@@ -51,8 +51,6 @@ extension AssociatedObjects {
 extension NSObject: AssociatedObjects { }
 
 
-
-
 enum ViewAssociatedKeys {
     static var emptyState = "emptyState"
 }

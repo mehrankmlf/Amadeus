@@ -12,12 +12,14 @@ final class MainView: UIView {
     lazy var viewContainer : UIView = {
         let viewContainer = UIView()
         viewContainer.backgroundColor = .white
+        viewContainer.translatesAutoresizingMaskIntoConstraints = false
         return viewContainer
     }()
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
@@ -34,11 +36,8 @@ final class MainView: UIView {
     }
     
     private func addSubviews() {
-        [viewContainer, tableView]
-            .forEach {
-                addSubview($0)
-                $0.translatesAutoresizingMaskIntoConstraints = false
-            }
+        addSubview(viewContainer)
+        viewContainer.addSubview(tableView)
     }
     
     private func setupUI() {

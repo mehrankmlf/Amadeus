@@ -11,8 +11,8 @@ import Combine
 class RegisterViewController: BaseViewController {
     
     var viewModel : RegisterViewModel?
-    var navigationSubject = PassthroughSubject<RegisterViewController.Event, Never>()
     var contentView : RegisterView?
+    var navigationSubject = PassthroughSubject<RegisterViewController.Event, Never>()
     
     init(viewModel : RegisterViewModel, contentView : RegisterView) {
         self.viewModel = viewModel

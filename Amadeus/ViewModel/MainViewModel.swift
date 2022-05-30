@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class MainViewModel : ObservableObject, BaseMainViewModel {
+final class MainViewModel : ObservableObject, BaseMainViewModel {
     
     @Published var flightData : FlightSearchResponse?
     var loadinState = CurrentValueSubject<ViewModelStatus, Never>(.dismissAlert)

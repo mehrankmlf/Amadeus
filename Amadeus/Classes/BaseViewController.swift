@@ -90,9 +90,6 @@ extension BaseViewController {
 }
 
 extension BaseViewController {
-    
-    // MARK: - Navigation Bar
-
     func setClearAppearanceNavigationBar() {
         if #available(iOS 15, *) {
             // It is recommended by apple to set the appearance for the navigation

@@ -51,7 +51,7 @@ extension MainView {
             viewContainer.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             viewContainer.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor),
             viewContainer.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor),
-            viewContainer.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
+            viewContainer.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([

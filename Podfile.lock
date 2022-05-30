@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (5.4.4)
+  - IHProgressHUD (0.1.4)
+  - IQKeyboardManagerSwift (6.5.9)
+  - SwiftKeychainWrapper (4.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - IHProgressHUD
+  - IQKeyboardManagerSwift
+  - SwiftKeychainWrapper
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - IHProgressHUD
+    - IQKeyboardManagerSwift
+    - SwiftKeychainWrapper
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  IHProgressHUD: a01846bfbb581c761c79747c67b08387c3bdfae3
+  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
+
+PODFILE CHECKSUM: c316ff955f8f16240c2c89297fcb35f686eb9750
+
+COCOAPODS: 1.11.2

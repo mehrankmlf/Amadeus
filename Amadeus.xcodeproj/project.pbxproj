@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		022765F02845CAFE00A9074A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022765EF2845CAFE00A9074A /* LoginViewModel.swift */; };
 		82DEB063B583A7A05C0429F6 /* Pods_Amadeus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */; };
 		A828C87228447D6500738854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C87128447D6500738854 /* AppDelegate.swift */; };
 		A828C87B28447D6800738854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A828C87A28447D6800738854 /* Assets.xcassets */; };
@@ -15,7 +16,6 @@
 		A828C89328447D6800738854 /* AmadeusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C89228447D6800738854 /* AmadeusUITests.swift */; };
 		A828C89528447D6800738854 /* AmadeusUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C89428447D6800738854 /* AmadeusUITestsLaunchTests.swift */; };
 		A828C8A428447DC600738854 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8A328447DC500738854 /* MainViewModel.swift */; };
-		A828C8AA28447E2000738854 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8A928447E2000738854 /* LoginViewModel.swift */; };
 		A828C8AF28447E6800738854 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8AD28447E6800738854 /* DetailView.swift */; };
 		A828C8B028447E6800738854 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8AE28447E6800738854 /* DetailViewController.swift */; };
 		A828C8B428447E8300738854 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8B228447E8300738854 /* MainView.swift */; };
@@ -110,6 +110,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		022765EF2845CAFE00A9074A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Amadeus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1530094CAF1E86E4F71C237D /* Pods-Amadeus-AmadeusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus-AmadeusUITests.release.xcconfig"; path = "Target Support Files/Pods-Amadeus-AmadeusUITests/Pods-Amadeus-AmadeusUITests.release.xcconfig"; sourceTree = "<group>"; };
 		34AEB3D063800CEA021DADD6 /* Pods-Amadeus-AmadeusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus-AmadeusUITests.debug.xcconfig"; path = "Target Support Files/Pods-Amadeus-AmadeusUITests/Pods-Amadeus-AmadeusUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,7 +127,6 @@
 		A828C89228447D6800738854 /* AmadeusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmadeusUITests.swift; sourceTree = "<group>"; };
 		A828C89428447D6800738854 /* AmadeusUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmadeusUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A828C8A328447DC500738854 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		A828C8A928447E2000738854 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = ../../../Traveller/SappPlus/LoginViewModel.swift; sourceTree = "<group>"; };
 		A828C8AD28447E6800738854 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		A828C8AE28447E6800738854 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A828C8B228447E8300738854 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -334,7 +334,7 @@
 		A828C8A628447E0800738854 /* LoginViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A828C8A928447E2000738854 /* LoginViewModel.swift */,
+				022765EF2845CAFE00A9074A /* LoginViewModel.swift */,
 			);
 			name = LoginViewModel;
 			sourceTree = "<group>";
@@ -995,6 +995,7 @@
 				A828C93C284482B100738854 /* AuthenticationFactory.swift in Sources */,
 				A828C95C2844836B00738854 /* TableViewCustomDataSource.swift in Sources */,
 				A828C9042844806D00738854 /* TableView + Extension.swift in Sources */,
+				022765F02845CAFE00A9074A /* LoginViewModel.swift in Sources */,
 				A828C92B2844821700738854 /* Enums.swift in Sources */,
 				A828C9592844835700738854 /* DependencyAssembler.swift in Sources */,
 				A828C92F2844822F00738854 /* Coordinator.swift in Sources */,
@@ -1024,7 +1025,6 @@
 				A828C942284482E000738854 /* KeychainManagerProtocol .swift in Sources */,
 				A828C8BF28447EBB00738854 /* LoginView.swift in Sources */,
 				A828C9082844806D00738854 /* Gradient + Extension.swift in Sources */,
-				A828C8AA28447E2000738854 /* LoginViewModel.swift in Sources */,
 				A828C9052844806D00738854 /* BaseAPI + Extension.swift in Sources */,
 				A828C8C828447F0B00738854 /* WalkthroughViewController.swift in Sources */,
 				A828C967284488B300738854 /* RegisterViewModel.swift in Sources */,

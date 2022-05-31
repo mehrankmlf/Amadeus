@@ -1,5 +1,5 @@
 //
-//  Configuration.swift
+//  BuildConfig.swift
 //  mediumapp
 //
 //  Created by Mehran Kamalifard on 6/28/21.

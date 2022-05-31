@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		022765F02845CAFE00A9074A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022765EF2845CAFE00A9074A /* LoginViewModel.swift */; };
+		022D79DD284624340050CEE4 /* MockFlightSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79DA284624340050CEE4 /* MockFlightSearch.swift */; };
+		022D79DE284624340050CEE4 /* MockLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79DB284624340050CEE4 /* MockLogin.swift */; };
+		022D79E2284624840050CEE4 /* ResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E1284624840050CEE4 /* ResponseMock.swift */; };
+		022D79E5284624A70050CEE4 /* GetToken_ResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E4284624A70050CEE4 /* GetToken_ResponseTests.swift */; };
+		022D79E9284624CC0050CEE4 /* TokenViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E7284624CC0050CEE4 /* TokenViewModelTest.swift */; };
+		022D79EA284624CC0050CEE4 /* FlightSearchViewModelSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E8284624CC0050CEE4 /* FlightSearchViewModelSearch.swift */; };
 		82DEB063B583A7A05C0429F6 /* Pods_Amadeus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */; };
 		A828C87228447D6500738854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C87128447D6500738854 /* AppDelegate.swift */; };
 		A828C87B28447D6800738854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A828C87A28447D6800738854 /* Assets.xcassets */; };
@@ -111,6 +117,12 @@
 
 /* Begin PBXFileReference section */
 		022765EF2845CAFE00A9074A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		022D79DA284624340050CEE4 /* MockFlightSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFlightSearch.swift; sourceTree = "<group>"; };
+		022D79DB284624340050CEE4 /* MockLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLogin.swift; sourceTree = "<group>"; };
+		022D79E1284624840050CEE4 /* ResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseMock.swift; sourceTree = "<group>"; };
+		022D79E4284624A70050CEE4 /* GetToken_ResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetToken_ResponseTests.swift; sourceTree = "<group>"; };
+		022D79E7284624CC0050CEE4 /* TokenViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenViewModelTest.swift; sourceTree = "<group>"; };
+		022D79E8284624CC0050CEE4 /* FlightSearchViewModelSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchViewModelSearch.swift; sourceTree = "<group>"; };
 		02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Amadeus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1530094CAF1E86E4F71C237D /* Pods-Amadeus-AmadeusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus-AmadeusUITests.release.xcconfig"; path = "Target Support Files/Pods-Amadeus-AmadeusUITests/Pods-Amadeus-AmadeusUITests.release.xcconfig"; sourceTree = "<group>"; };
 		34AEB3D063800CEA021DADD6 /* Pods-Amadeus-AmadeusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus-AmadeusUITests.debug.xcconfig"; path = "Target Support Files/Pods-Amadeus-AmadeusUITests/Pods-Amadeus-AmadeusUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +245,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		022D79D9284624240050CEE4 /* MockDataParser */ = {
+			isa = PBXGroup;
+			children = (
+				022D79DA284624340050CEE4 /* MockFlightSearch.swift */,
+				022D79DB284624340050CEE4 /* MockLogin.swift */,
+			);
+			path = MockDataParser;
+			sourceTree = "<group>";
+		};
+		022D79E0284624750050CEE4 /* MockResponse */ = {
+			isa = PBXGroup;
+			children = (
+				022D79E1284624840050CEE4 /* ResponseMock.swift */,
+			);
+			path = MockResponse;
+			sourceTree = "<group>";
+		};
+		022D79E32846249D0050CEE4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				022D79E4284624A70050CEE4 /* GetToken_ResponseTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		022D79E6284624BD0050CEE4 /* ViewModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				022D79E8284624CC0050CEE4 /* FlightSearchViewModelSearch.swift */,
+				022D79E7284624CC0050CEE4 /* TokenViewModelTest.swift */,
+			);
+			path = ViewModelTest;
+			sourceTree = "<group>";
+		};
 		4ED68E1F211C74C2C5A41099 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +344,10 @@
 		A828C88728447D6800738854 /* AmadeusTests */ = {
 			isa = PBXGroup;
 			children = (
+				022D79E6284624BD0050CEE4 /* ViewModelTest */,
+				022D79E32846249D0050CEE4 /* Models */,
+				022D79E0284624750050CEE4 /* MockResponse */,
+				022D79D9284624240050CEE4 /* MockDataParser */,
 				A828C88828447D6800738854 /* AmadeusTests.swift */,
 			);
 			path = AmadeusTests;
@@ -1052,7 +1102,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				022D79E5284624A70050CEE4 /* GetToken_ResponseTests.swift in Sources */,
+				022D79E2284624840050CEE4 /* ResponseMock.swift in Sources */,
 				A828C88928447D6800738854 /* AmadeusTests.swift in Sources */,
+				022D79EA284624CC0050CEE4 /* FlightSearchViewModelSearch.swift in Sources */,
+				022D79DD284624340050CEE4 /* MockFlightSearch.swift in Sources */,
+				022D79E9284624CC0050CEE4 /* TokenViewModelTest.swift in Sources */,
+				022D79DE284624340050CEE4 /* MockLogin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1219,6 +1275,7 @@
 				INFOPLIST_FILE = Amadeus/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1247,6 +1304,7 @@
 				INFOPLIST_FILE = Amadeus/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

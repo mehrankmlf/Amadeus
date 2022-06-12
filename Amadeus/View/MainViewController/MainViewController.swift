@@ -7,8 +7,6 @@
 
 import UIKit
 import Combine
-import Alamofire
-import SwiftUI
  
 class MainViewController: BaseViewController {
 

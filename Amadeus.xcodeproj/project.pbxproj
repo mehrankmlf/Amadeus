@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		022146F028564185003FB94B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022146EF28564185003FB94B /* Reachability.swift */; };
 		022765F02845CAFE00A9074A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022765EF2845CAFE00A9074A /* LoginViewModel.swift */; };
 		022D79DD284624340050CEE4 /* MockFlightSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79DA284624340050CEE4 /* MockFlightSearch.swift */; };
 		022D79DE284624340050CEE4 /* MockLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79DB284624340050CEE4 /* MockLogin.swift */; };
@@ -116,6 +117,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		022146EF28564185003FB94B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		022765EF2845CAFE00A9074A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		022D79DA284624340050CEE4 /* MockFlightSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFlightSearch.swift; sourceTree = "<group>"; };
 		022D79DB284624340050CEE4 /* MockLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLogin.swift; sourceTree = "<group>"; };
@@ -605,6 +607,7 @@
 				A828C91E284481E400738854 /* KeychainKeychainManager.swift */,
 				A828C919284481E400738854 /* MessageHelper.swift */,
 				A828C91A284481E400738854 /* UserDefaultHelper.swift */,
+				022146EF28564185003FB94B /* Reachability.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -1074,6 +1077,7 @@
 				A828C8EB2844800D00738854 /* TargetType.swift in Sources */,
 				A828C942284482E000738854 /* KeychainManagerProtocol .swift in Sources */,
 				A828C8BF28447EBB00738854 /* LoginView.swift in Sources */,
+				022146F028564185003FB94B /* Reachability.swift in Sources */,
 				A828C9082844806D00738854 /* Gradient + Extension.swift in Sources */,
 				A828C9052844806D00738854 /* BaseAPI + Extension.swift in Sources */,
 				A828C8C828447F0B00738854 /* WalkthroughViewController.swift in Sources */,

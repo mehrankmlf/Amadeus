@@ -22,6 +22,7 @@ protocol ShowEmptyStateProtocol : AnyObject {
 
 class BaseViewController: UIViewController {
     
+    let reachability = Reachability()
     var bag = Set<AnyCancellable>()
     var delegate : ShowEmptyStateProtocol?
     
@@ -31,7 +32,7 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setReachability()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +74,15 @@ class BaseViewController: UIViewController {
         case .hideKeyBoardWhenNeeded:
             return 
         }
+    }
+    
+    //Check Internet Connection Availability
+    private func setReachability() {
+        reachability?.whenUnreachable = { [weak self] _ in
+            guard let self = self else { return }
+            self.showAlertWith(message: "NetwortErro")
+        }
+        try? reachability?.startNotifier()
     }
 }
 

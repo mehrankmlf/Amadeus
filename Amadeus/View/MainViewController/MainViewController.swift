@@ -14,10 +14,9 @@ class MainViewController: BaseViewController {
     var viewModel : MainViewModel?
     var navigateSubject = PassthroughSubject<MainViewController.Event, Never>()
     var contentView : MainView?
-    private(set) var data : FlightSearchResponse?
-    private var dataSource:TableViewCustomDataSource<DataResponse>?
+    private(set) var data : [HotelSearchResponse]?
+    private var dataSource:TableViewCustomDataSource<HotelSearchResponse>?
 
-        
     init(viewModel : MainViewModel, contentView : MainView) {
         self.viewModel = viewModel
         self.contentView = contentView
@@ -61,16 +60,15 @@ class MainViewController: BaseViewController {
                 super.setViewState(state: state, viewContainer: view.viewContainer)
             }).store(in: &bag)
 
-        self.viewModel?.$flightData
+        self.viewModel?.$hotelData
             .compactMap({ $0 })
             .sink { [weak self] data in
                 self?.data = data
-                guard let data = data.data else {return}
                 self?.renderTableViewdataSource(data)
             }.store(in: &bag)
     }
     
-    private func renderTableViewdataSource(_ itemlists:[DataResponse]) {
+    private func renderTableViewdataSource(_ itemlists:[HotelSearchResponse]) {
         dataSource = .displayData(for: itemlists, withCellidentifier: cellId)
         self.contentView?.tableView.dataSource = dataSource
         self.contentView?.tableView.delegate = self
@@ -78,7 +76,7 @@ class MainViewController: BaseViewController {
     }
     
     private func callFlightServie() {
-        self.viewModel?.getFlightInspirationData(origin: "MAD")
+        self.viewModel?.getHotelsData(cityCode: "PAR")
     }
 }
 
@@ -99,7 +97,8 @@ extension MainViewController : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let rawData = self.data, let data = rawData.data?[indexPath.row] else {return}
+        guard let rawData = self.data else {return}
+        let data = rawData[indexPath.row]
         self.navigateSubject.send(.detail(data: data))
     }
 }
@@ -107,7 +106,7 @@ extension MainViewController : UITableViewDelegate {
 extension MainViewController {
     enum Event {
         case main
-        case detail(data : DataResponse)
+        case detail(data : HotelSearchResponse)
     }
 }
 

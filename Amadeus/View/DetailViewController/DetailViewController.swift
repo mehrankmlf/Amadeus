@@ -9,10 +9,10 @@ import UIKit
 
 class DetailViewController: BaseViewController {
     
-    var  data : DataResponse?
+    var  data : HotelSearchResponse?
     var contentView : DetailView?
     
-    init(data : DataResponse, contentView : DetailView) {
+    init(data : HotelSearchResponse, contentView : DetailView) {
         self.data = data
         self.contentView = contentView
         super.init(nibName: nil, bundle: nil)
@@ -41,8 +41,8 @@ class DetailViewController: BaseViewController {
     
     private func showData(){
         guard let data = data else {return}
-        self.contentView?.lblDestinationDetail.text = data.destination
-        self.contentView?.lblDeparturDetail.text = data.departureDate
+        self.contentView?.lblDestinationDetail.text = data.name
+        self.contentView?.lblDeparturDetail.text = data.chainCode
     }
 }
 

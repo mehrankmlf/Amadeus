@@ -10,19 +10,19 @@ import Combine
 
 final class MainViewModel : ObservableObject, BaseMainViewModel {
     
-    @Published var flightData : FlightSearchResponse?
+    @Published var hotelData : [HotelSearchResponse]?
     var loadinState = CurrentValueSubject<ViewModelStatus, Never>(.dismissAlert)
     var subscriber = Set<AnyCancellable>()
-    var getFlightInspiration: FlightSearchProtocol
+    var getHotels: HotelsSearchProtocol
         
-    init(getFlightInspiration : FlightSearchProtocol) {
-        self.getFlightInspiration = getFlightInspiration
+    init(getHotels : HotelsSearchProtocol) {
+        self.getHotels = getHotels
     }
     
-    func getFlightInspirationData(origin: String) {
+    func getHotelsData(cityCode: String) {
         self.loadinState.send(.loadStart)
         
-        self.getFlightInspiration.flightSearchService(origin: origin)
+        self.getHotels.HotelsSearchService(cityCode: cityCode)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] result in
                 switch result {
@@ -33,7 +33,8 @@ final class MainViewModel : ObservableObject, BaseMainViewModel {
                 }
                 self?.loadinState.send(.dismissAlert)
             } receiveValue: { [weak self] data in
-                self?.flightData = data
+                guard let data = data, let hotels = data.data else {return}
+                self?.hotelData = hotels
             }
             .store(in: &subscriber)
     }

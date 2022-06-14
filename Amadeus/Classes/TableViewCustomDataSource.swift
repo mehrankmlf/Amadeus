@@ -40,8 +40,8 @@ class TableViewCustomDataSource<Model>: NSObject,UITableViewDataSource {
     }    
 }
 
-extension TableViewCustomDataSource where Model == DataResponse {
-    static func displayData(for itemLists:[DataResponse],withCellidentifier reuseIdentifier: String)-> TableViewCustomDataSource {
+extension TableViewCustomDataSource where Model == HotelSearchResponse {
+    static func displayData(for itemLists:[HotelSearchResponse],withCellidentifier reuseIdentifier: String)-> TableViewCustomDataSource {
         return TableViewCustomDataSource(models: itemLists, reuseIdentifier: reuseIdentifier, cellConfigurator: { (data, cell ) in
             let itemcell:MainTableViewCell = cell as! MainTableViewCell
             itemcell.setupParametrs(items: data)

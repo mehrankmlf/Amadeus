@@ -20,6 +20,6 @@ protocol LogiViewModel {
 typealias BaseMainViewModel = ViewModelBaseProtocol & MainViewModelProtocol
 
 protocol MainViewModelProtocol {
-    var getFlightInspiration : FlightSearchProtocol { get }
-    func getFlightInspirationData(origin: String)
+    var getHotels : HotelsSearchProtocol { get }
+    func getHotelsData(cityCode: String)
 }

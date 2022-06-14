@@ -70,7 +70,7 @@ extension DependencyAssembler : MainFactory {
     }
     
     func makeMainViewModel(coordinator: MainCoordinator) -> MainViewModel {
-        let viewModel = MainViewModel(getFlightInspiration: FlightSearch_Request())
+        let viewModel = MainViewModel(getHotels: HotelSearch_Request())
         return viewModel
     }
 }

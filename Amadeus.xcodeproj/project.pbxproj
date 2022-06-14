@@ -15,6 +15,8 @@
 		022D79E5284624A70050CEE4 /* GetToken_ResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E4284624A70050CEE4 /* GetToken_ResponseTests.swift */; };
 		022D79E9284624CC0050CEE4 /* TokenViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E7284624CC0050CEE4 /* TokenViewModelTest.swift */; };
 		022D79EA284624CC0050CEE4 /* FlightSearchViewModelSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E8284624CC0050CEE4 /* FlightSearchViewModelSearch.swift */; };
+		02DC602B28590253000B2F97 /* HotelSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC602A28590253000B2F97 /* HotelSearchResponse.swift */; };
+		02DC602E285902D3000B2F97 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC602D285902D3000B2F97 /* BaseResponse.swift */; };
 		82DEB063B583A7A05C0429F6 /* Pods_Amadeus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */; };
 		A828C87228447D6500738854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C87128447D6500738854 /* AppDelegate.swift */; };
 		A828C87B28447D6800738854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A828C87A28447D6800738854 /* Assets.xcassets */; };
@@ -38,8 +40,7 @@
 		A828C8D028447F5600738854 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8CD28447F5600738854 /* EmptyStateView.swift */; };
 		A828C8D128447F5600738854 /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A828C8CE28447F5600738854 /* EmptyStateView.xib */; };
 		A828C8D428447F6D00738854 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8D328447F6D00738854 /* MainTableViewCell.swift */; };
-		A828C8DF28447FCE00738854 /* FlightSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8DD28447FCE00738854 /* FlightSearchRequest.swift */; };
-		A828C8E028447FCE00738854 /* FlightSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8DE28447FCE00738854 /* FlightSearchResponse.swift */; };
+		A828C8DF28447FCE00738854 /* HotelSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8DD28447FCE00738854 /* HotelSearchRequest.swift */; };
 		A828C8E82844800D00738854 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8E42844800D00738854 /* BaseAPI.swift */; };
 		A828C8E92844800D00738854 /* AlamofireLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8E52844800D00738854 /* AlamofireLogger.swift */; };
 		A828C8EA2844800D00738854 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8E62844800D00738854 /* RequestInterceptor.swift */; };
@@ -125,6 +126,8 @@
 		022D79E4284624A70050CEE4 /* GetToken_ResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetToken_ResponseTests.swift; sourceTree = "<group>"; };
 		022D79E7284624CC0050CEE4 /* TokenViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenViewModelTest.swift; sourceTree = "<group>"; };
 		022D79E8284624CC0050CEE4 /* FlightSearchViewModelSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchViewModelSearch.swift; sourceTree = "<group>"; };
+		02DC602A28590253000B2F97 /* HotelSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchResponse.swift; sourceTree = "<group>"; };
+		02DC602D285902D3000B2F97 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Amadeus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1530094CAF1E86E4F71C237D /* Pods-Amadeus-AmadeusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus-AmadeusUITests.release.xcconfig"; path = "Target Support Files/Pods-Amadeus-AmadeusUITests/Pods-Amadeus-AmadeusUITests.release.xcconfig"; sourceTree = "<group>"; };
 		34AEB3D063800CEA021DADD6 /* Pods-Amadeus-AmadeusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus-AmadeusUITests.debug.xcconfig"; path = "Target Support Files/Pods-Amadeus-AmadeusUITests/Pods-Amadeus-AmadeusUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,8 +159,7 @@
 		A828C8CD28447F5600738854 /* EmptyStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		A828C8CE28447F5600738854 /* EmptyStateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyStateView.xib; sourceTree = "<group>"; };
 		A828C8D328447F6D00738854 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
-		A828C8DD28447FCE00738854 /* FlightSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchRequest.swift; sourceTree = "<group>"; };
-		A828C8DE28447FCE00738854 /* FlightSearchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchResponse.swift; sourceTree = "<group>"; };
+		A828C8DD28447FCE00738854 /* HotelSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelSearchRequest.swift; sourceTree = "<group>"; };
 		A828C8E42844800D00738854 /* BaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		A828C8E52844800D00738854 /* AlamofireLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireLogger.swift; sourceTree = "<group>"; };
 		A828C8E62844800D00738854 /* RequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
@@ -281,6 +283,23 @@
 			path = ViewModelTest;
 			sourceTree = "<group>";
 		};
+		02DC602C285902C3000B2F97 /* BaseResponse */ = {
+			isa = PBXGroup;
+			children = (
+				02DC602D285902D3000B2F97 /* BaseResponse.swift */,
+			);
+			path = BaseResponse;
+			sourceTree = "<group>";
+		};
+		02DC602F28590866000B2F97 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A828C87128447D6500738854 /* AppDelegate.swift */,
+				A828C9512844833800738854 /* AppCoordiantor.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
 		4ED68E1F211C74C2C5A41099 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,7 +354,6 @@
 				A828C8AB28447E4D00738854 /* View */,
 				A828C8A128447D7300738854 /* ViewModel */,
 				A828C9622844869100738854 /* Storyboard */,
-				A828C87128447D6500738854 /* AppDelegate.swift */,
 				A828C87A28447D6800738854 /* Assets.xcassets */,
 				A828C87C28447D6800738854 /* LaunchScreen.storyboard */,
 				A828C87F28447D6800738854 /* Info.plist */,
@@ -503,6 +521,7 @@
 		A828C8D528447F8200738854 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				02DC602C285902C3000B2F97 /* BaseResponse */,
 				A828C8D728447FA000738854 /* TokenUseCase */,
 				A828C8DC28447FB500738854 /* FlightSearchUseCase */,
 			);
@@ -521,8 +540,8 @@
 		A828C8DC28447FB500738854 /* FlightSearchUseCase */ = {
 			isa = PBXGroup;
 			children = (
-				A828C8DD28447FCE00738854 /* FlightSearchRequest.swift */,
-				A828C8DE28447FCE00738854 /* FlightSearchResponse.swift */,
+				A828C8DD28447FCE00738854 /* HotelSearchRequest.swift */,
+				02DC602A28590253000B2F97 /* HotelSearchResponse.swift */,
 			);
 			path = FlightSearchUseCase;
 			sourceTree = "<group>";
@@ -530,16 +549,17 @@
 		A828C8E128447FE300738854 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				02DC602F28590866000B2F97 /* App */,
 				A828C95D2844837100738854 /* Base */,
-				A828C95A2844836600738854 /* TableViewDataSource */,
-				A828C9572844834900738854 /* DependencyAssembler */,
 				A828C94C2844832D00738854 /* Routing */,
 				A828C9492844831F00738854 /* BuildConfig */,
 				A828C92C2844821B00738854 /* Protocol */,
 				A828C9292844820300738854 /* Enums */,
-				A828C918284481D400738854 /* Helper */,
 				A828C8F12844805E00738854 /* Extension */,
+				A828C918284481D400738854 /* Helper */,
 				A828C8E228447FF500738854 /* Networking */,
+				A828C95A2844836600738854 /* TableViewDataSource */,
+				A828C9572844834900738854 /* DependencyAssembler */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -567,8 +587,8 @@
 		A828C8EC2844801300738854 /* EndPoints */ = {
 			isa = PBXGroup;
 			children = (
-				A828C8ED2844802600738854 /* MainNetworking.swift */,
 				A828C8EE2844802600738854 /* UserTokenNetworking.swift */,
+				A828C8ED2844802600738854 /* MainNetworking.swift */,
 			);
 			name = EndPoints;
 			sourceTree = "<group>";
@@ -727,7 +747,6 @@
 		A828C94C2844832D00738854 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
-				A828C9512844833800738854 /* AppCoordiantor.swift */,
 				A828C94F2844833800738854 /* AuthenticationhCoordinator.swift */,
 				A828C9502844833800738854 /* MainCoordinator.swift */,
 				A828C94D2844833800738854 /* SplashCoordinator.swift */,
@@ -1029,6 +1048,7 @@
 				A828C8D028447F5600738854 /* EmptyStateView.swift in Sources */,
 				A828C8BC28447EB100738854 /* RegisterView.swift in Sources */,
 				A828C9122844806D00738854 /* AppDelegate + Extension.swift in Sources */,
+				02DC602B28590253000B2F97 /* HotelSearchResponse.swift in Sources */,
 				A828C9602844837D00738854 /* BaseViewController.swift in Sources */,
 				A828C9322844823F00738854 /* ViewModelsProtocol.swift in Sources */,
 				A828C8D428447F6D00738854 /* MainTableViewCell.swift in Sources */,
@@ -1036,7 +1056,6 @@
 				A828C8EF2844802600738854 /* MainNetworking.swift in Sources */,
 				A828C8BB28447EB100738854 /* RegisterViewController.swift in Sources */,
 				A828C924284481E400738854 /* AppDelegateHelper.swift in Sources */,
-				A828C8E028447FCE00738854 /* FlightSearchResponse.swift in Sources */,
 				A828C90A2844806D00738854 /* AFError + Extension.swift in Sources */,
 				A828C9102844806D00738854 /* UIWindow + Extension.swift in Sources */,
 				A828C9522844833800738854 /* SplashCoordinator.swift in Sources */,
@@ -1058,7 +1077,7 @@
 				A828C9482844831400738854 /* RequestInterceptorProtocol.swift in Sources */,
 				A828C921284481E400738854 /* MessageHelper.swift in Sources */,
 				A828C926284481E400738854 /* KeychainKeychainManager.swift in Sources */,
-				A828C8DF28447FCE00738854 /* FlightSearchRequest.swift in Sources */,
+				A828C8DF28447FCE00738854 /* HotelSearchRequest.swift in Sources */,
 				A828C8E92844800D00738854 /* AlamofireLogger.swift in Sources */,
 				A828C90F2844806D00738854 /* NSFormatter + Extension.swift in Sources */,
 				A828C9542844833800738854 /* AuthenticationhCoordinator.swift in Sources */,
@@ -1067,6 +1086,7 @@
 				A828C928284481E400738854 /* AlertHelper.swift in Sources */,
 				A828C9532844833800738854 /* WalkthroughCoordinator.swift in Sources */,
 				A828C9112844806D00738854 /* String + Extension.swift in Sources */,
+				02DC602E285902D3000B2F97 /* BaseResponse.swift in Sources */,
 				A828C96A284488E300738854 /* SplashViewModel.swift in Sources */,
 				A828C922284481E400738854 /* UserDefaultHelper.swift in Sources */,
 				A828C8AF28447E6800738854 /* DetailView.swift in Sources */,

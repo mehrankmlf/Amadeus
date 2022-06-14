@@ -9,7 +9,7 @@ import Foundation
 
 enum MainNetworking {
     
-    case flightSearch(origin: String)
+    case hotelSearch(cityCode: String)
 }
 
 extension MainNetworking : TargetType {
@@ -24,21 +24,21 @@ extension MainNetworking : TargetType {
     
     var path: RequestType {
         switch self {
-        case .flightSearch(let origin):
-            return .queryParametrs(query: "\("/shopping/flight-destinations")\(["origin":origin].queryString)")
+        case .hotelSearch(let code):
+            return .queryParametrs(query: "\("/reference-data/locations/hotels/by-city")\(["cityCode":code].queryString)")
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .flightSearch :
+        case .hotelSearch :
             return .get
         }
     }
     
     var task: Task {
         switch self {
-        case .flightSearch:
+        case .hotelSearch:
             return .requestPlain
         }
     }

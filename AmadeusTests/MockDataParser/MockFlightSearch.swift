@@ -9,7 +9,7 @@ import Foundation
 import Combine
 @testable import Amadeus
 
-class MockFlightSearch : FlightSearchProtocol {
+class MockFlightSearch : HotelsSearchProtocol {
     var fetchFlightrResult : AnyPublisher<FlightSearchResponse?, APIError>!
     func flightSearchService(origin: String) -> AnyPublisher<FlightSearchResponse?, APIError> {
         return fetchFlightrResult

@@ -56,9 +56,9 @@ class MainTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupParametrs(items : DataResponse) {
-        self.lblName.text = items.destination
-        self.lblFamilyName.text = items.departureDate
+    func setupParametrs(items : HotelSearchResponse) {
+        self.lblName.text = items.name
+        self.lblFamilyName.text = items.hotelID
     }
 }
 

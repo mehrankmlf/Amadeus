@@ -41,8 +41,8 @@ class DetailViewController: BaseViewController {
     
     private func showData(){
         guard let data = data else {return}
-        self.contentView?.lblDestinationDetail.text = data.name
-        self.contentView?.lblDeparturDetail.text = data.chainCode
+        self.contentView?.lblHeadLineDetail.text = data.name
+        self.contentView?.lblSublineDetail.text = data.chainCode
     }
 }
 

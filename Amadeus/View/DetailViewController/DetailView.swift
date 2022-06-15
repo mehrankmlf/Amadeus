@@ -25,58 +25,56 @@ final class DetailView: UIView {
         return imageLogo
     }()
     
-     lazy var lblDestination : UILabel = {
-        let lblDestination = UILabel()
-        lblDestination.text = "Destination : "
-        lblDestination.textAlignment = .left
-        lblDestination.textColor = .black
-        lblDestination.font = UIFont.boldSystemFont(ofSize: 15)
-
-        return lblDestination
+     lazy var lblHeadLine : UILabel = {
+        let lblHeadLine = UILabel()
+         lblHeadLine.text = "Name : "
+         lblHeadLine.textColor = .gray
+         lblHeadLine.font = UIFont.boldSystemFont(ofSize: 12)
+        return lblHeadLine
     }()
     
-     lazy var lblDestinationDetail : UILabel = {
-        let lblDestinationDetail = UILabel()
-        lblDestinationDetail.text = "Destination"
-        lblDestinationDetail.textAlignment = .left
-        lblDestinationDetail.textColor = .black
-        lblDestinationDetail.font = UIFont.boldSystemFont(ofSize: 15)
-        return lblDestinationDetail
+     lazy var lblHeadLineDetail : UILabel = {
+        let lblHeadLineDetail = UILabel()
+         lblHeadLineDetail.text = "unknown"
+         lblHeadLineDetail.textColor = .black
+         lblHeadLineDetail.numberOfLines = 0
+         lblHeadLineDetail.font = UIFont.boldSystemFont(ofSize: 15)
+        return lblHeadLineDetail
     }()
     
-     lazy var lblDeparture : UILabel = {
-        let lblDestination = UILabel()
-        lblDestination.text = "DepartureDate : "
-        lblDestination.textAlignment = .left
-        lblDestination.textColor = .black
-        lblDestination.font = UIFont.boldSystemFont(ofSize: 15)
-        return lblDestination
+     lazy var lblSubline : UILabel = {
+        let lblSubline = UILabel()
+         lblSubline.text = "ChainName : "
+         lblSubline.textAlignment = .left
+         lblSubline.textColor = .gray
+         lblSubline.font = UIFont.boldSystemFont(ofSize: 12)
+        return lblSubline
     }()
     
-     lazy var lblDeparturDetail : UILabel = {
-        let lblDestinationDetail = UILabel()
-        lblDestinationDetail.text = "Destination"
-        lblDestinationDetail.textAlignment = .left
-        lblDestinationDetail.textColor = .black
-        lblDestinationDetail.font = UIFont.boldSystemFont(ofSize: 15)
-        return lblDestinationDetail
+     lazy var lblSublineDetail : UILabel = {
+        let lblSublineDetail = UILabel()
+         lblSublineDetail.text = "unknown"
+         lblSublineDetail.textAlignment = .left
+         lblSublineDetail.textColor = .black
+         lblSublineDetail.font = UIFont.boldSystemFont(ofSize: 15)
+        return lblSublineDetail
     }()
     
-     lazy var destinatioStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [lblDestination, lblDestinationDetail])
-        stackView.axis  = .horizontal
+     lazy var headLineStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [lblHeadLine, lblHeadLineDetail])
+        stackView.axis  = .vertical
         stackView.distribution  = .fill
         stackView.alignment = .fill
-        stackView.spacing = 5
+        stackView.spacing = 10
         return stackView
     }()
     
-     lazy var departureStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [lblDeparture, lblDeparturDetail])
-        stackView.axis  = .horizontal
+     lazy var subLineStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [lblSubline, lblSublineDetail])
+        stackView.axis  = .vertical
         stackView.distribution  = .fill
         stackView.alignment = .fill
-        stackView.spacing = 5
+        stackView.spacing = 10
         return stackView
     }()
     
@@ -93,7 +91,7 @@ final class DetailView: UIView {
     }
     
      func addSubviews() {
-         [viewContainer, imageHeader, destinatioStackView, departureStackView]
+         [viewContainer, imageHeader, headLineStackView, subLineStackView]
             .forEach {
                 addSubview($0)
                 $0.translatesAutoresizingMaskIntoConstraints = false
@@ -107,24 +105,23 @@ final class DetailView: UIView {
 
 extension DetailView {
     private func makeAutolayout() {
-        viewContainer.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
+        viewContainer.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 60).isActive = true
         viewContainer.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 30).isActive = true
         viewContainer.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -30).isActive = true
-        viewContainer.heightAnchor.constraint(equalToConstant: 110.0).isActive = true
+        viewContainer.heightAnchor.constraint(equalToConstant: 150.0).isActive = true
         
         imageHeader.topAnchor.constraint(equalTo: viewContainer.topAnchor, constant: -25).isActive = true
         imageHeader.leftAnchor.constraint(equalTo: viewContainer.leftAnchor, constant: 30).isActive = true
         imageHeader.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
         imageHeader.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
-        destinatioStackView.topAnchor.constraint(equalTo: viewContainer.topAnchor, constant: 30).isActive = true
-        destinatioStackView.leftAnchor.constraint(equalTo: viewContainer.leftAnchor, constant: 10).isActive = true
-        destinatioStackView.rightAnchor.constraint(greaterThanOrEqualTo: viewContainer.leftAnchor, constant: -10).isActive = true
-        destinatioStackView.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
+        headLineStackView.topAnchor.constraint(equalTo: viewContainer.topAnchor, constant: 30).isActive = true
+        headLineStackView.leftAnchor.constraint(equalTo: viewContainer.leftAnchor, constant: 10).isActive = true
+        headLineStackView.rightAnchor.constraint(equalTo: viewContainer.rightAnchor, constant: -10).isActive = true
         
-        departureStackView.topAnchor.constraint(equalTo: destinatioStackView.bottomAnchor, constant: 5).isActive = true
-        departureStackView.leftAnchor.constraint(equalTo: viewContainer.leftAnchor, constant: 10).isActive = true
-        departureStackView.rightAnchor.constraint(greaterThanOrEqualTo: viewContainer.leftAnchor, constant: -10).isActive = true
-        departureStackView.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
+        
+        subLineStackView.topAnchor.constraint(equalTo: headLineStackView.bottomAnchor, constant: 10).isActive = true
+        subLineStackView.leftAnchor.constraint(equalTo: viewContainer.leftAnchor, constant: 10).isActive = true
+        subLineStackView.rightAnchor.constraint(equalTo: viewContainer.rightAnchor, constant: -10).isActive = true
     }
 }

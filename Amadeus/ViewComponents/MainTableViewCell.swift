@@ -18,24 +18,24 @@ class MainTableViewCell: UITableViewCell {
         return view
     }()
     
-    private lazy var lblName : UILabel = {
-        let lblTop = UILabel()
-        lblTop.textColor = UIColor.white
-        lblTop.font = UIFont.boldSystemFont(ofSize: 17)
-        lblTop.translatesAutoresizingMaskIntoConstraints = false
-        return lblTop
+    private lazy var lblHeadLine : UILabel = {
+        let lblHeadLine = UILabel()
+        lblHeadLine.textColor = UIColor.white
+        lblHeadLine.font = UIFont.boldSystemFont(ofSize: 17)
+        lblHeadLine.translatesAutoresizingMaskIntoConstraints = false
+        return lblHeadLine
     }()
     
-    private lazy var lblFamilyName : UILabel = {
-        let lblTop = UILabel()
-        lblTop.textColor = UIColor.white
-        lblTop.font = UIFont.boldSystemFont(ofSize: 17)
-        lblTop.translatesAutoresizingMaskIntoConstraints = false
-        return lblTop
+    private lazy var lblSubline : UILabel = {
+        let lblSubline = UILabel()
+        lblSubline.textColor = UIColor.white
+        lblSubline.font = UIFont.boldSystemFont(ofSize: 17)
+        lblSubline.translatesAutoresizingMaskIntoConstraints = false
+        return lblSubline
     }()
     
     private lazy var statsView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [lblName, lblFamilyName])
+        let stackView = UIStackView(arrangedSubviews: [lblHeadLine, lblSubline])
         stackView.axis  = .vertical
         stackView.distribution  = .fillEqually
         stackView.alignment = .fill
@@ -57,8 +57,8 @@ class MainTableViewCell: UITableViewCell {
     }
     
     func setupParametrs(items : HotelSearchResponse) {
-        self.lblName.text = items.name
-        self.lblFamilyName.text = items.hotelID
+        self.lblHeadLine.text = items.name
+        self.lblSubline.text = items.hotelID
     }
 }
 

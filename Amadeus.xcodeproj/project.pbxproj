@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0211C1532860DD46009C1F28 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211C1522860DD46009C1F28 /* Configuration.swift */; };
 		022146F028564185003FB94B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022146EF28564185003FB94B /* Reachability.swift */; };
 		022765F02845CAFE00A9074A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022765EF2845CAFE00A9074A /* LoginViewModel.swift */; };
 		022D79DD284624340050CEE4 /* MockFlightSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79DA284624340050CEE4 /* MockFlightSearch.swift */; };
@@ -83,7 +84,7 @@
 		A828C942284482E000738854 /* KeychainManagerProtocol .swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C941284482E000738854 /* KeychainManagerProtocol .swift */; };
 		A828C945284482F400738854 /* AppConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C944284482F400738854 /* AppConfigurationProtocol.swift */; };
 		A828C9482844831400738854 /* RequestInterceptorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9472844831400738854 /* RequestInterceptorProtocol.swift */; };
-		A828C94B2844832700738854 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C94A2844832700738854 /* BuildConfig.swift */; };
+		A828C94B2844832700738854 /* AppBuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C94A2844832700738854 /* AppBuildConfig.swift */; };
 		A828C9522844833800738854 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C94D2844833800738854 /* SplashCoordinator.swift */; };
 		A828C9532844833800738854 /* WalkthroughCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C94E2844833800738854 /* WalkthroughCoordinator.swift */; };
 		A828C9542844833800738854 /* AuthenticationhCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C94F2844833800738854 /* AuthenticationhCoordinator.swift */; };
@@ -118,6 +119,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0211C1522860DD46009C1F28 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		022146EF28564185003FB94B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		022765EF2845CAFE00A9074A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		022D79DA284624340050CEE4 /* MockFlightSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFlightSearch.swift; sourceTree = "<group>"; };
@@ -202,7 +204,7 @@
 		A828C941284482E000738854 /* KeychainManagerProtocol .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeychainManagerProtocol .swift"; sourceTree = "<group>"; };
 		A828C944284482F400738854 /* AppConfigurationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfigurationProtocol.swift; sourceTree = "<group>"; };
 		A828C9472844831400738854 /* RequestInterceptorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInterceptorProtocol.swift; sourceTree = "<group>"; };
-		A828C94A2844832700738854 /* BuildConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
+		A828C94A2844832700738854 /* AppBuildConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBuildConfig.swift; sourceTree = "<group>"; };
 		A828C94D2844833800738854 /* SplashCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		A828C94E2844833800738854 /* WalkthroughCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughCoordinator.swift; sourceTree = "<group>"; };
 		A828C94F2844833800738854 /* AuthenticationhCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationhCoordinator.swift; sourceTree = "<group>"; };
@@ -249,6 +251,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0211C1512860DD11009C1F28 /* BaseAPI */ = {
+			isa = PBXGroup;
+			children = (
+				A828C8E42844800D00738854 /* BaseAPI.swift */,
+			);
+			name = BaseAPI;
+			sourceTree = "<group>";
+		};
 		022D79D9284624240050CEE4 /* MockDataParser */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +306,7 @@
 			children = (
 				A828C87128447D6500738854 /* AppDelegate.swift */,
 				A828C9512844833800738854 /* AppCoordiantor.swift */,
+				A828C94A2844832700738854 /* AppBuildConfig.swift */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -552,7 +563,6 @@
 				02DC602F28590866000B2F97 /* App */,
 				A828C95D2844837100738854 /* Base */,
 				A828C94C2844832D00738854 /* Routing */,
-				A828C9492844831F00738854 /* BuildConfig */,
 				A828C92C2844821B00738854 /* Protocol */,
 				A828C9292844820300738854 /* Enums */,
 				A828C8F12844805E00738854 /* Extension */,
@@ -567,21 +577,22 @@
 		A828C8E228447FF500738854 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				0211C1512860DD11009C1F28 /* BaseAPI */,
 				A828C8EC2844801300738854 /* EndPoints */,
-				A828C8E328447FFC00738854 /* APIManager */,
+				A828C8E328447FFC00738854 /* Utilities */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
 		};
-		A828C8E328447FFC00738854 /* APIManager */ = {
+		A828C8E328447FFC00738854 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				A828C8E52844800D00738854 /* AlamofireLogger.swift */,
-				A828C8E42844800D00738854 /* BaseAPI.swift */,
 				A828C8E62844800D00738854 /* RequestInterceptor.swift */,
 				A828C8E72844800D00738854 /* TargetType.swift */,
+				0211C1522860DD46009C1F28 /* Configuration.swift */,
 			);
-			name = APIManager;
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		A828C8EC2844801300738854 /* EndPoints */ = {
@@ -734,14 +745,6 @@
 				A828C9472844831400738854 /* RequestInterceptorProtocol.swift */,
 			);
 			name = RequestInterceptor;
-			sourceTree = "<group>";
-		};
-		A828C9492844831F00738854 /* BuildConfig */ = {
-			isa = PBXGroup;
-			children = (
-				A828C94A2844832700738854 /* BuildConfig.swift */,
-			);
-			name = BuildConfig;
 			sourceTree = "<group>";
 		};
 		A828C94C2844832D00738854 /* Routing */ = {
@@ -1066,6 +1069,7 @@
 				A828C9562844833800738854 /* AppCoordiantor.swift in Sources */,
 				A828C93C284482B100738854 /* AuthenticationFactory.swift in Sources */,
 				A828C95C2844836B00738854 /* TableViewCustomDataSource.swift in Sources */,
+				0211C1532860DD46009C1F28 /* Configuration.swift in Sources */,
 				A828C9042844806D00738854 /* TableView + Extension.swift in Sources */,
 				022765F02845CAFE00A9074A /* LoginViewModel.swift in Sources */,
 				A828C92B2844821700738854 /* Enums.swift in Sources */,
@@ -1105,7 +1109,7 @@
 				A828C8C528447EE700738854 /* SplashViewController.swift in Sources */,
 				A828C9092844806D00738854 /* ViewController + Extension.swift in Sources */,
 				A828C8EA2844800D00738854 /* RequestInterceptor.swift in Sources */,
-				A828C94B2844832700738854 /* BuildConfig.swift in Sources */,
+				A828C94B2844832700738854 /* AppBuildConfig.swift in Sources */,
 				A828C927284481E400738854 /* DeviceStatusHelper.swift in Sources */,
 				A828C8B528447E8300738854 /* MainViewController.swift in Sources */,
 				A828C8A428447DC600738854 /* MainViewModel.swift in Sources */,

@@ -15,11 +15,11 @@ enum MainNetworking {
 extension MainNetworking : TargetType {
     
     var baseURL: String {
-        return BuildConfig.setAppState.baseURL
+        return AppBuildConfig.setAppState.baseURL
     }
     
     var version: String {
-        return BuildConfig.setAppState.version
+        return AppBuildConfig.setAppState.version
     }
     
     var path: RequestType {

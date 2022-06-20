@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BuildConfig : AppConfigurable {
+struct AppBuildConfig : AppConfigurable {
     
     static var setAppState: AppConfiguration {
         // return help you to change thec AppConfigState

@@ -17,7 +17,9 @@ protocol LogiViewModel {
 }
 
 // MARK: MainViewModel.
-typealias BaseMainViewModel = ViewModelBaseProtocol & MainViewModelInput & MainViewModelProtocol
+typealias BaseMainViewModel = ViewModelBaseProtocol &
+                              MainViewModelInput &
+                              MainViewModelProtocol
 
 protocol MainViewModelInput {
     var title : String { get }

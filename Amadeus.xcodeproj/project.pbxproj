@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0211C1532860DD46009C1F28 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211C1522860DD46009C1F28 /* Configuration.swift */; };
+		021531132865FB33006D3C98 /* Hotel_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021531122865FB33006D3C98 /* Hotel_Response.swift */; };
+		021531152865FE30006D3C98 /* Address_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021531142865FE30006D3C98 /* Address_Response.swift */; };
 		022146F028564185003FB94B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022146EF28564185003FB94B /* Reachability.swift */; };
 		022765F02845CAFE00A9074A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022765EF2845CAFE00A9074A /* LoginViewModel.swift */; };
 		022D79DD284624340050CEE4 /* MockFlightSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79DA284624340050CEE4 /* MockFlightSearch.swift */; };
@@ -119,6 +121,8 @@
 
 /* Begin PBXFileReference section */
 		0211C1522860DD46009C1F28 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		021531122865FB33006D3C98 /* Hotel_Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel_Response.swift; sourceTree = "<group>"; };
+		021531142865FE30006D3C98 /* Address_Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address_Response.swift; sourceTree = "<group>"; };
 		022146EF28564185003FB94B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		022765EF2845CAFE00A9074A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		022D79DA284624340050CEE4 /* MockFlightSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFlightSearch.swift; sourceTree = "<group>"; };
@@ -532,7 +536,7 @@
 			children = (
 				02DC602C285902C3000B2F97 /* BaseResponse */,
 				A828C8D728447FA000738854 /* TokenUseCase */,
-				A828C8DC28447FB500738854 /* FlightSearchUseCase */,
+				A828C8DC28447FB500738854 /* HotelSearchUseCase */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -546,13 +550,15 @@
 			path = TokenUseCase;
 			sourceTree = "<group>";
 		};
-		A828C8DC28447FB500738854 /* FlightSearchUseCase */ = {
+		A828C8DC28447FB500738854 /* HotelSearchUseCase */ = {
 			isa = PBXGroup;
 			children = (
 				A828C8DD28447FCE00738854 /* HotelSearchRequest.swift */,
 				02DC602A28590253000B2F97 /* HotelSearchResponse.swift */,
+				021531122865FB33006D3C98 /* Hotel_Response.swift */,
+				021531142865FE30006D3C98 /* Address_Response.swift */,
 			);
-			path = FlightSearchUseCase;
+			path = HotelSearchUseCase;
 			sourceTree = "<group>";
 		};
 		A828C8E128447FE300738854 /* Classes */ = {
@@ -1053,6 +1059,7 @@
 				A828C9522844833800738854 /* SplashCoordinator.swift in Sources */,
 				A828C9172844816500738854 /* GetToken_Response.swift in Sources */,
 				A828C90C2844806D00738854 /* UIDevice + Extension.swift in Sources */,
+				021531152865FE30006D3C98 /* Address_Response.swift in Sources */,
 				A828C9552844833800738854 /* MainCoordinator.swift in Sources */,
 				A828C8CF28447F5600738854 /* EmptyState.swift in Sources */,
 				A828C9562844833800738854 /* AppCoordiantor.swift in Sources */,
@@ -1097,6 +1104,7 @@
 				A828C8C528447EE700738854 /* SplashViewController.swift in Sources */,
 				A828C9092844806D00738854 /* ViewController + Extension.swift in Sources */,
 				A828C8EA2844800D00738854 /* RequestInterceptor.swift in Sources */,
+				021531132865FB33006D3C98 /* Hotel_Response.swift in Sources */,
 				A828C94B2844832700738854 /* AppBuildConfig.swift in Sources */,
 				A828C927284481E400738854 /* DeviceStatusHelper.swift in Sources */,
 				A828C8B528447E8300738854 /* MainViewController.swift in Sources */,

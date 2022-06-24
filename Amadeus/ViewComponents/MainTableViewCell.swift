@@ -11,10 +11,10 @@ class MainTableViewCell: UITableViewCell {
     
     private lazy var containerView : UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.1403488219, green: 0.1641628742, blue: 0.1974385381, alpha: 1)
-        view.layer.cornerRadius = 10
+        view.backgroundColor = .background
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
+//        view.addshadow(top: true, left: true, bottom: true, right: true, shadowRadius: 1)
         return view
     }()
     
@@ -57,18 +57,20 @@ class MainTableViewCell: UITableViewCell {
     }
     
     func setupParametrs(items : HotelSearchResponse) {
-        self.lblHeadLine.text = items.name
-        self.lblSubline.text = items.hotelID
+        self.lblHeadLine.text = items.type?.rawValue
+        self.lblSubline.text = items.hotel?.type
     }
 }
 
 extension MainTableViewCell {
     private func setupAutoLayout() {
         
-        containerView.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        containerView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5).isActive = true
-        containerView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5).isActive = true
-        containerView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+        containerView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
+        containerView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
+//        containerView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
 
         statsView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         statsView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20).isActive = true

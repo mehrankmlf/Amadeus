@@ -18,7 +18,7 @@ class FlightSearchViewModelSearch: XCTestCase {
 
     override func setUpWithError() throws {
         mockFlightSearch = MockFlightSearch()
-        viewModelToTest = MainViewModel(getFlightInspiration: mockFlightSearch)
+        viewModelToTest = MainViewModel(getHotels: mockFlightSearch)
     }
 
     override func tearDownWithError() throws {

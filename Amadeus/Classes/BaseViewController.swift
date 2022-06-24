@@ -127,10 +127,15 @@ extension BaseViewController {
             // item when configuring the navigation appearance of a specific view controller
             // https://developer.apple.com/forums/thread/683590
             let navigationBarAppearance = UINavigationBarAppearance()
-            navigationBarAppearance.configureWithOpaqueBackground()
+//            navigationBarAppearance.configureWithDefaultBackground()
             navigationBarAppearance.backgroundColor = barTintColor
+            // This will alter the navigation bar title appearance
+            let titleAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold),
+                                  NSAttributedString.Key.foregroundColor: UIColor(red: 0/255, green: 94/255, blue: 184/255, alpha: 1.0)] //alter to fit your needs
+            navigationBarAppearance.titleTextAttributes = titleAttribute
             navigationItem.standardAppearance = navigationBarAppearance
-            navigationItem.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+            navigationItem.compactAppearance = navigationBarAppearance
+            navigationItem.scrollEdgeAppearance = navigationBarAppearance
         } else {
             navigationController?.navigationBar.barTintColor = barTintColor
             navigationController?.navigationBar.setBackgroundImage(nil, for: .default)

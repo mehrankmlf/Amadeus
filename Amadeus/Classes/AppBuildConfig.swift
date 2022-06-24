@@ -20,7 +20,7 @@ private struct Realese : AppConfiguration {
     
     var baseURL : String = BaseURLType.baseApi.desc
     
-    var version : String = VersionType.v1.desc
+    var version : String = VersionType.v2.desc
     
     func isVPNConnected() -> Bool {
         return false

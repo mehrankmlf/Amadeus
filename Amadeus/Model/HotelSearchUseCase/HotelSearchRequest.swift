@@ -1,5 +1,5 @@
 //
-//  FlightSearchRequest.swift
+//  HotelsSearchProtocol.swift
 //  SappPlus
 //
 //  Created by Mehran Kamalifard on 1/13/22.

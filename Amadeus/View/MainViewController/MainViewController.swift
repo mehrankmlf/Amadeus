@@ -37,7 +37,7 @@ class MainViewController: BaseViewController {
         super.delegate = self
         self.setupTableView()
         self.bindViewModel()
-        self.callFlightServie()
+        self.callServie()
         contentView?.viewContainer.emptyState.delegate = self
         self.setupNavigationBar()
     }
@@ -75,7 +75,7 @@ class MainViewController: BaseViewController {
         self.contentView?.tableView.reloadData()
     }
     
-    private func callFlightServie() {
+    private func callServie() {
         self.viewModel?.getHotelsData(cityCode: "PAR")
     }
 }
@@ -86,14 +86,14 @@ extension MainViewController : EmptyStateDelegate, ShowEmptyStateProtocol {
     }
     
     func emptyStateButtonClicked() {
-        self.callFlightServie()
+        self.callServie()
         contentView?.viewContainer.emptyState.hide()
     }
 }
 
 extension MainViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70.0
+        return 120.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

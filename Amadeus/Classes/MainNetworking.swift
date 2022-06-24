@@ -25,7 +25,7 @@ extension MainNetworking : TargetType {
     var path: RequestType {
         switch self {
         case .hotelSearch(let code):
-            return .queryParametrs(query: "\("/reference-data/locations/hotels/by-city")\(["cityCode":code].queryString)")
+            return .queryParametrs(query: "\("/shopping/hotel-offers")\(["cityCode":code].queryString)")
         }
     }
     

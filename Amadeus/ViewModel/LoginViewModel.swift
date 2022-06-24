@@ -20,7 +20,8 @@ class LoginViewModel : ObservableObject, BaseLoginViewModel, KeyChainManagerInje
     var loadinState = CurrentValueSubject<ViewModelStatus, Never>(.dismissAlert)
     var subscriber = Set<AnyCancellable>()
     
-    let keychainWrapper = KeychainWrapper(serviceName: KeychainWrapper.standard.serviceName, accessGroup: KeychainWrapper.standard.accessGroup)
+    let keychainWrapper = KeychainWrapper(serviceName: KeychainWrapper.standard.serviceName,
+                                          accessGroup: KeychainWrapper.standard.accessGroup)
     var getTokenService: GetTokenProtocol
     
     init(getTokenService : GetTokenProtocol) {

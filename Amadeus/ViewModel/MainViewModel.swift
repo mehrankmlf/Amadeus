@@ -10,6 +10,8 @@ import Combine
 
 final class MainViewModel : ObservableObject, BaseMainViewModel {
     
+    var title: String = "Amadeus"
+       
     @Published var hotelData : [HotelSearchResponse]?
     var loadinState = CurrentValueSubject<ViewModelStatus, Never>(.dismissAlert)
     var subscriber = Set<AnyCancellable>()

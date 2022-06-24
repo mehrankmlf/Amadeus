@@ -11,7 +11,7 @@ import Combine
 class MainViewController: BaseViewController {
 
     let cellId = "cellId"
-    var viewModel : MainViewModel?
+    var viewModel : MainViewModel!
     var navigateSubject = PassthroughSubject<MainViewController.Event, Never>()
     var contentView : MainView?
     private(set) var data : [HotelSearchResponse]?
@@ -48,7 +48,7 @@ class MainViewController: BaseViewController {
     
     private func setupNavigationBar() {
         self.setDefaultAppearanceNavigationBar(with: .white)
-        self.navigationItem.title = "Amadeus"
+        self.navigationItem.title = viewModel?.title
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backBarButtonItem
     }

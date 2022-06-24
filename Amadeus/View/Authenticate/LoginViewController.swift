@@ -11,7 +11,7 @@ import Combine
 class LoginViewController: BaseViewController {
     
     let timer = CountDownTimer(duration: 40)
-    var viewModel : LoginViewModel?
+    var viewModel : LoginViewModel!
     var contentView : LoginView?
     
     var navigateSubject = PassthroughSubject<LoginViewController.Event, Never>()

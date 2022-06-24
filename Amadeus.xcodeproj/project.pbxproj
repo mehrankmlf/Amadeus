@@ -74,7 +74,6 @@
 		A828C926284481E400738854 /* KeychainKeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C91E284481E400738854 /* KeychainKeychainManager.swift */; };
 		A828C927284481E400738854 /* DeviceStatusHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C91F284481E400738854 /* DeviceStatusHelper.swift */; };
 		A828C928284481E400738854 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C920284481E400738854 /* AlertHelper.swift */; };
-		A828C92B2844821700738854 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C92A2844821700738854 /* Enums.swift */; };
 		A828C92F2844822F00738854 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C92E2844822F00738854 /* Coordinator.swift */; };
 		A828C9322844823F00738854 /* ViewModelsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9312844823F00738854 /* ViewModelsProtocol.swift */; };
 		A828C9362844825F00738854 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9352844825F00738854 /* MainFactory.swift */; };
@@ -194,7 +193,6 @@
 		A828C91E284481E400738854 /* KeychainKeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainKeychainManager.swift; sourceTree = "<group>"; };
 		A828C91F284481E400738854 /* DeviceStatusHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceStatusHelper.swift; sourceTree = "<group>"; };
 		A828C920284481E400738854 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
-		A828C92A2844821700738854 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		A828C92E2844822F00738854 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A828C9312844823F00738854 /* ViewModelsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelsProtocol.swift; sourceTree = "<group>"; };
 		A828C9352844825F00738854 /* MainFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
@@ -564,7 +562,6 @@
 				A828C95D2844837100738854 /* Base */,
 				A828C94C2844832D00738854 /* Routing */,
 				A828C92C2844821B00738854 /* Protocol */,
-				A828C9292844820300738854 /* Enums */,
 				A828C8F12844805E00738854 /* Extension */,
 				A828C918284481D400738854 /* Helper */,
 				A828C8E228447FF500738854 /* Networking */,
@@ -641,14 +638,6 @@
 				022146EF28564185003FB94B /* Reachability.swift */,
 			);
 			name = Helper;
-			sourceTree = "<group>";
-		};
-		A828C9292844820300738854 /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-				A828C92A2844821700738854 /* Enums.swift */,
-			);
-			name = Enums;
 			sourceTree = "<group>";
 		};
 		A828C92C2844821B00738854 /* Protocol */ = {
@@ -1072,7 +1061,6 @@
 				0211C1532860DD46009C1F28 /* Configuration.swift in Sources */,
 				A828C9042844806D00738854 /* TableView + Extension.swift in Sources */,
 				022765F02845CAFE00A9074A /* LoginViewModel.swift in Sources */,
-				A828C92B2844821700738854 /* Enums.swift in Sources */,
 				A828C9592844835700738854 /* DependencyAssembler.swift in Sources */,
 				A828C92F2844822F00738854 /* Coordinator.swift in Sources */,
 				A828C9392844827000738854 /* SplashFactory.swift in Sources */,

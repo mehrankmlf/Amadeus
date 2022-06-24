@@ -8,6 +8,30 @@
 import Foundation
 import SwiftKeychainWrapper
 
+enum KeychainKeyType : String  {
+    
+    case grant_type
+    case client_id
+    case client_secret
+    
+    case passKey
+    case token
+}
+
+extension KeychainKeyType {
+    
+    var key : String {
+        
+        switch self  {
+        case .grant_type: return "com.grant_type"
+        case .client_id: return "com.client_id"
+        case .client_secret: return "com.client_secret"
+        case .passKey : return "com.passKey"
+        case .token : return "com.token"
+        }
+    }
+}
+
 
 /// a protocol base replacement for Singelton
 protocol KeyChainManagerInjector {

@@ -11,6 +11,12 @@ import IHProgressHUD
 import Combine
 import SwiftKeychainWrapper
 
+enum ViewModelStatus : Equatable {
+    case loadStart
+    case dismissAlert
+    case emptyStateHandler(title : String, isShow : Bool)
+}
+
 enum BaseVCActManager : Int {
     case setNavHeightForNotch = 0
     case hideKeyBoardWhenNeeded = 1

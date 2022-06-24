@@ -15,6 +15,31 @@ enum EmptyStateErrorType {
     case permisionError(type : PermisionType)
 }
 
+enum PermisionType : Int {
+    
+    case camera = 1
+    case contact = 2
+    case photoLibrary = 3
+    case location = 4
+    case photoCamera = 5
+    
+    var desc: String {
+        switch self {
+            
+        case .camera:
+            return "You do not have permission to access the Camera, you can access the application through the device settings, Privacy menu"
+        case .contact:
+            return "You have not allowed access to Contact, you can access the application through the device settings, under the Privacy menu"
+        case .photoLibrary:
+            return "You are not allowed to access Photos, you can access the app through the device settings under the Privacy menu"
+        case .location:
+            return "You are not allowed to access Location, you can access the application through the device settings, under the Privacy menu"
+        case .photoCamera:
+            return "You are not allowed to access Photo and Camera, you can access the application through the device settings, under the Privacy menu"
+        }
+    }
+}
+
 class EmptyStateView: UIView {
     
     struct ViewModel {

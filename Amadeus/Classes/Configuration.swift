@@ -8,14 +8,12 @@
 import Foundation
 
 enum BaseURLType {
-    
     case baseApi
     case staging
     
     var desc : String {
         
         switch self {
-            
         case .baseApi :
             return "https://test.api.amadeus.com"
         case .staging :
@@ -68,4 +66,16 @@ extension APIError {
         case .decodeError(let error):     return error
         }
     }
+}
+
+enum StatusCodeType : Int , Codable {
+    case success = 0
+    case requestIsNotPermitted = 31
+    case failed = 42
+    case NotFound = 1
+    case ServerError = 2
+    case InvalidToken = 3
+    case TokenExpired = 4
+    case Disabled = 23
+    case ValueIsNull = 19
 }

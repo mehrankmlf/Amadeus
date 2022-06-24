@@ -8,6 +8,15 @@
 
 import UIKit
 
+enum AppStoryboard: String {
+    case splash = "Splash"
+    case registration = "Registration"
+    case drawer = "Drawer"
+    case dashboard = "Dashboard"
+    case onBoarding = "OnBoarding"
+    case settings = "Settings"
+}
+
 extension UIViewController {
     class var storyboardID: String {
         return "\(self)"

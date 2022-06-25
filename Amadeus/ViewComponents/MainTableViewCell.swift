@@ -14,7 +14,16 @@ class MainTableViewCell: UITableViewCell {
         view.backgroundColor = .background
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
-//        view.addshadow(top: true, left: true, bottom: true, right: true, shadowRadius: 1)
+        view.dropShadow()
+        view.roundCorners([.topLeft, .bottomLeft], radius: 10)
+        return view
+    }()
+    
+    private lazy var rightSideView : UIView = {
+        let view = UIView()
+        view.backgroundColor = .blueBackground
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
         return view
     }()
     
@@ -48,6 +57,7 @@ class MainTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
         self.contentView.addSubview(containerView)
+        self.containerView.addSubview(rightSideView)
         self.containerView.addSubview(statsView)
         self.setupAutoLayout()
     }
@@ -65,15 +75,19 @@ class MainTableViewCell: UITableViewCell {
 extension MainTableViewCell {
     private func setupAutoLayout() {
         
-        containerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
         containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         containerView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
         containerView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
-//        containerView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        rightSideView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+        rightSideView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        rightSideView.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
+        rightSideView.widthAnchor.constraint(equalToConstant: 100).isActive = true
 
-        statsView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
-        statsView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20).isActive = true
-    
+//        statsView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+//        statsView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20).isActive = true
+//    
     }
 }

@@ -93,9 +93,12 @@ extension MainViewController : EmptyStateDelegate, ShowEmptyStateProtocol {
 
 extension MainViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120.0
+        return UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140.0
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let rawData = self.data else {return}
         let data = rawData[indexPath.row]

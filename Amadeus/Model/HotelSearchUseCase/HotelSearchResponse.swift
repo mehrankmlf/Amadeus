@@ -25,3 +25,10 @@ extension HotelSearchResponse {
 enum HotelType: String, Codable {
     case hotelOffers = "hotel-offers"
 }
+
+extension HotelSearchResponse {
+    func availableText() -> String {
+        guard let available = self.available else {return ""}
+        return available ? "Available" : "Not Available"
+    }
+}

@@ -8,9 +8,9 @@
 import Foundation
 
 struct HotelSearchResponse: Decodable {
-    let type : HotelType?
-    let hotel: Hotel_Response?
-    let available: Bool?
+    var type : HotelType?
+    var hotel: Hotel_Response?
+    var available: Bool?
 //    let offers: String?
 }
 

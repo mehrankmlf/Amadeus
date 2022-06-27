@@ -17,7 +17,6 @@
 		022D79E2284624840050CEE4 /* ResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E1284624840050CEE4 /* ResponseMock.swift */; };
 		022D79E5284624A70050CEE4 /* GetToken_ResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E4284624A70050CEE4 /* GetToken_ResponseTests.swift */; };
 		022D79E9284624CC0050CEE4 /* TokenViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E7284624CC0050CEE4 /* TokenViewModelTest.swift */; };
-		022D79EA284624CC0050CEE4 /* FlightSearchViewModelSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E8284624CC0050CEE4 /* FlightSearchViewModelSearch.swift */; };
 		02DC602B28590253000B2F97 /* HotelSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC602A28590253000B2F97 /* HotelSearchResponse.swift */; };
 		02DC602E285902D3000B2F97 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC602D285902D3000B2F97 /* BaseResponse.swift */; };
 		82DEB063B583A7A05C0429F6 /* Pods_Amadeus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */; };
@@ -130,7 +129,6 @@
 		022D79E1284624840050CEE4 /* ResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseMock.swift; sourceTree = "<group>"; };
 		022D79E4284624A70050CEE4 /* GetToken_ResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetToken_ResponseTests.swift; sourceTree = "<group>"; };
 		022D79E7284624CC0050CEE4 /* TokenViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenViewModelTest.swift; sourceTree = "<group>"; };
-		022D79E8284624CC0050CEE4 /* FlightSearchViewModelSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchViewModelSearch.swift; sourceTree = "<group>"; };
 		02DC602A28590253000B2F97 /* HotelSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchResponse.swift; sourceTree = "<group>"; };
 		02DC602D285902D3000B2F97 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Amadeus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,7 +287,6 @@
 		022D79E6284624BD0050CEE4 /* ViewModelTest */ = {
 			isa = PBXGroup;
 			children = (
-				022D79E8284624CC0050CEE4 /* FlightSearchViewModelSearch.swift */,
 				022D79E7284624CC0050CEE4 /* TokenViewModelTest.swift */,
 			);
 			path = ViewModelTest;
@@ -1129,7 +1126,6 @@
 				022D79E5284624A70050CEE4 /* GetToken_ResponseTests.swift in Sources */,
 				022D79E2284624840050CEE4 /* ResponseMock.swift in Sources */,
 				A828C88928447D6800738854 /* AmadeusTests.swift in Sources */,
-				022D79EA284624CC0050CEE4 /* FlightSearchViewModelSearch.swift in Sources */,
 				022D79DD284624340050CEE4 /* MockHotelsSearch.swift in Sources */,
 				022D79E9284624CC0050CEE4 /* TokenViewModelTest.swift in Sources */,
 				022D79DE284624340050CEE4 /* MockLogin.swift in Sources */,

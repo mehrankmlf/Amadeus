@@ -10,13 +10,14 @@ import Combine
 
 final class MainViewModel : ObservableObject, BaseMainViewModel {
     
-    var title: String = "Amadeus"
+    static let cellId = "cellId"
        
     @Published var hotelData : [HotelSearchResponse]?
     var loadinState = CurrentValueSubject<ViewModelStatus, Never>(.dismissAlert)
     var subscriber = Set<AnyCancellable>()
     var getHotels: HotelsSearchProtocol
-        
+    var title: String = "Amadeus"
+    
     init(getHotels : HotelsSearchProtocol) {
         self.getHotels = getHotels
     }

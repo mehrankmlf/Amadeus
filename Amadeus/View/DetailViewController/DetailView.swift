@@ -19,7 +19,7 @@ final class DetailView: UIView {
     
      lazy var imageHeader : UIImageView = {
         let imageLogo = UIImageView()
-        imageLogo.image = UIImage(named: "airplane")
+        imageLogo.image = UIImage(named: "info")
         imageLogo.contentMode = .scaleAspectFill
         imageLogo.clipsToBounds = true
         return imageLogo

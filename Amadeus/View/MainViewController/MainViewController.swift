@@ -10,7 +10,6 @@ import Combine
  
 class MainViewController: BaseViewController {
 
-    let cellId = "cellId"
     var viewModel : MainViewModel!
     var navigateSubject = PassthroughSubject<MainViewController.Event, Never>()
     var contentView : MainView?
@@ -43,7 +42,7 @@ class MainViewController: BaseViewController {
     }
         
     private func setupTableView() {
-        contentView?.tableView.register(MainTableViewCell.self, forCellReuseIdentifier: cellId)
+        contentView?.tableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainViewModel.cellId)
     }
     
     private func setupNavigationBar() {
@@ -69,7 +68,7 @@ class MainViewController: BaseViewController {
     }
     
     private func renderTableViewdataSource(_ itemlists:[HotelSearchResponse]) {
-        dataSource = .displayData(for: itemlists, withCellidentifier: cellId)
+        dataSource = .displayData(for: itemlists, withCellidentifier: MainViewModel.cellId)
         self.contentView?.tableView.dataSource = dataSource
         self.contentView?.tableView.delegate = self
         self.contentView?.tableView.reloadData()

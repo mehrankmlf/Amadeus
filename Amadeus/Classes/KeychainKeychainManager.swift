@@ -33,7 +33,7 @@ extension KeychainKeyType {
 }
 
 
-/// a protocol base replacement for Singelton
+/// Protocol approach replacement for Singelton
 protocol KeyChainManagerInjector {
     var keychainManager : KeychainManager { get }
 }

@@ -67,8 +67,10 @@ final class RequestInterceptorHelper : Alamofire.RequestInterceptor, KeyChainMan
         
         isRetrying = true
         
+        let credential = self.keychainManager.getUserCredential()
+        
         let targetUrl = "https://test.api.amadeus.com/v1/security/oauth2/token"
-        let parameters = ["grant_type": "client_credentials", "client_id": "sDi2yLIAAKqAfrZKGJU6Zassx3TnDboJ", "client_secret": "D347OAVE7ZJ8vwLR"]
+        let parameters = ["grant_type": credential.grant_type, "client_id": credential.client_id, "client_secret": credential.client_secret]
         let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
         AF.request(targetUrl, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: header).responseJSON { response in
             

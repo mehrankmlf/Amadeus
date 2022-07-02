@@ -42,7 +42,7 @@
 		A828C8D028447F5600738854 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8CD28447F5600738854 /* EmptyStateView.swift */; };
 		A828C8D128447F5600738854 /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A828C8CE28447F5600738854 /* EmptyStateView.xib */; };
 		A828C8D428447F6D00738854 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8D328447F6D00738854 /* MainTableViewCell.swift */; };
-		A828C8DF28447FCE00738854 /* HotelSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8DD28447FCE00738854 /* HotelSearchRequest.swift */; };
+		A828C8DF28447FCE00738854 /* HotelSearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8DD28447FCE00738854 /* HotelSearchUsecase.swift */; };
 		A828C8E82844800D00738854 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8E42844800D00738854 /* BaseAPI.swift */; };
 		A828C8E92844800D00738854 /* AlamofireLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8E52844800D00738854 /* AlamofireLogger.swift */; };
 		A828C8EA2844800D00738854 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8E62844800D00738854 /* RequestInterceptor.swift */; };
@@ -66,7 +66,7 @@
 		A828C9112844806D00738854 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9002844806D00738854 /* String + Extension.swift */; };
 		A828C9122844806D00738854 /* AppDelegate + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9012844806D00738854 /* AppDelegate + Extension.swift */; };
 		A828C9132844806D00738854 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9022844806D00738854 /* UIView + Extension.swift */; };
-		A828C9162844816500738854 /* GetToken_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9142844816500738854 /* GetToken_Request.swift */; };
+		A828C9162844816500738854 /* GetTokenUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9142844816500738854 /* GetTokenUsecase.swift */; };
 		A828C9172844816500738854 /* GetToken_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9152844816500738854 /* GetToken_Response.swift */; };
 		A828C921284481E400738854 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C919284481E400738854 /* MessageHelper.swift */; };
 		A828C922284481E400738854 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C91A284481E400738854 /* UserDefaultHelper.swift */; };
@@ -97,6 +97,7 @@
 		A828C964284486A900738854 /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A828C963284486A800738854 /* Walkthrough.storyboard */; };
 		A828C967284488B300738854 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C966284488B300738854 /* RegisterViewModel.swift */; };
 		A828C96A284488E300738854 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C969284488E300738854 /* SplashViewModel.swift */; };
+		A8A82669287010F6009850CD /* RequestNewToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A82668287010F6009850CD /* RequestNewToken.swift */; };
 		CBB0CED32AB19B42A11894B7 /* Pods_Amadeus_AmadeusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD8881E8377D2385D5357B /* Pods_Amadeus_AmadeusUITests.framework */; };
 		F6DC8512E5415D002E255942 /* Pods_AmadeusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E018C4C68CED2079D36B36FB /* Pods_AmadeusTests.framework */; };
 /* End PBXBuildFile section */
@@ -162,7 +163,7 @@
 		A828C8CD28447F5600738854 /* EmptyStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		A828C8CE28447F5600738854 /* EmptyStateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyStateView.xib; sourceTree = "<group>"; };
 		A828C8D328447F6D00738854 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
-		A828C8DD28447FCE00738854 /* HotelSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelSearchRequest.swift; sourceTree = "<group>"; };
+		A828C8DD28447FCE00738854 /* HotelSearchUsecase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelSearchUsecase.swift; sourceTree = "<group>"; };
 		A828C8E42844800D00738854 /* BaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		A828C8E52844800D00738854 /* AlamofireLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireLogger.swift; sourceTree = "<group>"; };
 		A828C8E62844800D00738854 /* RequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
@@ -186,7 +187,7 @@
 		A828C9002844806D00738854 /* String + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		A828C9012844806D00738854 /* AppDelegate + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate + Extension.swift"; sourceTree = "<group>"; };
 		A828C9022844806D00738854 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
-		A828C9142844816500738854 /* GetToken_Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetToken_Request.swift; sourceTree = "<group>"; };
+		A828C9142844816500738854 /* GetTokenUsecase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTokenUsecase.swift; sourceTree = "<group>"; };
 		A828C9152844816500738854 /* GetToken_Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetToken_Response.swift; sourceTree = "<group>"; };
 		A828C919284481E400738854 /* MessageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
 		A828C91A284481E400738854 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
@@ -217,6 +218,7 @@
 		A828C963284486A800738854 /* Walkthrough.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
 		A828C966284488B300738854 /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		A828C969284488E300738854 /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		A8A82668287010F6009850CD /* RequestNewToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestNewToken.swift; sourceTree = "<group>"; };
 		BEFD8881E8377D2385D5357B /* Pods_Amadeus_AmadeusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Amadeus_AmadeusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54C03FC9C3B93E76395FBC0 /* Pods-Amadeus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus.debug.xcconfig"; path = "Target Support Files/Pods-Amadeus/Pods-Amadeus.debug.xcconfig"; sourceTree = "<group>"; };
 		E018C4C68CED2079D36B36FB /* Pods_AmadeusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmadeusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				A828C8E128447FE300738854 /* Classes */,
+				A8A8266A28701153009850CD /* UseCases */,
 				A828C8D528447F8200738854 /* Model */,
 				A828C8C928447F1900738854 /* ViewComponents */,
 				A828C8AB28447E4D00738854 /* View */,
@@ -541,7 +544,6 @@
 		A828C8D728447FA000738854 /* TokenUseCase */ = {
 			isa = PBXGroup;
 			children = (
-				A828C9142844816500738854 /* GetToken_Request.swift */,
 				A828C9152844816500738854 /* GetToken_Response.swift */,
 			);
 			path = TokenUseCase;
@@ -550,7 +552,6 @@
 		A828C8DC28447FB500738854 /* HotelSearchUseCase */ = {
 			isa = PBXGroup;
 			children = (
-				A828C8DD28447FCE00738854 /* HotelSearchRequest.swift */,
 				02DC602A28590253000B2F97 /* HotelSearchResponse.swift */,
 				021531122865FB33006D3C98 /* Hotel_Response.swift */,
 				021531142865FE30006D3C98 /* Address_Response.swift */,
@@ -589,9 +590,10 @@
 			isa = PBXGroup;
 			children = (
 				A828C8E52844800D00738854 /* AlamofireLogger.swift */,
-				A828C8E62844800D00738854 /* RequestInterceptor.swift */,
 				A828C8E72844800D00738854 /* TargetType.swift */,
 				0211C1522860DD46009C1F28 /* Configuration.swift */,
+				A828C8E62844800D00738854 /* RequestInterceptor.swift */,
+				A8A82668287010F6009850CD /* RequestNewToken.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -805,6 +807,15 @@
 				022146EF28564185003FB94B /* Reachability.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		A8A8266A28701153009850CD /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				A828C9142844816500738854 /* GetTokenUsecase.swift */,
+				A828C8DD28447FCE00738854 /* HotelSearchUsecase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1049,6 +1060,7 @@
 			files = (
 				A828C945284482F400738854 /* AppConfigurationProtocol.swift in Sources */,
 				A828C8D028447F5600738854 /* EmptyStateView.swift in Sources */,
+				A8A82669287010F6009850CD /* RequestNewToken.swift in Sources */,
 				A828C8BC28447EB100738854 /* RegisterView.swift in Sources */,
 				A828C9122844806D00738854 /* AppDelegate + Extension.swift in Sources */,
 				02DC602B28590253000B2F97 /* HotelSearchResponse.swift in Sources */,
@@ -1081,7 +1093,7 @@
 				A828C9482844831400738854 /* RequestInterceptorProtocol.swift in Sources */,
 				A828C921284481E400738854 /* MessageHelper.swift in Sources */,
 				A828C926284481E400738854 /* KeychainKeychainManager.swift in Sources */,
-				A828C8DF28447FCE00738854 /* HotelSearchRequest.swift in Sources */,
+				A828C8DF28447FCE00738854 /* HotelSearchUsecase.swift in Sources */,
 				A828C8E92844800D00738854 /* AlamofireLogger.swift in Sources */,
 				A828C90F2844806D00738854 /* NSFormatter + Extension.swift in Sources */,
 				A828C9542844833800738854 /* AuthenticationhCoordinator.swift in Sources */,
@@ -1121,7 +1133,7 @@
 				A828C8B028447E6800738854 /* DetailViewController.swift in Sources */,
 				A828C8F02844802600738854 /* UserTokenNetworking.swift in Sources */,
 				A828C8C428447EE700738854 /* SplashView.swift in Sources */,
-				A828C9162844816500738854 /* GetToken_Request.swift in Sources */,
+				A828C9162844816500738854 /* GetTokenUsecase.swift in Sources */,
 				A828C9362844825F00738854 /* MainFactory.swift in Sources */,
 				A828C9032844806D00738854 /* TextField + Extension.swift in Sources */,
 			);

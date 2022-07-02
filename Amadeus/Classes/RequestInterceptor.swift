@@ -13,6 +13,11 @@ final class RequestInterceptorHelper : Alamofire.RequestInterceptor, KeyChainMan
     var retryLimit: Int = 3
     var isRetrying: Bool = false
     var retryDelay: TimeInterval = 2
+    weak var requestNewToken : RequestNewToken?
+    
+    init(requestNewTOken : RequestNewToken) {
+        self.requestNewToken = requestNewTOken
+    }
     
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var urlRequest = urlRequest
@@ -43,7 +48,7 @@ final class RequestInterceptorHelper : Alamofire.RequestInterceptor, KeyChainMan
                 completion(.doNotRetry)
             case 401 :
                 if !isRetrying {
-                    self.refreshToken { isSuccess in
+                    self.requestNewToken.refreshToken { isSuccess in
                         isSuccess ? completion(.retry) : completion(.doNotRetry)
                     }
                 }else{
@@ -60,30 +65,8 @@ final class RequestInterceptorHelper : Alamofire.RequestInterceptor, KeyChainMan
             completion(.doNotRetryWithError(APIError.serverError))
         }
     }
-    
-    private func refreshToken(completion: @escaping (_ isSuccess: Bool) -> Void) {
-        
-        guard !isRetrying else { return }
-        
-        isRetrying = true
-        
-        let credential = self.keychainManager.getUserCredential()
-        
-        let targetUrl = "https://test.api.amadeus.com/v1/security/oauth2/token"
-        let parameters = ["grant_type": credential.grant_type, "client_id": credential.client_id, "client_secret": credential.client_secret]
-        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
-        AF.request(targetUrl, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: header).responseJSON { response in
-            
-            if let data = response.data, let token = (try? JSONSerialization.jsonObject(with: data, options: [])
-                                                      as? [String: Any])?["access_token"] as? String {
-                self.keychainManager.setToken(token: token)
-                print("\nRefresh token completed successfully. New token is: \(token)\n")
-                completion(true)
-            } else {
-                completion(false)
-            }
-        }
-    }
 }
+
+
 
 

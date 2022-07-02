@@ -565,6 +565,7 @@
 				A828C95D2844837100738854 /* Base */,
 				A828C94C2844832D00738854 /* Routing */,
 				A828C92C2844821B00738854 /* Protocol */,
+				A8A82667287008C4009850CD /* Common */,
 				A828C8F12844805E00738854 /* Extension */,
 				A828C918284481D400738854 /* Helper */,
 				A828C8E228447FF500738854 /* Networking */,
@@ -632,13 +633,10 @@
 			isa = PBXGroup;
 			children = (
 				A828C920284481E400738854 /* AlertHelper.swift */,
-				A828C91C284481E400738854 /* AppDelegateHelper.swift */,
 				A828C91D284481E400738854 /* CountDownTimer.swift */,
 				A828C91F284481E400738854 /* DeviceStatusHelper.swift */,
-				A828C91E284481E400738854 /* KeychainKeychainManager.swift */,
 				A828C919284481E400738854 /* MessageHelper.swift */,
 				A828C91A284481E400738854 /* UserDefaultHelper.swift */,
-				022146EF28564185003FB94B /* Reachability.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -797,6 +795,16 @@
 				A828C969284488E300738854 /* SplashViewModel.swift */,
 			);
 			name = SplashViewModel;
+			sourceTree = "<group>";
+		};
+		A8A82667287008C4009850CD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A828C91C284481E400738854 /* AppDelegateHelper.swift */,
+				A828C91E284481E400738854 /* KeychainKeychainManager.swift */,
+				022146EF28564185003FB94B /* Reachability.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

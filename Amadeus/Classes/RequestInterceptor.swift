@@ -11,19 +11,18 @@ import Alamofire
 final class RequestInterceptorHelper : Alamofire.RequestInterceptor, KeyChainManagerInjector, RequestInterceptorProtocol {
     
     var retryLimit: Int = 3
-    var isRetrying: Bool = false
+    var isDoRetrying: Bool = false
     var retryDelay: TimeInterval = 2
-    weak var requestNewToken : RequestNewToken?
+    var requestNewToken : RequestNewTokenProtocol?
     
-    init(requestNewTOken : RequestNewToken) {
-        self.requestNewToken = requestNewTOken
+    init(_requestNewToken : RequestNewTokenProtocol) {
+        self.requestNewToken = _requestNewToken
     }
     
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var urlRequest = urlRequest
-        
+        /// Set the Authorization header value using the access token.
         guard let token = self.keychainManager.getToken() else {
-            /// Set the Authorization header value using the access token.
             completion(.success(urlRequest))
             return
         }
@@ -47,8 +46,9 @@ final class RequestInterceptorHelper : Alamofire.RequestInterceptor, KeyChainMan
             case 200...299 :
                 completion(.doNotRetry)
             case 401 :
-                if !isRetrying {
-                    self.requestNewToken.refreshToken { isSuccess in
+                if !isDoRetrying {
+                    self.requestNewToken?.refreshToken { isSuccess in
+                        self.isDoRetrying = true
                         isSuccess ? completion(.retry) : completion(.doNotRetry)
                     }
                 }else{

@@ -9,7 +9,7 @@ import Foundation
 
 protocol RequestInterceptorProtocol {
     var retryLimit : Int { get }
-    var isRetrying : Bool { get }
+    var isDoRetrying : Bool { get }
     var retryDelay : TimeInterval { get }
 }
 

@@ -676,6 +676,7 @@
 		A828C9332844824600738854 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
+				A8DDFE6A2872CEFB005CC4B8 /* RequestInterceptor */,
 				A828C93A2844827500738854 /* Authentication */,
 				A828C9372844826700738854 /* Splash */,
 				A828C9342844824F00738854 /* Main */,
@@ -816,6 +817,13 @@
 				A828C8DD28447FCE00738854 /* HotelSearchUsecase.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		A8DDFE6A2872CEFB005CC4B8 /* RequestInterceptor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = RequestInterceptor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

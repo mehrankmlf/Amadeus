@@ -16,7 +16,7 @@ class BaseAPI<T: TargetType> {
     typealias FutureResult<M> = Future<M?, APIError>
     
     let session = Session(eventMonitors: [AlamofireLogger()])
-    let interceptor = RequestInterceptorHelper(requestNewTOken: RequestNewToken(   ))
+    let interceptor = RequestInterceptorHelper(_requestNewToken: RequestNewToken())
     
     /// ```
     /// Generic Base Class + Combine Concept + Future Promise
@@ -36,7 +36,11 @@ class BaseAPI<T: TargetType> {
         
         return FutureResult<M> { [weak self] promise in
             
-            self?.session.request(url, method: method, parameters: params.0, encoding: params.1, headers: headers, interceptor: interceptor, requestModifier: { $0.timeoutInterval = 20 })
+            self?.session.request(url, method: method,
+                                  parameters: params.0,
+                                  encoding: params.1, headers: headers,
+                                  interceptor: self?.interceptor,
+                                  requestModifier: { $0.timeoutInterval = 20 })
                 .validate(statusCode: 200..<300)
                 .responseDecodable(of: M.self) { response in
                     

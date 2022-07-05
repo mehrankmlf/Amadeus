@@ -15,7 +15,7 @@ final class RequestInterceptorHelper : Alamofire.RequestInterceptor, KeyChainMan
     var retryDelay: TimeInterval = 2
     var requestNewToken : RequestNewTokenProtocol?
     
-    init(_requestNewToken : RequestNewTokenProtocol) {
+    init(_requestNewToken : RequestNewTokenProtocol = RequestNewToken()) {
         self.requestNewToken = _requestNewToken
     }
     

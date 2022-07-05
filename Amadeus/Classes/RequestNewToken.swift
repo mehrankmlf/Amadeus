@@ -9,15 +9,19 @@ import Foundation
 import Alamofire
 import Combine
 
-protocol RequestNewTokenProtocol : AnyObject {
+protocol RequestNewTokenProtocol  {
     var getTokenService : GetTokenProtocol { get }
     func refreshToken(completion: @escaping (_ isSuccess: Bool) -> Void)
 }
 
-final class RequestNewToken : RequestNewTokenProtocol, KeyChainManagerInjector {
+ final class RequestNewToken : RequestNewTokenProtocol, KeyChainManagerInjector {
     
-    let getTokenService: GetTokenProtocol = GetToken_Request()
+    var getTokenService: GetTokenProtocol
     var subscriber = Set<AnyCancellable>()
+     
+     init(getTokenService: GetTokenProtocol = GetToken_Request()) {
+         self.getTokenService = getTokenService
+     }
     
     public func refreshToken(completion: @escaping (_ isSuccess: Bool) -> Void) {
         

@@ -18,9 +18,9 @@ struct AppBuildConfig : AppConfigurable {
 
 private struct Realese : AppConfiguration {
     
-    var baseURL : String = BaseURLType.baseApi.desc
+    var baseURL : BaseURLType = .baseApi
     
-    var version : String = VersionType.v2.desc
+    var version : VersionType = .none
     
     func isVPNConnected() -> Bool {
         return false
@@ -41,9 +41,9 @@ private struct Realese : AppConfiguration {
 
 private struct PenTest : AppConfiguration {
     
-    var baseURL : String = BaseURLType.baseApi.desc
+    var baseURL : BaseURLType = .baseApi
     
-    var version : String = VersionType.v1.desc
+    var version : VersionType = .none
     
     func isVPNConnected() -> Bool {
         return false

@@ -16,7 +16,6 @@ class BaseAPI<T: TargetType> {
     typealias FutureResult<M> = Future<M?, APIError>
     
     let session = Session(eventMonitors: [AlamofireLogger()])
-    let interceptor = RequestInterceptorHelper(_requestNewToken: RequestNewToken())
     
     /// ```
     /// Generic Base Class + Combine Concept + Future Promise
@@ -32,14 +31,14 @@ class BaseAPI<T: TargetType> {
         let headers = Alamofire.HTTPHeaders(target.headers ?? [:])
         let params = buildParameters(task: target.task)
         let targetPath = buildTarget(target: target.path)
-        let url = (target.baseURL + target.version + targetPath)
+        let url = (target.baseURL.desc + target.version.desc + targetPath)
         
         return FutureResult<M> { [weak self] promise in
             
             self?.session.request(url, method: method,
                                   parameters: params.0,
                                   encoding: params.1, headers: headers,
-                                  interceptor: self?.interceptor,
+                                  interceptor: RequestInterceptorHelper(),
                                   requestModifier: { $0.timeoutInterval = 20 })
                 .validate(statusCode: 200..<300)
                 .responseDecodable(of: M.self) { response in

@@ -13,15 +13,14 @@ enum MainNetworking {
 }
 
 extension MainNetworking : TargetType {
-    
-    var baseURL: String {
-        return AppBuildConfig.setAppState.baseURL
+    var baseURL: BaseURLType {
+        return .baseApi
     }
     
-    var version: String {
-        return AppBuildConfig.setAppState.version
+    var version: VersionType {
+        return .v2
     }
-    
+
     var path: RequestType {
         switch self {
         case .hotelSearch(let code):

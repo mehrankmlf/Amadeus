@@ -14,15 +14,14 @@ enum UserTokenNetworking {
 }
 
 extension UserTokenNetworking : TargetType {
-    
-    var baseURL: String {
-        return AppBuildConfig.setAppState.baseURL
+    var baseURL: BaseURLType {
+        return .baseApi
     }
     
-    var version: String {
-        return AppBuildConfig.setAppState.version
+    var version: VersionType {
+        return .v1
     }
-    
+
     var path: RequestType {
         switch self {
         case .accessToken:

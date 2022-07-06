@@ -46,20 +46,19 @@ final class RequestInterceptorHelper : Alamofire.RequestInterceptor, KeyChainMan
             case 200...299 :
                 completion(.doNotRetry)
             case 401 :
-                if !isDoRetrying {
-                    self.requestNewToken?.refreshToken { isSuccess in
-                        self.isDoRetrying = true
-                        isSuccess ? completion(.retry) : completion(.doNotRetry)
-                    }
-                }else{
+                guard !isDoRetrying else {
                     completion(.doNotRetry)
+                    return
+                }
+                self.requestNewToken?.refreshToken { isSuccess in
+                    self.isDoRetrying = true
+                    isSuccess ? completion(.retry) : completion(.doNotRetry)
                 }
             case 500...599 :
                 return completion(.retryWithDelay(self.retryDelay))
             default:
                 completion(.doNotRetry)
             }
-            
         } else {
             session.cancelAllRequests()
             completion(.doNotRetryWithError(APIError.serverError))

@@ -31,7 +31,9 @@ protocol RequestNewTokenProtocol  {
         
         self.getTokenService.getTokenService(grant_type: type, client_id: id, client_secret: secret)
             .receive(on: DispatchQueue.main)
-            .sink {_ in }
+            .sink { data in
+                print(data)
+            }
             receiveValue: { [weak self] data in
                 guard let data = data, let token = data.tokenData else {return}
                 if !String.isNilOrEmpty(string: token) {

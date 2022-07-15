@@ -535,28 +535,28 @@
 			isa = PBXGroup;
 			children = (
 				02DC602C285902C3000B2F97 /* BaseResponse */,
-				A828C8D728447FA000738854 /* TokenUseCase */,
-				A828C8DC28447FB500738854 /* HotelSearchUseCase */,
+				A828C8D728447FA000738854 /* Token */,
+				A828C8DC28447FB500738854 /* HotelSearch */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A828C8D728447FA000738854 /* TokenUseCase */ = {
+		A828C8D728447FA000738854 /* Token */ = {
 			isa = PBXGroup;
 			children = (
 				A828C9152844816500738854 /* GetToken_Response.swift */,
 			);
-			path = TokenUseCase;
+			path = Token;
 			sourceTree = "<group>";
 		};
-		A828C8DC28447FB500738854 /* HotelSearchUseCase */ = {
+		A828C8DC28447FB500738854 /* HotelSearch */ = {
 			isa = PBXGroup;
 			children = (
 				02DC602A28590253000B2F97 /* HotelSearchResponse.swift */,
 				021531122865FB33006D3C98 /* Hotel_Response.swift */,
 				021531142865FE30006D3C98 /* Address_Response.swift */,
 			);
-			path = HotelSearchUseCase;
+			path = HotelSearch;
 			sourceTree = "<group>";
 		};
 		A828C8E128447FE300738854 /* Classes */ = {
@@ -649,7 +649,7 @@
 				A828C946284482FE00738854 /* RequestInterceptor */,
 				A828C943284482E900738854 /* AppConfig */,
 				A828C940284482DC00738854 /* KeyChainManager */,
-				A828C93D284482C800738854 /* AlertAdapter */,
+				A828C93D284482C800738854 /* Adapter */,
 				A828C9332844824600738854 /* Factory */,
 				A828C9302844823500738854 /* ViewModel */,
 				A828C92D2844822600738854 /* Coordinator */,
@@ -668,6 +668,7 @@
 		A828C9302844823500738854 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A828C95F2844837D00738854 /* ViewModelBaseProtocol.swift */,
 				A828C9312844823F00738854 /* ViewModelsProtocol.swift */,
 			);
 			name = ViewModel;
@@ -676,7 +677,6 @@
 		A828C9332844824600738854 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				A8DDFE6A2872CEFB005CC4B8 /* RequestInterceptor */,
 				A828C93A2844827500738854 /* Authentication */,
 				A828C9372844826700738854 /* Splash */,
 				A828C9342844824F00738854 /* Main */,
@@ -708,12 +708,12 @@
 			name = Authentication;
 			sourceTree = "<group>";
 		};
-		A828C93D284482C800738854 /* AlertAdapter */ = {
+		A828C93D284482C800738854 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
 				A828C93E284482CF00738854 /* AlertAdapter.swift */,
 			);
-			name = AlertAdapter;
+			name = Adapter;
 			sourceTree = "<group>";
 		};
 		A828C940284482DC00738854 /* KeyChainManager */ = {
@@ -771,7 +771,6 @@
 			isa = PBXGroup;
 			children = (
 				A828C95E2844837D00738854 /* BaseViewController.swift */,
-				A828C95F2844837D00738854 /* ViewModelBaseProtocol.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -817,13 +816,6 @@
 				A828C8DD28447FCE00738854 /* HotelSearchUsecase.swift */,
 			);
 			path = UseCases;
-			sourceTree = "<group>";
-		};
-		A8DDFE6A2872CEFB005CC4B8 /* RequestInterceptor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = RequestInterceptor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

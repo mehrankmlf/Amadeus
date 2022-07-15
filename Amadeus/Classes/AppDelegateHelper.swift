@@ -1,6 +1,6 @@
 //
-//  SceneDelegateHelper.swift
-//  SappPlus
+//  AppDelegateHelper.swift
+//  Amadeus
 //
 //  Created by Mehran Kamalifard on 12/19/21.
 //

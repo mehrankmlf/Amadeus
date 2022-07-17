@@ -1,6 +1,6 @@
 //
 //  BuildConfig.swift
-//  mediumapp
+//  Amadeus
 //
 //  Created by Mehran Kamalifard on 6/28/21.
 //  Copyright © 2021 MediumApp. All rights reserved.

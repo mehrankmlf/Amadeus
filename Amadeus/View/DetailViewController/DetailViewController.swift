@@ -1,6 +1,6 @@
 //
 //  DetailViewController.swift
-//  SappPlus
+//  Amadeus
 //
 //  Created by Mehran Kamalifard on 2/17/22.
 //

@@ -1,6 +1,6 @@
 //
 //  GradientHelper + Extension.swift
-//  GymMedia
+//  Amadeus
 //
 //  Created by Mehran on 3/31/20.
 //  Copyright © 2020 MediumApp. All rights reserved.

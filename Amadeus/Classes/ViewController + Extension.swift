@@ -1,6 +1,6 @@
 //
 //  ViewController + Extension.swift
-//  mediumapp
+//  Amadeus
 //
 //  Created by Mehran on 12/2/20.
 //  Copyright © 2020 MediumApp. All rights reserved.

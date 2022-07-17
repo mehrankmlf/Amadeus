@@ -1,6 +1,6 @@
 //
 //  SplashViewController.swift
-//  SappPlus
+//  Amadeus
 //
 //  Created by Mehran Kamalifard on 9/12/21.
 //

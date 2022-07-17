@@ -1,6 +1,6 @@
 //
 //  WalkthroughCoordinator.swift
-//  SappPlus
+//  Amadeus
 //
 //  Created by Mehran on 12/27/1400 AP.
 //

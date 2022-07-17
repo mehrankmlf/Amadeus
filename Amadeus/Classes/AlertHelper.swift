@@ -1,6 +1,6 @@
 //
 //  AlertHelper.swift
-//  mediumapp
+//  Amadeus
 //
 //  Created by Mehran on 9/25/20.
 //  Copyright © 2020 MediumApp. All rights reserved.

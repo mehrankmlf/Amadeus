@@ -1,6 +1,6 @@
 //
 //  DeviceStatusHelper.swift
-//  mediumapp
+//  Amadeus
 //
 //  Created by Mehran on 7/17/20.
 //  Copyright © 2020 MediumApp. All rights reserved.

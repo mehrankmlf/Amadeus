@@ -1,6 +1,6 @@
 //
 //  MockHotelsSearch.swift
-//  SappPlusTests
+//  AmadeusTest
 //
 //  Created by Mehran Kamalifard on 4/10/22.
 //

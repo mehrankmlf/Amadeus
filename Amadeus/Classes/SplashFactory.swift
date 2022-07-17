@@ -1,6 +1,6 @@
 //
 //  SplashFactory.swift
-//  SappPlus
+//  Amadeus
 //
 //  Created by Mehran on 1/9/1401 AP.
 //

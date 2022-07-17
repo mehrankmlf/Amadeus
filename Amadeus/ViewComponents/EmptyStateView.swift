@@ -1,6 +1,6 @@
 //
 //  EmptyStateView.swift
-//  mediumapp
+//  Amadeus
 //
 //  Created by Mehran on 7/12/1399 AP.
 //  Copyright © 1399 MediumApp. All rights reserved.

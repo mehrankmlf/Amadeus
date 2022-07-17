@@ -1,6 +1,6 @@
 //
 //  UniversalViewController.swift
-//  mediumapp
+//  Amadeus
 //
 //  Created by Mehran on 6/5/20.
 //  Copyright © 2020 MediumApp. All rights reserved.

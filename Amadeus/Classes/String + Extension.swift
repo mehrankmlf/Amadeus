@@ -1,6 +1,6 @@
 //
 //  String + Extension.swift
-//  mediumapp
+//  Amadeus
 //
 //  Created by Mehran on 7/9/20.
 //  Copyright © 2020 MediumApp. All rights reserved.

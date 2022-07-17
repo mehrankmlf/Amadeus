@@ -1,6 +1,6 @@
 //
 //  BaseResponse.swift
-//  CoreAPI-iOS
+//  Amadeus
 //
 //  Created by Mehran Kamalifard on 5/14/22.
 //

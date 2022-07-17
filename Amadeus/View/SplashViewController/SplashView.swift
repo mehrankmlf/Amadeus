@@ -1,6 +1,6 @@
 //
 //  SplashView.swift
-//  SappPlus
+//  Amadeus
 //
 //  Created by Mehran on 3/5/1401 AP.
 //

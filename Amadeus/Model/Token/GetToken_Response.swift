@@ -1,6 +1,6 @@
 //
 //  RegisterDevice_Resposne.swift
-//  SappPlus
+//  Amadeus
 //
 //  Created by Mehran Kamalifard on 10/11/21.
 //

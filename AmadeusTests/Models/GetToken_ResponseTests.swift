@@ -1,6 +1,6 @@
 //
 //  GetToken_ResponseTests.swift
-//  SappPlusTests
+//  AmadeusTest
 //
 //  Created by Mehran Kamalifard on 2/27/22.
 //

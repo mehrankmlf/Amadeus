@@ -1,6 +1,6 @@
 //
 //  RegisterViewController.swift
-//  SappPlus
+//  Amadeus
 //
 //  Created by Mehran Kamalifard on 12/25/21.
 //

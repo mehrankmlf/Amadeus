@@ -74,7 +74,6 @@
 		A828C927284481E400738854 /* DeviceStatusHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C91F284481E400738854 /* DeviceStatusHelper.swift */; };
 		A828C928284481E400738854 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C920284481E400738854 /* AlertHelper.swift */; };
 		A828C92F2844822F00738854 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C92E2844822F00738854 /* Coordinator.swift */; };
-		A828C9322844823F00738854 /* ViewModelsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9312844823F00738854 /* ViewModelsProtocol.swift */; };
 		A828C9362844825F00738854 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9352844825F00738854 /* MainFactory.swift */; };
 		A828C9392844827000738854 /* SplashFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9382844827000738854 /* SplashFactory.swift */; };
 		A828C93C284482B100738854 /* AuthenticationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C93B284482B100738854 /* AuthenticationFactory.swift */; };
@@ -93,8 +92,6 @@
 		A828C9602844837D00738854 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C95E2844837D00738854 /* BaseViewController.swift */; };
 		A828C9612844837D00738854 /* ViewModelBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C95F2844837D00738854 /* ViewModelBaseProtocol.swift */; };
 		A828C964284486A900738854 /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A828C963284486A800738854 /* Walkthrough.storyboard */; };
-		A828C967284488B300738854 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C966284488B300738854 /* RegisterViewModel.swift */; };
-		A828C96A284488E300738854 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C969284488E300738854 /* SplashViewModel.swift */; };
 		A8A82669287010F6009850CD /* RequestNewToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A82668287010F6009850CD /* RequestNewToken.swift */; };
 		A8BDA622288BC3360052BB3F /* Obfuscator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BDA621288BC3360052BB3F /* Obfuscator.swift */; };
 		CBB0CED32AB19B42A11894B7 /* Pods_Amadeus_AmadeusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD8881E8377D2385D5357B /* Pods_Amadeus_AmadeusUITests.framework */; };
@@ -194,7 +191,6 @@
 		A828C91F284481E400738854 /* DeviceStatusHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceStatusHelper.swift; sourceTree = "<group>"; };
 		A828C920284481E400738854 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		A828C92E2844822F00738854 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		A828C9312844823F00738854 /* ViewModelsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelsProtocol.swift; sourceTree = "<group>"; };
 		A828C9352844825F00738854 /* MainFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
 		A828C9382844827000738854 /* SplashFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashFactory.swift; sourceTree = "<group>"; };
 		A828C93B284482B100738854 /* AuthenticationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationFactory.swift; sourceTree = "<group>"; };
@@ -213,8 +209,6 @@
 		A828C95E2844837D00738854 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A828C95F2844837D00738854 /* ViewModelBaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBaseProtocol.swift; sourceTree = "<group>"; };
 		A828C963284486A800738854 /* Walkthrough.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
-		A828C966284488B300738854 /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
-		A828C969284488E300738854 /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		A8A82668287010F6009850CD /* RequestNewToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestNewToken.swift; sourceTree = "<group>"; };
 		A8BDA621288BC3360052BB3F /* Obfuscator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obfuscator.swift; sourceTree = "<group>"; };
 		BEFD8881E8377D2385D5357B /* Pods_Amadeus_AmadeusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Amadeus_AmadeusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -396,8 +390,6 @@
 		A828C8A128447D7300738854 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A828C968284488D500738854 /* SplashViewModel */,
-				A828C965284488A700738854 /* RegisterViewModel */,
 				A828C8A628447E0800738854 /* LoginViewModel */,
 				A828C8A228447DA400738854 /* MainViewModel */,
 			);
@@ -657,7 +649,6 @@
 			isa = PBXGroup;
 			children = (
 				A828C95F2844837D00738854 /* ViewModelBaseProtocol.swift */,
-				A828C9312844823F00738854 /* ViewModelsProtocol.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -769,22 +760,6 @@
 				A828C963284486A800738854 /* Walkthrough.storyboard */,
 			);
 			path = Storyboard;
-			sourceTree = "<group>";
-		};
-		A828C965284488A700738854 /* RegisterViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				A828C966284488B300738854 /* RegisterViewModel.swift */,
-			);
-			name = RegisterViewModel;
-			sourceTree = "<group>";
-		};
-		A828C968284488D500738854 /* SplashViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				A828C969284488E300738854 /* SplashViewModel.swift */,
-			);
-			name = SplashViewModel;
 			sourceTree = "<group>";
 		};
 		A8A82667287008C4009850CD /* Common */ = {
@@ -1053,7 +1028,6 @@
 				A828C9122844806D00738854 /* AppDelegate + Extension.swift in Sources */,
 				02DC602B28590253000B2F97 /* HotelSearchResponse.swift in Sources */,
 				A828C9602844837D00738854 /* BaseViewController.swift in Sources */,
-				A828C9322844823F00738854 /* ViewModelsProtocol.swift in Sources */,
 				A828C8D428447F6D00738854 /* MainTableViewCell.swift in Sources */,
 				A828C9062844806D00738854 /* Dictionary + Extension.swift in Sources */,
 				A828C8EF2844802600738854 /* MainNetworking.swift in Sources */,
@@ -1090,7 +1064,6 @@
 				A828C9532844833800738854 /* WalkthroughCoordinator.swift in Sources */,
 				A828C9112844806D00738854 /* String + Extension.swift in Sources */,
 				02DC602E285902D3000B2F97 /* BaseResponse.swift in Sources */,
-				A828C96A284488E300738854 /* SplashViewModel.swift in Sources */,
 				A828C922284481E400738854 /* UserDefaultHelper.swift in Sources */,
 				A828C8AF28447E6800738854 /* DetailView.swift in Sources */,
 				A828C90D2844806D00738854 /* UIView + EmptyView.swift in Sources */,
@@ -1105,7 +1078,6 @@
 				A8BDA622288BC3360052BB3F /* Obfuscator.swift in Sources */,
 				A828C9052844806D00738854 /* BaseAPI + Extension.swift in Sources */,
 				A828C8C828447F0B00738854 /* WalkthroughViewController.swift in Sources */,
-				A828C967284488B300738854 /* RegisterViewModel.swift in Sources */,
 				A828C8C528447EE700738854 /* SplashViewController.swift in Sources */,
 				A828C9092844806D00738854 /* ViewController + Extension.swift in Sources */,
 				A828C8EA2844800D00738854 /* RequestInterceptor.swift in Sources */,

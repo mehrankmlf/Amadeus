@@ -9,7 +9,14 @@ import Foundation
 import SwiftKeychainWrapper
 import Combine
 
-class LoginViewModel : ObservableObject, BaseLoginViewModel, KeyChainManagerInjector {
+typealias BaseLoginViewModel = ViewModelBaseProtocol & LogiViewModel
+
+protocol LogiViewModel {
+    var getTokenService : GetTokenProtocol { get }
+    func getTokenData(grant_type: String, client_id: String, client_secret: String)
+}
+
+final class LoginViewModel : ObservableObject, BaseLoginViewModel, KeyChainManagerInjector {
     
     @Published var userName : String = ""
     @Published var password : String = ""

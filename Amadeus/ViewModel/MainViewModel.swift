@@ -8,6 +8,21 @@
 import Foundation
 import Combine
 
+// MARK: MainViewModel.
+typealias BaseMainViewModel = ViewModelBaseProtocol &
+                              MainViewModelInput &
+                              MainViewModelProtocol
+
+protocol MainViewModelInput {
+    var title : String { get }
+}
+
+protocol MainViewModelProtocol {
+    var getHotels : HotelsSearchProtocol { get }
+    func getHotelsData(cityCode: String)
+}
+
+
 final class MainViewModel : ObservableObject, BaseMainViewModel {
     
     static let cellId = "cellId"

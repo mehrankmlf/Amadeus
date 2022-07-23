@@ -37,19 +37,6 @@ extension DependencyAssembler : LoginViewFactory {
     }
 }
 
-extension DependencyAssembler : RegisterFactory {
-    func makeRegisterViewController(coordinator: AuthenticationCoordinator) -> RegisterViewController {
-        let vc = RegisterViewController(viewModel: self.makeRegisterViewModel(coordinator: coordinator), contentView: RegisterView())
-        vc.viewModel = self.makeRegisterViewModel(coordinator: coordinator)
-        return vc
-    }
-    
-    func makeRegisterViewModel(coordinator: AuthenticationCoordinator) -> RegisterViewModel {
-        let viewModel = RegisterViewModel()
-        return viewModel
-    }
-}
-
 extension DependencyAssembler : SplashFactory {
     func makeSplashViewController(coordinator: SplashCoordinator) -> SplashViewController {
         let vc = SplashViewController(viewModel: self.makeSplashViewModel(coordinator: coordinator), contentView: SplashView())

@@ -48,7 +48,7 @@ class AppCoordinator : AppCoordinatorProtocol, DependencyAssemblerInjector, KeyC
         if isSignin() {
             self.showMainFlow()
         }else{
-            let login = AuthenticationCoordinator.init(navigationController, loginViewFactory: self.dependencyAssembler, registerViewFactory: self.dependencyAssembler)
+            let login = AuthenticationCoordinator.init(navigationController, loginViewFactory: self.dependencyAssembler)
             login.finishDelegate = self
             login.start()
             childCoordinators.append(login)

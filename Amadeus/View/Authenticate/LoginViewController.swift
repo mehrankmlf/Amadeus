@@ -41,7 +41,6 @@ class LoginViewController: BaseViewController {
     
     private func setUpTargets() {
         contentView?.btnSubmit.addTarget(self, action: #selector(submitAction), for: .touchUpInside)
-        contentView?.btnRegister.addTarget(self, action: #selector(registerAction), for: .touchUpInside)
         contentView?.txtID.addTarget(self, action: #selector(LoginViewController.textFieldDidChange(_:)), for: .editingChanged)
     }
     
@@ -112,10 +111,6 @@ class LoginViewController: BaseViewController {
         self.viewModel?.getTokenData(grant_type: "client_credentials", client_id: self.contentView?.txtID.text ?? "", client_secret: self.contentView?.txtSecret.text ?? "")
     }
     
-    @objc func registerAction() {
-        self.navigateSubject.send(.register)
-    }
-    
     @objc func textFieldDidChange(_ textField: UITextField) {
         self.viewModel?.userName = textField.text ?? ""
     }
@@ -131,7 +126,6 @@ extension LoginViewController : ShowEmptyStateProtocol {
 extension LoginViewController {
     enum Event {
         case login
-        case register
     }
 }
 

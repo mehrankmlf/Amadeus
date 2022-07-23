@@ -12,7 +12,3 @@ protocol LoginViewFactory {
     func makeLoginViewModel(coordinator : AuthenticationCoordinator) -> LoginViewModel
 }
 
-protocol RegisterFactory {
-    func makeRegisterViewController(coordinator : AuthenticationCoordinator) -> RegisterViewController
-    func makeRegisterViewModel(coordinator : AuthenticationCoordinator) -> RegisterViewModel
-}

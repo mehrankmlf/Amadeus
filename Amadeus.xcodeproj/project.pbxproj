@@ -31,8 +31,6 @@
 		A828C8B028447E6800738854 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8AE28447E6800738854 /* DetailViewController.swift */; };
 		A828C8B428447E8300738854 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8B228447E8300738854 /* MainView.swift */; };
 		A828C8B528447E8300738854 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8B328447E8300738854 /* MainViewController.swift */; };
-		A828C8BB28447EB100738854 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8B928447EB000738854 /* RegisterViewController.swift */; };
-		A828C8BC28447EB100738854 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8BA28447EB100738854 /* RegisterView.swift */; };
 		A828C8BF28447EBB00738854 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8BD28447EBA00738854 /* LoginView.swift */; };
 		A828C8C028447EBB00738854 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8BE28447EBB00738854 /* LoginViewController.swift */; };
 		A828C8C428447EE700738854 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8C228447EE700738854 /* SplashView.swift */; };
@@ -152,8 +150,6 @@
 		A828C8AE28447E6800738854 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A828C8B228447E8300738854 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A828C8B328447E8300738854 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		A828C8B928447EB000738854 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		A828C8BA28447EB100738854 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A828C8BD28447EBA00738854 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A828C8BE28447EBB00738854 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A828C8C228447EE700738854 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -455,7 +451,6 @@
 		A828C8B628447E9000738854 /* Authenticate */ = {
 			isa = PBXGroup;
 			children = (
-				A828C8B828447EA200738854 /* Register */,
 				A828C8B728447E9C00738854 /* Login */,
 			);
 			path = Authenticate;
@@ -468,15 +463,6 @@
 				A828C8BE28447EBB00738854 /* LoginViewController.swift */,
 			);
 			name = Login;
-			sourceTree = "<group>";
-		};
-		A828C8B828447EA200738854 /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				A828C8BA28447EB100738854 /* RegisterView.swift */,
-				A828C8B928447EB000738854 /* RegisterViewController.swift */,
-			);
-			name = Register;
 			sourceTree = "<group>";
 		};
 		A828C8C128447EC800738854 /* SplashViewController */ = {
@@ -1061,7 +1047,6 @@
 				A828C945284482F400738854 /* AppConfigurationProtocol.swift in Sources */,
 				A828C8D028447F5600738854 /* EmptyStateView.swift in Sources */,
 				A8A82669287010F6009850CD /* RequestNewToken.swift in Sources */,
-				A828C8BC28447EB100738854 /* RegisterView.swift in Sources */,
 				A828C9122844806D00738854 /* AppDelegate + Extension.swift in Sources */,
 				02DC602B28590253000B2F97 /* HotelSearchResponse.swift in Sources */,
 				A828C9602844837D00738854 /* BaseViewController.swift in Sources */,
@@ -1069,7 +1054,6 @@
 				A828C8D428447F6D00738854 /* MainTableViewCell.swift in Sources */,
 				A828C9062844806D00738854 /* Dictionary + Extension.swift in Sources */,
 				A828C8EF2844802600738854 /* MainNetworking.swift in Sources */,
-				A828C8BB28447EB100738854 /* RegisterViewController.swift in Sources */,
 				A828C924284481E400738854 /* AppDelegateHelper.swift in Sources */,
 				A828C90A2844806D00738854 /* AFError + Extension.swift in Sources */,
 				A828C9102844806D00738854 /* UIWindow + Extension.swift in Sources */,

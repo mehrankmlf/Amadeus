@@ -10,15 +10,12 @@ import Combine
 
 protocol AuthenticationFactory {
     var loginViewFactory : LoginViewFactory { get set }
-    var registerViewFactory : RegisterFactory { get set }
 }
 
 protocol AuthenticationCoordinatorProtocol : Coordinator, AuthenticationFactory {
     func showLoginViewController()
-    func showRegisterViewController()
     init(_ navigationController : UINavigationController,
-         loginViewFactory : LoginViewFactory,
-         registerViewFactory : RegisterFactory)
+         loginViewFactory : LoginViewFactory)
 }
 
 final class AuthenticationCoordinator : AuthenticationCoordinatorProtocol, DependencyAssemblerInjector {
@@ -28,16 +25,13 @@ final class AuthenticationCoordinator : AuthenticationCoordinatorProtocol, Depen
     var childCoordinators: [Coordinator] = []
     var type: CoordinatorType { .authentication }
     var loginViewFactory : LoginViewFactory
-    var registerViewFactory: RegisterFactory
     private var subscriber = Set<AnyCancellable>()
     
     
     init(_ navigationController: UINavigationController,
-         loginViewFactory : LoginViewFactory,
-         registerViewFactory : RegisterFactory) {
+         loginViewFactory : LoginViewFactory) {
         self.navigationController = navigationController
         self.loginViewFactory = loginViewFactory
-        self.registerViewFactory = registerViewFactory
     }
     
     func start() {
@@ -50,24 +44,8 @@ final class AuthenticationCoordinator : AuthenticationCoordinatorProtocol, Depen
             switch event {
             case .login:
                 self?.finish()
-            case .register:
-                self?.showRegisterViewController()
             }
         }.store(in: &subscriber)
-        navigationController.pushViewController(vc, animated: true)
-    }
-    
-    func showRegisterViewController() {
-        let vc = self.registerViewFactory.makeRegisterViewController(coordinator: self)
-        vc.navigationSubject.sink { [weak self] event in
-            switch event {
-            case .register:
-                self?.finish()
-            case .onBack:
-                self?.navigationController.popViewController(animated: true)
-            }
-        }.store(in: &subscriber)
-        navigationController.setNavigationBarHidden(true, animated: false)
         navigationController.pushViewController(vc, animated: true)
     }
 }

@@ -90,32 +90,6 @@ final class LoginView: UIView {
         return btnSubmit
     }()
     
-    private lazy var lblSignup : UILabel = {
-        let lblSignup = UILabel()
-        lblSignup.text = "Don't have an account?"
-        lblSignup.textColor = UIColor(red: 54.0/255, green: 94.0/255, blue: 180.0/255, alpha: 1.0)
-        lblSignup.font = UIFont.boldSystemFont(ofSize: 12)
-        return lblSignup
-    }()
-    
-    lazy var btnRegister : UIButton = {
-        let btnRegister = UIButton()
-        btnRegister.setTitle("Register", for: .normal)
-        btnRegister.setTitleColor(UIColor(red: 54.0/255, green: 94.0/255, blue: 180.0/255, alpha: 1.0), for: .normal)
-        btnRegister.titleLabel?.font = .systemFont(ofSize: 12)
-        btnRegister.clipsToBounds = true
-        return btnRegister
-    }()
-    
-    lazy var registerStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [lblSignup, btnRegister])
-        stackView.axis  = .horizontal
-        stackView.distribution  = .fill
-        stackView.alignment = .fill
-        stackView.spacing = 5
-        return stackView
-    }()
-    
     init() {
         super.init(frame: .zero)
         
@@ -129,7 +103,7 @@ final class LoginView: UIView {
     }
     
     private func addSubviews() {
-        [imageLogo, lblTop, statsView, btnSubmit, registerStackView]
+        [imageLogo, lblTop, statsView, btnSubmit]
             .forEach {
                 addSubview($0)
                 $0.translatesAutoresizingMaskIntoConstraints = false
@@ -166,8 +140,5 @@ extension LoginView {
         btnSubmit.leadingAnchor.constraint(equalTo: statsView.leadingAnchor).isActive = true
         btnSubmit.trailingAnchor.constraint(equalTo: statsView.trailingAnchor).isActive = true
         btnSubmit.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        registerStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        registerStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
     }
 }

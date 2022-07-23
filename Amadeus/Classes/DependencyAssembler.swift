@@ -39,13 +39,8 @@ extension DependencyAssembler : LoginViewFactory {
 
 extension DependencyAssembler : SplashFactory {
     func makeSplashViewController(coordinator: SplashCoordinator) -> SplashViewController {
-        let vc = SplashViewController(viewModel: self.makeSplashViewModel(coordinator: coordinator), contentView: SplashView())
+        let vc = SplashViewController(contentView: SplashView())
         return vc
-    }
-    
-    func makeSplashViewModel(coordinator: SplashCoordinator) -> SplashViewModel {
-        let viewModel = SplashViewModel()
-        return viewModel
     }
 }
 

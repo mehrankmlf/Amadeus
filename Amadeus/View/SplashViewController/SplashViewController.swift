@@ -10,7 +10,6 @@ import Combine
 
 class SplashViewController: BaseViewController  {
     
-    var viewModel : SplashViewModel?
     let timer = CountDownTimer(duration: 4)
     var navigateSubject = PassthroughSubject<SplashViewController.Event, Never>()
     var contentView : SplashView?
@@ -26,8 +25,7 @@ class SplashViewController: BaseViewController  {
         self.setupNavigation()
     }
     
-    init(viewModel : SplashViewModel, contentView : SplashView) {
-        self.viewModel = viewModel
+    init(contentView : SplashView) {
         self.contentView = contentView
         super.init(nibName: nil, bundle: nil)
     }

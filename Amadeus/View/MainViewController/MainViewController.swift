@@ -11,10 +11,10 @@ import Combine
 class MainViewController: BaseViewController {
 
     var viewModel : MainViewModel!
-    var navigateSubject = PassthroughSubject<MainViewController.Event, Never>()
     var contentView : MainView?
     private(set) var data : [HotelSearchResponse]?
     private var dataSource:TableViewCustomDataSource<HotelSearchResponse>?
+    var navigateSubject = PassthroughSubject<MainViewController.Event, Never>()
 
     init(viewModel : MainViewModel, contentView : MainView) {
         self.viewModel = viewModel

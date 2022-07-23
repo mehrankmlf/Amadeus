@@ -57,7 +57,7 @@ class LoginViewController: BaseViewController {
     }
     
     private func setupNavigation() {
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        super.setNavigationvBarHidden()
     }
     
     private func fetchSecret() -> String? {

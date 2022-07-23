@@ -21,16 +21,14 @@ protocol MainViewModelProtocol {
     func getHotelsData(cityCode: String)
 }
 
-
 final class MainViewModel : ObservableObject, BaseMainViewModel {
-    
-    static let cellId = "cellId"
-       
-    @Published var hotelData : [HotelSearchResponse]?
+           
     var loadinState = CurrentValueSubject<ViewModelStatus, Never>(.dismissAlert)
     var subscriber = Set<AnyCancellable>()
     var getHotels: HotelsSearchProtocol
     var title: String = "Amadeus"
+    
+    @Published var hotelData : [HotelSearchResponse]?
     
     init(getHotels : HotelsSearchProtocol) {
         self.getHotels = getHotels

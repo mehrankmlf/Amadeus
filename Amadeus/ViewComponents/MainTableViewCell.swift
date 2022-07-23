@@ -9,20 +9,23 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
     
+    static let cellId = "cellId"
+    private var cornerRadius : CGFloat = 10
+    private var padding : CGFloat = 10
+    private var fontSize : CGFloat = 15
+    
     private lazy var containerView : UIView = {
         let view = UIView()
         view.backgroundColor = .whiteBackground
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
         view.dropShadow()
-        view.roundCorners([.topLeft, .bottomLeft], radius: 10)
+        view.roundCorners([.topLeft, .bottomLeft], radius: cornerRadius)
         return view
     }()
     
     private lazy var rightSideView : UIView = {
         let view = UIView()
         view.backgroundColor = .blueBackground
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
         return view
     }()
@@ -32,7 +35,6 @@ class MainTableViewCell: UITableViewCell {
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 13)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -40,32 +42,28 @@ class MainTableViewCell: UITableViewCell {
         let imageMain = UIImageView()
         imageMain.contentMode = .scaleAspectFill
         imageMain.image = UIImage(named: "discount")
-        imageMain.translatesAutoresizingMaskIntoConstraints = false
         return imageMain
     }()
     
     private lazy var lblTitle : UILabel = {
         let lblTitle = UILabel()
         lblTitle.textColor = UIColor.black
-        lblTitle.font = UIFont.systemFont(ofSize: 15)
-        lblTitle.translatesAutoresizingMaskIntoConstraints = false
+        lblTitle.font = UIFont.systemFont(ofSize: fontSize)
         return lblTitle
     }()
     
     private lazy var lblHeadLine : UILabel = {
         let lblHeadLine = UILabel()
         lblHeadLine.textColor = UIColor.black
-        lblHeadLine.font = UIFont.systemFont(ofSize: 15)
+        lblHeadLine.font = UIFont.systemFont(ofSize: fontSize)
         lblHeadLine.numberOfLines = 0
-        lblHeadLine.translatesAutoresizingMaskIntoConstraints = false
         return lblHeadLine
     }()
     
     private lazy var lblSubline : UILabel = {
         let lblSubline = UILabel()
         lblSubline.textColor = UIColor.black
-        lblSubline.font = UIFont.systemFont(ofSize: 15)
-        lblSubline.translatesAutoresizingMaskIntoConstraints = false
+        lblSubline.font = UIFont.systemFont(ofSize: fontSize)
         return lblSubline
     }()
     
@@ -74,8 +72,7 @@ class MainTableViewCell: UITableViewCell {
         stackView.axis  = .vertical
         stackView.distribution  = .fillEqually
         stackView.alignment = .fill
-        stackView.spacing = 10
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.spacing = padding
         return stackView
     }()
     
@@ -88,6 +85,17 @@ class MainTableViewCell: UITableViewCell {
         self.containerView.addSubview(lblTitle)
         self.rightSideView.addSubview(lblRightSideView)
         self.containerView.addSubview(statsView)
+        [containerView,
+         rightSideView,
+         lblRightSideView,
+         imageDiscount,
+         lblTitle,
+         lblHeadLine,
+         lblSubline,
+         statsView]
+            .forEach {
+                $0.translatesAutoresizingMaskIntoConstraints = false
+            }
         self.setupAutoLayout()
     }
     

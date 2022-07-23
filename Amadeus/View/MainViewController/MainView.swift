@@ -9,26 +9,28 @@ import UIKit
 
 final class MainView: UIView {
     
+    private var safeArea: UILayoutGuide!
+    private var cornerRadius : CGFloat = 10
+    private var padding : CGFloat = 10
+    private var fontSize : CGFloat = 15
+    
     lazy var viewContainer : UIView = {
         let viewContainer = UIView()
-        viewContainer.backgroundColor = .white
-        viewContainer.translatesAutoresizingMaskIntoConstraints = false
+        viewContainer.backgroundColor = .whiteBackground
         return viewContainer
     }()
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
     init() {
         super.init(frame: .zero)
-        
+        setupUI()
         addSubviews()
         makeAutolayout()
-        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -38,19 +40,24 @@ final class MainView: UIView {
     private func addSubviews() {
         addSubview(viewContainer)
         viewContainer.addSubview(tableView)
+        [viewContainer, tableView]
+            .forEach {
+                $0.translatesAutoresizingMaskIntoConstraints = false
+            }
     }
     
     private func setupUI() {
         backgroundColor = .whiteBackground
+        safeArea = self.safeAreaLayoutGuide
     }
 }
 
 extension MainView {
     private func makeAutolayout() {
         NSLayoutConstraint.activate([
-            viewContainer.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            viewContainer.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor),
-            viewContainer.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor),
+            viewContainer.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            viewContainer.leftAnchor.constraint(equalTo: safeArea.leftAnchor),
+            viewContainer.rightAnchor.constraint(equalTo: safeArea.rightAnchor),
             viewContainer.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
         

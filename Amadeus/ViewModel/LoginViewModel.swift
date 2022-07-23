@@ -98,7 +98,8 @@ extension LoginViewModel {
                     return nil
                 }
                 return pass
-            }.eraseToAnyPublisher()
+            }
+            .eraseToAnyPublisher()
     }
     
      var formValidation: AnyPublisher<(String, String)?, Never> {

@@ -12,6 +12,7 @@ final class LoginView: UIView {
     private var safeArea: UILayoutGuide!
     private var cornerRadius : CGFloat = 10
     private var padding : CGFloat = 10
+    private var fontSize : CGFloat = 15
     
     lazy var imageLogo : UIImageView = {
         let imageLogo = UIImageView()
@@ -33,7 +34,7 @@ final class LoginView: UIView {
         let lblID = UILabel()
         lblID.text = "ClientID"
         lblID.textColor = .fontColor
-        lblID.font = UIFont.boldSystemFont(ofSize: 15)
+        lblID.font = UIFont.boldSystemFont(ofSize: fontSize)
         return lblID
     }()
     
@@ -41,7 +42,7 @@ final class LoginView: UIView {
         let lblSecret = UILabel()
         lblSecret.text = "ClientSecret"
         lblSecret.textColor = .fontColor
-        lblSecret.font = UIFont.boldSystemFont(ofSize: 15)
+        lblSecret.font = UIFont.boldSystemFont(ofSize: fontSize)
         return lblSecret
     }()
     
@@ -86,7 +87,7 @@ final class LoginView: UIView {
         stackView.axis  = .vertical
         stackView.distribution  = .fillEqually
         stackView.alignment = .fill
-        stackView.spacing = 10
+        stackView.spacing = padding
         return stackView
     }()
     
@@ -127,9 +128,9 @@ final class LoginView: UIView {
 
 extension LoginView {
     private func makeAutolayout() {
-        imageLogo.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
-        imageLogo.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 30).isActive = true
-        imageLogo.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -30).isActive = true
+        imageLogo.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 50).isActive = true
+        imageLogo.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 30).isActive = true
+        imageLogo.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: -30).isActive = true
         imageLogo.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         
         lblTop.topAnchor.constraint(equalTo: imageLogo.bottomAnchor, constant: 40).isActive = true
@@ -141,8 +142,8 @@ extension LoginView {
         txtSecret.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         statsView.topAnchor.constraint(equalTo: lblTop.bottomAnchor, constant: 15).isActive = true
-        statsView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 30).isActive = true
-        statsView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -30).isActive = true
+        statsView.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 30).isActive = true
+        statsView.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: -30).isActive = true
         
         btnSubmit.topAnchor.constraint(equalTo: statsView.bottomAnchor, constant: 50).isActive = true
         btnSubmit.leadingAnchor.constraint(equalTo: statsView.leadingAnchor).isActive = true

@@ -14,14 +14,14 @@ protocol RequestNewTokenProtocol  {
     func refreshToken(completion: @escaping (_ isSuccess: Bool) -> Void)
 }
 
- final class RequestNewToken : RequestNewTokenProtocol, KeyChainManagerInjector {
+final class RequestNewToken : RequestNewTokenProtocol, KeyChainManagerInjector {
     
     var getTokenService: GetTokenProtocol
     var subscriber = Set<AnyCancellable>()
-     
-     init(getTokenService: GetTokenProtocol = GetToken_Request()) {
-         self.getTokenService = getTokenService
-     }
+    
+    init(getTokenService: GetTokenProtocol = GetToken_Request()) {
+        self.getTokenService = getTokenService
+    }
     
     public func refreshToken(completion: @escaping (_ isSuccess: Bool) -> Void) {
         
@@ -34,15 +34,15 @@ protocol RequestNewTokenProtocol  {
             .sink { data in
                 print(data)
             }
-            receiveValue: { [weak self] data in
-                guard let data = data, let token = data.tokenData else {return}
-                if !String.isNilOrEmpty(string: token) {
-                    self?.keychainManager.setToken(token: token)
-                    completion(true)
-                    }else{
-                    completion(false)
-                    }
+    receiveValue: { [weak self] data in
+        guard let data = data, let token = data.tokenData else {return}
+        if !String.isNilOrEmpty(string: token) {
+            self?.keychainManager.setToken(token: token)
+            completion(true)
+        }else{
+            completion(false)
         }
-            .store(in: &subscriber)
+    }
+    .store(in: &subscriber)
     }
 }

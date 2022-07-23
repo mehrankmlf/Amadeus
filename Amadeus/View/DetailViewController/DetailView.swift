@@ -8,6 +8,11 @@
 import UIKit
 
 final class DetailView: UIView {
+    
+    private var safeArea: UILayoutGuide!
+    private var cornerRadius : CGFloat = 10
+    private var padding : CGFloat = 10
+    private var fontSize : CGFloat = 15
 
      lazy var viewContainer : UIView = {
         let viewContainer = UIView()
@@ -38,7 +43,7 @@ final class DetailView: UIView {
          lblHeadLineDetail.text = "unknown"
          lblHeadLineDetail.textColor = .black
          lblHeadLineDetail.numberOfLines = 0
-         lblHeadLineDetail.font = UIFont.boldSystemFont(ofSize: 15)
+         lblHeadLineDetail.font = UIFont.boldSystemFont(ofSize: fontSize)
         return lblHeadLineDetail
     }()
     
@@ -56,7 +61,7 @@ final class DetailView: UIView {
          lblSublineDetail.text = "unknown"
          lblSublineDetail.textAlignment = .left
          lblSublineDetail.textColor = .black
-         lblSublineDetail.font = UIFont.boldSystemFont(ofSize: 15)
+         lblSublineDetail.font = UIFont.boldSystemFont(ofSize: fontSize)
         return lblSublineDetail
     }()
     
@@ -65,7 +70,7 @@ final class DetailView: UIView {
         stackView.axis  = .vertical
         stackView.distribution  = .fill
         stackView.alignment = .fill
-        stackView.spacing = 10
+        stackView.spacing = padding
         return stackView
     }()
     
@@ -74,16 +79,15 @@ final class DetailView: UIView {
         stackView.axis  = .vertical
         stackView.distribution  = .fill
         stackView.alignment = .fill
-        stackView.spacing = 10
+        stackView.spacing = padding
         return stackView
     }()
     
     init() {
         super.init(frame: .zero)
-        
+        setupUI()
         addSubviews()
         makeAutolayout()
-        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -100,6 +104,7 @@ final class DetailView: UIView {
     
      func setupUI() {
         backgroundColor = .whiteBackground
+        safeArea = self.safeAreaLayoutGuide
     }
 }
 

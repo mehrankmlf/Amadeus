@@ -16,7 +16,8 @@ class MainViewController: BaseViewController {
     private var dataSource:TableViewCustomDataSource<HotelSearchResponse>?
     var navigateSubject = PassthroughSubject<MainViewController.Event, Never>()
 
-    init(viewModel : MainViewModel, contentView : MainView) {
+    init(viewModel : MainViewModel,
+         contentView : MainView) {
         self.viewModel = viewModel
         self.contentView = contentView
         super.init(nibName: nil, bundle: nil)
@@ -42,7 +43,7 @@ class MainViewController: BaseViewController {
     }
         
     private func setupTableView() {
-        contentView?.tableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainViewModel.cellId)
+        contentView?.tableView.register(MainTableViewCell.self, forCellReuseIdentifier:  MainTableViewCell.cellId)
     }
     
     private func setupNavigationBar() {
@@ -68,7 +69,7 @@ class MainViewController: BaseViewController {
     }
     
     private func renderTableViewdataSource(_ itemlists:[HotelSearchResponse]) {
-        dataSource = .displayData(for: itemlists, withCellidentifier: MainViewModel.cellId)
+        dataSource = .displayData(for: itemlists, withCellidentifier: MainTableViewCell.cellId)
         self.contentView?.tableView.dataSource = dataSource
         self.contentView?.tableView.delegate = self
         self.contentView?.tableView.reloadData()
@@ -91,6 +92,7 @@ extension MainViewController : EmptyStateDelegate, ShowEmptyStateProtocol {
 }
 
 extension MainViewController : UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -98,10 +100,11 @@ extension MainViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140.0
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let rawData = self.data else {return}
-        let data = rawData[indexPath.row]
-        self.navigateSubject.send(.detail(data: data))
+        guard let data = self.data else {return}
+        let indexData = data[indexPath.row]
+        self.navigateSubject.send(.detail(data: indexData))
     }
 }
 

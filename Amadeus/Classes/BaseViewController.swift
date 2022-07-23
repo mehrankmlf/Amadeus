@@ -100,6 +100,11 @@ extension BaseViewController {
 }
 
 extension BaseViewController {
+    
+    func setNavigationvBarHidden() {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     func setClearAppearanceNavigationBar() {
         if #available(iOS 15, *) {
             // It is recommended by apple to set the appearance for the navigation

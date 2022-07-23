@@ -32,7 +32,6 @@ extension KeychainKeyType {
     }
 }
 
-
 /// Protocol approach replacement for Singelton
 protocol KeyChainManagerInjector {
     var keychainManager : KeychainManager { get }
@@ -66,7 +65,7 @@ extension KeychainManager : TokenManagment {
         
        let granty_type = self.keyChain.string(forKey: KeychainKeyType.grant_type.key)
        let client_id = self.keyChain.string(forKey: KeychainKeyType.client_id.key)
-       let client_secret = self.keyChain.string(forKey: KeychainKeyType.client_id.key)
+       let client_secret = self.keyChain.string(forKey: KeychainKeyType.client_secret.key)
         
         return (granty_type, client_id, client_secret)
     }

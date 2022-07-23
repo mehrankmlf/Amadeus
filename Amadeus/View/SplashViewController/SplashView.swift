@@ -43,7 +43,7 @@ final class SplashView: UIView {
     }
     
     private func setupUI() {
-        backgroundColor = .background
+        backgroundColor = .whiteBackground
     }
 }
 

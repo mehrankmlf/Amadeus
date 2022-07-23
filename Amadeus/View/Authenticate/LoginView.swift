@@ -9,6 +9,10 @@ import UIKit
 
 final class LoginView: UIView {
     
+    private var safeArea: UILayoutGuide!
+    private var cornerRadius : CGFloat = 10
+    private var padding : CGFloat = 10
+    
     lazy var imageLogo : UIImageView = {
         let imageLogo = UIImageView()
         imageLogo.image = UIImage(named: "amadeus_logo")
@@ -20,7 +24,7 @@ final class LoginView: UIView {
     lazy var lblTop : UILabel = {
         let lblTop = UILabel()
         lblTop.text = "Sign in"
-        lblTop.textColor = UIColor(red: 54.0/255, green: 94.0/255, blue: 180.0/255, alpha: 1.0)
+        lblTop.textColor = .fontColor
         lblTop.font = UIFont.boldSystemFont(ofSize: 25)
         return lblTop
     }()
@@ -28,7 +32,7 @@ final class LoginView: UIView {
     lazy var lblID : UILabel = {
         let lblID = UILabel()
         lblID.text = "ClientID"
-        lblID.textColor = UIColor(red: 54.0/255, green: 94.0/255, blue: 180.0/255, alpha: 1.0)
+        lblID.textColor = .fontColor
         lblID.font = UIFont.boldSystemFont(ofSize: 15)
         return lblID
     }()
@@ -36,7 +40,7 @@ final class LoginView: UIView {
     lazy var lblSecret : UILabel = {
         let lblSecret = UILabel()
         lblSecret.text = "ClientSecret"
-        lblSecret.textColor = UIColor(red: 54.0/255, green: 94.0/255, blue: 180.0/255, alpha: 1.0)
+        lblSecret.textColor = .fontColor
         lblSecret.font = UIFont.boldSystemFont(ofSize: 15)
         return lblSecret
     }()
@@ -47,6 +51,7 @@ final class LoginView: UIView {
         txtID.borderStyle = .line
         txtID.layer.borderColor = UIColor.gray.cgColor
         txtID.layer.borderWidth = 1.0
+        txtID.setLeftPaddingPoints(padding)
         return txtID
     }()
     
@@ -56,6 +61,8 @@ final class LoginView: UIView {
         txtSecret.borderStyle = .line
         txtSecret.layer.borderColor = UIColor.gray.cgColor
         txtSecret.layer.borderWidth = 1.0
+        txtSecret.setLeftPaddingPoints(padding)
+        txtSecret.isSecureTextEntry = true
         return txtSecret
     }()
     
@@ -72,7 +79,10 @@ final class LoginView: UIView {
     }()
     
     lazy var statsView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [lblID, txtID, lblSecret, txtSecret])
+        let stackView = UIStackView(arrangedSubviews: [lblID,
+                                                       txtID,
+                                                       lblSecret,
+                                                       txtSecret])
         stackView.axis  = .vertical
         stackView.distribution  = .fillEqually
         stackView.alignment = .fill
@@ -83,19 +93,18 @@ final class LoginView: UIView {
     lazy var btnSubmit : UIButton = {
         let btnSubmit = UIButton()
         btnSubmit.setTitle("Login", for: .normal)
-        btnSubmit.backgroundColor = UIColor(red: 2.0/255, green: 94.0/255, blue: 184.0/255, alpha: 1.0)
+        btnSubmit.backgroundColor = .blueBackground
         btnSubmit.setTitleColor(UIColor.white, for: .normal)
         btnSubmit.clipsToBounds = true
-        btnSubmit.layer.cornerRadius = 10.0
+        btnSubmit.layer.cornerRadius = cornerRadius
         return btnSubmit
     }()
     
     init() {
         super.init(frame: .zero)
-        
+        setupUI()
         addSubviews()
         makeAutolayout()
-        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -111,9 +120,8 @@ final class LoginView: UIView {
     }
     
     private func setupUI() {
-        self.txtID.text = "sDi2yLIAAKqAfrZKGJU6Zassx3TnDboJ"
-        self.txtSecret.text = "D347OAVE7ZJ8vwLR"
-        backgroundColor = .background
+        backgroundColor = .whiteBackground
+        safeArea = self.safeAreaLayoutGuide
     }
 }
 

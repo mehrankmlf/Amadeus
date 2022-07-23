@@ -11,7 +11,7 @@ class MainTableViewCell: UITableViewCell {
     
     private lazy var containerView : UIView = {
         let view = UIView()
-        view.backgroundColor = .background
+        view.backgroundColor = .whiteBackground
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
         view.dropShadow()

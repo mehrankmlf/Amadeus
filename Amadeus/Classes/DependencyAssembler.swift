@@ -26,7 +26,7 @@ final class DependencyAssembler {
 
 extension DependencyAssembler : LoginViewFactory {
     func makeLoginViewController(coordinator: AuthenticationCoordinator) -> LoginViewController {
-        let vc = LoginViewController(viewModel: self.makeLoginViewModel(coordinator: coordinator), contentView: LoginView())
+        let vc = LoginViewController(viewModel: self.makeLoginViewModel(coordinator: coordinator), contentView: LoginView(), obfuscator: Obfuscator())
         vc.viewModel = self.makeLoginViewModel(coordinator: coordinator)
         return vc
     }

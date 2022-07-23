@@ -10,15 +10,21 @@ import Combine
 
 class LoginViewController: BaseViewController {
     
+    let clientId = "sDi2yLIAAKqAfrZKGJU6Zassx3TnDboJ"
+    
     let timer = CountDownTimer(duration: 40)
     var viewModel : LoginViewModel!
     var contentView : LoginView?
+    var obfuscator : Obfuscator!
     
     var navigateSubject = PassthroughSubject<LoginViewController.Event, Never>()
     
-    init(viewModel : LoginViewModel, contentView : LoginView) {
+    init(viewModel : LoginViewModel,
+         contentView : LoginView,
+         obfuscator : Obfuscator) {
         self.viewModel = viewModel
         self.contentView = contentView
+        self.obfuscator = obfuscator
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,11 +38,17 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .background
+        view.backgroundColor = .whiteBackground
         super.delegate = self
         self.setUpTargets()
         self.bindViewModel()
         self.setupNavigation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.contentView?.txtID.text = clientId
+        self.contentView?.txtSecret.text = self.fetchSecret()
     }
     
     private func setUpTargets() {
@@ -46,6 +58,10 @@ class LoginViewController: BaseViewController {
     
     private func setupNavigation() {
         navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    private func fetchSecret() -> String? {
+        return obfuscator?.reveal(key: ObfuscatedConstants.obfuscatedSecret)
     }
     
     private func bindViewModel() {
@@ -108,7 +124,7 @@ class LoginViewController: BaseViewController {
     }
     
     @objc func submitAction() {
-        self.viewModel?.getTokenData(grant_type: "client_credentials", client_id: self.contentView?.txtID.text ?? "", client_secret: self.contentView?.txtSecret.text ?? "")
+        self.viewModel?.getTokenData(grant_type: "client_credentials", client_id: clientId, client_secret: fetchSecret() ?? "")
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

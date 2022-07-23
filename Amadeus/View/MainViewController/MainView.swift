@@ -41,7 +41,7 @@ final class MainView: UIView {
     }
     
     private func setupUI() {
-        backgroundColor = .background
+        backgroundColor = .whiteBackground
     }
 }
 

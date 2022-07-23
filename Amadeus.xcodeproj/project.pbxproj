@@ -96,6 +96,7 @@
 		A828C967284488B300738854 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C966284488B300738854 /* RegisterViewModel.swift */; };
 		A828C96A284488E300738854 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C969284488E300738854 /* SplashViewModel.swift */; };
 		A8A82669287010F6009850CD /* RequestNewToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A82668287010F6009850CD /* RequestNewToken.swift */; };
+		A8BDA622288BC3360052BB3F /* Obfuscator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BDA621288BC3360052BB3F /* Obfuscator.swift */; };
 		CBB0CED32AB19B42A11894B7 /* Pods_Amadeus_AmadeusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD8881E8377D2385D5357B /* Pods_Amadeus_AmadeusUITests.framework */; };
 		F6DC8512E5415D002E255942 /* Pods_AmadeusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E018C4C68CED2079D36B36FB /* Pods_AmadeusTests.framework */; };
 /* End PBXBuildFile section */
@@ -215,6 +216,7 @@
 		A828C966284488B300738854 /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		A828C969284488E300738854 /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		A8A82668287010F6009850CD /* RequestNewToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestNewToken.swift; sourceTree = "<group>"; };
+		A8BDA621288BC3360052BB3F /* Obfuscator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obfuscator.swift; sourceTree = "<group>"; };
 		BEFD8881E8377D2385D5357B /* Pods_Amadeus_AmadeusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Amadeus_AmadeusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54C03FC9C3B93E76395FBC0 /* Pods-Amadeus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus.debug.xcconfig"; path = "Target Support Files/Pods-Amadeus/Pods-Amadeus.debug.xcconfig"; sourceTree = "<group>"; };
 		E018C4C68CED2079D36B36FB /* Pods_AmadeusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmadeusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -791,6 +793,7 @@
 				A828C91C284481E400738854 /* AppDelegateHelper.swift */,
 				A828C91E284481E400738854 /* KeychainKeychainManager.swift */,
 				022146EF28564185003FB94B /* Reachability.swift */,
+				A8BDA621288BC3360052BB3F /* Obfuscator.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1099,6 +1102,7 @@
 				A828C8BF28447EBB00738854 /* LoginView.swift in Sources */,
 				022146F028564185003FB94B /* Reachability.swift in Sources */,
 				A828C9082844806D00738854 /* Gradient + Extension.swift in Sources */,
+				A8BDA622288BC3360052BB3F /* Obfuscator.swift in Sources */,
 				A828C9052844806D00738854 /* BaseAPI + Extension.swift in Sources */,
 				A828C8C828447F0B00738854 /* WalkthroughViewController.swift in Sources */,
 				A828C967284488B300738854 /* RegisterViewModel.swift in Sources */,

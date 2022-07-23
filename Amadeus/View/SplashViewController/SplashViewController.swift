@@ -21,7 +21,7 @@ class SplashViewController: BaseViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .background
+        view.backgroundColor = .whiteBackground
         self.handleTimer()
         self.setupNavigation()
     }

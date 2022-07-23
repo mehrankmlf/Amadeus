@@ -28,7 +28,7 @@ class DetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .background
+        view.backgroundColor = .whiteBackground
         self.setupNavigationBar()
         self.showData()
     }

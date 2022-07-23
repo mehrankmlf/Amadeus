@@ -99,7 +99,7 @@ final class DetailView: UIView {
     }
     
      func setupUI() {
-        backgroundColor = .background
+        backgroundColor = .whiteBackground
     }
 }
 

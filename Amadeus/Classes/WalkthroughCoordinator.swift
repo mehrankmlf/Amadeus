@@ -18,7 +18,7 @@ final class WalkthroughCoordinator : WalkthroughCoordinatorProtocol {
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
     var type: CoordinatorType { .walkthrough }
-    private var bag = Set<AnyCancellable>()
+    private var subscriber = Set<AnyCancellable>()
     
     required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -33,7 +33,7 @@ final class WalkthroughCoordinator : WalkthroughCoordinatorProtocol {
         vc.navigateSubject.sink { _ in
             UserDefaultHelper.save(value: true, key: .isShowedWalkthrough)
             self.finish()
-        }.store(in: &bag)
+        }.store(in: &subscriber)
         navigationController.pushViewController(vc, animated: true)
     }
 }

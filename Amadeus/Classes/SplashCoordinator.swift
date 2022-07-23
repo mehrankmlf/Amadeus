@@ -24,7 +24,7 @@ final class SplashCoordinator : SplashCoordinatorProtocol, DependencyAssemblerIn
     var childCoordinators: [Coordinator] = []
     var type : CoordinatorType { .splash }
     var splashFactory: SplashFactory
-    private var bag = Set<AnyCancellable>()
+    private var subscriber = Set<AnyCancellable>()
     
     init(_ navigationController: UINavigationController, splashFactory: SplashFactory) {
         self.navigationController = navigationController
@@ -42,7 +42,7 @@ final class SplashCoordinator : SplashCoordinatorProtocol, DependencyAssemblerIn
             case .splash:
                 self.finish()
             }
-        }.store(in: &bag)
+        }.store(in: &subscriber)
         navigationController.pushViewController(vc, animated: true)
     }
 }

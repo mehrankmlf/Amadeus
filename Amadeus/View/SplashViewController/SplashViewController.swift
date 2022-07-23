@@ -46,7 +46,7 @@ class SplashViewController: BaseViewController  {
                 }
             } receiveValue: { value in
                 print(value)
-            }.store(in: &bag)
+            }.store(in: &subscriber)
     }
     
     private func setupNavigation() {

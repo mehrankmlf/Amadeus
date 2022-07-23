@@ -25,7 +25,7 @@ final class MainCoordinator : MainCoordinatorProtocol {
     var childCoordinators: [Coordinator] = []
     var type: CoordinatorType { .main }
     var mainFactory: MainFactory
-    private var bag = Set<AnyCancellable>()
+    private var subscriber = Set<AnyCancellable>()
     
     init(_ navigationController: UINavigationController, mainFactory : MainFactory) {
         self.navigationController = navigationController
@@ -45,7 +45,7 @@ final class MainCoordinator : MainCoordinatorProtocol {
             case .detail(data: let data):
                 self?.showDetailViewController(data: data)
             }
-        }.store(in: &bag)
+        }.store(in: &subscriber)
         navigationController.pushViewController(vc, animated: true)
     }
     

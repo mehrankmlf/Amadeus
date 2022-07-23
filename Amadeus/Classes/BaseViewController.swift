@@ -29,7 +29,7 @@ protocol ShowEmptyStateProtocol : AnyObject {
 class BaseViewController: UIViewController {
     
     let reachability = Reachability()
-    var bag = Set<AnyCancellable>()
+    var subscriber = Set<AnyCancellable>()
     var delegate : ShowEmptyStateProtocol?
     
     lazy var alert: AlertHelper = {

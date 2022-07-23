@@ -54,14 +54,14 @@ class LoginViewController: BaseViewController {
         viewModel?.loadinState
             .sink(receiveValue: { state in
                 super.setViewState(state: state, viewContainer: self.view)
-            }).store(in: &bag)
+            }).store(in: &subscriber)
         
         viewModel?.$isGetToken
             .sink(receiveValue: { [weak self] event in
                 if event {
                     self?.navigateSubject.send(.login)
                 }
-            }).store(in: &bag)
+            }).store(in: &subscriber)
         
         viewModel?.usernameMessagePublisher
             .receive(on: RunLoop.main)
@@ -77,7 +77,7 @@ class LoginViewController: BaseViewController {
                 } else {
                     view.txtID.addRightView(txtField: view.txtID, str: "👍🏻")
                 }
-            }.store(in: &bag)
+            }.store(in: &subscriber)
         
         viewModel?.formValidation
             .map { $0 != nil}
@@ -90,7 +90,7 @@ class LoginViewController: BaseViewController {
                 }
                 //Do Something
             })
-            .store(in: &bag)
+            .store(in: &subscriber)
     }
     
     func handleTimer() {
@@ -105,7 +105,7 @@ class LoginViewController: BaseViewController {
             } receiveValue: { value in
                 self.contentView?.lblCountDownTimer.text = value
                 print(value)
-            }.store(in: &bag)
+            }.store(in: &subscriber)
     }
     
     @objc func submitAction() {

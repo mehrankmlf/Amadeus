@@ -57,14 +57,14 @@ class MainViewController: BaseViewController {
             .sink(receiveValue: {  state in
                 guard let view = self.contentView else {return}
                 super.setViewState(state: state, viewContainer: view.viewContainer)
-            }).store(in: &bag)
+            }).store(in: &subscriber)
 
         self.viewModel?.$hotelData
             .compactMap({ $0 })
             .sink { [weak self] data in
                 self?.data = data
                 self?.renderTableViewdataSource(data)
-            }.store(in: &bag)
+            }.store(in: &subscriber)
     }
     
     private func renderTableViewdataSource(_ itemlists:[HotelSearchResponse]) {

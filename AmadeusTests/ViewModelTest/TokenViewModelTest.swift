@@ -14,7 +14,7 @@ class TokenViewModelTest: XCTestCase {
     
     private var mockLogin : MockLogin!
     private var viewModelToTest : LoginViewModel!
-    private var bag : Set<AnyCancellable> = []
+    private var subscriber : Set<AnyCancellable> = []
 
     override func setUpWithError() throws {
        mockLogin = MockLogin()
@@ -34,7 +34,7 @@ class TokenViewModelTest: XCTestCase {
         viewModelToTest.loadinState.dropFirst().sink { event in
             XCTAssertEqual(event, .loadStart)
               expectation.fulfill()
-        }.store(in: &bag)
+        }.store(in: &subscriber)
         
         mockLogin.fetchedTokenResult = Result.success(tokenToTest).publisher.eraseToAnyPublisher()
         viewModelToTest.getTokenData(grant_type: "", client_id: "", client_secret: "")
@@ -49,7 +49,7 @@ class TokenViewModelTest: XCTestCase {
         viewModelToTest.loadinState.dropFirst().sink { event in
             XCTAssertEqual(event, .loadStart)
               expectation.fulfill()
-        }.store(in: &bag)
+        }.store(in: &subscriber)
         
         mockLogin.fetchedTokenResult = Result.success(tokenToTest).publisher.eraseToAnyPublisher()
         viewModelToTest.getTokenData(grant_type: "", client_id: "", client_secret: "")

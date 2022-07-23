@@ -29,7 +29,7 @@ final class AuthenticationCoordinator : AuthenticationCoordinatorProtocol, Depen
     var type: CoordinatorType { .authentication }
     var loginViewFactory : LoginViewFactory
     var registerViewFactory: RegisterFactory
-    private var bag = Set<AnyCancellable>()
+    private var subscriber = Set<AnyCancellable>()
     
     
     init(_ navigationController: UINavigationController,
@@ -53,7 +53,7 @@ final class AuthenticationCoordinator : AuthenticationCoordinatorProtocol, Depen
             case .register:
                 self?.showRegisterViewController()
             }
-        }.store(in: &bag)
+        }.store(in: &subscriber)
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -66,7 +66,7 @@ final class AuthenticationCoordinator : AuthenticationCoordinatorProtocol, Depen
             case .onBack:
                 self?.navigationController.popViewController(animated: true)
             }
-        }.store(in: &bag)
+        }.store(in: &subscriber)
         navigationController.setNavigationBarHidden(true, animated: false)
         navigationController.pushViewController(vc, animated: true)
     }

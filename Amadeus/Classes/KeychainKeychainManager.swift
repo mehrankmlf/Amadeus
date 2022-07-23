@@ -84,11 +84,11 @@ extension KeychainManager : TokenManagment {
     }
     
     func signOutUser() {
-        UserDefaultHelper.save(value: false, key: .isShowedWalkthrough)
+        UserDefaultManager.save(value: false, key: .isShowedWalkthrough)
     }
     
     func signInUser() {
-        UserDefaultHelper.save(value: true, key: .isSignIn)
+        UserDefaultManager.save(value: true, key: .isSignIn)
     }
     
     func signIn(grant_type: String, client_id: String, client_secret: String, token :String) {

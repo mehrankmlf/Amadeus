@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum UserDefaultType:String {
+public enum UserDefaultType: String {
     case isShowedWalkthrough
     case isInstalledApp
     case tokenExpireDate
@@ -15,14 +15,14 @@ public enum UserDefaultType:String {
     case isSignOut
 }
 
-final class UserDefaultHelper {
+final class UserDefaultManager {
     
-    static func save<T>(value:T , key:UserDefaultType){
+    static func save<T>(value:T , key: UserDefaultType){
         UserDefaults.standard.set(value, forKey: key.rawValue)
         UserDefaults.standard.synchronize()
     }
     
-    static func get<T>(for type:T.Type,key:UserDefaultType) -> T? {
+    static func get<T>(for type:T.Type,key: UserDefaultType) -> T? {
         
         if let value = UserDefaults.standard.value(forKey: key.rawValue) as? T {
             return value

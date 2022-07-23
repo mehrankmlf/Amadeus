@@ -31,7 +31,7 @@ final class WalkthroughCoordinator : WalkthroughCoordinatorProtocol {
     func showWWalkthroughViewController() {
         let vc = Storyboard.walkthrough.instantiate(WalkthroughViewController.self)
         vc.navigateSubject.sink { _ in
-            UserDefaultHelper.save(value: true, key: .isShowedWalkthrough)
+            UserDefaultManager.save(value: true, key: .isShowedWalkthrough)
             self.finish()
         }.store(in: &subscriber)
         navigationController.pushViewController(vc, animated: true)

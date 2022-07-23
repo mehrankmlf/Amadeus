@@ -92,12 +92,12 @@ extension AppCoordinator : FinishDelegate {
 
 extension AppCoordinator {
     func isShowWalktrough() -> Bool {
-        return UserDefaultHelper.get(for: Bool.self, key: .isShowedWalkthrough) ?? false
+        return UserDefaultManager.get(for: Bool.self, key: .isShowedWalkthrough) ?? false
     }
 }
 
 extension AppCoordinator {
     func isSignin() -> Bool {
-        return UserDefaultHelper.get(for: Bool.self, key: .isSignIn) ?? false
+        return UserDefaultManager.get(for: Bool.self, key: .isSignIn) ?? false
     }
 }

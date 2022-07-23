@@ -43,14 +43,15 @@ final class LoginViewModel : ObservableObject, BaseLoginViewModel, KeyChainManag
             .sink { [weak self] result in
                 switch result {
                 case .finished:
-                    self?.loadinState.send(.dismissAlert)
+                    break
                 case .failure(let error):
                     self?.loadinState.send(.emptyStateHandler(title: error.desc, isShow: true))
                 }
+                self?.loadinState.send(.dismissAlert)
             } receiveValue: { [weak self] data in
+                self?.loadinState.send(.dismissAlert)
                 guard let data = data, let token = data.tokenData else {return}
                 self?.keychainManager.signIn(grant_type: grant_type, client_id: client_id, client_secret: client_secret, token: token)
-                self?.loadinState.send(.dismissAlert)
                 self?.isGetToken = true
             }
             .store(in: &subscriber)

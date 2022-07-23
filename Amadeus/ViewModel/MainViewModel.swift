@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 
-// MARK: MainViewModel.
 typealias BaseMainViewModel = ViewModelBaseProtocol &
                               MainViewModelInput &
                               MainViewModelProtocol
@@ -51,6 +50,7 @@ final class MainViewModel : ObservableObject, BaseMainViewModel {
                 }
                 self?.loadinState.send(.dismissAlert)
             } receiveValue: { [weak self] data in
+                self?.loadinState.send(.dismissAlert)
                 guard let data = data, let hotels = data.data else {return}
                 self?.hotelData = hotels
             }

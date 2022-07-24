@@ -11,6 +11,7 @@ protocol ObfuscatorProtocol {
     var salt : String { get }
     func bytesByObfuscatingString(string: String) -> [UInt8]
     func reveal(key: [UInt8]) -> String
+    init(with salt: String)
 }
 
 enum ObfuscatedConstants {
@@ -33,7 +34,6 @@ struct Obfuscator : ObfuscatorProtocol {
     init(with salt: String) {
         self.salt = salt
     }
-    
     
     // MARK: - Instance Methods
     

@@ -37,7 +37,9 @@ final class AuthenticationCoordinator : AuthenticationCoordinatorProtocol, Depen
     func start() {
         showLoginViewController()
     }
-    
+}
+
+extension AuthenticationCoordinator {
     func showLoginViewController() {
         let vc = self.dependencyAssembler.makeLoginViewController(coordinator: self)
         vc.navigateSubject.sink { [weak self] event in

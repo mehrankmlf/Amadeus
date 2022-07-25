@@ -12,11 +12,12 @@ import Combine
 typealias BaseLoginViewModel = ViewModelBaseProtocol & LogiViewModel
 
 protocol LogiViewModel {
-    var getTokenService : GetTokenProtocol { get }
+    var useCase : GetTokenProtocol { get }
     func getTokenData(grant_type: String, client_id: String, client_secret: String)
 }
 
-final class LoginViewModel : ObservableObject, BaseLoginViewModel, KeyChainManagerInjector {
+final class LoginViewModel : BaseViewModel, BaseLoginViewModel, KeyChainManagerInjector {
+    var loadinState: CurrentValueSubject<ViewModelStatus, Never>
     
     @Published var userName : String = ""
     @Published var password : String = ""
@@ -24,37 +25,49 @@ final class LoginViewModel : ObservableObject, BaseLoginViewModel, KeyChainManag
     
     let usernameMessagePublisher = PassthroughSubject<String, Never>()
     let passwordMessagePublisher = PassthroughSubject<String, Never>()
-    var loadinState = CurrentValueSubject<ViewModelStatus, Never>(.dismissAlert)
-    var subscriber = Set<AnyCancellable>()
     
     let keychainWrapper = KeychainWrapper(serviceName: KeychainWrapper.standard.serviceName,
                                           accessGroup: KeychainWrapper.standard.accessGroup)
-    var getTokenService: GetTokenProtocol
+    var useCase: GetTokenProtocol
     
-    init(getTokenService : GetTokenProtocol) {
-        self.getTokenService = getTokenService
+    init(useCase : GetTokenProtocol) {
+        self.useCase = useCase
     }
     
     func getTokenData(grant_type: String, client_id: String, client_secret: String) {
-        self.loadinState.send(.loadStart)
         
-        self.getTokenService.getTokenService(grant_type: grant_type, client_id: client_id, client_secret: client_secret)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] result in
-                switch result {
-                case .finished:
-                    break
-                case .failure(let error):
-                    self?.loadinState.send(.emptyStateHandler(title: error.desc, isShow: true))
-                }
-                self?.loadinState.send(.dismissAlert)
-            } receiveValue: { [weak self] data in
-                self?.loadinState.send(.dismissAlert)
-                guard let data = data, let token = data.tokenData else {return}
-                self?.keychainManager.signIn(grant_type: grant_type, client_id: client_id, client_secret: client_secret, token: token)
-                self?.isGetToken = true
-            }
-            .store(in: &subscriber)
+        super.callWithProgress(argument: self.useCase.getTokenService(grant_type: grant_type, client_id: client_id, client_secret: client_secret)) { [weak self] data in
+            guard let data = data else {return}
+            self?.keychainManager.signIn(grant_type: grant_type, client_id: client_id, client_secret: client_secret, token: data.tokenData)
+            self?.isGetToken = true
+        }
+        
+        //        self.useCase.getTokenService(grant_type: grant_type, client_id: client_id, client_secret: client_secret)
+        //            .sink { <#Subscribers.Completion<APIError>#> in
+        //                copletionHandler .T
+        //            } receiveValue: { <#GetToken_Response?#> in
+        //                <#code#>
+        //            }
+        
+        //        self.loadinState.send(.loadStart)
+        //
+        //        self.useCase.getTokenService(grant_type: grant_type, client_id: client_id, client_secret: client_secret)
+        //            .subscribe(on: Scheduler.backgroundWorkScheduler)
+        //            .receive(on: Scheduler.mainScheduler)
+        //            .sink { [weak self] result in
+        //                switch result {
+        //                case .finished:
+        //                    self?.loadinState.send(.dismissAlert)
+        //                case .failure(let error):
+        //                    self?.loadinState.send(.emptyStateHandler(title: error.desc, isShow: true))
+        //                }
+        //            } receiveValue: { [weak self] data in
+        //                self?.loadinState.send(.dismissAlert)
+        //                guard let data = data else {return}
+        //                self?.keychainManager.signIn(grant_type: grant_type, client_id: client_id, client_secret: client_secret, token: data.tokenData)
+        //                self?.isGetToken = true
+        //            }
+        //            .store(in: &subscriber)
     }
 }
 
@@ -102,9 +115,9 @@ extension LoginViewModel {
             .eraseToAnyPublisher()
     }
     
-     var formValidation: AnyPublisher<(String, String)?, Never> {
+    var formValidation: AnyPublisher<(String, String)?, Never> {
         
-       return Publishers.CombineLatest(validateUserName, validatePassword)
+        return Publishers.CombineLatest(validateUserName, validatePassword)
             .map { name, pass in
                 guard let name = name, let pass = pass else {
                     return nil

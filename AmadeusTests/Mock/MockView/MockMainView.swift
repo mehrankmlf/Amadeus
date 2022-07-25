@@ -8,12 +8,13 @@
 import Foundation
 @testable import Amadeus
 
-class MockMainView : MainFactory {
-    func makeMainViewController(coordinator: MainCoordinator) -> MainViewController {
-        let viewModel = makeMainViewModel(coordinator: coordinator)
-    }
-    
-    func makeMainViewModel(coordinator: MainCoordinator) -> MainViewModel {
-      
-    }
-}
+//class MockMainView : MainFactory {
+//    func makeMainViewController(coordinator: MainCoordinator) -> MainViewController {
+//        let viewModel = makeMainViewModel(coordinator: coordinator)
+//        
+//    }
+//    
+//    func makeMainViewModel(coordinator: MainCoordinator) -> MainViewModel {
+//      
+//    }
+//}

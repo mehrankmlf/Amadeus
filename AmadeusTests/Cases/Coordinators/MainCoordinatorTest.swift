@@ -15,8 +15,8 @@ class MainCoordinatorTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        navigation = SpyNavigationController()
-        sut = MainCoordinator(navigation, mainFactory: <#T##MainFactory#>)
+//        navigation = SpyNavigationController()
+//        sut = MainCoordinator(navigation, mainFactory: <#T##MainFactory#>)
     }
     
     override func tearDown() {

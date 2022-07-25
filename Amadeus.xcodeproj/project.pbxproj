@@ -16,10 +16,13 @@
 		022D79DE284624340050CEE4 /* MockLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79DB284624340050CEE4 /* MockLogin.swift */; };
 		022D79E2284624840050CEE4 /* ResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E1284624840050CEE4 /* ResponseMock.swift */; };
 		022D79E5284624A70050CEE4 /* GetToken_ResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E4284624A70050CEE4 /* GetToken_ResponseTests.swift */; };
-		022D79E9284624CC0050CEE4 /* TokenViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E7284624CC0050CEE4 /* TokenViewModelTest.swift */; };
+		022D79E9284624CC0050CEE4 /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E7284624CC0050CEE4 /* LoginViewModelTest.swift */; };
 		02DC602B28590253000B2F97 /* HotelSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC602A28590253000B2F97 /* HotelSearchResponse.swift */; };
 		02DC602E285902D3000B2F97 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC602D285902D3000B2F97 /* BaseResponse.swift */; };
 		82DEB063B583A7A05C0429F6 /* Pods_Amadeus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */; };
+		A80BE4A7288E554000D11F88 /* HotelSearchViewModelSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80BE4A6288E554000D11F88 /* HotelSearchViewModelSearch.swift */; };
+		A80BE4A9288E9E0800D11F88 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80BE4A8288E9E0800D11F88 /* Scheduler.swift */; };
+		A80BE4AC288EA85200D11F88 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80BE4AB288EA85200D11F88 /* BaseViewModel.swift */; };
 		A828C87228447D6500738854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C87128447D6500738854 /* AppDelegate.swift */; };
 		A828C87B28447D6800738854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A828C87A28447D6800738854 /* Assets.xcassets */; };
 		A828C87E28447D6800738854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A828C87C28447D6800738854 /* LaunchScreen.storyboard */; };
@@ -131,7 +134,7 @@
 		022D79DB284624340050CEE4 /* MockLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLogin.swift; sourceTree = "<group>"; };
 		022D79E1284624840050CEE4 /* ResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseMock.swift; sourceTree = "<group>"; };
 		022D79E4284624A70050CEE4 /* GetToken_ResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetToken_ResponseTests.swift; sourceTree = "<group>"; };
-		022D79E7284624CC0050CEE4 /* TokenViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenViewModelTest.swift; sourceTree = "<group>"; };
+		022D79E7284624CC0050CEE4 /* LoginViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModelTest.swift; sourceTree = "<group>"; };
 		02DC602A28590253000B2F97 /* HotelSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchResponse.swift; sourceTree = "<group>"; };
 		02DC602D285902D3000B2F97 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Amadeus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +142,9 @@
 		34AEB3D063800CEA021DADD6 /* Pods-Amadeus-AmadeusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus-AmadeusUITests.debug.xcconfig"; path = "Target Support Files/Pods-Amadeus-AmadeusUITests/Pods-Amadeus-AmadeusUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		69F1C0F06733B06828F9B82B /* Pods-Amadeus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus.release.xcconfig"; path = "Target Support Files/Pods-Amadeus/Pods-Amadeus.release.xcconfig"; sourceTree = "<group>"; };
 		7035E696CB460776507D073D /* Pods-AmadeusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmadeusTests.release.xcconfig"; path = "Target Support Files/Pods-AmadeusTests/Pods-AmadeusTests.release.xcconfig"; sourceTree = "<group>"; };
+		A80BE4A6288E554000D11F88 /* HotelSearchViewModelSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchViewModelSearch.swift; sourceTree = "<group>"; };
+		A80BE4A8288E9E0800D11F88 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		A80BE4AB288EA85200D11F88 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		A828C86E28447D6500738854 /* Amadeus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Amadeus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A828C87128447D6500738854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A828C87A28447D6800738854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -268,8 +274,8 @@
 		022D79D9284624240050CEE4 /* MockDataParser */ = {
 			isa = PBXGroup;
 			children = (
-				022D79DA284624340050CEE4 /* MockHotelsSearch.swift */,
 				022D79DB284624340050CEE4 /* MockLogin.swift */,
+				022D79DA284624340050CEE4 /* MockHotelsSearch.swift */,
 			);
 			path = MockDataParser;
 			sourceTree = "<group>";
@@ -293,7 +299,8 @@
 		022D79E6284624BD0050CEE4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				022D79E7284624CC0050CEE4 /* TokenViewModelTest.swift */,
+				022D79E7284624CC0050CEE4 /* LoginViewModelTest.swift */,
+				A80BE4A6288E554000D11F88 /* HotelSearchViewModelSearch.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -337,6 +344,14 @@
 				7035E696CB460776507D073D /* Pods-AmadeusTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A80BE4AA288EA83D00D11F88 /* BaseViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A80BE4AB288EA85200D11F88 /* BaseViewModel.swift */,
+			);
+			name = BaseViewModel;
 			sourceTree = "<group>";
 		};
 		A828C86528447D6500738854 = {
@@ -401,6 +416,7 @@
 		A828C8A128447D7300738854 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A80BE4AA288EA83D00D11F88 /* BaseViewModel */,
 				A828C8A628447E0800738854 /* LoginViewModel */,
 				A828C8A228447DA400738854 /* MainViewModel */,
 			);
@@ -585,6 +601,7 @@
 				0211C1522860DD46009C1F28 /* Configuration.swift */,
 				A828C8E62844800D00738854 /* RequestInterceptor.swift */,
 				A8A82668287010F6009850CD /* RequestNewToken.swift */,
+				A80BE4A8288E9E0800D11F88 /* Scheduler.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -1091,6 +1108,7 @@
 				A828C945284482F400738854 /* AppConfigurationProtocol.swift in Sources */,
 				A828C8D028447F5600738854 /* EmptyStateView.swift in Sources */,
 				A8A82669287010F6009850CD /* RequestNewToken.swift in Sources */,
+				A80BE4A9288E9E0800D11F88 /* Scheduler.swift in Sources */,
 				A828C9122844806D00738854 /* AppDelegate + Extension.swift in Sources */,
 				02DC602B28590253000B2F97 /* HotelSearchResponse.swift in Sources */,
 				A828C9602844837D00738854 /* BaseViewController.swift in Sources */,
@@ -1120,6 +1138,7 @@
 				A828C9482844831400738854 /* RequestInterceptorProtocol.swift in Sources */,
 				A828C921284481E400738854 /* MessageHelper.swift in Sources */,
 				A828C926284481E400738854 /* KeychainKeychainManager.swift in Sources */,
+				A80BE4AC288EA85200D11F88 /* BaseViewModel.swift in Sources */,
 				A828C8DF28447FCE00738854 /* HotelSearchUsecase.swift in Sources */,
 				A828C8E92844800D00738854 /* AlamofireLogger.swift in Sources */,
 				A828C90F2844806D00738854 /* NSFormatter + Extension.swift in Sources */,
@@ -1176,7 +1195,8 @@
 				A828C88928447D6800738854 /* AmadeusTests.swift in Sources */,
 				A8EC3C57288D586200C75CFA /* MainCoordinatorTest.swift in Sources */,
 				022D79DD284624340050CEE4 /* MockHotelsSearch.swift in Sources */,
-				022D79E9284624CC0050CEE4 /* TokenViewModelTest.swift in Sources */,
+				A80BE4A7288E554000D11F88 /* HotelSearchViewModelSearch.swift in Sources */,
+				022D79E9284624CC0050CEE4 /* LoginViewModelTest.swift in Sources */,
 				022D79DE284624340050CEE4 /* MockLogin.swift in Sources */,
 				A8BDA62F288C0A770052BB3F /* MockLoginView.swift in Sources */,
 				A8EC3C52288D3D9A00C75CFA /* ObfuscatorTest.swift in Sources */,

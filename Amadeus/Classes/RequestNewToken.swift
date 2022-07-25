@@ -30,19 +30,13 @@ final class RequestNewToken : RequestNewTokenProtocol, KeyChainManagerInjector {
         guard let type = credential.grant_type, let id = credential.client_id, let secret = credential.client_secret else {return}
         
         self.getTokenService.getTokenService(grant_type: type, client_id: id, client_secret: secret)
-            .receive(on: DispatchQueue.main)
-            .sink { data in
-                print(data)
+            .receive(on: Scheduler.mainScheduler)
+            .sink { _ in }
+            receiveValue: { [weak self] data in
+                guard let data = data else {return}
+                self?.keychainManager.setToken(token: data.tokenData)
+                !String.isNilOrEmpty(string: data.tokenData) ? completion(true) : completion(false)
             }
-    receiveValue: { [weak self] data in
-        guard let data = data, let token = data.tokenData else {return}
-        if !String.isNilOrEmpty(string: token) {
-            self?.keychainManager.setToken(token: token)
-            completion(true)
-        }else{
-            completion(false)
+            .store(in: &subscriber)
         }
     }
-    .store(in: &subscriber)
-    }
-}

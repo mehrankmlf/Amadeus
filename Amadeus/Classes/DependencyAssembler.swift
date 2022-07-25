@@ -32,7 +32,7 @@ extension DependencyAssembler : LoginViewFactory {
     }
     
     func makeLoginViewModel(coordinator: AuthenticationCoordinator) -> LoginViewModel {
-        let viewModel = LoginViewModel(getTokenService:  GetToken_Request())
+        let viewModel = LoginViewModel(useCase:  GetToken_Request())
         return viewModel
     }
 }
@@ -52,7 +52,7 @@ extension DependencyAssembler : MainFactory {
     }
     
     func makeMainViewModel(coordinator: MainCoordinator) -> MainViewModel {
-        let viewModel = MainViewModel(getHotels: HotelSearch_Request())
+        let viewModel = MainViewModel(useCase: HotelSearch_Request())
         return viewModel
     }
 }

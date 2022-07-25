@@ -37,10 +37,10 @@ extension GetToken_Response {
 
 extension GetToken_Response {
     
-    var tokenData : String? {
+    var tokenData : String {
         get{
-            guard let token = self.access_token else {return nil}
-            return token
+            guard let token = self.access_token else {return ""}
+            return token.trimmingString()
         }
     }
 }

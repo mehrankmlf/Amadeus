@@ -22,17 +22,19 @@ protocol ShowEmptyStateProtocol : AnyObject {
 
 class BaseViewController: UIViewController {
     
-    let reachability = Reachability()
+    var reachability =  Reachability()
+    var baseViewModel = BaseViewModel()
     var subscriber = Set<AnyCancellable>()
     var delegate : ShowEmptyStateProtocol?
     
     lazy var alert: AlertHelper = {
         return AlertHelper(vc: self)
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setReachability()
+        self.handleLoadingState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,13 +47,13 @@ class BaseViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.handle(_:)), name: NotificationName.IHProgressHUDWillDisappear.getNotificationName(), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.handle(_:)), name: NotificationName.IHProgressHUDDidReceiveTouchEvent.getNotificationName(), object: nil)
     }
-
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
     @objc func handle(_ notification: Notification?) {
-  
+        
         if notification?.name.rawValue == "IHProgressHUDWillAppear" {
             DispatchQueue.main.async {
                 self.view.isUserInteractionEnabled = false
@@ -72,7 +74,7 @@ class BaseViewController: UIViewController {
         case .setNavHeightForNotch:
             return
         case .hideKeyBoardWhenNeeded:
-            return 
+            return
         }
     }
     
@@ -84,10 +86,17 @@ class BaseViewController: UIViewController {
         }
         try? reachability?.startNotifier()
     }
+    
+    private func handleLoadingState() {
+        self.baseViewModel.loadinState
+            .sink(receiveValue: {  state in
+                self.setViewState(state: state, viewContainer: self.view)
+            }).store(in: &subscriber)
+    }
 }
 
 extension BaseViewController {
-     func setViewState(state : ViewModelStatus, viewContainer : UIView) {
+    func setViewState(state : ViewModelStatus, viewContainer : UIView) {
         switch state {
         case .loadStart:
             self.alert.Loading()
@@ -119,14 +128,14 @@ extension BaseViewController {
             navigationController?.navigationBar.shadowImage = UIImage()
         }
     }
-
+    
     func setDefaultAppearanceNavigationBar(with barTintColor: UIColor) {
         if #available(iOS 15, *) {
             // It is recommended by apple to set the appearance for the navigation
             // item when configuring the navigation appearance of a specific view controller
             // https://developer.apple.com/forums/thread/683590
             let navigationBarAppearance = UINavigationBarAppearance()
-//            navigationBarAppearance.configureWithDefaultBackground()
+            //            navigationBarAppearance.configureWithDefaultBackground()
             navigationBarAppearance.backgroundColor = barTintColor
             // This will alter the navigation bar title appearance
             let titleAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold),

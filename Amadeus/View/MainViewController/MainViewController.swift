@@ -11,15 +11,13 @@ import Combine
 class MainViewController: BaseViewController {
 
     var viewModel : MainViewModel!
-    var contentView : MainView?
+    var contentView = MainView()
     private(set) var data : [HotelSearchResponse]?
     private var dataSource:TableViewCustomDataSource<HotelSearchResponse>?
     var navigateSubject = PassthroughSubject<MainViewController.Event, Never>()
 
-    init(viewModel : MainViewModel,
-         contentView : MainView) {
+    init(viewModel : MainViewModel) {
         self.viewModel = viewModel
-        self.contentView = contentView
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -38,12 +36,12 @@ class MainViewController: BaseViewController {
         self.setupTableView()
         self.bindViewModel()
         self.callServie()
-        contentView?.viewContainer.emptyState.delegate = self
+        contentView.viewContainer.emptyState.delegate = self
         self.setupNavigationBar()
     }
         
     private func setupTableView() {
-        contentView?.tableView.register(MainTableViewCell.self, forCellReuseIdentifier:  MainTableViewCell.cellId)
+        contentView.tableView.register(MainTableViewCell.self, forCellReuseIdentifier:  MainTableViewCell.cellId)
     }
     
     private func setupNavigationBar() {
@@ -54,11 +52,11 @@ class MainViewController: BaseViewController {
     }
         
     private func bindViewModel() {
-        self.viewModel?.loadinState
-            .sink(receiveValue: {  state in
-                guard let view = self.contentView else {return}
-                super.setViewState(state: state, viewContainer: view.viewContainer)
-            }).store(in: &subscriber)
+//        self.viewModel?.loadinState
+//            .sink(receiveValue: {  state in
+//                guard let view = self.contentView else {return}
+//                super.setViewState(state: state, viewContainer: view.viewContainer)
+//            }).store(in: &subscriber)
 
         self.viewModel?.$hotelData
             .compactMap({ $0 })
@@ -70,9 +68,9 @@ class MainViewController: BaseViewController {
     
     private func renderTableViewdataSource(_ itemlists:[HotelSearchResponse]) {
         dataSource = .displayData(for: itemlists, withCellidentifier: MainTableViewCell.cellId)
-        self.contentView?.tableView.dataSource = dataSource
-        self.contentView?.tableView.delegate = self
-        self.contentView?.tableView.reloadData()
+        self.contentView.tableView.dataSource = dataSource
+        self.contentView.tableView.delegate = self
+        self.contentView.tableView.reloadData()
     }
     
     private func callServie() {
@@ -82,12 +80,12 @@ class MainViewController: BaseViewController {
 
 extension MainViewController : EmptyStateDelegate, ShowEmptyStateProtocol {
     func showEmptyStateView(title: String?, errorType: EmptyStateErrorType, isShow: Bool) {
-        contentView?.viewContainer.emptyState.show(title: title ?? "", errorType: errorType, isShow: isShow)
+        contentView.viewContainer.emptyState.show(title: title ?? "", errorType: errorType, isShow: isShow)
     }
     
     func emptyStateButtonClicked() {
         self.callServie()
-        contentView?.viewContainer.emptyState.hide()
+        contentView.viewContainer.emptyState.hide()
     }
 }
 

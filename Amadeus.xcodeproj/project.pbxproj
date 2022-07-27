@@ -144,7 +144,7 @@
 		7035E696CB460776507D073D /* Pods-AmadeusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmadeusTests.release.xcconfig"; path = "Target Support Files/Pods-AmadeusTests/Pods-AmadeusTests.release.xcconfig"; sourceTree = "<group>"; };
 		A80BE4A6288E554000D11F88 /* HotelSearchViewModelSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchViewModelSearch.swift; sourceTree = "<group>"; };
 		A80BE4A8288E9E0800D11F88 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
-		A80BE4AB288EA85200D11F88 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		A80BE4AB288EA85200D11F88 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewModel.swift; path = ../ViewModel/BaseViewModel.swift; sourceTree = "<group>"; };
 		A828C86E28447D6500738854 /* Amadeus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Amadeus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A828C87128447D6500738854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A828C87A28447D6800738854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -346,14 +346,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A80BE4AA288EA83D00D11F88 /* BaseViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				A80BE4AB288EA85200D11F88 /* BaseViewModel.swift */,
-			);
-			name = BaseViewModel;
-			sourceTree = "<group>";
-		};
 		A828C86528447D6500738854 = {
 			isa = PBXGroup;
 			children = (
@@ -416,7 +408,6 @@
 		A828C8A128447D7300738854 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A80BE4AA288EA83D00D11F88 /* BaseViewModel */,
 				A828C8A628447E0800738854 /* LoginViewModel */,
 				A828C8A228447DA400738854 /* MainViewModel */,
 			);
@@ -777,6 +768,7 @@
 			isa = PBXGroup;
 			children = (
 				A828C95E2844837D00738854 /* BaseViewController.swift */,
+				A80BE4AB288EA85200D11F88 /* BaseViewModel.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";

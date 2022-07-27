@@ -14,16 +14,14 @@ class LoginViewController: BaseViewController {
     
     let timer = CountDownTimer(duration: 40)
     var viewModel : LoginViewModel!
-    var contentView : LoginView?
+    var contentView = LoginView()
     var obfuscator : Obfuscator!
     
     var navigateSubject = PassthroughSubject<LoginViewController.Event, Never>()
     
     init(viewModel : LoginViewModel,
-         contentView : LoginView,
          obfuscator : Obfuscator) {
         self.viewModel = viewModel
-        self.contentView = contentView
         self.obfuscator = obfuscator
         super.init(nibName: nil, bundle: nil)
     }
@@ -47,13 +45,13 @@ class LoginViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.contentView?.txtID.text = clientId
-        self.contentView?.txtSecret.text = self.fetchSecret()
+        self.contentView.txtID.text = clientId
+        self.contentView.txtSecret.text = self.fetchSecret()
     }
     
     private func setUpTargets() {
-        contentView?.btnSubmit.addTarget(self, action: #selector(submitAction), for: .touchUpInside)
-        contentView?.txtID.addTarget(self, action: #selector(LoginViewController.textFieldDidChange(_:)), for: .editingChanged)
+        contentView.btnSubmit.addTarget(self, action: #selector(submitAction), for: .touchUpInside)
+        contentView.txtID.addTarget(self, action: #selector(LoginViewController.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     private func setupNavigation() {
@@ -66,11 +64,11 @@ class LoginViewController: BaseViewController {
     
     private func bindViewModel() {
         
-        viewModel?.loadinState
-            .sink(receiveValue: { state in
-                super.setViewState(state: state, viewContainer: self.view)
-            }).store(in: &subscriber)
-        
+//        viewModel?.loadinState
+//            .sink(receiveValue: { state in
+//                super.setViewState(state: state, viewContainer: self.view)
+//            }).store(in: &subscriber)
+//        
         viewModel?.$isGetToken
             .sink(receiveValue: { [weak self] event in
                 if event {
@@ -79,24 +77,24 @@ class LoginViewController: BaseViewController {
             }).store(in: &subscriber)
         
         viewModel?.usernameMessagePublisher
-            .receive(on: RunLoop.main)
+            .receive(on: Scheduler.mainScheduler)
             .sink { [weak self] text in
                 
-                guard let `self` = self, let view = self.contentView else {
+                guard let `self` = self else {
                     return
                 }
                 
-                self.contentView?.lblValidation.text = text
+                self.contentView.lblValidation.text = text
                 if text != "" {
-                    view.txtID.addRightView(txtField: view.txtID, str: "")
+                    self.contentView.txtID.addRightView(txtField: self.contentView.txtID, str: "")
                 } else {
-                    view.txtID.addRightView(txtField: view.txtID, str: "👍🏻")
+                    self.contentView.txtID.addRightView(txtField: self.contentView.txtID, str: "👍🏻")
                 }
             }.store(in: &subscriber)
         
         viewModel?.formValidation
             .map { $0 != nil}
-            .receive(on: RunLoop.main)
+            .receive(on: Scheduler.mainScheduler)
             .sink(receiveValue: { (isEnable) in
                 if isEnable {
                     //Do Something
@@ -118,7 +116,7 @@ class LoginViewController: BaseViewController {
                     return
                 }
             } receiveValue: { value in
-                self.contentView?.lblCountDownTimer.text = value
+                self.contentView.lblCountDownTimer.text = value
                 print(value)
             }.store(in: &subscriber)
     }

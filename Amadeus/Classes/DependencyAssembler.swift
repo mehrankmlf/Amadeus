@@ -26,7 +26,7 @@ final class DependencyAssembler {
 
 extension DependencyAssembler : LoginViewFactory {
     func makeLoginViewController(coordinator: AuthenticationCoordinator) -> LoginViewController {
-        let vc = LoginViewController(viewModel: self.makeLoginViewModel(coordinator: coordinator), contentView: LoginView(), obfuscator: Obfuscator())
+        let vc = LoginViewController(viewModel: self.makeLoginViewModel(coordinator: coordinator), obfuscator: Obfuscator())
         vc.viewModel = self.makeLoginViewModel(coordinator: coordinator)
         return vc
     }
@@ -46,7 +46,7 @@ extension DependencyAssembler : SplashFactory {
 
 extension DependencyAssembler : MainFactory {
     func makeMainViewController(coordinator: MainCoordinator) -> MainViewController {
-        let vc = MainViewController(viewModel: self.makeMainViewModel(coordinator: coordinator), contentView: MainView())
+        let vc = MainViewController(viewModel: self.makeMainViewModel(coordinator: coordinator))
         vc.viewModel = self.makeMainViewModel(coordinator: coordinator)
         return vc
     }

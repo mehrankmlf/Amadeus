@@ -18,7 +18,7 @@ class LoginViewModelTest: XCTestCase {
     
     override func setUp()  {
         mockLogin = MockLogin()
-        viewModelToTest = LoginViewModel(getTokenService: mockLogin)
+        viewModelToTest = LoginViewModel(useCase: mockLogin)
     }
     
     override func tearDown() {

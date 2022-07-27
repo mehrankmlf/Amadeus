@@ -8,29 +8,30 @@
 import Foundation
 import Combine
 
-class BaseViewModel : ObservableObject {
+protocol BaseViewModelEventSource : AnyObject {
+    var loadinState : CurrentValueSubject<ViewModelStatus, Never> { get }
+}
+
+class BaseViewModel : BaseViewModelEventSource {
     
-    typealias LoadingState = ((ViewModelStatus) -> Void)
-    
-    let alertState : LoadingState? = nil
+    var loadinState = CurrentValueSubject<ViewModelStatus, Never>(.dismissAlert)
     var subscriber = Set<AnyCancellable>()
     
     func callWithProgress<ReturnType>(argument: AnyPublisher<ReturnType?, APIError>, callback: @escaping (_ data: ReturnType?) -> Void) {
-        guard let state = alertState else {return}
-        state(.loadStart)
+        self.loadinState.send(.loadStart)
         argument
             .subscribe(on: Scheduler.backgroundWorkScheduler)
             .receive(on: Scheduler.mainScheduler)
             .sink { result in
                 switch result {
                 case .finished:
-                    state(.dismissAlert)
+                    self.loadinState.send(.dismissAlert)
                 case .failure(let error):
-                    state(.emptyStateHandler(title: error.desc, isShow: true))
+                    self.loadinState.send(.emptyStateHandler(title: error.desc, isShow: true))
                 }}
     receiveValue: { data in
         callback(data)
-        state(.dismissAlert)
+        self.loadinState.send(.dismissAlert)
     }
     .store(in: &subscriber)
     }

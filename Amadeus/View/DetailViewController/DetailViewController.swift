@@ -10,11 +10,10 @@ import UIKit
 class DetailViewController: BaseViewController {
     
     var  data : HotelSearchResponse?
-    var contentView : DetailView?
+    var contentView = DetailView()
     
-    init(data : HotelSearchResponse, contentView : DetailView) {
+    init(data : HotelSearchResponse) {
         self.data = data
-        self.contentView = contentView
         super.init(nibName: nil, bundle: nil)
     }
     

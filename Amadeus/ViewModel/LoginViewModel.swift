@@ -9,9 +9,7 @@ import Foundation
 import SwiftKeychainWrapper
 import Combine
 
-typealias BaseLoginViewModel = LogiViewModel
-
-protocol LogiViewModel {
+protocol BaseLoginViewModel {
     var useCase : GetTokenProtocol { get }
     func getTokenData(grant_type: String, client_id: String, client_secret: String)
 }
@@ -32,7 +30,9 @@ final class LoginViewModel : BaseViewModel, BaseLoginViewModel, KeyChainManagerI
     init(useCase : GetTokenProtocol) {
         self.useCase = useCase
     }
-    
+}
+
+extension LoginViewModel {
     func getTokenData(grant_type: String, client_id: String, client_secret: String) {
         super.callWithProgress(argument: self.useCase.getTokenService(grant_type: grant_type, client_id: client_id, client_secret: client_secret)) { [weak self] data in
             guard let data = data else {return}

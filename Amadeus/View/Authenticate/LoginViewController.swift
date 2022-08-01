@@ -8,35 +8,23 @@
 import UIKit
 import Combine
 
-class LoginViewController: BaseViewController {
+final class LoginViewController: BaseViewController<LoginViewModel> {
     
     let clientId = "sDi2yLIAAKqAfrZKGJU6Zassx3TnDboJ"
     
     let timer = CountDownTimer(duration: 40)
-    var viewModel : LoginViewModel!
     var contentView = LoginView()
-    var obfuscator : Obfuscator!
+    var obfuscator = Obfuscator()
     
     var navigateSubject = PassthroughSubject<LoginViewController.Event, Never>()
-    
-    init(viewModel : LoginViewModel,
-         obfuscator : Obfuscator) {
-        self.viewModel = viewModel
-        self.obfuscator = obfuscator
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
+
+
     override func loadView() {
         view = contentView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .whiteBackground
         super.delegate = self
         self.setUpTargets()
         self.bindViewModel()
@@ -59,24 +47,18 @@ class LoginViewController: BaseViewController {
     }
     
     private func fetchSecret() -> String? {
-        return obfuscator?.reveal(key: ObfuscatedConstants.obfuscatedSecret)
+        return obfuscator.reveal(key: ObfuscatedConstants.obfuscatedSecret)
     }
     
     private func bindViewModel() {
-        
-//        viewModel?.loadinState
-//            .sink(receiveValue: { state in
-//                super.setViewState(state: state, viewContainer: self.view)
-//            }).store(in: &subscriber)
-//        
-        viewModel?.$isGetToken
+        viewModel.$isGetToken
             .sink(receiveValue: { [weak self] event in
                 if event {
                     self?.navigateSubject.send(.login)
                 }
             }).store(in: &subscriber)
         
-        viewModel?.usernameMessagePublisher
+        viewModel.usernameMessagePublisher
             .receive(on: Scheduler.mainScheduler)
             .sink { [weak self] text in
                 
@@ -92,7 +74,7 @@ class LoginViewController: BaseViewController {
                 }
             }.store(in: &subscriber)
         
-        viewModel?.formValidation
+        viewModel.formValidation
             .map { $0 != nil}
             .receive(on: Scheduler.mainScheduler)
             .sink(receiveValue: { (isEnable) in
@@ -121,17 +103,18 @@ class LoginViewController: BaseViewController {
             }.store(in: &subscriber)
     }
     
-    @objc func submitAction() {
-        self.viewModel?.getTokenData(grant_type: "client_credentials", client_id: clientId, client_secret: fetchSecret() ?? "")
+    @objc
+    func submitAction() {
+        viewModel.getTokenData(grant_type: "client_credentials", client_id: clientId, client_secret: fetchSecret() ?? "")
     }
     
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        self.viewModel?.userName = textField.text ?? ""
+    @objc
+    func textFieldDidChange(_ textField: UITextField) {
+        viewModel.userName = textField.text ?? ""
     }
 }
 
 extension LoginViewController : ShowEmptyStateProtocol {
-    
     func showEmptyStateView(title: String?, errorType: EmptyStateErrorType, isShow: Bool) {
         super.alert.error(message: title ?? "")
     }

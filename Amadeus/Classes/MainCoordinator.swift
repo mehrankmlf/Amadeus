@@ -50,7 +50,9 @@ final class MainCoordinator : MainCoordinatorProtocol {
     }
     
     func showDetailViewController(data: HotelSearchResponse) {
-        let vc = DetailViewController(data: data)
+        let viewModel = DetailViewModel()
+        let vc = DetailViewController(viewModel: viewModel)
+        vc.data = data
         navigationController.pushViewController(vc, animated: true)
     }
 }

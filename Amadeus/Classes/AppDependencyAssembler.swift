@@ -8,25 +8,25 @@
 import Foundation
 
 
-fileprivate let sharedDependencyAssembler : DependencyAssembler = DependencyAssembler()
+fileprivate let sharedDependencyAssembler : AppDependencyAssembler = AppDependencyAssembler()
 
 protocol DependencyAssemblerInjector {
-    var dependencyAssembler : DependencyAssembler { get }
+    var dependencyAssembler : AppDependencyAssembler { get }
 }
 
 extension DependencyAssemblerInjector {
-    var dependencyAssembler : DependencyAssembler{
+    var dependencyAssembler : AppDependencyAssembler {
         return sharedDependencyAssembler
     }
 }
 
-final class DependencyAssembler {
+final class AppDependencyAssembler {
      init() {}
 }
 
-extension DependencyAssembler : LoginViewFactory {
+extension AppDependencyAssembler : LoginViewFactory {
     func makeLoginViewController(coordinator: AuthenticationCoordinator) -> LoginViewController {
-        let vc = LoginViewController(viewModel: self.makeLoginViewModel(coordinator: coordinator), obfuscator: Obfuscator())
+        let vc = LoginViewController(viewModel: self.makeLoginViewModel(coordinator: coordinator))
         vc.viewModel = self.makeLoginViewModel(coordinator: coordinator)
         return vc
     }
@@ -37,14 +37,20 @@ extension DependencyAssembler : LoginViewFactory {
     }
 }
 
-extension DependencyAssembler : SplashFactory {
+extension AppDependencyAssembler : SplashFactory {
     func makeSplashViewController(coordinator: SplashCoordinator) -> SplashViewController {
-        let vc = SplashViewController(contentView: SplashView())
+        let vc = SplashViewController(viewModel: self.makeSplashViewModel(coordinator: coordinator))
         return vc
     }
+    
+    func makeSplashViewModel(coordinator: SplashCoordinator) -> SplashViewModel {
+        let viewModel =  SplashViewModel()
+        return viewModel
+    }
+    
 }
 
-extension DependencyAssembler : MainFactory {
+extension AppDependencyAssembler : MainFactory {
     func makeMainViewController(coordinator: MainCoordinator) -> MainViewController {
         let vc = MainViewController(viewModel: self.makeMainViewModel(coordinator: coordinator))
         vc.viewModel = self.makeMainViewModel(coordinator: coordinator)

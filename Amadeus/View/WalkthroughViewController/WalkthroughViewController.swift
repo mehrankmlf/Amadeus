@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class WalkthroughViewController: BaseViewController {
+class WalkthroughViewController: UIViewController {
 
     var navigateSubject = PassthroughSubject<WalkthroughViewController.Event, Never>()
 

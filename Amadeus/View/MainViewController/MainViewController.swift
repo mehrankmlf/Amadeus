@@ -7,23 +7,13 @@
 
 import UIKit
 import Combine
- 
-class MainViewController: BaseViewController {
 
-    var viewModel : MainViewModel!
+class MainViewController: BaseViewController<MainViewModel> {
+    
     var contentView = MainView()
     private(set) var data : [HotelSearchResponse]?
     private var dataSource:TableViewCustomDataSource<HotelSearchResponse>?
     var navigateSubject = PassthroughSubject<MainViewController.Event, Never>()
-
-    init(viewModel : MainViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-       super.init(coder: aDecoder)
-    }
     
     override func loadView() {
         view = contentView
@@ -39,26 +29,20 @@ class MainViewController: BaseViewController {
         contentView.viewContainer.emptyState.delegate = self
         self.setupNavigationBar()
     }
-        
+    
     private func setupTableView() {
         contentView.tableView.register(MainTableViewCell.self, forCellReuseIdentifier:  MainTableViewCell.cellId)
     }
     
     private func setupNavigationBar() {
         self.setDefaultAppearanceNavigationBar(with: .white)
-        self.navigationItem.title = viewModel?.title
+        self.navigationItem.title = viewModel.title
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backBarButtonItem
     }
-        
+    
     private func bindViewModel() {
-//        self.viewModel?.loadinState
-//            .sink(receiveValue: {  state in
-//                guard let view = self.contentView else {return}
-//                super.setViewState(state: state, viewContainer: view.viewContainer)
-//            }).store(in: &subscriber)
-
-        self.viewModel?.$hotelData
+        viewModel.$hotelData
             .compactMap({ $0 })
             .sink { [weak self] data in
                 self?.data = data
@@ -74,7 +58,7 @@ class MainViewController: BaseViewController {
     }
     
     private func callServie() {
-        self.viewModel?.getHotelsData(cityCode: "PAR")
+        viewModel.getHotelsData(cityCode: "PAR")
     }
 }
 

@@ -8,11 +8,11 @@
 import UIKit
 import Combine
 
-class SplashViewController: BaseViewController  {
+class SplashViewController: BaseViewController<SplashViewModel>  {
     
     let timer = CountDownTimer(duration: 4)
     var navigateSubject = PassthroughSubject<SplashViewController.Event, Never>()
-    var contentView : SplashView?
+    var contentView = SplashView()
     
     override func loadView() {
         view = contentView
@@ -23,15 +23,6 @@ class SplashViewController: BaseViewController  {
         view.backgroundColor = .whiteBackground
         self.handleTimer()
         self.setupNavigation()
-    }
-    
-    init(contentView : SplashView) {
-        self.contentView = contentView
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
     }
     
     private func handleTimer() {

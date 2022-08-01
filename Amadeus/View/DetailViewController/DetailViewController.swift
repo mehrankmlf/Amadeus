@@ -7,20 +7,11 @@
 
 import UIKit
 
-class DetailViewController: BaseViewController {
+class DetailViewController: BaseViewController<DetailViewModel> {
     
     var  data : HotelSearchResponse?
     var contentView = DetailView()
-    
-    init(data : HotelSearchResponse) {
-        self.data = data
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-       super.init(coder: aDecoder)
-    }
-    
+
     override func loadView() {
         view = contentView
     }

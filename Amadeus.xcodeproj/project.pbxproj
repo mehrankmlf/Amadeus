@@ -83,23 +83,23 @@
 		A828C93F284482CF00738854 /* AlertAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C93E284482CF00738854 /* AlertAdapter.swift */; };
 		A828C942284482E000738854 /* KeychainManagerProtocol .swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C941284482E000738854 /* KeychainManagerProtocol .swift */; };
 		A828C945284482F400738854 /* AppConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C944284482F400738854 /* AppConfigurationProtocol.swift */; };
-		A828C9482844831400738854 /* RequestInterceptorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9472844831400738854 /* RequestInterceptorProtocol.swift */; };
 		A828C94B2844832700738854 /* AppBuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C94A2844832700738854 /* AppBuildConfig.swift */; };
 		A828C9522844833800738854 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C94D2844833800738854 /* SplashCoordinator.swift */; };
 		A828C9532844833800738854 /* WalkthroughCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C94E2844833800738854 /* WalkthroughCoordinator.swift */; };
 		A828C9542844833800738854 /* AuthenticationhCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C94F2844833800738854 /* AuthenticationhCoordinator.swift */; };
 		A828C9552844833800738854 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9502844833800738854 /* MainCoordinator.swift */; };
 		A828C9562844833800738854 /* AppCoordiantor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9512844833800738854 /* AppCoordiantor.swift */; };
-		A828C9592844835700738854 /* DependencyAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9582844835700738854 /* DependencyAssembler.swift */; };
+		A828C9592844835700738854 /* AppDependencyAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C9582844835700738854 /* AppDependencyAssembler.swift */; };
 		A828C95C2844836B00738854 /* TableViewCustomDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C95B2844836B00738854 /* TableViewCustomDataSource.swift */; };
 		A828C9602844837D00738854 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C95E2844837D00738854 /* BaseViewController.swift */; };
-		A828C9612844837D00738854 /* ViewModelBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C95F2844837D00738854 /* ViewModelBaseProtocol.swift */; };
 		A828C964284486A900738854 /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A828C963284486A800738854 /* Walkthrough.storyboard */; };
 		A8A82669287010F6009850CD /* RequestNewToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A82668287010F6009850CD /* RequestNewToken.swift */; };
 		A8BDA622288BC3360052BB3F /* Obfuscator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BDA621288BC3360052BB3F /* Obfuscator.swift */; };
 		A8BDA628288BFE2A0052BB3F /* AuthenticationCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BDA627288BFE2A0052BB3F /* AuthenticationCoordinatorTest.swift */; };
 		A8BDA62B288C02510052BB3F /* SpyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BDA62A288C02510052BB3F /* SpyNavigationController.swift */; };
 		A8BDA62F288C0A770052BB3F /* MockLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BDA62E288C0A770052BB3F /* MockLoginView.swift */; };
+		A8C6F5C1289687BD00ADFB81 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6F5C0289687BD00ADFB81 /* DetailViewModel.swift */; };
+		A8C6F5C42896882700ADFB81 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6F5C32896882700ADFB81 /* SplashViewModel.swift */; };
 		A8EC3C52288D3D9A00C75CFA /* ObfuscatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC3C51288D3D9A00C75CFA /* ObfuscatorTest.swift */; };
 		A8EC3C57288D586200C75CFA /* MainCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC3C56288D586200C75CFA /* MainCoordinatorTest.swift */; };
 		A8EC3C59288D58C100C75CFA /* MockMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC3C58288D58C100C75CFA /* MockMainView.swift */; };
@@ -209,23 +209,23 @@
 		A828C93E284482CF00738854 /* AlertAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAdapter.swift; sourceTree = "<group>"; };
 		A828C941284482E000738854 /* KeychainManagerProtocol .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeychainManagerProtocol .swift"; sourceTree = "<group>"; };
 		A828C944284482F400738854 /* AppConfigurationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfigurationProtocol.swift; sourceTree = "<group>"; };
-		A828C9472844831400738854 /* RequestInterceptorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInterceptorProtocol.swift; sourceTree = "<group>"; };
 		A828C94A2844832700738854 /* AppBuildConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBuildConfig.swift; sourceTree = "<group>"; };
 		A828C94D2844833800738854 /* SplashCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		A828C94E2844833800738854 /* WalkthroughCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughCoordinator.swift; sourceTree = "<group>"; };
 		A828C94F2844833800738854 /* AuthenticationhCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationhCoordinator.swift; sourceTree = "<group>"; };
 		A828C9502844833800738854 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A828C9512844833800738854 /* AppCoordiantor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordiantor.swift; sourceTree = "<group>"; };
-		A828C9582844835700738854 /* DependencyAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyAssembler.swift; sourceTree = "<group>"; };
+		A828C9582844835700738854 /* AppDependencyAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencyAssembler.swift; sourceTree = "<group>"; };
 		A828C95B2844836B00738854 /* TableViewCustomDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCustomDataSource.swift; sourceTree = "<group>"; };
 		A828C95E2844837D00738854 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		A828C95F2844837D00738854 /* ViewModelBaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBaseProtocol.swift; sourceTree = "<group>"; };
 		A828C963284486A800738854 /* Walkthrough.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
 		A8A82668287010F6009850CD /* RequestNewToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestNewToken.swift; sourceTree = "<group>"; };
 		A8BDA621288BC3360052BB3F /* Obfuscator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obfuscator.swift; sourceTree = "<group>"; };
 		A8BDA627288BFE2A0052BB3F /* AuthenticationCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinatorTest.swift; sourceTree = "<group>"; };
 		A8BDA62A288C02510052BB3F /* SpyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyNavigationController.swift; sourceTree = "<group>"; };
 		A8BDA62E288C0A770052BB3F /* MockLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginView.swift; sourceTree = "<group>"; };
+		A8C6F5C0289687BD00ADFB81 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		A8C6F5C32896882700ADFB81 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		A8EC3C51288D3D9A00C75CFA /* ObfuscatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObfuscatorTest.swift; sourceTree = "<group>"; };
 		A8EC3C56288D586200C75CFA /* MainCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorTest.swift; sourceTree = "<group>"; };
 		A8EC3C58288D58C100C75CFA /* MockMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMainView.swift; sourceTree = "<group>"; };
@@ -319,6 +319,7 @@
 				A828C87128447D6500738854 /* AppDelegate.swift */,
 				A828C9512844833800738854 /* AppCoordiantor.swift */,
 				A828C94A2844832700738854 /* AppBuildConfig.swift */,
+				A828C9582844835700738854 /* AppDependencyAssembler.swift */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -408,8 +409,10 @@
 		A828C8A128447D7300738854 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A8C6F5C22896881200ADFB81 /* SplashViewModel */,
 				A828C8A628447E0800738854 /* LoginViewModel */,
 				A828C8A228447DA400738854 /* MainViewModel */,
+				A8C6F5BF2896879D00ADFB81 /* DetailViewModel */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -569,7 +572,6 @@
 				A828C918284481D400738854 /* Helper */,
 				A828C8E228447FF500738854 /* Networking */,
 				A828C95A2844836600738854 /* TableViewDataSource */,
-				A828C9572844834900738854 /* DependencyAssembler */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -644,12 +646,10 @@
 		A828C92C2844821B00738854 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				A828C946284482FE00738854 /* RequestInterceptor */,
 				A828C943284482E900738854 /* AppConfig */,
 				A828C940284482DC00738854 /* KeyChainManager */,
 				A828C93D284482C800738854 /* Adapter */,
 				A828C9332844824600738854 /* Factory */,
-				A828C9302844823500738854 /* ViewModel */,
 				A828C92D2844822600738854 /* Coordinator */,
 			);
 			name = Protocol;
@@ -661,14 +661,6 @@
 				A828C92E2844822F00738854 /* Coordinator.swift */,
 			);
 			name = Coordinator;
-			sourceTree = "<group>";
-		};
-		A828C9302844823500738854 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				A828C95F2844837D00738854 /* ViewModelBaseProtocol.swift */,
-			);
-			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		A828C9332844824600738854 /* Factory */ = {
@@ -729,14 +721,6 @@
 			name = AppConfig;
 			sourceTree = "<group>";
 		};
-		A828C946284482FE00738854 /* RequestInterceptor */ = {
-			isa = PBXGroup;
-			children = (
-				A828C9472844831400738854 /* RequestInterceptorProtocol.swift */,
-			);
-			name = RequestInterceptor;
-			sourceTree = "<group>";
-		};
 		A828C94C2844832D00738854 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
@@ -746,14 +730,6 @@
 				A828C94E2844833800738854 /* WalkthroughCoordinator.swift */,
 			);
 			name = Routing;
-			sourceTree = "<group>";
-		};
-		A828C9572844834900738854 /* DependencyAssembler */ = {
-			isa = PBXGroup;
-			children = (
-				A828C9582844835700738854 /* DependencyAssembler.swift */,
-			);
-			name = DependencyAssembler;
 			sourceTree = "<group>";
 		};
 		A828C95A2844836600738854 /* TableViewDataSource */ = {
@@ -847,6 +823,22 @@
 				A8EC3C58288D58C100C75CFA /* MockMainView.swift */,
 			);
 			path = MockView;
+			sourceTree = "<group>";
+		};
+		A8C6F5BF2896879D00ADFB81 /* DetailViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6F5C0289687BD00ADFB81 /* DetailViewModel.swift */,
+			);
+			name = DetailViewModel;
+			sourceTree = "<group>";
+		};
+		A8C6F5C22896881200ADFB81 /* SplashViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6F5C32896882700ADFB81 /* SplashViewModel.swift */,
+			);
+			name = SplashViewModel;
 			sourceTree = "<group>";
 		};
 		A8EC3C50288D3D7200C75CFA /* Obfuscator */ = {
@@ -1110,6 +1102,7 @@
 				A828C924284481E400738854 /* AppDelegateHelper.swift in Sources */,
 				A828C90A2844806D00738854 /* AFError + Extension.swift in Sources */,
 				A828C9102844806D00738854 /* UIWindow + Extension.swift in Sources */,
+				A8C6F5C1289687BD00ADFB81 /* DetailViewModel.swift in Sources */,
 				A828C9522844833800738854 /* SplashCoordinator.swift in Sources */,
 				A828C9172844816500738854 /* GetToken_Response.swift in Sources */,
 				A828C90C2844806D00738854 /* UIDevice + Extension.swift in Sources */,
@@ -1122,12 +1115,11 @@
 				0211C1532860DD46009C1F28 /* Configuration.swift in Sources */,
 				A828C9042844806D00738854 /* TableView + Extension.swift in Sources */,
 				022765F02845CAFE00A9074A /* LoginViewModel.swift in Sources */,
-				A828C9592844835700738854 /* DependencyAssembler.swift in Sources */,
+				A828C9592844835700738854 /* AppDependencyAssembler.swift in Sources */,
 				A828C92F2844822F00738854 /* Coordinator.swift in Sources */,
 				A828C9392844827000738854 /* SplashFactory.swift in Sources */,
 				A828C8B428447E8300738854 /* MainView.swift in Sources */,
 				A828C925284481E400738854 /* CountDownTimer.swift in Sources */,
-				A828C9482844831400738854 /* RequestInterceptorProtocol.swift in Sources */,
 				A828C921284481E400738854 /* MessageHelper.swift in Sources */,
 				A828C926284481E400738854 /* KeychainKeychainManager.swift in Sources */,
 				A80BE4AC288EA85200D11F88 /* BaseViewModel.swift in Sources */,
@@ -1135,8 +1127,8 @@
 				A828C8E92844800D00738854 /* AlamofireLogger.swift in Sources */,
 				A828C90F2844806D00738854 /* NSFormatter + Extension.swift in Sources */,
 				A828C9542844833800738854 /* AuthenticationhCoordinator.swift in Sources */,
-				A828C9612844837D00738854 /* ViewModelBaseProtocol.swift in Sources */,
 				A828C90B2844806D00738854 /* StoryBoard + Extension.swift in Sources */,
+				A8C6F5C42896882700ADFB81 /* SplashViewModel.swift in Sources */,
 				A828C928284481E400738854 /* AlertHelper.swift in Sources */,
 				A828C9532844833800738854 /* WalkthroughCoordinator.swift in Sources */,
 				A828C9112844806D00738854 /* String + Extension.swift in Sources */,

@@ -20,21 +20,31 @@ protocol ShowEmptyStateProtocol : AnyObject {
     func showEmptyStateView(title: String?, errorType: EmptyStateErrorType, isShow : Bool)
 }
 
-class BaseViewController: UIViewController {
+class BaseViewController<ViewModel : StandardBaseViewModel>: UIViewController {
     
+    var viewModel : ViewModel
     var reachability =  Reachability()
-    var baseViewModel = BaseViewModel()
     var subscriber = Set<AnyCancellable>()
-    var delegate : ShowEmptyStateProtocol?
+    weak var delegate : ShowEmptyStateProtocol?
     
     lazy var alert: AlertHelper = {
         return AlertHelper(vc: self)
     }()
     
+    init(viewModel : ViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("use init() method")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .whiteBackground
+        self.handleViewState()
         self.setReachability()
-        self.handleLoadingState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,16 +97,16 @@ class BaseViewController: UIViewController {
         try? reachability?.startNotifier()
     }
     
-    private func handleLoadingState() {
-        self.baseViewModel.loadinState
-            .sink(receiveValue: {  state in
-                self.setViewState(state: state, viewContainer: self.view)
-            }).store(in: &subscriber)
+    func handleViewState() {
+        self.viewModel.loadinState
+            .sink { [weak self] state in
+                self?.setViewState(state: state)
+            }.store(in: &subscriber)
     }
 }
 
 extension BaseViewController {
-    func setViewState(state : ViewModelStatus, viewContainer : UIView) {
+    func setViewState(state : ViewModelStatus) {
         switch state {
         case .loadStart:
             self.alert.Loading()
@@ -152,5 +162,3 @@ extension BaseViewController {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
 }
-
-

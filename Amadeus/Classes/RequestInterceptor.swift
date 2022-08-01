@@ -8,6 +8,12 @@
 import UIKit
 import Alamofire
 
+protocol RequestInterceptorProtocol {
+    var retryLimit : Int { get }
+    var isDoRetrying : Bool { get }
+    var retryDelay : TimeInterval { get }
+}
+
 final class RequestInterceptorHelper : Alamofire.RequestInterceptor, KeyChainManagerInjector, RequestInterceptorProtocol {
     
     var retryLimit: Int = 3

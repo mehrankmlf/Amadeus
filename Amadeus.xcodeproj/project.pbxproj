@@ -347,6 +347,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A80E76AC2898D25F00896E94 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		A828C86528447D6500738854 = {
 			isa = PBXGroup;
 			children = (
@@ -646,6 +653,7 @@
 		A828C92C2844821B00738854 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				A80E76AC2898D25F00896E94 /* ViewModel */,
 				A828C943284482E900738854 /* AppConfig */,
 				A828C940284482DC00738854 /* KeyChainManager */,
 				A828C93D284482C800738854 /* Adapter */,

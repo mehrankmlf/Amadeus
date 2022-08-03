@@ -21,7 +21,6 @@ class MainViewController: BaseViewController<MainViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .whiteBackground
         super.delegate = self
         self.setupTableView()
         self.bindViewModel()

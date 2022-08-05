@@ -25,5 +25,10 @@ You don't need to install Anything manually, Alamofire will install  Automatical
 - IHProgressHUD
 - SwiftKeychainWrapper
 
+## Todo
+
+- Complete Unit test
+- Make generic base programmatically UIVIEW 
+
 Thank you!
 

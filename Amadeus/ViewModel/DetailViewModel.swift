@@ -7,6 +7,4 @@
 
 import Foundation
 
-class DetailViewModel : BaseViewModel {
-    
-}
+class DetailViewModel : BaseViewModel {}

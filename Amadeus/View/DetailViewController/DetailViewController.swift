@@ -29,9 +29,9 @@ class DetailViewController: BaseViewController<DetailViewModel> {
     }
     
     private func showData(){
-        guard let data = data else {return}
-//        self.contentView?.lblHeadLineDetail.text = data.name
-//        self.contentView?.lblSublineDetail.text = data.chainCode
+        guard let data = data, let hotel = data.hotel else {return}
+        self.contentView.lblHeadLineDetail.text = hotel.hotelID
+        self.contentView.lblSublineDetail.text = hotel.name
     }
 }
 

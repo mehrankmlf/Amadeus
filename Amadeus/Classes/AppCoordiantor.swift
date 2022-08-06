@@ -60,7 +60,9 @@ class AppCoordinator : AppCoordinatorProtocol, DependencyAssemblerInjector, KeyC
     }
     
     func showMainFlow() {
-        let main = MainCoordinator.init(navigationController, mainFactory: self.dependencyAssembler)
+        let main = MainCoordinator.init(navigationController,
+                                        mainFactory: self.dependencyAssembler,
+                                        detailFactory: self.dependencyAssembler)
         main.finishDelegate = self
         main.start()
         childCoordinators.append(main)

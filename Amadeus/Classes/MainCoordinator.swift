@@ -10,26 +10,32 @@ import Combine
 
 protocol MainViewFactory {
     var mainFactory : MainFactory { get set }
+    var detailFactory : DetailFactory { get set }
 }
 
 protocol MainCoordinatorProtocol : Coordinator, MainViewFactory {
     func showMainViewController()
     func showDetailViewController(data : HotelSearchResponse)
-    init(_ navigationController: UINavigationController, mainFactory : MainFactory)
+    init(_ navigationController: UINavigationController,
+         mainFactory : MainFactory,
+         detailFactory : DetailFactory)
 }
 
 final class MainCoordinator : MainCoordinatorProtocol {
-
+    
     var finishDelegate: FinishDelegate?
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
     var type: CoordinatorType { .main }
     var mainFactory: MainFactory
+    var detailFactory: DetailFactory
     private var subscriber = Set<AnyCancellable>()
     
-    init(_ navigationController: UINavigationController, mainFactory : MainFactory) {
+    init(_ navigationController: UINavigationController, mainFactory : MainFactory,
+         detailFactory : DetailFactory) {
         self.navigationController = navigationController
         self.mainFactory = mainFactory
+        self.detailFactory = detailFactory
     }
     
     func start() {
@@ -50,8 +56,7 @@ final class MainCoordinator : MainCoordinatorProtocol {
     }
     
     func showDetailViewController(data: HotelSearchResponse) {
-        let viewModel = DetailViewModel()
-        let vc = DetailViewController(viewModel: viewModel)
+        let vc = self.detailFactory.makeDetailViewController(coordinator: self)
         vc.data = data
         navigationController.pushViewController(vc, animated: true)
     }

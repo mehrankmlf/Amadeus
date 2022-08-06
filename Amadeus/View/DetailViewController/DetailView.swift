@@ -32,7 +32,7 @@ final class DetailView: UIView {
     
      lazy var lblHeadLine : UILabel = {
         let lblHeadLine = UILabel()
-         lblHeadLine.text = "Name : "
+         lblHeadLine.text = "ID : "
          lblHeadLine.textColor = .gray
          lblHeadLine.font = UIFont.boldSystemFont(ofSize: 12)
         return lblHeadLine
@@ -49,7 +49,7 @@ final class DetailView: UIView {
     
      lazy var lblSubline : UILabel = {
         let lblSubline = UILabel()
-         lblSubline.text = "ChainName : "
+         lblSubline.text = "Hotel Name : "
          lblSubline.textAlignment = .left
          lblSubline.textColor = .gray
          lblSubline.font = UIFont.boldSystemFont(ofSize: 12)

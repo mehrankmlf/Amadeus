@@ -27,7 +27,6 @@ final class AppDependencyAssembler {
 extension AppDependencyAssembler : LoginViewFactory {
     func makeLoginViewController(coordinator: AuthenticationCoordinator) -> LoginViewController {
         let vc = LoginViewController(viewModel: self.makeLoginViewModel(coordinator: coordinator))
-        vc.viewModel = self.makeLoginViewModel(coordinator: coordinator)
         return vc
     }
     
@@ -53,12 +52,23 @@ extension AppDependencyAssembler : SplashFactory {
 extension AppDependencyAssembler : MainFactory {
     func makeMainViewController(coordinator: MainCoordinator) -> MainViewController {
         let vc = MainViewController(viewModel: self.makeMainViewModel(coordinator: coordinator))
-        vc.viewModel = self.makeMainViewModel(coordinator: coordinator)
         return vc
     }
     
     func makeMainViewModel(coordinator: MainCoordinator) -> MainViewModel {
         let viewModel = MainViewModel(useCase: HotelSearch_Request())
+        return viewModel
+    }
+}
+
+extension AppDependencyAssembler : DetailFactory {
+    func makeDetailViewController(coordinator: MainCoordinator) -> DetailViewController {
+        let vc = DetailViewController(viewModel: self.makeDetailViewModel(coordinator: coordinator))
+        return vc
+    }
+    
+    func makeDetailViewModel(coordinator: MainCoordinator) -> DetailViewModel {
+        let viewModel = DetailViewModel()
         return viewModel
     }
 }

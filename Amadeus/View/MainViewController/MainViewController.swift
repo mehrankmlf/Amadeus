@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class MainViewController: BaseViewController<MainViewModel> {
+final class MainViewController: BaseViewController<MainViewModel> {
     
     var contentView = MainView()
     private(set) var data : [HotelSearchResponse]?

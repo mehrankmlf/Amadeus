@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailViewController: BaseViewController<DetailViewModel> {
+final class DetailViewController: BaseViewController<DetailViewModel> {
     
     var  data : HotelSearchResponse?
     var contentView = DetailView()

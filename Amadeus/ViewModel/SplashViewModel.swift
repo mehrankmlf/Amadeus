@@ -7,6 +7,6 @@
 
 import Foundation
 
-class SplashViewModel : BaseViewModel {
+final class SplashViewModel : BaseViewModel {
     
 }

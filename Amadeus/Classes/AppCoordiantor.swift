@@ -15,7 +15,7 @@ protocol AppCoordinatorProtocol : Coordinator {
     func isShowWalktroughFlow()
 }
 
-class AppCoordinator : AppCoordinatorProtocol, DependencyAssemblerInjector, KeyChainManagerInjector {
+final class AppCoordinator : AppCoordinatorProtocol, DependencyAssemblerInjector, KeyChainManagerInjector {
      
     weak var finishDelegate : FinishDelegate? = nil
     var navigationController: UINavigationController

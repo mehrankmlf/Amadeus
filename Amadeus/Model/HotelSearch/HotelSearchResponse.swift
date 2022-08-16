@@ -11,7 +11,6 @@ struct HotelSearchResponse: Decodable {
     var type : HotelType?
     var hotel: Hotel_Response?
     var available: Bool?
-//    let offers: String?
 }
 
 extension HotelSearchResponse {

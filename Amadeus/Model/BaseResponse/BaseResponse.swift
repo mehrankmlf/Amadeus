@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BaseResponse<T: Decodable>: Decodable {
+final class BaseResponse<T: Decodable>: Decodable {
 
     var data: T?
 

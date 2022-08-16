@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DeviceStatusHelper {
+struct DeviceStatusHelper {
     
     static func getDeviceUniqueID() -> String {
         return UIDevice.current.identifierForVendor?.uuidString ?? MessageHelper.DeviceStatus.unknownDeviceID

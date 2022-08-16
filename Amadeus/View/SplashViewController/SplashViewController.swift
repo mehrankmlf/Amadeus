@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class SplashViewController: BaseViewController<SplashViewModel>  {
+final class SplashViewController: BaseViewController<SplashViewModel>  {
     
     let timer = CountDownTimer(duration: 4)
     var navigateSubject = PassthroughSubject<SplashViewController.Event, Never>()

@@ -12,7 +12,7 @@ protocol EmptyStateDelegate : AnyObject {
     func emptyStateButtonClicked()
 }
 
-class EmptyState {
+final class EmptyState {
     
     var delegate : EmptyStateDelegate?
     private var emptyStateView : EmptyStateView!

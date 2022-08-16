@@ -20,6 +20,9 @@
 		02DC602B28590253000B2F97 /* HotelSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC602A28590253000B2F97 /* HotelSearchResponse.swift */; };
 		02DC602E285902D3000B2F97 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC602D285902D3000B2F97 /* BaseResponse.swift */; };
 		82DEB063B583A7A05C0429F6 /* Pods_Amadeus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */; };
+		A809F50C28AB7889006F95BE /* UITextField + Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A809F50B28AB7889006F95BE /* UITextField + Publisher.swift */; };
+		A809F50F28AB8D64006F95BE /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A809F50E28AB8D64006F95BE /* ViewModelProtocol.swift */; };
+		A809F51128AB8E35006F95BE /* Array + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A809F51028AB8E35006F95BE /* Array + Extension.swift */; };
 		A80BE4A7288E554000D11F88 /* HotelSearchViewModelSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80BE4A6288E554000D11F88 /* HotelSearchViewModelSearch.swift */; };
 		A80BE4A9288E9E0800D11F88 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80BE4A8288E9E0800D11F88 /* Scheduler.swift */; };
 		A80BE4AC288EA85200D11F88 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80BE4AB288EA85200D11F88 /* BaseViewModel.swift */; };
@@ -143,6 +146,9 @@
 		34AEB3D063800CEA021DADD6 /* Pods-Amadeus-AmadeusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus-AmadeusUITests.debug.xcconfig"; path = "Target Support Files/Pods-Amadeus-AmadeusUITests/Pods-Amadeus-AmadeusUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		69F1C0F06733B06828F9B82B /* Pods-Amadeus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus.release.xcconfig"; path = "Target Support Files/Pods-Amadeus/Pods-Amadeus.release.xcconfig"; sourceTree = "<group>"; };
 		7035E696CB460776507D073D /* Pods-AmadeusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmadeusTests.release.xcconfig"; path = "Target Support Files/Pods-AmadeusTests/Pods-AmadeusTests.release.xcconfig"; sourceTree = "<group>"; };
+		A809F50B28AB7889006F95BE /* UITextField + Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Publisher.swift"; sourceTree = "<group>"; };
+		A809F50E28AB8D64006F95BE /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		A809F51028AB8E35006F95BE /* Array + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Extension.swift"; sourceTree = "<group>"; };
 		A80BE4A6288E554000D11F88 /* HotelSearchViewModelSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchViewModelSearch.swift; sourceTree = "<group>"; };
 		A80BE4A8288E9E0800D11F88 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		A80BE4AB288EA85200D11F88 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewModel.swift; path = ../ViewModel/BaseViewModel.swift; sourceTree = "<group>"; };
@@ -347,6 +353,14 @@
 				7035E696CB460776507D073D /* Pods-AmadeusTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A809F50D28AB8D56006F95BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A809F50E28AB8D64006F95BE /* ViewModelProtocol.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		A828C86528447D6500738854 = {
@@ -630,6 +644,7 @@
 				A828C8FD2844806D00738854 /* UIViewController + Extesnsion.swift */,
 				A828C8FF2844806D00738854 /* UIWindow + Extension.swift */,
 				A828C8F82844806D00738854 /* ViewController + Extension.swift */,
+				A809F51028AB8E35006F95BE /* Array + Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -648,6 +663,7 @@
 		A828C92C2844821B00738854 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				A809F50D28AB8D56006F95BE /* ViewModel */,
 				A828C943284482E900738854 /* AppConfig */,
 				A828C940284482DC00738854 /* KeyChainManager */,
 				A828C93D284482C800738854 /* Adapter */,
@@ -768,6 +784,7 @@
 				022146EF28564185003FB94B /* Reachability.swift */,
 				A8BDA621288BC3360052BB3F /* Obfuscator.swift */,
 				A828C91A284481E400738854 /* UserDefault.swift */,
+				A809F50B28AB7889006F95BE /* UITextField + Publisher.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1100,6 +1117,7 @@
 				02DC602B28590253000B2F97 /* HotelSearchResponse.swift in Sources */,
 				A828C9602844837D00738854 /* BaseViewController.swift in Sources */,
 				A828C8D428447F6D00738854 /* MainTableViewCell.swift in Sources */,
+				A809F50F28AB8D64006F95BE /* ViewModelProtocol.swift in Sources */,
 				A828C9062844806D00738854 /* Dictionary + Extension.swift in Sources */,
 				A828C8EF2844802600738854 /* MainNetworking.swift in Sources */,
 				A828C924284481E400738854 /* AppDelegateHelper.swift in Sources */,
@@ -1116,6 +1134,7 @@
 				A828C93C284482B100738854 /* AuthenticationFactory.swift in Sources */,
 				A828C95C2844836B00738854 /* TableViewCustomDataSource.swift in Sources */,
 				A82CEAC4289E290F000E460F /* DetailFactory.swift in Sources */,
+				A809F51128AB8E35006F95BE /* Array + Extension.swift in Sources */,
 				0211C1532860DD46009C1F28 /* Configuration.swift in Sources */,
 				A828C9042844806D00738854 /* TableView + Extension.swift in Sources */,
 				022765F02845CAFE00A9074A /* LoginViewModel.swift in Sources */,
@@ -1132,6 +1151,7 @@
 				A828C90F2844806D00738854 /* NSFormatter + Extension.swift in Sources */,
 				A828C9542844833800738854 /* AuthenticationhCoordinator.swift in Sources */,
 				A828C90B2844806D00738854 /* StoryBoard + Extension.swift in Sources */,
+				A809F50C28AB7889006F95BE /* UITextField + Publisher.swift in Sources */,
 				A8C6F5C42896882700ADFB81 /* SplashViewModel.swift in Sources */,
 				A828C928284481E400738854 /* AlertHelper.swift in Sources */,
 				A828C9532844833800738854 /* WalkthroughCoordinator.swift in Sources */,

@@ -18,7 +18,7 @@ final class StartCommonBuilder {
     }
 }
 
-// clear keychain data after  new installation
+// Clear keychain after new installation
 struct ClearKeycahin : Command {
     
     func execute() {

@@ -9,12 +9,23 @@ import UIKit
 
 final class DetailView: UIView {
     
+    private enum Constants {
+        
+        static let fontSize : CGFloat = 15
+        static let padding : CGFloat = 10
+        
+        // MARK: contentView layout constants
+        static let contentViewCornerRadius: CGFloat = 10.0
+        
+        // MARK: profileImageView layout constants
+        
+        static let generalPadding : CGFloat = 10.0
+        static let generalHeight  : CGFloat = 25.0
+    }
+    
     private var safeArea: UILayoutGuide!
-    private var cornerRadius : CGFloat = 10
-    private var padding : CGFloat = 10
-    private var fontSize : CGFloat = 15
-
-     lazy var viewContainer : UIView = {
+    
+    lazy var viewContainer : UIView = {
         let viewContainer = UIView()
         viewContainer.backgroundColor = .white
         viewContainer.layer.borderColor =  UIColor.gray.cgColor
@@ -22,7 +33,7 @@ final class DetailView: UIView {
         return viewContainer
     }()
     
-     lazy var imageHeader : UIImageView = {
+    lazy var imageHeader : UIImageView = {
         let imageLogo = UIImageView()
         imageLogo.image = UIImage(named: "info")
         imageLogo.contentMode = .scaleAspectFill
@@ -30,56 +41,56 @@ final class DetailView: UIView {
         return imageLogo
     }()
     
-     lazy var lblHeadLine : UILabel = {
+    lazy var lblHeadLine : UILabel = {
         let lblHeadLine = UILabel()
-         lblHeadLine.text = "ID : "
-         lblHeadLine.textColor = .gray
-         lblHeadLine.font = UIFont.boldSystemFont(ofSize: 12)
+        lblHeadLine.text = "ID : "
+        lblHeadLine.textColor = .gray
+        lblHeadLine.font = UIFont.boldSystemFont(ofSize: Constants.fontSize)
         return lblHeadLine
     }()
     
-     lazy var lblHeadLineDetail : UILabel = {
+    lazy var lblHeadLineDetail : UILabel = {
         let lblHeadLineDetail = UILabel()
-         lblHeadLineDetail.text = "unknown"
-         lblHeadLineDetail.textColor = .black
-         lblHeadLineDetail.numberOfLines = 0
-         lblHeadLineDetail.font = UIFont.boldSystemFont(ofSize: fontSize)
+        lblHeadLineDetail.text = "unknown"
+        lblHeadLineDetail.textColor = .black
+        lblHeadLineDetail.numberOfLines = 0
+        lblHeadLineDetail.font = UIFont.boldSystemFont(ofSize: Constants.fontSize)
         return lblHeadLineDetail
     }()
     
-     lazy var lblSubline : UILabel = {
+    lazy var lblSubline : UILabel = {
         let lblSubline = UILabel()
-         lblSubline.text = "Hotel Name : "
-         lblSubline.textAlignment = .left
-         lblSubline.textColor = .gray
-         lblSubline.font = UIFont.boldSystemFont(ofSize: 12)
+        lblSubline.text = "Hotel Name : "
+        lblSubline.textAlignment = .left
+        lblSubline.textColor = .gray
+        lblSubline.font = UIFont.boldSystemFont(ofSize: Constants.fontSize)
         return lblSubline
     }()
     
-     lazy var lblSublineDetail : UILabel = {
+    lazy var lblSublineDetail : UILabel = {
         let lblSublineDetail = UILabel()
-         lblSublineDetail.text = "unknown"
-         lblSublineDetail.textAlignment = .left
-         lblSublineDetail.textColor = .black
-         lblSublineDetail.font = UIFont.boldSystemFont(ofSize: fontSize)
+        lblSublineDetail.text = "unknown"
+        lblSublineDetail.textAlignment = .left
+        lblSublineDetail.textColor = .black
+        lblSublineDetail.font = UIFont.boldSystemFont(ofSize: Constants.fontSize)
         return lblSublineDetail
     }()
     
-     lazy var headLineStackView: UIStackView = {
+    lazy var headLineStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [lblHeadLine, lblHeadLineDetail])
         stackView.axis  = .vertical
         stackView.distribution  = .fill
         stackView.alignment = .fill
-        stackView.spacing = padding
+        stackView.spacing = Constants.padding
         return stackView
     }()
     
-     lazy var subLineStackView: UIStackView = {
+    lazy var subLineStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [lblSubline, lblSublineDetail])
         stackView.axis  = .vertical
         stackView.distribution  = .fill
         stackView.alignment = .fill
-        stackView.spacing = padding
+        stackView.spacing = Constants.padding
         return stackView
     }()
     
@@ -94,15 +105,15 @@ final class DetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-     func addSubviews() {
-         [viewContainer, imageHeader, headLineStackView, subLineStackView]
+    func addSubviews() {
+        [viewContainer, imageHeader, headLineStackView, subLineStackView]
             .forEach {
                 addSubview($0)
                 $0.translatesAutoresizingMaskIntoConstraints = false
             }
     }
     
-     func setupUI() {
+    func setupUI() {
         backgroundColor = .whiteBackground
         safeArea = self.safeAreaLayoutGuide
     }

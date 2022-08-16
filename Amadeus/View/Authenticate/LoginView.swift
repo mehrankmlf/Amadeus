@@ -9,10 +9,21 @@ import UIKit
 
 final class LoginView: UIView {
     
+    private enum Constants {
+        
+        static let fontSize : CGFloat = 15
+        static let padding : CGFloat = 10
+        
+        // MARK: contentView layout constants
+        static let contentViewCornerRadius: CGFloat = 10.0
+        
+        // MARK: profileImageView layout constants
+        
+        static let generalPadding : CGFloat = 10.0
+        static let generalHeight  : CGFloat = 25.0
+    }
+    
     private var safeArea: UILayoutGuide!
-    private var cornerRadius : CGFloat = 10
-    private var padding : CGFloat = 10
-    private var fontSize : CGFloat = 15
     
     lazy var imageLogo : UIImageView = {
         let imageLogo = UIImageView()
@@ -34,7 +45,7 @@ final class LoginView: UIView {
         let lblID = UILabel()
         lblID.text = "ClientID"
         lblID.textColor = .fontColor
-        lblID.font = UIFont.boldSystemFont(ofSize: fontSize)
+        lblID.font = UIFont.boldSystemFont(ofSize: Constants.fontSize)
         return lblID
     }()
     
@@ -42,7 +53,7 @@ final class LoginView: UIView {
         let lblSecret = UILabel()
         lblSecret.text = "ClientSecret"
         lblSecret.textColor = .fontColor
-        lblSecret.font = UIFont.boldSystemFont(ofSize: fontSize)
+        lblSecret.font = UIFont.boldSystemFont(ofSize: Constants.fontSize)
         return lblSecret
     }()
     
@@ -52,7 +63,7 @@ final class LoginView: UIView {
         txtID.borderStyle = .line
         txtID.layer.borderColor = UIColor.gray.cgColor
         txtID.layer.borderWidth = 1.0
-        txtID.setLeftPaddingPoints(padding)
+        txtID.setLeftPaddingPoints(Constants.padding)
         return txtID
     }()
     
@@ -62,7 +73,7 @@ final class LoginView: UIView {
         txtSecret.borderStyle = .line
         txtSecret.layer.borderColor = UIColor.gray.cgColor
         txtSecret.layer.borderWidth = 1.0
-        txtSecret.setLeftPaddingPoints(padding)
+        txtSecret.setLeftPaddingPoints(Constants.padding)
         txtSecret.isSecureTextEntry = true
         return txtSecret
     }()
@@ -87,7 +98,7 @@ final class LoginView: UIView {
         stackView.axis  = .vertical
         stackView.distribution  = .fillEqually
         stackView.alignment = .fill
-        stackView.spacing = padding
+        stackView.spacing = Constants.padding
         return stackView
     }()
     
@@ -97,7 +108,7 @@ final class LoginView: UIView {
         btnSubmit.backgroundColor = .blueBackground
         btnSubmit.setTitleColor(UIColor.white, for: .normal)
         btnSubmit.clipsToBounds = true
-        btnSubmit.layer.cornerRadius = cornerRadius
+        btnSubmit.layer.cornerRadius = Constants.contentViewCornerRadius
         return btnSubmit
     }()
     

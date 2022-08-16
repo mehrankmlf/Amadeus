@@ -18,7 +18,6 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     var navigateSubject = PassthroughSubject<LoginViewController.Event, Never>()
 
-
     override func loadView() {
         view = contentView
     }
@@ -39,7 +38,6 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     private func setUpTargets() {
         contentView.btnSubmit.addTarget(self, action: #selector(submitAction), for: .touchUpInside)
-        contentView.txtID.addTarget(self, action: #selector(LoginViewController.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     private func setupNavigation() {
@@ -51,6 +49,12 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     }
     
     private func bindViewModel() {
+        
+        contentView.txtID.textPublisher
+            .receive(on: Scheduler.mainThread)
+            .assign(to: \.userName, on: viewModel)
+            .store(in: &subscriber)
+        
         viewModel.$isGetToken
             .sink(receiveValue: { [weak self] event in
                 if event {
@@ -99,18 +103,12 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
                 }
             } receiveValue: { value in
                 self.contentView.lblCountDownTimer.text = value
-                print(value)
             }.store(in: &subscriber)
     }
     
     @objc
     func submitAction() {
         viewModel.getTokenData(grant_type: "client_credentials", client_id: clientId, client_secret: fetchSecret() ?? "")
-    }
-    
-    @objc
-    func textFieldDidChange(_ textField: UITextField) {
-        viewModel.userName = textField.text ?? ""
     }
 }
 

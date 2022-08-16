@@ -8,23 +8,6 @@
 import Foundation
 import Combine
 
-enum ViewModelStatus : Equatable {
-    case loadStart
-    case dismissAlert
-    case emptyStateHandler(title : String, isShow : Bool)
-}
-
-protocol BaseViewModelEventSource : AnyObject {
-    var loadinState : CurrentValueSubject<ViewModelStatus, Never> { get }
-    var subscriber : Set<AnyCancellable> { get }
-}
-
-protocol BaseViewModelUseCase : AnyObject {
-    func callWithProgress<ReturnType>(argument: AnyPublisher<ReturnType?, APIError>, callback: @escaping (_ data: ReturnType?) -> Void)
-}
-
-typealias StandardBaseViewModel = BaseViewModelEventSource & BaseViewModelUseCase
-
 open class BaseViewModel : StandardBaseViewModel {
     
     var loadinState = CurrentValueSubject<ViewModelStatus, Never>(.dismissAlert)
@@ -51,6 +34,19 @@ open class BaseViewModel : StandardBaseViewModel {
             .subscribe(on: Scheduler.backgroundWorkScheduler)
             .receive(on: Scheduler.mainScheduler)
             .sink(receiveCompletion: completionHandler, receiveValue: resultValueHandler)
+            .store(in: &subscriber)
+    }
+    
+    func callWithoutProgress<ReturnType>(argument: AnyPublisher<ReturnType?, APIError>, callback: @escaping (_ data: ReturnType?) -> Void) {
+        
+        let resultValueHandler: (ReturnType?) -> Void = { data in
+            callback(data)
+        }
+        
+        argument
+            .subscribe(on: Scheduler.backgroundWorkScheduler)
+            .receive(on: Scheduler.mainScheduler)
+            .sink(receiveCompletion: {_ in }, receiveValue: resultValueHandler)
             .store(in: &subscriber)
     }
 }

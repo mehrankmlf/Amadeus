@@ -9,17 +9,28 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
     
+    private enum Constants {
+        
+        static let fontSize : CGFloat = 15
+        static let padding : CGFloat = 10
+        
+        // MARK: contentView layout constants
+        static let contentViewCornerRadius: CGFloat = 10.0
+        
+        // MARK: profileImageView layout constants
+        
+        static let generalPadding : CGFloat = 10.0
+        static let generalHeight  : CGFloat = 25.0
+    }
+    
     static let cellId = "cellId"
-    private var cornerRadius : CGFloat = 10
-    private var padding : CGFloat = 10
-    private var fontSize : CGFloat = 15
     
     private lazy var containerView : UIView = {
         let view = UIView()
         view.backgroundColor = .whiteBackground
         view.clipsToBounds = true
         view.dropShadow()
-        view.roundCorners([.topLeft, .bottomLeft], radius: cornerRadius)
+        view.roundCorners([.topLeft, .bottomLeft], radius: Constants.contentViewCornerRadius)
         return view
     }()
     
@@ -48,14 +59,14 @@ class MainTableViewCell: UITableViewCell {
     private lazy var lblTitle : UILabel = {
         let lblTitle = UILabel()
         lblTitle.textColor = UIColor.black
-        lblTitle.font = UIFont.systemFont(ofSize: fontSize)
+        lblTitle.font = UIFont.systemFont(ofSize: Constants.fontSize)
         return lblTitle
     }()
     
     private lazy var lblHeadLine : UILabel = {
         let lblHeadLine = UILabel()
         lblHeadLine.textColor = UIColor.black
-        lblHeadLine.font = UIFont.systemFont(ofSize: fontSize)
+        lblHeadLine.font = UIFont.systemFont(ofSize: Constants.fontSize)
         lblHeadLine.numberOfLines = 0
         return lblHeadLine
     }()
@@ -63,7 +74,7 @@ class MainTableViewCell: UITableViewCell {
     private lazy var lblSubline : UILabel = {
         let lblSubline = UILabel()
         lblSubline.textColor = UIColor.black
-        lblSubline.font = UIFont.systemFont(ofSize: fontSize)
+        lblSubline.font = UIFont.systemFont(ofSize: Constants.fontSize)
         return lblSubline
     }()
     
@@ -72,7 +83,7 @@ class MainTableViewCell: UITableViewCell {
         stackView.axis  = .vertical
         stackView.distribution  = .fillEqually
         stackView.alignment = .fill
-        stackView.spacing = padding
+        stackView.spacing = Constants.padding
         return stackView
     }()
     

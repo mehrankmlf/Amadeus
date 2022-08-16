@@ -8,11 +8,8 @@
 import UIKit
 
 final class MainView: UIView {
-    
+        
     private var safeArea: UILayoutGuide!
-    private var cornerRadius : CGFloat = 10
-    private var padding : CGFloat = 10
-    private var fontSize : CGFloat = 15
     
     lazy var viewContainer : UIView = {
         let viewContainer = UIView()

@@ -8,7 +8,7 @@
 import XCTest
 import Combine
 @testable import Amadeus
-
+ 
 class HotelSearchViewModelSearch: XCTestCase {
 
     private var mockSearch : MockHotelsSearch!
@@ -17,7 +17,7 @@ class HotelSearchViewModelSearch: XCTestCase {
 
     override func setUp()  {
         mockSearch = MockHotelsSearch()
-        viewModelToTest = MainViewModel(getHotels: mockSearch)
+        viewModelToTest = MainViewModel(useCase: mockSearch)
     }
 
     override func tearDown() {
@@ -45,13 +45,3 @@ class HotelSearchViewModelSearch: XCTestCase {
     }
 }
 
-//class TestClass : BaseResponse<[HotelSearchResponse]> {
-//    override init() {
-//        super.init()
-//        self.data = hotelSearchResponseMockData
-//    }
-//
-//    required init(from decoder: Decoder) throws {
-//        fatalError("init(from:) has not been implemented")
-//    }
-//}

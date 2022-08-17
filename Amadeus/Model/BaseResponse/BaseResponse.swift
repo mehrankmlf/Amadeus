@@ -7,10 +7,10 @@
 
 import Foundation
 
-final class BaseResponse<T: Decodable>: Decodable {
-
+class BaseResponse<T: Decodable>: Decodable {
+    
     var data: T?
-
+    
     private enum CodingKeys: String, CodingKey {
         case data = "data"
     }

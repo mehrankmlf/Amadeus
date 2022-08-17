@@ -363,6 +363,20 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		A820166B28ACACB1004642E2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A820166C28ACACE3004642E2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Repository;
+			sourceTree = "<group>";
+		};
 		A828C86528447D6500738854 = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +404,7 @@
 			children = (
 				A828C8E128447FE300738854 /* Classes */,
 				A8A8266A28701153009850CD /* UseCases */,
+				A820166B28ACACB1004642E2 /* Repository */,
 				A828C8D528447F8200738854 /* Model */,
 				A828C8C928447F1900738854 /* ViewComponents */,
 				A828C8AB28447E4D00738854 /* View */,
@@ -663,6 +678,7 @@
 		A828C92C2844821B00738854 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				A820166C28ACACE3004642E2 /* Repository */,
 				A809F50D28AB8D56006F95BE /* ViewModel */,
 				A828C943284482E900738854 /* AppConfig */,
 				A828C940284482DC00738854 /* KeyChainManager */,

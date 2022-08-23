@@ -11,15 +11,13 @@ import Foundation
 class MockLoginView : LoginViewFactory {
     func makeLoginViewController(coordinator: AuthenticationCoordinator) -> LoginViewController {
         let viewModel = makeLoginViewModel(coordinator: coordinator)
-        let view = LoginView()
-        let obfuscator = Obfuscator()
-        let initialViewController = LoginViewController(viewModel: viewModel, contentView: view, obfuscator: obfuscator)
+        let initialViewController = LoginViewController(viewModel: viewModel)
         return initialViewController
     }
     
     func makeLoginViewModel(coordinator: AuthenticationCoordinator) -> LoginViewModel {
         let mockLogin = MockLogin()
-        let viewModel = LoginViewModel(getTokenService: mockLogin)
+        let viewModel = LoginViewModel(useCase: mockLogin)
         return viewModel
     }
 }

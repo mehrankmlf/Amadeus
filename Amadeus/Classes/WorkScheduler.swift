@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class Scheduler {
+final class WorkScheduler {
 
     static var backgroundWorkScheduler: OperationQueue = {
         let operationQueue = OperationQueue()
@@ -21,3 +21,4 @@ final class Scheduler {
     
     static let mainThread = DispatchQueue.main
 }
+

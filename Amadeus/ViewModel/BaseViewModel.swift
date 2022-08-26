@@ -20,7 +20,7 @@ open class BaseViewModel : StandardBaseViewModel {
             switch completion {
             case .failure(let error):
                 self?.loadinState.send(.dismissAlert)
-                self?.loadinState.send(.emptyStateHandler(title: error.desc, isShow: true))
+//                self?.loadinState.send(.emptyStateHandler(title: error.desc, isShow: true))
             case .finished:
                 self?.loadinState.send(.dismissAlert)
             }
@@ -31,8 +31,8 @@ open class BaseViewModel : StandardBaseViewModel {
         }
         
         argument
-            .subscribe(on: Scheduler.backgroundWorkScheduler)
-            .receive(on: Scheduler.mainScheduler)
+            .subscribe(on: WorkScheduler.backgroundWorkScheduler)
+            .receive(on: WorkScheduler.mainScheduler)
             .sink(receiveCompletion: completionHandler, receiveValue: resultValueHandler)
             .store(in: &subscriber)
     }
@@ -44,8 +44,8 @@ open class BaseViewModel : StandardBaseViewModel {
         }
         
         argument
-            .subscribe(on: Scheduler.backgroundWorkScheduler)
-            .receive(on: Scheduler.mainScheduler)
+            .subscribe(on: WorkScheduler.backgroundWorkScheduler)
+            .receive(on: WorkScheduler.mainScheduler)
             .sink(receiveCompletion: {_ in }, receiveValue: resultValueHandler)
             .store(in: &subscriber)
     }

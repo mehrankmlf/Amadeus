@@ -28,10 +28,10 @@ final class MainViewModel : BaseViewModel, BaseMainViewModel {
     }
     
     func getHotelsData(cityCode: String) {
-        self.callWithProgress(argument: self.useCase.HotelsSearchService(cityCode: cityCode)) { [weak self] data in
-            guard let data = data, let hotels = data.data else {return}
-            self?.hotelData = hotels
-        }
+//        self.callWithProgress(argument: self.useCase.HotelsSearchService(cityCode: cityCode)) { [weak self] data in
+//            guard let data = data, let hotels = data.data else {return}
+//            self?.hotelData = hotels
+//        }
     }
 }
 

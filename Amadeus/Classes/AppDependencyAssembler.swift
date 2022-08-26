@@ -56,7 +56,7 @@ extension AppDependencyAssembler : MainFactory {
     }
     
     func makeMainViewModel(coordinator: MainCoordinator) -> MainViewModel {
-        let viewModel = MainViewModel(useCase: HotelSearch_Request())
+        let viewModel = MainViewModel(useCase: HotelSearch_Request() as! HotelsSearchProtocol)
         return viewModel
     }
 }

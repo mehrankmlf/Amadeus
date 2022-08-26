@@ -51,7 +51,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     private func bindViewModel() {
         
         contentView.txtID.textPublisher
-            .receive(on: Scheduler.mainThread)
+            .receive(on: WorkScheduler.mainThread)
             .assign(to: \.userName, on: viewModel)
             .store(in: &subscriber)
         
@@ -63,7 +63,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
             }).store(in: &subscriber)
         
         viewModel.usernameMessagePublisher
-            .receive(on: Scheduler.mainScheduler)
+            .receive(on: WorkScheduler.mainScheduler)
             .sink { [weak self] text in
                 
                 guard let `self` = self else {
@@ -80,7 +80,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         
         viewModel.formValidation
             .map { $0 != nil}
-            .receive(on: Scheduler.mainScheduler)
+            .receive(on: WorkScheduler.mainScheduler)
             .sink(receiveValue: { (isEnable) in
                 if isEnable {
                     //Do Something

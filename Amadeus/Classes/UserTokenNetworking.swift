@@ -13,7 +13,7 @@ enum UserTokenNetworking {
     case accessToken(grant_type: String, client_id :String, client_secret: String)
 }
 
-extension UserTokenNetworking : TargetType {
+extension UserTokenNetworking : NetworkTarget {
     var baseURL: BaseURLType {
         return .baseApi
     }
@@ -21,32 +21,31 @@ extension UserTokenNetworking : TargetType {
     var version: VersionType {
         return .v1
     }
-
-    var path: RequestType {
-        switch self {
-        case .accessToken:
-            return .requestPath(path: "/security/oauth2/token")
-        }
+    
+    var path: String {
+        return "/security/oauth2/token"
     }
     
-    var method: HTTPMethod {
-        switch self {
-        case .accessToken :
-            return .post
-        }
+    var methodType: HTTPMethod {
+        return .post
     }
     
     var task: Task {
         switch self {
-        case .accessToken(let grantType, let clientId, let clientSecret):
-            return .requestParameters(parameters: ["grant_type":grantType, "client_id": clientId, "client_secret": clientSecret], encoding: URLEncoding.httpBody)
+        case .accessToken(grant_type: let grant_type, client_id: let client_id, client_secret: let client_secret):
+            return .requestParameters(parameters: ["grant_type":grant_type, "client_id": client_id, "client_secret": client_secret], encoding: URLEncoding.httpBody)
         }
     }
-
+    
+    var providerType: AuthProviderType {
+        .none
+    }
+    
+    var contentType: ContentType? {
+        return .urlFormEncoded
+    }
+    
     var headers: [String : String]? {
-        switch self {
-        default :
-            return ["Content-Type":"application/x-www-form-urlencoded"]
-        }
+        return ["Content-Type":"application/x-www-form-urlencoded"]
     }
 }

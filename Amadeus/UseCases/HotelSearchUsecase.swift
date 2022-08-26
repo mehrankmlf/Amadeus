@@ -12,9 +12,9 @@ protocol HotelsSearchProtocol : AnyObject {
     func HotelsSearchService(cityCode :String) -> AnyPublisher <BaseResponse<[HotelSearchResponse]>?, APIError>
 }
 
-final class HotelSearch_Request : BaseAPI<MainNetworking>, HotelsSearchProtocol {
+final class HotelSearch_Request  {
     
-    func HotelsSearchService(cityCode : String) -> AnyPublisher <BaseResponse<[HotelSearchResponse]>?, APIError> {
-        self.fetchData(target: .hotelSearch(cityCode: cityCode), responseClass: BaseResponse<[HotelSearchResponse]>.self)
-    }
+//    func HotelsSearchService(cityCode : String) -> AnyPublisher <BaseResponse<[HotelSearchResponse]>?, APIError> {
+////        self.fetchData(target: .hotelSearch(cityCode: cityCode), responseClass: BaseResponse<[HotelSearchResponse]>.self)
+//    }
 }

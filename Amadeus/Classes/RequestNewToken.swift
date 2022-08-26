@@ -30,7 +30,7 @@ final class RequestNewToken : RequestNewTokenProtocol, KeyChainManagerInjector {
         guard let type = credential.grant_type, let id = credential.client_id, let secret = credential.client_secret else {return}
         
         self.getTokenService.getTokenService(grant_type: type, client_id: id, client_secret: secret)
-            .receive(on: Scheduler.mainScheduler)
+            .receive(on: WorkScheduler.mainScheduler)
             .sink { _ in }
             receiveValue: { [weak self] data in
                 guard let data = data else {return}

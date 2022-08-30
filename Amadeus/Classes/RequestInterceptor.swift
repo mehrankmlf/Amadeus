@@ -40,35 +40,35 @@ final class RequestInterceptorHelper : Alamofire.RequestInterceptor, KeyChainMan
     }
     
     func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
-        
-        guard let statusCode = request.response?.statusCode else {
-            completion(.doNotRetry)
-            return
-        }
-        
-        if request.retryCount < self.retryLimit {
-            
-            switch statusCode {
-            case 200...299 :
-                completion(.doNotRetry)
-            case 401 :
-                guard !isDoRetrying else {
-                    completion(.doNotRetry)
-                    return
-                }
-                self.requestNewToken?.refreshToken { isSuccess in
-                    self.isDoRetrying = true
-                    isSuccess ? completion(.retry) : completion(.doNotRetry)
-                }
-            case 500...599 :
-                return completion(.retryWithDelay(self.retryDelay))
-            default:
-                completion(.doNotRetry)
-            }
-        } else {
-            session.cancelAllRequests()
-            completion(.doNotRetryWithError(APIError.serverError))
-        }
+//
+//        guard let statusCode = request.response?.statusCode else {
+//            completion(.doNotRetry)
+//            return
+//        }
+//        
+//        if request.retryCount < self.retryLimit {
+//            
+//            switch statusCode {
+//            case 200...299 :
+//                completion(.doNotRetry)
+//            case 401 :
+//                guard !isDoRetrying else {
+//                    completion(.doNotRetry)
+//                    return
+//                }
+//                self.requestNewToken?.refreshToken { isSuccess in
+//                    self.isDoRetrying = true
+//                    isSuccess ? completion(.retry) : completion(.doNotRetry)
+//                }
+//            case 500...599 :
+//                return completion(.retryWithDelay(self.retryDelay))
+//            default:
+//                completion(.doNotRetry)
+//            }
+//        } else {
+//            session.cancelAllRequests()
+//            completion(.doNotRetryWithError(APIError.serverError))
+//        }
     }
 }
 

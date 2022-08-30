@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal extension URLRequest {
+ extension URLRequest {
     
   private var headerField: String { "Authorization" }
   private var contentTypeHeader: String { "Content-Type" }

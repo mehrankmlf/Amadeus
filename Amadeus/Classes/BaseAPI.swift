@@ -8,47 +8,49 @@
 
 import Foundation
 import Combine
+import os.log
 
-class BaseAPI: HoverProtocol {
+class BaseAPI: BaseAPIProtocol {
     
     typealias AnyPublisherResult<M> = AnyPublisher<M, APIError>
-
+    
     private let debugger : BaseAPIDebuger
-
-    // MARK: Object Lifecycle
+    
     public init(debugger : BaseAPIDebuger = BaseAPIDebuger()) {
         self.debugger = debugger
     }
-
+    
     func request<M, T>(with target: NetworkTarget,
-                       urlSession: URLSession = URLSession.shared,
-                       jsonDecoder: JSONDecoder = .init(),
-                       scheduler: T, class type: M.Type) -> AnyPublisherResult<M> where M : Decodable, T : Scheduler {
-        let urlRequest = constructURL(with: target)
-   
-        return urlSession.dataTaskPublisher(for: urlRequest)
+                       decoder: JSONDecoder = .init(),
+                       scheduler: T, response type: M.Type) -> AnyPublisherResult<M> where M : Decodable, T : Scheduler {
+        /// Generate Specific URLRequest
+                let urlRequest = request(with: target)
+//        let urlRequest = constructURL(with: target)
+        //        print(urlRequest)
+        //        print(urlRequest.url)
+        return urlRequest.dataTaskPublisher
             .tryCatch { error -> URLSession.DataTaskPublisher in
                 guard error.networkUnavailableReason == .constrained else {
                     let error = APIError.connectionError(error)
                     self.debugger.log(request: urlRequest,error: error)
                     throw error
                 }
-                return urlSession.dataTaskPublisher(for: urlRequest)
-            }.receive(on: DispatchQueue.main)
+                return URLSession.shared.dataTaskPublisher(for: urlRequest)
+            }.receive(on: scheduler)
             .tryMap { output, response -> Data in
                 guard let httpResponse = response as? HTTPURLResponse else {
                     let error = APIError.invalidResponse(httpStatusCode: 0)
                     self.debugger.log(request: urlRequest,error: error)
                     throw error
                 }
-
-                if !httpResponse.isSuccessful {
+                if !httpResponse.isResponseOK {
                     let error = APIError.invalidResponse(httpStatusCode: httpResponse.statusCode)
                     self.debugger.log(request: urlRequest,error: error)
                     throw error
                 }
+                /// Return response to the Usecase
                 return output
-            }.decode(type: type.self, decoder: jsonDecoder).mapError { error in
+            }.decode(type: type.self, decoder: decoder).mapError { error in
                 if let error = error as? APIError {
                     self.debugger.log(request: urlRequest,error: error)
                     return error
@@ -63,6 +65,21 @@ class BaseAPI: HoverProtocol {
 
 // MARK: - Private Extension
 extension BaseAPI {
+    
+    func request(with type : NetworkTarget) -> URLRequest {
+        let request = try! URLRequestBuilder(path: type.path)
+            .method(.post)
+        //            .jsonBody(type.parameters)
+            .contentType(.applicationXWwwFormUrlEncoded)
+        //            .accept(.applicationJSON)
+            .timeout(20)
+        //            .acceptEncoding(<#T##encoding: URLRequestBuilder.Encoding##URLRequestBuilder.Encoding#>)
+
+            .queryItems(type.parameters)
+            .makeRequest(withBaseURL: type.baseURL.desc)
+        return request
+    }
+    
     func constructURL(with target: NetworkTarget) -> URLRequest {
         switch target.methodType {
         case .get:
@@ -124,4 +141,3 @@ extension BaseAPI {
         }
     }
 }
-

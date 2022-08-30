@@ -18,11 +18,18 @@ enum Task {
     case requestParameters(parameters: [String: Any], encoding: ParameterEncoding)
 }
 
+//This defines the parameters to pass along with the request
+enum RequestParams {
+    case body(_: [String: Any]?)
+    case url(_: [String: Any]?)
+}
+
 protocol NetworkTarget {
     var baseURL: BaseURLType { get }
     var version : VersionType { get }
     var path: String { get }
     var methodType: HTTPMethod { get }
+    var parameters:  [String: String] { get }
     var task: Task { get }
     var providerType: AuthProviderType { get }
     var contentType: ContentType? { get }

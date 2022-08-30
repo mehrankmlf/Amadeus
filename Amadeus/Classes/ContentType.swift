@@ -14,7 +14,6 @@ public enum ContentType: String {
     case multipartFormData = "multipart/form-data"
 }
 
-
 // MARK: - Public
 public extension ContentType {
   

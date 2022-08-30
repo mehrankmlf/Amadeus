@@ -16,8 +16,25 @@ enum BaseVCActManager : Int {
     case hideKeyBoardWhenNeeded = 1
 }
 
+enum IHProgressHudType {
+    case willAppear
+    case disAppear
+    case touchEvent
+    var desc : String {
+        switch self {
+        case .willAppear:
+            return "IHProgressHUDWillAppear"
+        case .disAppear:
+            return "IHProgressHUDWillDisappear"
+        case .touchEvent:
+            return "IHProgressHUDDidReceiveTouchEvent"
+        }
+    }
+}
+
 protocol ShowEmptyStateProtocol : AnyObject {
-    func showEmptyStateView(title: String?, errorType: EmptyStateErrorType, isShow : Bool)
+    func showEmptyStateView(title: String?, errorType:
+                            EmptyStateErrorType, isShow : Bool)
 }
 
 class BaseViewController<ViewModel : StandardBaseViewModel>: UIViewController {
@@ -53,9 +70,18 @@ class BaseViewController<ViewModel : StandardBaseViewModel>: UIViewController {
     }
     
     private func addIHProgressObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.handle(_:)), name: NotificationName.IHProgressHUDWillAppear.getNotificationName(), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.handle(_:)), name: NotificationName.IHProgressHUDWillDisappear.getNotificationName(), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.handle(_:)), name: NotificationName.IHProgressHUDDidReceiveTouchEvent.getNotificationName(), object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(BaseViewController.handle(_:)),
+                                               name: NotificationName.IHProgressHUDWillAppear.getNotificationName(),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(BaseViewController.handle(_:)),
+                                               name: NotificationName.IHProgressHUDWillDisappear.getNotificationName(),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(BaseViewController.handle(_:)),
+                                               name: NotificationName.IHProgressHUDDidReceiveTouchEvent.getNotificationName(),
+                                               object: nil)
     }
     
     deinit {
@@ -64,17 +90,17 @@ class BaseViewController<ViewModel : StandardBaseViewModel>: UIViewController {
     
     @objc func handle(_ notification: Notification?) {
         
-        if notification?.name.rawValue == "IHProgressHUDWillAppear" {
+        if notification?.name.rawValue == IHProgressHudType.willAppear.desc  {
             DispatchQueue.main.async {
                 self.view.isUserInteractionEnabled = false
             }
         }
-        if notification?.name.rawValue == "IHProgressHUDWillDisappear" {
+        if notification?.name.rawValue == IHProgressHudType.disAppear.desc {
             DispatchQueue.main.async {
                 self.view.isUserInteractionEnabled = true
             }
         }
-        if notification?.name.rawValue == "IHProgressHUDDidReceiveTouchEvent" {
+        if notification?.name.rawValue == IHProgressHudType.touchEvent.desc {
             //DO SomeThing if Needded
         }
     }
@@ -92,7 +118,7 @@ class BaseViewController<ViewModel : StandardBaseViewModel>: UIViewController {
     private func setReachability() {
         reachability?.whenUnreachable = { [weak self] _ in
             guard let self = self else { return }
-            self.showAlertWith(message: "NetwortErro")
+            self.showAlertWith(message: APIError.noNetwork.desc)
         }
         try? reachability?.startNotifier()
     }
@@ -113,7 +139,9 @@ extension BaseViewController {
         case .dismissAlert:
             self.alert.dismiss()
         case .emptyStateHandler(let title, let isShow):
-            self.delegate?.showEmptyStateView(title: title, errorType: .serverError, isShow: isShow)
+            self.delegate?.showEmptyStateView(title: title,
+                                              errorType: .serverError,
+                                              isShow: isShow)
         }
     }
 }

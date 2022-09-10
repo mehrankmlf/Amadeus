@@ -1,7 +1,6 @@
 /**
  Enum to represent a HTTP request method.
 
- Generated from https://developer.mozilla.org/de/docs/Web/HTTP/Methods
  */
 public enum HTTPMethod : Equatable {
 

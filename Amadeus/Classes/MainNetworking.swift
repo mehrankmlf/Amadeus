@@ -7,45 +7,44 @@
 
 import Foundation
 
-//enum MainNetworking {
-//    
-//    case hotelSearch(cityCode: String)
-//}
-//
-//extension MainNetworking : TargetType {
-//    var baseURL: BaseURLType {
-//        return .baseApi
-//    }
-//    
-//    var version: VersionType {
-//        return .v2
-//    }
-//
-//    var path: RequestType {
-//        switch self {
-//        case .hotelSearch(let code):
-//            return .queryParametrs(query: "\("/shopping/hotel-offers")\(["cityCode":code].queryString)")
-//        }
-//    }
-//    
-//    var method: HTTPMethod {
-//        switch self {
-//        case .hotelSearch :
-//            return .get
-//        }
-//    }
-//    
-//    var task: Task {
-//        switch self {
-//        case .hotelSearch:
-//            return .requestPlain
-//        }
-//    }
-//
-//    var headers: [String : String]? {
-//        switch self {
-//        default :
-//            return nil
-//        }
-//    }
-//}
+enum MainNetworking {
+    
+    case hotelSearch(cityCode: String)
+}
+
+extension MainNetworking : NetworkTarget {
+    var baseURL: BaseURLType {
+        return .baseApi
+    }
+    
+    var version: VersionType {
+        return .v2
+    }
+    
+    var path: String {
+        return "/shopping/hotel-offers"
+    }
+    
+    var methodType: HTTPMethod {
+        .get
+    }
+    
+    var queryParams: [String : String]? {
+        switch self {
+        case .hotelSearch(let code) :
+            return ["cityCode":code]
+        }
+    }
+    
+    var queryParamsEncoding: URLEncoding? {
+        return .default
+    }
+    
+    var bodyEncoding: BodyEncoding? {
+        return .xWWWFormURLEncoded
+    }
+
+    var headers: [String : String]? {
+        return nil
+    }
+}

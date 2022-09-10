@@ -10,24 +10,27 @@ import Foundation
 import Combine
 import os.log
 
-class BaseAPI: BaseAPIProtocol {
+public protocol SessionPublisherProtocol: AnyObject {
+  func dataTaskPublisher(request: URLRequest) -> AnyPublisher<(data: Data, response: URLResponse), Error>
+}
+
+class BaseAPI<Target: NetworkTarget>: BaseAPIProtocol {
     
     typealias AnyPublisherResult<M> = AnyPublisher<M, APIError>
     
-    private let debugger : BaseAPIDebuger
+    var debugger : BaseAPIDebuger
+    
+    private let session: SessionPublisherProtocol
     
     public init(debugger : BaseAPIDebuger = BaseAPIDebuger()) {
         self.debugger = debugger
     }
     
-    func request<M, T>(with target: NetworkTarget,
+    func request<M, T>(with target: Target,
                        decoder: JSONDecoder = .init(),
                        scheduler: T, response type: M.Type) -> AnyPublisherResult<M> where M : Decodable, T : Scheduler {
         /// Generate Specific URLRequest
-                let urlRequest = request(with: target)
-//        let urlRequest = constructURL(with: target)
-        //        print(urlRequest)
-        //        print(urlRequest.url)
+        let urlRequest = target.buildURLRequest()
         return urlRequest.dataTaskPublisher
             .tryCatch { error -> URLSession.DataTaskPublisher in
                 guard error.networkUnavailableReason == .constrained else {
@@ -43,8 +46,11 @@ class BaseAPI: BaseAPIProtocol {
                     self.debugger.log(request: urlRequest,error: error)
                     throw error
                 }
+                if httpResponse.statusCode == 401 {
+                    
+                }
                 if !httpResponse.isResponseOK {
-                    let error = APIError.invalidResponse(httpStatusCode: httpResponse.statusCode)
+                    let error = BaseAPI.errorType(type: httpResponse.statusCode)
                     self.debugger.log(request: urlRequest,error: error)
                     throw error
                 }
@@ -55,89 +61,133 @@ class BaseAPI: BaseAPIProtocol {
                     self.debugger.log(request: urlRequest,error: error)
                     return error
                 } else {
-                    let err = APIError.decodingError(error)
+                    let error = APIError.decodingError(error)
                     self.debugger.log(request: urlRequest,error: error)
-                    return err
+                    return error
                 }
             }.eraseToAnyPublisher()
     }
 }
 
-// MARK: - Private Extension
-extension BaseAPI {
-    
-    func request(with type : NetworkTarget) -> URLRequest {
-        let request = try! URLRequestBuilder(path: type.path)
-            .method(.post)
-        //            .jsonBody(type.parameters)
-            .contentType(.applicationXWwwFormUrlEncoded)
-        //            .accept(.applicationJSON)
-            .timeout(20)
-        //            .acceptEncoding(<#T##encoding: URLRequestBuilder.Encoding##URLRequestBuilder.Encoding#>)
 
-            .queryItems(type.parameters)
-            .makeRequest(withBaseURL: type.baseURL.desc)
-        return request
+public typealias AccessToken = String
+public typealias RefreshToken = String
+
+public protocol AuthenticationTokenProvidable: AnyObject {
+  var accessToken: CurrentValueSubject<AccessToken?, Never> { get }
+  var refreshToken: CurrentValueSubject<RefreshToken?, Never> { get }
+  func reissueAccessToken() -> AnyPublisher<AccessToken, Error>
+  func invalidateAccessToken()
+  func invalidateRefreshToken()
+}
+
+extension AuthenticationTokenProvidable {
+  func invalidateRefreshToken() {
+    refreshToken.value = nil
+    accessToken.value = nil
+  }
+
+  func invalidateAccesstoken() {
+    accessToken.value = nil
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+public enum AuthorizationHeaderScheme: String {
+  case basic = "Basic "
+  case bearer = "Bearer "
+  case none = ""
+}
+
+public struct AuthenticatedWebServiceConfiguration {
+  let authorizationHeaderScheme: AuthorizationHeaderScheme
+  let refreshTriggerStatusCodes: [Int]
+
+  public init(authorizationHeaderScheme: AuthorizationHeaderScheme = .none,
+              refreshTriggerStatusCodes: [Int] = [401, 403]) {
+    self.authorizationHeaderScheme = authorizationHeaderScheme
+    self.refreshTriggerStatusCodes = refreshTriggerStatusCodes
+  }
+}
+
+final class AuthenticatedWebService: BaseAPI<UserTokenNetworking> {
+  let tokenAccessQueue = DispatchQueue(label: "com.fusion.authentication.queue")
+  let executionQueue = DispatchQueue(label: "com.fusion.execution.queue",
+                                     qos: .userInitiated,
+                                     attributes: .concurrent)
+  private let tokenProvider: AuthenticationTokenProvidable
+  private let configuration: AuthenticatedWebServiceConfiguration
+
+  public init(urlSession: SessionPublisherProtocol = URLSession(configuration: URLSessionConfiguration.ephemeral,
+                                                                delegate: nil,
+                                                                delegateQueue: nil),
+              tokenProvider: AuthenticationTokenProvidable,
+              configuration: AuthenticatedWebServiceConfiguration = AuthenticatedWebServiceConfiguration()) {
+    self.tokenProvider = tokenProvider
+    self.configuration = configuration
+    super.init(urlSession: urlSession)
+  }
+
+  public override func execute(urlRequest: URLRequest) -> AnyPublisher<(data: Data, response: HTTPURLResponse), Error> {
+    var urlRequest = urlRequest
+
+    func appendTokenAndExecute(accessToken: AccessToken) -> AnyPublisher<(data: Data, response: HTTPURLResponse), Error> {
+      urlRequest.setValue(self.configuration.authorizationHeaderScheme.rawValue + accessToken, forHTTPHeaderField: "Authorization")
+      return super.execute(urlRequest: urlRequest)
+        .subscribe(on: executionQueue)
+        .eraseToAnyPublisher()
     }
-    
-    func constructURL(with target: NetworkTarget) -> URLRequest {
-        switch target.methodType {
-        case .get:
-            return prepareGetRequest(with: target)
-        case .put,
-                .post:
-            return prepareGeneralRequest(with: target)
-        case .delete:
-            return prepareDeleteRequest(with: target)
+
+    guard let accessToken = self.tokenProvider.accessToken.value else {
+      return Deferred {
+          Fail<(data: Data, response: HTTPURLResponse), Error>(error: APIError.unknownError)
+      }
+      .receive(on: DispatchQueue.main)
+      .eraseToAnyPublisher()
+    }
+
+    return Deferred {
+      return appendTokenAndExecute(accessToken: accessToken)
+        .flatMap { output -> AnyPublisher<(data: Data, response: HTTPURLResponse), Error> in
+          if self.configuration.refreshTriggerStatusCodes.contains(where: { return $0 == output.response.statusCode }){
+            return self.retrySynchronizedTokenRefresh()
+              .flatMap { accessToken -> AnyPublisher<(data: Data, response: HTTPURLResponse), Error> in
+                return appendTokenAndExecute(accessToken: accessToken)
+              }
+              .eraseToAnyPublisher()
+          }
+          return Just<(data: Data, response: HTTPURLResponse)>(output)
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
         }
     }
-    
-    func prepareGetRequest(with target: NetworkTarget) -> URLRequest {
-        let url = target.pathAppendedURL
-        switch target.task {
-        case .requestParameters(let parameters, _):
-            guard let contentType = target.contentType,
-                  contentType == .urlFormEncoded else {
-                let url = url.generateUrlWithQuery(with: parameters)
-                var request = URLRequest(url: url)
-                request.prepareRequest(with: target)
-                return request
-            }
-            var request = URLRequest(url: url)
-            request.httpBody = contentType.prepareContentBody(parameters: parameters)
-            return request
-        default:
-            var request = URLRequest(url: url)
-            request.prepareRequest(with: target)
-            return request
+    .receive(on: DispatchQueue.main)
+    .eraseToAnyPublisher()
+  }
+
+  private func retrySynchronizedTokenRefresh() -> AnyPublisher<AccessToken, Error> {
+    return tokenProvider.reissueAccessToken()
+      .subscribe(on: executionQueue,
+                 options: DispatchQueue.SchedulerOptions(qos: .userInitiated, flags: .barrier))
+      .handleEvents(receiveSubscription: { [weak self] _ in
+        self?.tokenAccessQueue.sync {
+          self?.tokenProvider.invalidateAccessToken()
         }
-    }
-    
-    func prepareGeneralRequest(with target: NetworkTarget) -> URLRequest {
-        let url = target.pathAppendedURL
-        var request = URLRequest(url: url)
-        request.prepareRequest(with: target)
-        switch target.task {
-        case .requestParameters(let parameters, _):
-            request.httpBody = target.contentType?.prepareContentBody(parameters: parameters)
-            return request
-        default:
-            return request
+      },
+      receiveOutput: { [weak self] (accessToken) in
+        self?.tokenAccessQueue.sync {
+          self?.tokenProvider.accessToken.value = accessToken
         }
-    }
-    
-    func prepareDeleteRequest(with target: NetworkTarget) -> URLRequest {
-        let url = target.pathAppendedURL
-        switch target.task {
-        case .requestParameters(let parameters, _):
-            var request = URLRequest(url: url)
-            request.prepareRequest(with: target)
-            request.httpBody = target.contentType?.prepareContentBody(parameters: parameters)
-            return request
-        default:
-            var request = URLRequest(url: url)
-            request.httpMethod = target.methodType.name
-            return request
-        }
-    }
+      })
+      .eraseToAnyPublisher()
+  }
 }

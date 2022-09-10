@@ -20,7 +20,7 @@ open class BaseViewModel : StandardBaseViewModel {
             switch completion {
             case .failure(let error):
                 self?.loadinState.send(.dismissAlert)
-//                self?.loadinState.send(.emptyStateHandler(title: error.desc, isShow: true))
+                self?.loadinState.send(.emptyStateHandler(title: error.desc, isShow: true))
             case .finished:
                 self?.loadinState.send(.dismissAlert)
             }

@@ -13,4 +13,3 @@ extension HTTPURLResponse {
         return (200..<299).contains(statusCode)
     }
 }
-

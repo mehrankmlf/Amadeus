@@ -9,7 +9,9 @@
 import Foundation
 import Combine
 
- protocol BaseAPIProtocol {
+ protocol APIProtocol {
+     
+     associatedtype Target = NetworkTarget
   
   /// Requests with `DataTaskPublisher` with body response
   /// - Parameters:
@@ -19,9 +21,15 @@ import Combine
   ///   - response: Response Model
   @available(iOS 13.0, *)
   func request<M, T>(
-    with target: NetworkTarget,
+    with target: Target,
     decoder: JSONDecoder,
     scheduler: T,
     response type: M.Type
   ) -> AnyPublisher<M, APIError> where M: Decodable, T: Scheduler
 }
+
+protocol DebuggerProtocol {
+    var debugger : BaseAPIDebuger { get }
+}
+
+typealias BaseAPIProtocol = APIProtocol & DebuggerProtocol

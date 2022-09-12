@@ -47,4 +47,8 @@ extension MainNetworking : NetworkTarget {
     var headers: [String : String]? {
         return nil
     }
+    
+    var providerType: AuthProviderType {
+        return .bearer(token: "")
+    }
 }

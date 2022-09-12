@@ -8,6 +8,7 @@
 import Foundation
 
 protocol NetworkTarget {
+    var token : String { get }
     var baseURL: BaseURLType { get }
     var version : VersionType { get }
     var path: String { get }

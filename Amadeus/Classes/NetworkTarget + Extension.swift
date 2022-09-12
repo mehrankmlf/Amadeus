@@ -25,7 +25,11 @@ extension NetworkTarget {
         urlRequest.httpMethod = self.methodType.name
         //set requestHeaders for request
         urlRequest.allHTTPHeaderFields = self.headers
-        
+        //set authorization header for reqeust 
+        let result = self.authorizationHandler(type: self.providerType)
+        if let token = result.0, let name = result.1 {
+            urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: name)
+        }
         //set query parameters for request
         if let queryParams = self.queryParams, queryParams.count > 0,
            let queryParamsEncoding = self.queryParamsEncoding {
@@ -101,5 +105,18 @@ extension NetworkTarget {
         }
     }
     
+    private func authorizationHandler(type : AuthProviderType) -> (String?, String?) {
+        var headerField: String { "Authorization" }
+        switch type {
+        case .bearer(token: let token):
+            return (token, headerField)
+        case .none:
+            break
+        }
+        return (nil, nil)
+    }
     
+    private func getToken() -> String? {
+        let 
+    }
 }

@@ -1,5 +1,5 @@
 //
-//  HotelsSearchProtocol.swift
+//  CitySearchProtocol.swift
 //  Amadeus
 //
 //  Created by Mehran Kamalifard on 1/13/22.
@@ -8,14 +8,14 @@
 import Foundation
 import Combine
 
-protocol HotelsSearchProtocol : AnyObject {
-    func HotelsSearchService(cityCode :String) -> AnyPublisher <BaseResponse<[HotelSearchResponse]>?, APIError>
+protocol CitySearchProtocol : AnyObject {
+    func citySearchService(countryCode: String, keyword: String) -> AnyPublisher <BaseResponse<[CitySearchResponse]>?, APIError>
 }
 
-final class HotelSearch_Request : BaseAPI<MainNetworking>, HotelsSearchProtocol {
-    func HotelsSearchService(cityCode : String) -> AnyPublisher <BaseResponse<[HotelSearchResponse]>?, APIError> {
-        self.request(with: .hotelSearch(cityCode: cityCode),
+final class CitySearch_Request : NetworkClientManager<MainNetworking>, CitySearchProtocol {
+    func citySearchService(countryCode: String, keyword: String) -> AnyPublisher <BaseResponse<[CitySearchResponse]>?, APIError> {
+        self.request(with: .citySearch(countryCode: countryCode, keyword: keyword),
                      scheduler: WorkScheduler.mainScheduler,
-                     response: BaseResponse<[HotelSearchResponse]>?.self)
+                     responseObject: BaseResponse<[CitySearchResponse]>?.self)
     }
 }

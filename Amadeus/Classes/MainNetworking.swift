@@ -9,20 +9,21 @@ import Foundation
 
 enum MainNetworking {
     
-    case hotelSearch(cityCode: String)
+    case citySearch(countryCode: String, keyword : String)
 }
 
 extension MainNetworking : NetworkTarget {
+
     var baseURL: BaseURLType {
         return .baseApi
     }
     
     var version: VersionType {
-        return .v2
+        return .v1
     }
     
     var path: String {
-        return "/shopping/hotel-offers"
+        return "/reference-data/locations/cities"
     }
     
     var methodType: HTTPMethod {
@@ -31,24 +32,16 @@ extension MainNetworking : NetworkTarget {
     
     var queryParams: [String : String]? {
         switch self {
-        case .hotelSearch(let code) :
-            return ["cityCode":code]
+        case .citySearch(let country, let key) :
+            return ["countryCode":country, "keyword":key]
         }
     }
     
     var queryParamsEncoding: URLEncoding? {
         return .default
     }
-    
-    var bodyEncoding: BodyEncoding? {
-        return .xWWWFormURLEncoded
-    }
 
-    var headers: [String : String]? {
-        return nil
-    }
-    
-    var providerType: AuthProviderType {
-        return .bearer(token: "")
+    var authorization: AuthorizationType {
+        return .bearer
     }
 }

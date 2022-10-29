@@ -15,7 +15,7 @@ protocol MainViewFactory {
 
 protocol MainCoordinatorProtocol : Coordinator, MainViewFactory {
     func showMainViewController()
-    func showDetailViewController(data : HotelSearchResponse)
+    func showDetailViewController(data : CitySearchResponse)
     init(_ navigationController: UINavigationController,
          mainFactory : MainFactory,
          detailFactory : DetailFactory)
@@ -55,7 +55,7 @@ final class MainCoordinator : MainCoordinatorProtocol {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func showDetailViewController(data: HotelSearchResponse) {
+    func showDetailViewController(data: CitySearchResponse) {
         let vc = self.detailFactory.makeDetailViewController(coordinator: self)
         vc.data = data
         navigationController.pushViewController(vc, animated: true)

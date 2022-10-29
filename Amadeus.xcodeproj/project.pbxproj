@@ -8,28 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		0211C1532860DD46009C1F28 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211C1522860DD46009C1F28 /* Configuration.swift */; };
-		021531132865FB33006D3C98 /* Hotel_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021531122865FB33006D3C98 /* Hotel_Response.swift */; };
-		021531152865FE30006D3C98 /* Address_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021531142865FE30006D3C98 /* Address_Response.swift */; };
+		021531132865FB33006D3C98 /* Address_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021531122865FB33006D3C98 /* Address_Response.swift */; };
+		021B357D28E74B3D00EBCC0F /* AuthorizationHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B357C28E74B3D00EBCC0F /* AuthorizationHttpRequest.swift */; };
 		022146F028564185003FB94B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022146EF28564185003FB94B /* Reachability.swift */; };
+		0222FCEC28E57A17003EADD7 /* AuthorizationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0222FCEB28E57A17003EADD7 /* AuthorizationType.swift */; };
+		0222FCEE28E58798003EADD7 /* AuthorizationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0222FCED28E58798003EADD7 /* AuthorizationProtocol.swift */; };
 		022765F02845CAFE00A9074A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022765EF2845CAFE00A9074A /* LoginViewModel.swift */; };
-		022D79DD284624340050CEE4 /* MockHotelsSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79DA284624340050CEE4 /* MockHotelsSearch.swift */; };
+		022D79DD284624340050CEE4 /* MockCitySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79DA284624340050CEE4 /* MockCitySearch.swift */; };
 		022D79DE284624340050CEE4 /* MockLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79DB284624340050CEE4 /* MockLogin.swift */; };
 		022D79E2284624840050CEE4 /* ResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E1284624840050CEE4 /* ResponseMock.swift */; };
 		022D79E5284624A70050CEE4 /* GetToken_ResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E4284624A70050CEE4 /* GetToken_ResponseTests.swift */; };
 		022D79E9284624CC0050CEE4 /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D79E7284624CC0050CEE4 /* LoginViewModelTest.swift */; };
 		023AB54428B7F86000C23DB6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023AB54328B7F86000C23DB6 /* HTTPMethod.swift */; };
-		02BB8ED028B8BC2400B75D3F /* BaseAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB8ECF28B8BC2400B75D3F /* BaseAPIProtocol.swift */; };
+		0246A36128E42609007C7775 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A36028E42609007C7775 /* NetworkClient.swift */; };
+		0246A36328E451F6007C7775 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A36228E451F6007C7775 /* KeychainStore.swift */; };
+		0247F391290D722F00C1977D /* Publisher + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0247F390290D722F00C1977D /* Publisher + Extension.swift */; };
+		02BB8ED028B8BC2400B75D3F /* NetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB8ECF28B8BC2400B75D3F /* NetworkClientProtocol.swift */; };
 		02BB8EE628B8CDA300B75D3F /* HttpUrlResponse+IsSuccesful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB8EE528B8CDA300B75D3F /* HttpUrlResponse+IsSuccesful.swift */; };
 		02BB8EEC28B8DD4F00B75D3F /* URL + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB8EEB28B8DD4F00B75D3F /* URL + Extension.swift */; };
 		02BB8EEE28B9276400B75D3F /* BaseAPIDebuger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB8EED28B9276400B75D3F /* BaseAPIDebuger.swift */; };
 		02BB8EF028B930C500B75D3F /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB8EEF28B930C500B75D3F /* APIError.swift */; };
-		02DC602B28590253000B2F97 /* HotelSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC602A28590253000B2F97 /* HotelSearchResponse.swift */; };
+		02DC602B28590253000B2F97 /* CitySearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC602A28590253000B2F97 /* CitySearchResponse.swift */; };
 		02DC602E285902D3000B2F97 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC602D285902D3000B2F97 /* BaseResponse.swift */; };
 		82DEB063B583A7A05C0429F6 /* Pods_Amadeus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */; };
 		A809F50C28AB7889006F95BE /* UITextField + Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A809F50B28AB7889006F95BE /* UITextField + Publisher.swift */; };
 		A809F50F28AB8D64006F95BE /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A809F50E28AB8D64006F95BE /* ViewModelProtocol.swift */; };
 		A809F51128AB8E35006F95BE /* Array + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A809F51028AB8E35006F95BE /* Array + Extension.swift */; };
-		A80BE4A7288E554000D11F88 /* HotelSearchViewModelSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80BE4A6288E554000D11F88 /* HotelSearchViewModelSearch.swift */; };
+		A80BE4A7288E554000D11F88 /* CitySearchViewModelSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80BE4A6288E554000D11F88 /* CitySearchViewModelSearch.swift */; };
 		A80BE4A9288E9E0800D11F88 /* WorkScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80BE4A8288E9E0800D11F88 /* WorkScheduler.swift */; };
 		A80BE4AC288EA85200D11F88 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80BE4AB288EA85200D11F88 /* BaseViewModel.swift */; };
 		A828C87228447D6500738854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C87128447D6500738854 /* AppDelegate.swift */; };
@@ -53,7 +58,7 @@
 		A828C8D128447F5600738854 /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A828C8CE28447F5600738854 /* EmptyStateView.xib */; };
 		A828C8D428447F6D00738854 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8D328447F6D00738854 /* MainTableViewCell.swift */; };
 		A828C8DF28447FCE00738854 /* HotelSearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8DD28447FCE00738854 /* HotelSearchUsecase.swift */; };
-		A828C8E82844800D00738854 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8E42844800D00738854 /* BaseAPI.swift */; };
+		A828C8E82844800D00738854 /* NetworkClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8E42844800D00738854 /* NetworkClientManager.swift */; };
 		A828C8EA2844800D00738854 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8E62844800D00738854 /* RequestInterceptor.swift */; };
 		A828C8EF2844802600738854 /* MainNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8ED2844802600738854 /* MainNetworking.swift */; };
 		A828C8F02844802600738854 /* UserTokenNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C8EE2844802600738854 /* UserTokenNetworking.swift */; };
@@ -79,7 +84,7 @@
 		A828C922284481E400738854 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C91A284481E400738854 /* UserDefault.swift */; };
 		A828C924284481E400738854 /* AppDelegateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C91C284481E400738854 /* AppDelegateHelper.swift */; };
 		A828C925284481E400738854 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C91D284481E400738854 /* CountDownTimer.swift */; };
-		A828C926284481E400738854 /* KeychainKeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C91E284481E400738854 /* KeychainKeychainManager.swift */; };
+		A828C926284481E400738854 /* AccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C91E284481E400738854 /* AccessTokenStore.swift */; };
 		A828C927284481E400738854 /* DeviceStatusHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C91F284481E400738854 /* DeviceStatusHelper.swift */; };
 		A828C928284481E400738854 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C920284481E400738854 /* AlertHelper.swift */; };
 		A828C92F2844822F00738854 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828C92E2844822F00738854 /* Coordinator.swift */; };
@@ -138,22 +143,27 @@
 
 /* Begin PBXFileReference section */
 		0211C1522860DD46009C1F28 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		021531122865FB33006D3C98 /* Hotel_Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel_Response.swift; sourceTree = "<group>"; };
-		021531142865FE30006D3C98 /* Address_Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address_Response.swift; sourceTree = "<group>"; };
+		021531122865FB33006D3C98 /* Address_Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address_Response.swift; sourceTree = "<group>"; };
+		021B357C28E74B3D00EBCC0F /* AuthorizationHttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationHttpRequest.swift; sourceTree = "<group>"; };
 		022146EF28564185003FB94B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		0222FCEB28E57A17003EADD7 /* AuthorizationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationType.swift; sourceTree = "<group>"; };
+		0222FCED28E58798003EADD7 /* AuthorizationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationProtocol.swift; sourceTree = "<group>"; };
 		022765EF2845CAFE00A9074A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		022D79DA284624340050CEE4 /* MockHotelsSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockHotelsSearch.swift; sourceTree = "<group>"; };
+		022D79DA284624340050CEE4 /* MockCitySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCitySearch.swift; sourceTree = "<group>"; };
 		022D79DB284624340050CEE4 /* MockLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLogin.swift; sourceTree = "<group>"; };
 		022D79E1284624840050CEE4 /* ResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseMock.swift; sourceTree = "<group>"; };
 		022D79E4284624A70050CEE4 /* GetToken_ResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetToken_ResponseTests.swift; sourceTree = "<group>"; };
 		022D79E7284624CC0050CEE4 /* LoginViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModelTest.swift; sourceTree = "<group>"; };
 		023AB54328B7F86000C23DB6 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		02BB8ECF28B8BC2400B75D3F /* BaseAPIProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIProtocol.swift; sourceTree = "<group>"; };
+		0246A36028E42609007C7775 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		0246A36228E451F6007C7775 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		0247F390290D722F00C1977D /* Publisher + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher + Extension.swift"; sourceTree = "<group>"; };
+		02BB8ECF28B8BC2400B75D3F /* NetworkClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientProtocol.swift; sourceTree = "<group>"; };
 		02BB8EE528B8CDA300B75D3F /* HttpUrlResponse+IsSuccesful.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HttpUrlResponse+IsSuccesful.swift"; sourceTree = "<group>"; };
 		02BB8EEB28B8DD4F00B75D3F /* URL + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL + Extension.swift"; sourceTree = "<group>"; };
 		02BB8EED28B9276400B75D3F /* BaseAPIDebuger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIDebuger.swift; sourceTree = "<group>"; };
 		02BB8EEF28B930C500B75D3F /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		02DC602A28590253000B2F97 /* HotelSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchResponse.swift; sourceTree = "<group>"; };
+		02DC602A28590253000B2F97 /* CitySearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchResponse.swift; sourceTree = "<group>"; };
 		02DC602D285902D3000B2F97 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Amadeus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1530094CAF1E86E4F71C237D /* Pods-Amadeus-AmadeusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus-AmadeusUITests.release.xcconfig"; path = "Target Support Files/Pods-Amadeus-AmadeusUITests/Pods-Amadeus-AmadeusUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,7 +173,7 @@
 		A809F50B28AB7889006F95BE /* UITextField + Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Publisher.swift"; sourceTree = "<group>"; };
 		A809F50E28AB8D64006F95BE /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		A809F51028AB8E35006F95BE /* Array + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Extension.swift"; sourceTree = "<group>"; };
-		A80BE4A6288E554000D11F88 /* HotelSearchViewModelSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelSearchViewModelSearch.swift; sourceTree = "<group>"; };
+		A80BE4A6288E554000D11F88 /* CitySearchViewModelSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchViewModelSearch.swift; sourceTree = "<group>"; };
 		A80BE4A8288E9E0800D11F88 /* WorkScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkScheduler.swift; sourceTree = "<group>"; };
 		A80BE4AB288EA85200D11F88 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewModel.swift; path = ../ViewModel/BaseViewModel.swift; sourceTree = "<group>"; };
 		A828C86E28447D6500738854 /* Amadeus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Amadeus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,7 +201,7 @@
 		A828C8CE28447F5600738854 /* EmptyStateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyStateView.xib; sourceTree = "<group>"; };
 		A828C8D328447F6D00738854 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		A828C8DD28447FCE00738854 /* HotelSearchUsecase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelSearchUsecase.swift; sourceTree = "<group>"; };
-		A828C8E42844800D00738854 /* BaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		A828C8E42844800D00738854 /* NetworkClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientManager.swift; sourceTree = "<group>"; };
 		A828C8E62844800D00738854 /* RequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
 		A828C8ED2844802600738854 /* MainNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNetworking.swift; sourceTree = "<group>"; };
 		A828C8EE2844802600738854 /* UserTokenNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTokenNetworking.swift; sourceTree = "<group>"; };
@@ -217,7 +227,7 @@
 		A828C91A284481E400738854 /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		A828C91C284481E400738854 /* AppDelegateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateHelper.swift; sourceTree = "<group>"; };
 		A828C91D284481E400738854 /* CountDownTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
-		A828C91E284481E400738854 /* KeychainKeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainKeychainManager.swift; sourceTree = "<group>"; };
+		A828C91E284481E400738854 /* AccessTokenStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenStore.swift; sourceTree = "<group>"; };
 		A828C91F284481E400738854 /* DeviceStatusHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceStatusHelper.swift; sourceTree = "<group>"; };
 		A828C920284481E400738854 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		A828C92E2844822F00738854 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -287,20 +297,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0211C1512860DD11009C1F28 /* BaseAPI */ = {
+		0211C1512860DD11009C1F28 /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				02BB8ECF28B8BC2400B75D3F /* BaseAPIProtocol.swift */,
-				A828C8E42844800D00738854 /* BaseAPI.swift */,
+				02BB8ECF28B8BC2400B75D3F /* NetworkClientProtocol.swift */,
+				0246A36028E42609007C7775 /* NetworkClient.swift */,
 			);
-			name = BaseAPI;
+			name = Client;
+			sourceTree = "<group>";
+		};
+		0222FCEF28E617B1003EADD7 /* AccessTokenStore */ = {
+			isa = PBXGroup;
+			children = (
+				A828C91E284481E400738854 /* AccessTokenStore.swift */,
+			);
+			name = AccessTokenStore;
+			sourceTree = "<group>";
+		};
+		022A077628F02464006B0F86 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				0222FCED28E58798003EADD7 /* AuthorizationProtocol.swift */,
+				021B357C28E74B3D00EBCC0F /* AuthorizationHttpRequest.swift */,
+				0222FCEB28E57A17003EADD7 /* AuthorizationType.swift */,
+			);
+			name = Authorization;
+			sourceTree = "<group>";
+		};
+		022A077928F0B540006B0F86 /* ClientManager */ = {
+			isa = PBXGroup;
+			children = (
+				A828C8E42844800D00738854 /* NetworkClientManager.swift */,
+			);
+			name = ClientManager;
 			sourceTree = "<group>";
 		};
 		022D79D9284624240050CEE4 /* MockDataParser */ = {
 			isa = PBXGroup;
 			children = (
 				022D79DB284624340050CEE4 /* MockLogin.swift */,
-				022D79DA284624340050CEE4 /* MockHotelsSearch.swift */,
+				022D79DA284624340050CEE4 /* MockCitySearch.swift */,
 			);
 			path = MockDataParser;
 			sourceTree = "<group>";
@@ -325,7 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				022D79E7284624CC0050CEE4 /* LoginViewModelTest.swift */,
-				A80BE4A6288E554000D11F88 /* HotelSearchViewModelSearch.swift */,
+				A80BE4A6288E554000D11F88 /* CitySearchViewModelSearch.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -608,9 +644,8 @@
 		A828C8DC28447FB500738854 /* HotelSearch */ = {
 			isa = PBXGroup;
 			children = (
-				02DC602A28590253000B2F97 /* HotelSearchResponse.swift */,
-				021531122865FB33006D3C98 /* Hotel_Response.swift */,
-				021531142865FE30006D3C98 /* Address_Response.swift */,
+				02DC602A28590253000B2F97 /* CitySearchResponse.swift */,
+				021531122865FB33006D3C98 /* Address_Response.swift */,
 			);
 			path = HotelSearch;
 			sourceTree = "<group>";
@@ -634,7 +669,10 @@
 		A828C8E228447FF500738854 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				0211C1512860DD11009C1F28 /* BaseAPI */,
+				0222FCEF28E617B1003EADD7 /* AccessTokenStore */,
+				022A077628F02464006B0F86 /* Authorization */,
+				0211C1512860DD11009C1F28 /* Client */,
+				022A077928F0B540006B0F86 /* ClientManager */,
 				02BB8ED128B8C21F00B75D3F /* Extension */,
 				A828C8EC2844801300738854 /* EndPoints */,
 				02BB8ED628B8C26900B75D3F /* Types */,
@@ -686,6 +724,7 @@
 				A828C8F82844806D00738854 /* ViewController + Extension.swift */,
 				A809F51028AB8E35006F95BE /* Array + Extension.swift */,
 				02BB8EEB28B8DD4F00B75D3F /* URL + Extension.swift */,
+				0247F390290D722F00C1977D /* Publisher + Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -821,7 +860,7 @@
 			isa = PBXGroup;
 			children = (
 				A828C91C284481E400738854 /* AppDelegateHelper.swift */,
-				A828C91E284481E400738854 /* KeychainKeychainManager.swift */,
+				0246A36228E451F6007C7775 /* KeychainStore.swift */,
 				022146EF28564185003FB94B /* Reachability.swift */,
 				A8BDA621288BC3360052BB3F /* Obfuscator.swift */,
 				A828C91A284481E400738854 /* UserDefault.swift */,
@@ -1154,13 +1193,13 @@
 				A8A82669287010F6009850CD /* RequestNewToken.swift in Sources */,
 				A80BE4A9288E9E0800D11F88 /* WorkScheduler.swift in Sources */,
 				A828C9122844806D00738854 /* AppDelegate + Extension.swift in Sources */,
-				02DC602B28590253000B2F97 /* HotelSearchResponse.swift in Sources */,
+				02DC602B28590253000B2F97 /* CitySearchResponse.swift in Sources */,
 				A828C9602844837D00738854 /* BaseViewController.swift in Sources */,
 				A828C8D428447F6D00738854 /* MainTableViewCell.swift in Sources */,
 				A809F50F28AB8D64006F95BE /* ViewModelProtocol.swift in Sources */,
 				A828C9062844806D00738854 /* Dictionary + Extension.swift in Sources */,
 				A828C8EF2844802600738854 /* MainNetworking.swift in Sources */,
-				02BB8ED028B8BC2400B75D3F /* BaseAPIProtocol.swift in Sources */,
+				02BB8ED028B8BC2400B75D3F /* NetworkClientProtocol.swift in Sources */,
 				A828C924284481E400738854 /* AppDelegateHelper.swift in Sources */,
 				A828C90A2844806D00738854 /* AFError + Extension.swift in Sources */,
 				A828C9102844806D00738854 /* UIWindow + Extension.swift in Sources */,
@@ -1169,7 +1208,6 @@
 				A828C9172844816500738854 /* GetToken_Response.swift in Sources */,
 				023AB54428B7F86000C23DB6 /* HTTPMethod.swift in Sources */,
 				A828C90C2844806D00738854 /* UIDevice + Extension.swift in Sources */,
-				021531152865FE30006D3C98 /* Address_Response.swift in Sources */,
 				A828C9552844833800738854 /* MainCoordinator.swift in Sources */,
 				A828C8CF28447F5600738854 /* EmptyState.swift in Sources */,
 				A828C9562844833800738854 /* AppCoordiantor.swift in Sources */,
@@ -1179,16 +1217,19 @@
 				A809F51128AB8E35006F95BE /* Array + Extension.swift in Sources */,
 				0211C1532860DD46009C1F28 /* Configuration.swift in Sources */,
 				A828C9042844806D00738854 /* TableView + Extension.swift in Sources */,
+				0222FCEE28E58798003EADD7 /* AuthorizationProtocol.swift in Sources */,
 				022765F02845CAFE00A9074A /* LoginViewModel.swift in Sources */,
+				0222FCEC28E57A17003EADD7 /* AuthorizationType.swift in Sources */,
 				A828C9592844835700738854 /* AppDependencyAssembler.swift in Sources */,
 				A828C92F2844822F00738854 /* Coordinator.swift in Sources */,
+				0247F391290D722F00C1977D /* Publisher + Extension.swift in Sources */,
 				A828C9392844827000738854 /* SplashFactory.swift in Sources */,
 				A86526E628C860A900C20807 /* NetworkTarget + Extension.swift in Sources */,
 				A828C8B428447E8300738854 /* MainView.swift in Sources */,
 				A828C925284481E400738854 /* CountDownTimer.swift in Sources */,
 				A83FD84D28BA399400F3994D /* URLRequest + Extension.swift in Sources */,
 				A828C921284481E400738854 /* MessageHelper.swift in Sources */,
-				A828C926284481E400738854 /* KeychainKeychainManager.swift in Sources */,
+				A828C926284481E400738854 /* AccessTokenStore.swift in Sources */,
 				A80BE4AC288EA85200D11F88 /* BaseViewModel.swift in Sources */,
 				02BB8EEE28B9276400B75D3F /* BaseAPIDebuger.swift in Sources */,
 				A828C8DF28447FCE00738854 /* HotelSearchUsecase.swift in Sources */,
@@ -1203,11 +1244,13 @@
 				02DC602E285902D3000B2F97 /* BaseResponse.swift in Sources */,
 				A828C922284481E400738854 /* UserDefault.swift in Sources */,
 				A828C8AF28447E6800738854 /* DetailView.swift in Sources */,
+				0246A36328E451F6007C7775 /* KeychainStore.swift in Sources */,
 				02BB8EF028B930C500B75D3F /* APIError.swift in Sources */,
 				A828C90D2844806D00738854 /* UIView + EmptyView.swift in Sources */,
 				A828C87228447D6500738854 /* AppDelegate.swift in Sources */,
 				A828C9072844806D00738854 /* UIColor + Extension.swift in Sources */,
 				A828C9132844806D00738854 /* UIView + Extension.swift in Sources */,
+				021B357D28E74B3D00EBCC0F /* AuthorizationHttpRequest.swift in Sources */,
 				A828C942284482E000738854 /* KeychainManagerProtocol .swift in Sources */,
 				A828C8BF28447EBB00738854 /* LoginView.swift in Sources */,
 				022146F028564185003FB94B /* Reachability.swift in Sources */,
@@ -1218,18 +1261,19 @@
 				A828C8C528447EE700738854 /* SplashViewController.swift in Sources */,
 				A828C9092844806D00738854 /* ViewController + Extension.swift in Sources */,
 				A828C8EA2844800D00738854 /* RequestInterceptor.swift in Sources */,
-				021531132865FB33006D3C98 /* Hotel_Response.swift in Sources */,
+				021531132865FB33006D3C98 /* Address_Response.swift in Sources */,
 				A828C94B2844832700738854 /* AppBuildConfig.swift in Sources */,
 				A828C927284481E400738854 /* DeviceStatusHelper.swift in Sources */,
 				A828C8B528447E8300738854 /* MainViewController.swift in Sources */,
 				A86526E428C8607D00C20807 /* NetworkTarget.swift in Sources */,
 				A83F1F1028C45C58000DAE7D /* Encoding + Dictionary.swift in Sources */,
+				0246A36128E42609007C7775 /* NetworkClient.swift in Sources */,
 				A828C8A428447DC600738854 /* MainViewModel.swift in Sources */,
 				02BB8EE628B8CDA300B75D3F /* HttpUrlResponse+IsSuccesful.swift in Sources */,
 				A828C93F284482CF00738854 /* AlertAdapter.swift in Sources */,
 				A828C90E2844806D00738854 /* UIViewController + Extesnsion.swift in Sources */,
 				A828C8C028447EBB00738854 /* LoginViewController.swift in Sources */,
-				A828C8E82844800D00738854 /* BaseAPI.swift in Sources */,
+				A828C8E82844800D00738854 /* NetworkClientManager.swift in Sources */,
 				A828C8B028447E6800738854 /* DetailViewController.swift in Sources */,
 				A828C8F02844802600738854 /* UserTokenNetworking.swift in Sources */,
 				A828C8C428447EE700738854 /* SplashView.swift in Sources */,
@@ -1251,8 +1295,8 @@
 				022D79E2284624840050CEE4 /* ResponseMock.swift in Sources */,
 				A828C88928447D6800738854 /* AmadeusTests.swift in Sources */,
 				A8EC3C57288D586200C75CFA /* MainCoordinatorTest.swift in Sources */,
-				022D79DD284624340050CEE4 /* MockHotelsSearch.swift in Sources */,
-				A80BE4A7288E554000D11F88 /* HotelSearchViewModelSearch.swift in Sources */,
+				022D79DD284624340050CEE4 /* MockCitySearch.swift in Sources */,
+				A80BE4A7288E554000D11F88 /* CitySearchViewModelSearch.swift in Sources */,
 				022D79E9284624CC0050CEE4 /* LoginViewModelTest.swift in Sources */,
 				022D79DE284624340050CEE4 /* MockLogin.swift in Sources */,
 				A8BDA62F288C0A770052BB3F /* MockLoginView.swift in Sources */,
@@ -1434,6 +1478,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ir.gravityapp.Amadeus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1464,6 +1511,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ir.gravityapp.Amadeus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

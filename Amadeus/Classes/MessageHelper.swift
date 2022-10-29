@@ -20,6 +20,7 @@ struct MessageHelper {
         static let redirection: String = "Request doesn't seem to be proper."
         static let clientError: String = "Request doesn't seem to be proper."
         static let invalidResponse : String = "Invalid Server Response"
+        static let unauthorizedClient : String = "Unauthorized Client"
     }
     
     struct DeviceStatus {

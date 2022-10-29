@@ -8,15 +8,13 @@
 import Foundation
 
 struct Address_Response : Decodable {
-    let lines: [String]?
-    let postalCode: String?
-    let cityName : String?
+    var countryCode: String?
+    var stateCode : String?
 }
 
 extension Address_Response {
     enum CodingKeys: String, CodingKey {
-        case lines = "lines"
-        case postalCode = "postalCode"
-        case cityName = "cityName"
+        case countryCode = "countryCode"
+        case stateCode = "stateCode"
     }
 }

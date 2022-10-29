@@ -7,6 +7,16 @@
 
 import Foundation
 
+private struct HTTPHeader {
+    static let contentLength = "Content-Length"
+    static let contentType = "Content-Type"
+    static let accept = "Accept"
+    static let acceptEncoding = "Accept-Encoding"
+    static let contentEncoding = "Content-Encoding"
+    static let cacheControl = "Cache-Control"
+    static let authorization = "Authorization"
+}
+
 extension NetworkTarget {
     var pathAppendedURL: URL {
         var url = baseURL.desc
@@ -17,6 +27,7 @@ extension NetworkTarget {
 }
 
 extension NetworkTarget {
+    
     func buildURLRequest() -> URLRequest {
         let url = self.pathAppendedURL
         //prepare a url request
@@ -25,10 +36,9 @@ extension NetworkTarget {
         urlRequest.httpMethod = self.methodType.name
         //set requestHeaders for request
         urlRequest.allHTTPHeaderFields = self.headers
-        //set authorization header for reqeust 
-        let result = self.authorizationHandler(type: self.providerType)
-        if let token = result.0, let name = result.1 {
-            urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: name)
+        //set authorization header for reqeust
+        if authorization == .bearer {
+            urlRequest.setValue(authorization.rawValue, forHTTPHeaderField: HTTPHeader.authorization)
         }
         //set query parameters for request
         if let queryParams = self.queryParams, queryParams.count > 0,
@@ -82,7 +92,7 @@ extension NetworkTarget {
         case .xWWWFormURLEncoded:
             if let queryParamsData = self.queryParams?.urlEncodedQueryParams().data(using: .utf8) {
                 urlRequest.httpBody = queryParamsData
-                urlRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+                urlRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: HTTPHeader.contentType)
             }
         }
     }
@@ -104,19 +114,6 @@ extension NetworkTarget {
             }
         }
     }
-    
-    private func authorizationHandler(type : AuthProviderType) -> (String?, String?) {
-        var headerField: String { "Authorization" }
-        switch type {
-        case .bearer(token: let token):
-            return (token, headerField)
-        case .none:
-            break
-        }
-        return (nil, nil)
-    }
-    
-    private func getToken() -> String? {
-        let 
-    }
 }
+
+

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftKeychainWrapper
 import Combine
 
 protocol BaseLoginViewModel {
@@ -14,7 +13,7 @@ protocol BaseLoginViewModel {
     func getTokenData(grant_type: String, client_id: String, client_secret: String)
 }
 
-final class LoginViewModel : BaseViewModel, BaseLoginViewModel, KeyChainManagerInjector {
+final class LoginViewModel : BaseViewModel, BaseLoginViewModel, AccessTokenInjector {
     
     @Published var userName : String = ""
     @Published var password : String = ""
@@ -22,9 +21,7 @@ final class LoginViewModel : BaseViewModel, BaseLoginViewModel, KeyChainManagerI
     
     let usernameMessagePublisher = PassthroughSubject<String, Never>()
     let passwordMessagePublisher = PassthroughSubject<String, Never>()
-    
-    let keychainWrapper = KeychainWrapper(serviceName: KeychainWrapper.standard.serviceName,
-                                          accessGroup: KeychainWrapper.standard.accessGroup)
+
     var useCase: GetTokenProtocol
     
     init(useCase : GetTokenProtocol) {
@@ -36,7 +33,12 @@ extension LoginViewModel {
     func getTokenData(grant_type: String, client_id: String, client_secret: String) {
         super.callWithProgress(argument: self.useCase.getTokenService(grant_type: grant_type, client_id: client_id, client_secret: client_secret)) { [weak self] data in
             guard let data = data else {return}
-            self?.keychainManager.signIn(grant_type: grant_type, client_id: client_id, client_secret: client_secret, token: data.tokenData)
+            print(data)
+            self?.manager.signIn(grant_type: grant_type,
+                                 client_id: client_id,
+                                 client_secret: client_secret,
+                                 token: data.tokenData,
+                                 expire_date: data.expire_date)
             self?.isGetToken = true
         }
     }

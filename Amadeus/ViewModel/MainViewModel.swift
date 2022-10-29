@@ -12,25 +12,25 @@ typealias BaseMainViewModel =  MainViewModelProtocol
 
 protocol MainViewModelProtocol {
     var title : String { get }
-    var useCase : HotelsSearchProtocol { get }
-    func getHotelsData(cityCode: String)
+    var useCase : CitySearchProtocol { get }
+    func getCityData(countryCode: String, keyword: String)
 }
 
 final class MainViewModel : BaseViewModel, BaseMainViewModel {
     
     var title: String = "Amadeus"
-    var useCase: HotelsSearchProtocol
+    var useCase: CitySearchProtocol
 
-    @Published var hotelData : [HotelSearchResponse]?
+    @Published var cityData : [CitySearchResponse]?
     
-    init(useCase : HotelsSearchProtocol) {
+    init(useCase : CitySearchProtocol) {
         self.useCase = useCase
     }
     
-    func getHotelsData(cityCode: String) {
-        self.callWithProgress(argument: self.useCase.HotelsSearchService(cityCode: cityCode)) { [weak self] data in
-            guard let data = data, let hotels = data.data else {return}
-            self?.hotelData = hotels
+    func getCityData(countryCode: String, keyword: String) {
+        self.callWithProgress(argument: self.useCase.citySearchService(countryCode: countryCode, keyword: keyword)) { [weak self] data in
+            guard let data = data, let cityData = data.data else {return}
+            self?.cityData = cityData
         }
     }
 }

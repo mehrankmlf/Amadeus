@@ -5,7 +5,6 @@
 //  Created by Mehran Kamalifard on 12/19/21.
 //
 
-import SwiftKeychainWrapper
 import UIKit
 
 protocol Command {
@@ -22,12 +21,11 @@ final class StartCommonBuilder {
 struct ClearKeycahin : Command {
     
     func execute() {
-        let keyChain = KeychainWrapper(serviceName: KeychainWrapper.standard.serviceName)
         let freshInstall = !UserDefaults.standard.bool(forKey: "alreadyInstalled")
 
         if freshInstall {
-            let _ : Bool = keyChain.removeObject(forKey: KeychainKeyType.passKey.key)
-            let _ : Bool = keyChain.removeObject(forKey: KeychainKeyType.token.key)
+            // remove all data types related from app
+            KeychainStore.eraseAll()
             UserDefaults.standard.set(true, forKey: "alreadyInstalled")
         }
     }

@@ -11,8 +11,8 @@ import Combine
 final class MainViewController: BaseViewController<MainViewModel> {
     
     var contentView = MainView()
-    private(set) var data : [HotelSearchResponse]?
-    private var dataSource:TableViewCustomDataSource<HotelSearchResponse>?
+    private(set) var data : [CitySearchResponse]?
+    private var dataSource:TableViewCustomDataSource<CitySearchResponse>?
     var navigateSubject = PassthroughSubject<MainViewController.Event, Never>()
     
     override func loadView() {
@@ -24,7 +24,7 @@ final class MainViewController: BaseViewController<MainViewModel> {
         super.delegate = self
         self.setupTableView()
         self.bindViewModel()
-        self.callServie()
+        self.callService()
         contentView.viewContainer.emptyState.delegate = self
         self.setupNavigationBar()
     }
@@ -41,7 +41,7 @@ final class MainViewController: BaseViewController<MainViewModel> {
     }
     
     private func bindViewModel() {
-        viewModel.$hotelData
+        viewModel.$cityData
             .compactMap({ $0 })
             .sink { [weak self] data in
                 self?.data = data
@@ -49,15 +49,15 @@ final class MainViewController: BaseViewController<MainViewModel> {
             }.store(in: &subscriber)
     }
     
-    private func renderTableViewdataSource(_ itemlists:[HotelSearchResponse]) {
+    private func renderTableViewdataSource(_ itemlists:[CitySearchResponse]) {
         dataSource = .displayData(for: itemlists, withCellidentifier: MainTableViewCell.cellId)
         self.contentView.tableView.dataSource = dataSource
         self.contentView.tableView.delegate = self
         self.contentView.tableView.reloadData()
     }
     
-    private func callServie() {
-        viewModel.getHotelsData(cityCode: "PAR")
+    private func callService() {
+        viewModel.getCityData(countryCode: "FR", keyword: "PARIS")
     }
 }
 
@@ -67,7 +67,7 @@ extension MainViewController : EmptyStateDelegate, ShowEmptyStateProtocol {
     }
     
     func emptyStateButtonClicked() {
-        self.callServie()
+        self.callService()
         contentView.viewContainer.emptyState.hide()
     }
 }
@@ -92,7 +92,7 @@ extension MainViewController : UITableViewDelegate {
 extension MainViewController {
     enum Event {
         case main
-        case detail(data : HotelSearchResponse)
+        case detail(data : CitySearchResponse)
     }
 }
 

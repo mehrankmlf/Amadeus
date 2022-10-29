@@ -60,7 +60,7 @@ final class DetailView: UIView {
     
     lazy var lblSubline : UILabel = {
         let lblSubline = UILabel()
-        lblSubline.text = "Hotel Name : "
+        lblSubline.text = "City Name : "
         lblSubline.textAlignment = .left
         lblSubline.textColor = .gray
         lblSubline.font = UIFont.boldSystemFont(ofSize: Constants.fontSize)

@@ -8,7 +8,7 @@
 import Foundation
 
 struct GetToken_Response : Decodable, Equatable {
-    
+
     var type, username, application_name, client_id: String?
     var token_type: String?
     var access_token: String?
@@ -32,6 +32,8 @@ struct GetToken_Response : Decodable, Equatable {
 extension GetToken_Response {
     static func ==(lhs: GetToken_Response, rhs: GetToken_Response) -> Bool {
         return lhs.access_token == rhs.access_token
+        && lhs.expires_in == rhs.expires_in
+        
     }
 }
 
@@ -41,6 +43,13 @@ extension GetToken_Response {
         get{
             guard let token = self.access_token else {return ""}
             return token.trimmingString()
+        }
+    }
+    
+    var expire_date : Int {
+        get {
+            guard let date = self.expires_in else {return 0}
+            return date
         }
     }
 }

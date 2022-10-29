@@ -1,5 +1,5 @@
 //
-//  HotelSearchViewModelSearch.swift
+//  CitySearchViewModelSearch.swift
 //  AmadeusTests
 //
 //  Created by Mehran Kamalifard on 7/25/22.
@@ -9,14 +9,14 @@ import XCTest
 import Combine
 @testable import Amadeus
  
-class HotelSearchViewModelSearch: XCTestCase {
+class CitySearchViewModelSearch: XCTestCase {
 
-    private var mockSearch : MockHotelsSearch!
+    private var mockSearch : MockCitySearch!
     private var viewModelToTest : MainViewModel!
     private var subscriber : Set<AnyCancellable> = []
 
     override func setUp()  {
-        mockSearch = MockHotelsSearch()
+        mockSearch = MockCitySearch()
         viewModelToTest = MainViewModel(useCase: mockSearch)
     }
 
@@ -28,9 +28,9 @@ class HotelSearchViewModelSearch: XCTestCase {
         super.tearDown()
     }
     
-    func testHotelsViewModelService_WhenServieCalled_ShouldReturnResponse() {
+    func testCityViewModelService_WhenServieCalled_ShouldReturnResponse() {
         
-        let result = BaseResponseHotelSearch()
+        let result = BaseResponseCitySearch()
         
         let expectation = XCTestExpectation(description: "State is set to Token")
         
@@ -39,7 +39,7 @@ class HotelSearchViewModelSearch: XCTestCase {
               expectation.fulfill()
         }.store(in: &subscriber)
         mockSearch.fetchResult = Result.success(result).publisher.eraseToAnyPublisher()
-        viewModelToTest.getHotelsData(cityCode: "")
+        viewModelToTest.getCityData(countryCode: "", keyword: "")
         
         wait(for: [expectation], timeout: 1)
     }

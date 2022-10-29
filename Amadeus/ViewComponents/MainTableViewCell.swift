@@ -114,11 +114,11 @@ class MainTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupParametrs(items : HotelSearchResponse) {
-        self.lblTitle.text = items.hotel?.type
-        self.lblRightSideView.text = items.availableText()
-        self.lblHeadLine.text = items.hotel?.name
-        self.lblSubline.text = items.hotel?.hotelID
+    func setupParametrs(items : CitySearchResponse) {
+        self.lblTitle.text = items.name
+        self.lblRightSideView.text = items.iataCode ?? "N/A"
+        self.lblHeadLine.text = items.address?.countryCode
+        self.lblSubline.text = items.address?.stateCode
     }
 }
 

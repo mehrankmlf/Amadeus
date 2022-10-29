@@ -8,7 +8,6 @@
 import Foundation
 
 protocol NetworkTarget {
-    var token : String { get }
     var baseURL: BaseURLType { get }
     var version : VersionType { get }
     var path: String { get }
@@ -20,10 +19,5 @@ protocol NetworkTarget {
     var cachePolicy: URLRequest.CachePolicy? { get }
     var timeoutInterval: TimeInterval? { get }
     var headers: [String: String]? { get }
-    var providerType: AuthProviderType { get }
-}
-
-public enum AuthProviderType {
-    case bearer(token: String)
-    case none
+    var authorization: AuthorizationType { get }
 }

@@ -9,9 +9,7 @@ import UIKit
 import Combine
 
 final class LoginViewController: BaseViewController<LoginViewModel> {
-    
-    let clientId = "sDi2yLIAAKqAfrZKGJU6Zassx3TnDboJ"
-    
+ 
     let timer = CountDownTimer(duration: 40)
     var contentView = LoginView()
     var obfuscator = Obfuscator()
@@ -32,7 +30,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.contentView.txtID.text = clientId
+        self.contentView.txtID.text = "bwsVyIFat6a8No23ehekEXBVsaZkckWd"
         self.contentView.txtSecret.text = self.fetchSecret()
     }
     
@@ -45,7 +43,8 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     }
     
     private func fetchSecret() -> String? {
-        return obfuscator.reveal(key: ObfuscatedConstants.obfuscatedSecret)
+//        return obfuscator.reveal(key: ObfuscatedConstants.obfuscatedSecret)
+        return "VVPaSoyTn5OABcMR"
     }
     
     private func bindViewModel() {
@@ -108,7 +107,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     @objc
     func submitAction() {
-        viewModel.getTokenData(grant_type: "client_credentials", client_id: clientId, client_secret: fetchSecret() ?? "")
+        viewModel.getTokenData(grant_type: "client_credentials", client_id: "bwsVyIFat6a8No23ehekEXBVsaZkckWd", client_secret: fetchSecret() ?? "")
     }
 }
 

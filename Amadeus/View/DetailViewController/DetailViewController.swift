@@ -9,7 +9,7 @@ import UIKit
 
 final class DetailViewController: BaseViewController<DetailViewModel> {
     
-    var  data : HotelSearchResponse?
+    var  data : CitySearchResponse?
     var contentView = DetailView()
 
     override func loadView() {
@@ -29,9 +29,9 @@ final class DetailViewController: BaseViewController<DetailViewModel> {
     }
     
     private func showData(){
-        guard let data = data, let hotel = data.hotel else {return}
-        self.contentView.lblHeadLineDetail.text = hotel.hotelID
-        self.contentView.lblSublineDetail.text = hotel.name
+        guard let data = data, let city = data.address else {return}
+        self.contentView.lblHeadLineDetail.text = city.countryCode
+        self.contentView.lblSublineDetail.text = city.stateCode
     }
 }
 

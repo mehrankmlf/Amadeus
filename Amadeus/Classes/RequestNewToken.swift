@@ -6,37 +6,53 @@
 //
 
 import Foundation
-import Alamofire
 import Combine
 
 protocol RequestNewTokenProtocol  {
-    var getTokenService : GetTokenProtocol { get }
-    func refreshToken(completion: @escaping (_ isSuccess: Bool) -> Void)
+//    func refreshToken() -> Future<Bool, Error>
 }
 
-final class RequestNewToken : RequestNewTokenProtocol, KeyChainManagerInjector {
+final class RequestNewToken : RequestNewTokenProtocol {
     
-    var getTokenService: GetTokenProtocol
-    var subscriber = Set<AnyCancellable>()
+    private var subscriber = Set<AnyCancellable>()
+    private let queue = DispatchQueue(label: "RequestNewToken")
+//    
+//    public func refreshToken() -> Future<Bool, Error> {
+//
+//        let credential = self.keychainManager.getUserCredential()
+//
+//        return Future { [weak self] promise in
+//            
+//            guard let type = credential.grant_type, let id = credential.client_id, let secret = credential.client_secret else {return}
+//
+//            let requestEnv : UserTokenNetworking = .accessToken(grant_type: type, client_id: id, client_secret: secret)
+//            let request = requestEnv.buildURLRequest()
+//            queue.sync {
+//                return request.dataTaskPublisher
+//                    .retry(3)
+//                    .sink { _ in}
+//            receiveValue: { [weak self] data in
+//                do {
+//                    //                        let decoder = JSONDecoder()
+//                    //                        let data = try decoder.decode(GetToken_Response.self, from: data.data)
+//                    guard let decodedResponse: GetToken_Response = self?.decode(data.data) else {return}
+//                    self?.keychainManager.setToken(token: decodedResponse.tokenData)
+//                    promise(.success(true))
+//                } catch  {
+//                    promise(.failure(error))
+//                }
+//            }
+//            .store(in: &subscriber)
+//            }
+//        }
+//    }
     
-    init(getTokenService: GetTokenProtocol = GetToken_Request()) {
-        self.getTokenService = getTokenService
-    }
-    
-    public func refreshToken(completion: @escaping (_ isSuccess: Bool) -> Void) {
-        
-        let credential = self.keychainManager.getUserCredential()
-        
-        guard let type = credential.grant_type, let id = credential.client_id, let secret = credential.client_secret else {return}
-        
-        self.getTokenService.getTokenService(grant_type: type, client_id: id, client_secret: secret)
-            .receive(on: WorkScheduler.mainScheduler)
-            .sink { _ in }
-            receiveValue: { [weak self] data in
-                guard let data = data else {return}
-                self?.keychainManager.setToken(token: data.tokenData)
-                !String.isNilOrEmpty(string: data.tokenData) ? completion(true) : completion(false)
-            }
-            .store(in: &subscriber)
+    func decode<T: Decodable>(_ data: Data) -> T? {
+        do {
+            return try JSONDecoder().decode(T.self, from: data)
+        } catch (let error) {
+            print(error)
+            return nil
         }
     }
+}

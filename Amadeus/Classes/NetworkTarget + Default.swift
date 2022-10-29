@@ -32,7 +32,13 @@ extension NetworkTarget {
         return 20.0
     }
     
-    var providerType: AuthProviderType {
+    var headers: [String : String]? {
+        return nil
+    }
+    
+    var authorization: AuthorizationType {
         return .none
     }
 }
+
+

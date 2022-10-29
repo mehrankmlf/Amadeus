@@ -21,6 +21,7 @@ enum APIError : Error {
     case statusMessage(message : String)
     case decodingError(Error)
     case connectionError(Error)
+    case unauthorizedClient
 }
 
 extension APIError {
@@ -38,6 +39,7 @@ extension APIError {
         case .redirection:                return MessageHelper.serverError.redirection
         case .clientError:                return MessageHelper.serverError.clientError
         case .invalidResponse:            return MessageHelper.serverError.invalidResponse
+        case .unauthorizedClient:          return MessageHelper.serverError.unauthorizedClient
         case .statusMessage(let message): return message
         case .decodingError(let error):   return "Decoding Error: \(error.localizedDescription)"
         case .connectionError(let error): return "Network connection Error : \(error.localizedDescription)"
@@ -45,7 +47,7 @@ extension APIError {
     }
 }
 
-extension BaseAPI {
+extension NetworkClient {
     static func errorType(type : Int) -> APIError {
         switch type {
         case 300..<400:

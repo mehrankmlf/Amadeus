@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		0211C1532860DD46009C1F28 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0211C1522860DD46009C1F28 /* Configuration.swift */; };
 		021531132865FB33006D3C98 /* Address_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021531122865FB33006D3C98 /* Address_Response.swift */; };
-		021B357D28E74B3D00EBCC0F /* AuthorizationHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B357C28E74B3D00EBCC0F /* AuthorizationHttpRequest.swift */; };
+		0216554E2912D63900BD3D8D /* Retrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0216554D2912D63900BD3D8D /* Retrier.swift */; };
+		021B357D28E74B3D00EBCC0F /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B357C28E74B3D00EBCC0F /* Authorization.swift */; };
 		022146F028564185003FB94B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022146EF28564185003FB94B /* Reachability.swift */; };
 		0222FCEC28E57A17003EADD7 /* AuthorizationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0222FCEB28E57A17003EADD7 /* AuthorizationType.swift */; };
 		0222FCEE28E58798003EADD7 /* AuthorizationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0222FCED28E58798003EADD7 /* AuthorizationProtocol.swift */; };
@@ -23,6 +24,7 @@
 		0246A36128E42609007C7775 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A36028E42609007C7775 /* NetworkClient.swift */; };
 		0246A36328E451F6007C7775 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246A36228E451F6007C7775 /* KeychainStore.swift */; };
 		0247F391290D722F00C1977D /* Publisher + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0247F390290D722F00C1977D /* Publisher + Extension.swift */; };
+		02BB654E291404EE008AEB7E /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB654D291404EE008AEB7E /* RequestBuilder.swift */; };
 		02BB8ED028B8BC2400B75D3F /* NetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB8ECF28B8BC2400B75D3F /* NetworkClientProtocol.swift */; };
 		02BB8EE628B8CDA300B75D3F /* HttpUrlResponse+IsSuccesful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB8EE528B8CDA300B75D3F /* HttpUrlResponse+IsSuccesful.swift */; };
 		02BB8EEC28B8DD4F00B75D3F /* URL + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB8EEB28B8DD4F00B75D3F /* URL + Extension.swift */; };
@@ -144,7 +146,8 @@
 /* Begin PBXFileReference section */
 		0211C1522860DD46009C1F28 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		021531122865FB33006D3C98 /* Address_Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address_Response.swift; sourceTree = "<group>"; };
-		021B357C28E74B3D00EBCC0F /* AuthorizationHttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationHttpRequest.swift; sourceTree = "<group>"; };
+		0216554D2912D63900BD3D8D /* Retrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retrier.swift; sourceTree = "<group>"; };
+		021B357C28E74B3D00EBCC0F /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		022146EF28564185003FB94B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0222FCEB28E57A17003EADD7 /* AuthorizationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationType.swift; sourceTree = "<group>"; };
 		0222FCED28E58798003EADD7 /* AuthorizationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationProtocol.swift; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 		0246A36028E42609007C7775 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		0246A36228E451F6007C7775 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
 		0247F390290D722F00C1977D /* Publisher + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher + Extension.swift"; sourceTree = "<group>"; };
+		02BB654D291404EE008AEB7E /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		02BB8ECF28B8BC2400B75D3F /* NetworkClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientProtocol.swift; sourceTree = "<group>"; };
 		02BB8EE528B8CDA300B75D3F /* HttpUrlResponse+IsSuccesful.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HttpUrlResponse+IsSuccesful.swift"; sourceTree = "<group>"; };
 		02BB8EEB28B8DD4F00B75D3F /* URL + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL + Extension.swift"; sourceTree = "<group>"; };
@@ -306,19 +310,21 @@
 			name = Client;
 			sourceTree = "<group>";
 		};
-		0222FCEF28E617B1003EADD7 /* AccessTokenStore */ = {
+		0216554C2912D62600BD3D8D /* Retry */ = {
 			isa = PBXGroup;
 			children = (
-				A828C91E284481E400738854 /* AccessTokenStore.swift */,
+				0216554D2912D63900BD3D8D /* Retrier.swift */,
 			);
-			name = AccessTokenStore;
+			name = Retry;
 			sourceTree = "<group>";
 		};
 		022A077628F02464006B0F86 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				A828C941284482E000738854 /* KeychainManagerProtocol .swift */,
+				A828C91E284481E400738854 /* AccessTokenStore.swift */,
 				0222FCED28E58798003EADD7 /* AuthorizationProtocol.swift */,
-				021B357C28E74B3D00EBCC0F /* AuthorizationHttpRequest.swift */,
+				021B357C28E74B3D00EBCC0F /* Authorization.swift */,
 				0222FCEB28E57A17003EADD7 /* AuthorizationType.swift */,
 			);
 			name = Authorization;
@@ -366,6 +372,24 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		02BB654B291404B2008AEB7E /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				A86526E328C8607D00C20807 /* NetworkTarget.swift */,
+				A86526E728C8617300C20807 /* NetworkTarget + Default.swift */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		02BB654C291404D3008AEB7E /* RequestBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				02BB654D291404EE008AEB7E /* RequestBuilder.swift */,
+				A86526E528C860A900C20807 /* NetworkTarget + Extension.swift */,
+			);
+			name = RequestBuilder;
+			sourceTree = "<group>";
+		};
 		02BB8ED128B8C21F00B75D3F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,9 +402,6 @@
 		02BB8ED628B8C26900B75D3F /* Types */ = {
 			isa = PBXGroup;
 			children = (
-				A86526E328C8607D00C20807 /* NetworkTarget.swift */,
-				A86526E528C860A900C20807 /* NetworkTarget + Extension.swift */,
-				A86526E728C8617300C20807 /* NetworkTarget + Default.swift */,
 				023AB54328B7F86000C23DB6 /* HTTPMethod.swift */,
 				A83F1F0D28C45C29000DAE7D /* Encoding.swift */,
 				A83F1F0F28C45C58000DAE7D /* Encoding + Dictionary.swift */,
@@ -669,14 +690,16 @@
 		A828C8E228447FF500738854 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				0222FCEF28E617B1003EADD7 /* AccessTokenStore */,
 				022A077628F02464006B0F86 /* Authorization */,
 				0211C1512860DD11009C1F28 /* Client */,
 				022A077928F0B540006B0F86 /* ClientManager */,
-				02BB8ED128B8C21F00B75D3F /* Extension */,
+				0216554C2912D62600BD3D8D /* Retry */,
 				A828C8EC2844801300738854 /* EndPoints */,
+				02BB654B291404B2008AEB7E /* Request */,
+				02BB654C291404D3008AEB7E /* RequestBuilder */,
 				02BB8ED628B8C26900B75D3F /* Types */,
 				A828C8E328447FFC00738854 /* Utilities */,
+				02BB8ED128B8C21F00B75D3F /* Extension */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -745,7 +768,6 @@
 			children = (
 				A809F50D28AB8D56006F95BE /* ViewModel */,
 				A828C943284482E900738854 /* AppConfig */,
-				A828C940284482DC00738854 /* KeyChainManager */,
 				A828C93D284482C800738854 /* Adapter */,
 				A828C9332844824600738854 /* Factory */,
 				A828C92D2844822600738854 /* Coordinator */,
@@ -802,14 +824,6 @@
 				A828C93E284482CF00738854 /* AlertAdapter.swift */,
 			);
 			name = Adapter;
-			sourceTree = "<group>";
-		};
-		A828C940284482DC00738854 /* KeyChainManager */ = {
-			isa = PBXGroup;
-			children = (
-				A828C941284482E000738854 /* KeychainManagerProtocol .swift */,
-			);
-			name = KeyChainManager;
 			sourceTree = "<group>";
 		};
 		A828C943284482E900738854 /* AppConfig */ = {
@@ -1243,6 +1257,7 @@
 				A828C9112844806D00738854 /* String + Extension.swift in Sources */,
 				02DC602E285902D3000B2F97 /* BaseResponse.swift in Sources */,
 				A828C922284481E400738854 /* UserDefault.swift in Sources */,
+				0216554E2912D63900BD3D8D /* Retrier.swift in Sources */,
 				A828C8AF28447E6800738854 /* DetailView.swift in Sources */,
 				0246A36328E451F6007C7775 /* KeychainStore.swift in Sources */,
 				02BB8EF028B930C500B75D3F /* APIError.swift in Sources */,
@@ -1250,7 +1265,8 @@
 				A828C87228447D6500738854 /* AppDelegate.swift in Sources */,
 				A828C9072844806D00738854 /* UIColor + Extension.swift in Sources */,
 				A828C9132844806D00738854 /* UIView + Extension.swift in Sources */,
-				021B357D28E74B3D00EBCC0F /* AuthorizationHttpRequest.swift in Sources */,
+				02BB654E291404EE008AEB7E /* RequestBuilder.swift in Sources */,
+				021B357D28E74B3D00EBCC0F /* Authorization.swift in Sources */,
 				A828C942284482E000738854 /* KeychainManagerProtocol .swift in Sources */,
 				A828C8BF28447EBB00738854 /* LoginView.swift in Sources */,
 				022146F028564185003FB94B /* Reachability.swift in Sources */,

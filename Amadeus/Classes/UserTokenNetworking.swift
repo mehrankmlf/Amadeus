@@ -23,7 +23,7 @@ extension UserTokenNetworking : NetworkTarget {
         return .v1
     }
     
-    var path: String {
+    var path: String? {
         return "/security/oauth2/token"
     }
     
@@ -41,7 +41,48 @@ extension UserTokenNetworking : NetworkTarget {
     var queryParamsEncoding: URLEncoding? {
         return .xWWWFormURLEncoded
     }
-        
+    
+    var headers: [String : String]? {
+        return ["Content-Type":"application/x-www-form-urlencoded"]
+    }
+}
+
+struct UserTokenRequest : NetworkTarget {
+    
+    let grant_Type : String
+    let client_id : String
+    let client_secret : String
+    
+    init(grant_type: String, client_id :String, client_secret: String) {
+        self.grant_Type = grant_type
+        self.client_id = client_id
+        self.client_secret = client_secret
+    }
+    
+    var baseURL: BaseURLType {
+        return .baseApi
+    }
+    
+    var version: VersionType {
+        return .v1
+    }
+    
+    var path: String? {
+        return "/security/oauth2/token"
+    }
+    
+    var methodType: HTTPMethod {
+        return .post
+    }
+    
+    var queryParams: [String : String]? {
+        return ["grant_type":grant_Type, "client_id": client_id, "client_secret": client_secret]
+    }
+    
+    var queryParamsEncoding: URLEncoding? {
+        return .xWWWFormURLEncoded
+    }
+    
     var headers: [String : String]? {
         return ["Content-Type":"application/x-www-form-urlencoded"]
     }

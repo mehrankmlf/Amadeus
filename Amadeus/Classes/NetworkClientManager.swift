@@ -10,11 +10,7 @@ import Foundation
 import Combine
 import os.log
 
-public protocol SessionPublisherProtocol: AnyObject {
-    func dataTaskPublisher(request: URLRequest) -> AnyPublisher<(data: Data, response: URLResponse), Error>
-}
-
-class NetworkClientManager<Target: NetworkTarget> {
+class NetworkClientManager<Target: RequestBuilder> {
     
     typealias AnyPublisherResult<M> = AnyPublisher<M, APIError>
     
@@ -27,10 +23,12 @@ class NetworkClientManager<Target: NetworkTarget> {
         self.clientURLSession = clientURLSession
     }
     
-    func request<M, T>(with target: Target,
+    func request<M, T>(request: Target,
                        decoder: JSONDecoder = .init(),
-                       scheduler: T, responseObject type: M.Type) -> AnyPublisherResult<M> where M : Decodable, T : Scheduler {
-        return clientURLSession.request(with: target, decoder: decoder, scheduler: scheduler, responseObject: type)
+                       scheduler: T,
+                       responseObject type: M.Type) -> AnyPublisherResult<M> where M : Decodable, T : Scheduler {
+//        return clientURLSession.request(with: request, decoder: decoder, scheduler: scheduler, responseObject: type)
+        return clientURLSession.perform(with: request, decoder: decoder, scheduler: scheduler, responseObject: type)
     }
 }
 

@@ -13,5 +13,5 @@ protocol AuthorizationRequestProtocol : AnyObject, AccessTokenInjector {
     ///
     /// - parameter request: The request to be sent.
     /// - parameter completion: A callback to invoke when the request completed.
-    func authenticateRequest(Completion: @escaping(Bool) -> Void)
+    func authenticateRequest() -> Future<Bool, Never>
 }

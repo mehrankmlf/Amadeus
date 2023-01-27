@@ -13,7 +13,7 @@ enum MainNetworking {
 }
 
 extension MainNetworking : NetworkTarget {
-
+    
     var baseURL: BaseURLType {
         return .baseApi
     }
@@ -22,7 +22,7 @@ extension MainNetworking : NetworkTarget {
         return .v1
     }
     
-    var path: String {
+    var path: String? {
         return "/reference-data/locations/cities"
     }
     
@@ -40,7 +40,46 @@ extension MainNetworking : NetworkTarget {
     var queryParamsEncoding: URLEncoding? {
         return .default
     }
+    
+    var authorization: AuthorizationType {
+        return .bearer
+    }
+}
 
+struct CitySearchRequest : NetworkTarget {
+    
+    let code : String
+    let key : String
+    
+    init(code: String, key: String) {
+        self.code = code
+        self.key = key
+    }
+    
+    var baseURL: BaseURLType {
+        return .baseApi
+    }
+    
+    var version: VersionType {
+        return .v1
+    }
+    
+    var path: String? {
+        return "/reference-data/locations/cities"
+    }
+    
+    var methodType: HTTPMethod {
+        .get
+    }
+    
+    var queryParams: [String : String]? {
+        return ["countryCode":code, "keyword":key]
+    }
+    
+    var queryParamsEncoding: URLEncoding? {
+        return .default
+    }
+    
     var authorization: AuthorizationType {
         return .bearer
     }

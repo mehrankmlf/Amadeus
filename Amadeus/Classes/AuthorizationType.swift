@@ -26,7 +26,7 @@ extension AuthorizationType : AccessTokenInjector {
             return ""
         case .bearer:
             guard let token = self.manager.getToken() else {return ""}
-            return "\(StringValue.bearer)\(token)"
+            return "\(StringValue.bearer)\("token")"
         }
     }
 }

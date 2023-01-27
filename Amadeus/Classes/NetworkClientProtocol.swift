@@ -9,18 +9,22 @@
 import Foundation
 import Combine
 
+
+
 protocol NetworkClientProtocol : AnyObject {
     /// Sends the given request.
     ///
     /// - parameter request: The request to be sent.
     /// - parameter completion: A callback to invoke when the request completed.
+    
     var session: URLSession { get }
-    var refreshTokenSubject : PassthroughSubject<Void, Never> { get }
+    
+    func perform<M: Decodable, T>(with request: RequestBuilder, decoder: JSONDecoder, scheduler: T, responseObject type: M.Type) -> AnyPublisher<M, APIError> where M : Decodable, T : Scheduler
     
     @available(iOS 13.0, *)
     @discardableResult
     func request<M, T>(
-        with target: NetworkTarget,
+        with request: RequestBuilder,
         decoder: JSONDecoder,
         scheduler: T,
         responseObject type: M.Type
@@ -32,3 +36,5 @@ protocol DebuggerProtocol {
 }
 
 typealias BaseAPIProtocol = NetworkClientProtocol & DebuggerProtocol 
+
+typealias AnyPublisherResult<M> = AnyPublisher<M, APIError>

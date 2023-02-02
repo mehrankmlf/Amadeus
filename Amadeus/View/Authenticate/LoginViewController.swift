@@ -10,7 +10,7 @@ import Combine
 
 final class LoginViewController: BaseViewController<LoginViewModel> {
     
-    let clientId = "sDi2yLIAAKqAfrZKGJU6Zassx3TnDboJ"
+    let clientId = "Your Amadeus Client Id"
     
     let timer = CountDownTimer(duration: 40)
     var contentView = LoginView()

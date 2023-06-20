@@ -10,7 +10,7 @@ import Combine
 
 final class MainViewController: BaseViewController<MainViewModel> {
     
-    var contentView = MainView()
+    let contentView = MainView()
     private(set) var data: [HotelSearchResponse]?
     private var dataSource:TableViewCustomDataSource<HotelSearchResponse>?
     var navigateSubject = PassthroughSubject<MainViewController.Event, Never>()

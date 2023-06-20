@@ -20,7 +20,7 @@ final class LoginView: UIView {
         // MARK: profileImageView layout constants
         
         static let generalPadding: CGFloat = 10.0
-        static let generalHeight : CGFloat = 25.0
+        static let generalHeight: CGFloat = 25.0
     }
     
     private var safeArea: UILayoutGuide!
@@ -95,7 +95,7 @@ final class LoginView: UIView {
                                                        txtID,
                                                        lblSecret,
                                                        txtSecret])
-        stackView.axis  = .vertical
+        stackView.axis = .vertical
         stackView.distribution  = .fillEqually
         stackView.alignment = .fill
         stackView.spacing = Constants.padding

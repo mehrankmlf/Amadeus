@@ -13,7 +13,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     let clientId = "Your Amadeus Client Id"
     
     let timer = CountDownTimer(duration: 40)
-    var contentView = LoginView()
+    let contentView = LoginView()
     var obfuscator = Obfuscator()
     
     var navigateSubject = PassthroughSubject<LoginViewController.Event, Never>()

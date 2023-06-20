@@ -22,7 +22,7 @@ struct CountDownTimer: Publisher {
 
     let duration: TimeInterval
 
-    func receive<S>(subscriber: S) where S : Subscriber, Never == S.Failure, Output == S.Input {
+    func receive<S>(subscriber: S) where S: Subscriber, Never == S.Failure, Output == S.Input {
         let subscription = CountDownSubscription(duration: duration, subscriber: subscriber)
         subscriber.receive(subscription: subscription)
     }

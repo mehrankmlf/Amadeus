@@ -8,10 +8,10 @@
 import IHProgressHUD
 import UIKit
 
-struct AlertHelper : AlertAdapter {
+struct AlertHelper: AlertAdapter {
     
-    var vc : UIViewController?
-    var view : UIView?
+    var vc: UIViewController?
+    var view: UIView?
     
     init(vc:UIViewController) {
         self.vc = vc
@@ -44,7 +44,7 @@ struct AlertHelper : AlertAdapter {
     
     //MARK: - Implement Loading With Message
     
-    func LoadingWithMessage(message : String) {
+    func LoadingWithMessage(message: String) {
         DispatchQueue.global().async {
             DispatchQueue.main.async {
                 IHProgressHUD.set(containerView: (self.vc?.view ?? self.view))
@@ -55,7 +55,7 @@ struct AlertHelper : AlertAdapter {
     
     //MARK: - Implement Success With Message
     
-    func success(message : String) {
+    func success(message: String) {
         DispatchQueue.global().async {
             DispatchQueue.main.async {
                 IHProgressHUD.set(containerView: (self.vc?.view ?? self.view))
@@ -66,7 +66,7 @@ struct AlertHelper : AlertAdapter {
     
     //MARK: - Implement Error With Message
     
-    func error(message : String) {
+    func error(message: String) {
         DispatchQueue.global().async {
             DispatchQueue.main.async {
                 IHProgressHUD.set(containerView: (self.vc?.view ?? self.view))

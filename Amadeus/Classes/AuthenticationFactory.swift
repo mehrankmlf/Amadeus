@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LoginViewFactory {
-    func makeLoginViewController(coordinator : AuthenticationCoordinator) -> LoginViewController
-    func makeLoginViewModel(coordinator : AuthenticationCoordinator) -> LoginViewModel
+    func makeLoginViewController(coordinator: AuthenticationCoordinator) -> LoginViewController
+    func makeLoginViewModel(coordinator: AuthenticationCoordinator) -> LoginViewModel
 }
 

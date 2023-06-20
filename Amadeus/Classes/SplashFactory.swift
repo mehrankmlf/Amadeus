@@ -8,6 +8,6 @@
 import Foundation
 
 protocol SplashFactory {
-    func makeSplashViewController(coordinator :  SplashCoordinator) -> SplashViewController
-    func makeSplashViewModel(coordinator : SplashCoordinator) -> SplashViewModel
+    func makeSplashViewController(coordinator:  SplashCoordinator) -> SplashViewController
+    func makeSplashViewModel(coordinator: SplashCoordinator) -> SplashViewModel
 }

@@ -12,10 +12,10 @@ import Combine
 enum EmptyStateErrorType {
     case serverError
     case noConnection
-    case permisionError(type : PermisionType)
+    case permisionError(type: PermisionType)
 }
 
-enum PermisionType : Int {
+enum PermisionType: Int {
     
     case camera = 1
     case contact = 2
@@ -43,19 +43,19 @@ enum PermisionType : Int {
 class EmptyStateView: UIView {
     
     struct ViewModel {
-        var title : String?
-        var description : String?
+        var title: String?
+        var description: String?
     }
     
     public var buttonPressSubject = PassthroughSubject<Void, Never>()
     
-    var errorType : EmptyStateErrorType = .serverError {
+    var errorType: EmptyStateErrorType = .serverError {
         didSet {
             self.setStyle()
         }
     }
     
-    var viewModel : ViewModel? {
+    var viewModel: ViewModel? {
         didSet {
             guard let viewModel = viewModel else {return}
             self.lblDesc.isHidden = false

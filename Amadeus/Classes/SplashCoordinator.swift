@@ -9,20 +9,20 @@ import Combine
 import UIKit
 
 protocol SplashFactorty {
-    var splashFactory : SplashFactory { get set }
+    var splashFactory: SplashFactory { get set }
 }
 
-protocol SplashCoordinatorProtocol : Coordinator, SplashFactorty {
+protocol SplashCoordinatorProtocol: Coordinator, SplashFactorty {
     func showSplashViewController()
-    init(_ navigationController : UINavigationController, splashFactory : SplashFactory)
+    init(_ navigationController: UINavigationController, splashFactory: SplashFactory)
 }
 
-final class SplashCoordinator : SplashCoordinatorProtocol, DependencyAssemblerInjector {
+final class SplashCoordinator: SplashCoordinatorProtocol, DependencyAssemblerInjector {
     
     weak var finishDelegate: FinishDelegate?
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
-    var type : CoordinatorType { .splash }
+    var type: CoordinatorType { .splash }
     var splashFactory: SplashFactory
     private var subscriber = Set<AnyCancellable>()
     

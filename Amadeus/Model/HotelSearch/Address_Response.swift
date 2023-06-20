@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Address_Response : Decodable {
+struct Address_Response: Decodable {
     let lines: [String]?
     let postalCode: String?
-    let cityName : String?
+    let cityName: String?
 }
 
 extension Address_Response {

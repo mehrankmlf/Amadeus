@@ -12,7 +12,7 @@ final class SplashViewController: BaseViewController<SplashViewModel>  {
     
     let timer = CountDownTimer(duration: 4)
     var navigateSubject = PassthroughSubject<SplashViewController.Event, Never>()
-    var contentView = SplashView()
+    let contentView = SplashView()
     
     override func loadView() {
         view = contentView

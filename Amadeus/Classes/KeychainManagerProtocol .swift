@@ -9,14 +9,14 @@ import Foundation
 import SwiftKeychainWrapper
 
 protocol KeyChainWrapperProtcol {
-    var keyChain : KeychainWrapper { get }
+    var keyChain: KeychainWrapper { get }
 }
 
-protocol TokenManagment : KeyChainWrapperProtcol {
+protocol TokenManagment: KeyChainWrapperProtcol {
     func signInUser()
     func signOutUser()
     func getToken() -> String?
-    func setToken(token :String)
+    func setToken(token:String)
     func setUsetCredential(grant_type: String, client_id: String, client_secret: String)
     func signIn(grant_type: String, client_id: String, client_secret: String, token:String)
     func getUserCredential() -> (grant_type: String?, client_id: String?, client_secret: String?)

@@ -11,21 +11,21 @@ final class LoginView: UIView {
     
     private enum Constants {
         
-        static let fontSize : CGFloat = 15
-        static let padding : CGFloat = 10
+        static let fontSize: CGFloat = 15
+        static let padding: CGFloat = 10
         
         // MARK: contentView layout constants
         static let contentViewCornerRadius: CGFloat = 10.0
         
         // MARK: profileImageView layout constants
         
-        static let generalPadding : CGFloat = 10.0
-        static let generalHeight  : CGFloat = 25.0
+        static let generalPadding: CGFloat = 10.0
+        static let generalHeight : CGFloat = 25.0
     }
     
     private var safeArea: UILayoutGuide!
     
-    lazy var imageLogo : UIImageView = {
+    lazy var imageLogo: UIImageView = {
         let imageLogo = UIImageView()
         imageLogo.image = UIImage(named: "amadeus_logo")
         imageLogo.contentMode = .scaleAspectFill
@@ -33,7 +33,7 @@ final class LoginView: UIView {
         return imageLogo
     }()
     
-    lazy var lblTop : UILabel = {
+    lazy var lblTop: UILabel = {
         let lblTop = UILabel()
         lblTop.text = "Sign in"
         lblTop.textColor = .fontColor
@@ -41,7 +41,7 @@ final class LoginView: UIView {
         return lblTop
     }()
     
-    lazy var lblID : UILabel = {
+    lazy var lblID: UILabel = {
         let lblID = UILabel()
         lblID.text = "ClientID"
         lblID.textColor = .fontColor
@@ -49,7 +49,7 @@ final class LoginView: UIView {
         return lblID
     }()
     
-    lazy var lblSecret : UILabel = {
+    lazy var lblSecret: UILabel = {
         let lblSecret = UILabel()
         lblSecret.text = "ClientSecret"
         lblSecret.textColor = .fontColor
@@ -57,7 +57,7 @@ final class LoginView: UIView {
         return lblSecret
     }()
     
-    lazy var txtID : UITextField = {
+    lazy var txtID: UITextField = {
         let txtID = UITextField()
         txtID.textColor = UIColor.gray
         txtID.borderStyle = .line
@@ -67,7 +67,7 @@ final class LoginView: UIView {
         return txtID
     }()
     
-    lazy var txtSecret : UITextField = {
+    lazy var txtSecret: UITextField = {
         let txtSecret = UITextField()
         txtSecret.textColor = UIColor.gray
         txtSecret.borderStyle = .line
@@ -78,13 +78,13 @@ final class LoginView: UIView {
         return txtSecret
     }()
     
-    lazy var lblValidation : UILabel = {
+    lazy var lblValidation: UILabel = {
         let lblValidation = UILabel()
         lblValidation.textColor = UIColor.gray
         return lblValidation
     }()
     
-    lazy var lblCountDownTimer : UILabel = {
+    lazy var lblCountDownTimer: UILabel = {
         let lblCountDownTimer = UILabel()
         lblCountDownTimer.textColor = UIColor.gray
         return lblCountDownTimer
@@ -102,7 +102,7 @@ final class LoginView: UIView {
         return stackView
     }()
     
-    lazy var btnSubmit : UIButton = {
+    lazy var btnSubmit: UIButton = {
         let btnSubmit = UIButton()
         btnSubmit.setTitle("Login", for: .normal)
         btnSubmit.backgroundColor = .blueBackground

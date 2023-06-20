@@ -8,6 +8,6 @@
 import Foundation
 
 protocol DetailFactory {
-    func makeDetailViewController(coordinator : MainCoordinator) -> DetailViewController
-    func makeDetailViewModel(coordinator : MainCoordinator) -> DetailViewModel
+    func makeDetailViewController(coordinator: MainCoordinator) -> DetailViewController
+    func makeDetailViewModel(coordinator: MainCoordinator) -> DetailViewModel
 }

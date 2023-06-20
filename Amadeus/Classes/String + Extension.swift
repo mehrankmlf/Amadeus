@@ -17,7 +17,7 @@ extension String {
         return value.trimmingCharacters(in: .whitespaces).isEmpty
     }
     
-    var isNumeric : Bool {
+    var isNumeric: Bool {
         return NumberFormatter().number(from: self) != nil
     }
     

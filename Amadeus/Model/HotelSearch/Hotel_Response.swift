@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Hotel_Response : Decodable {
+struct Hotel_Response: Decodable {
     let type: String?
-    let hotelID : String?
+    let hotelID: String?
     let name: String?
     let address: Address_Response?
 }

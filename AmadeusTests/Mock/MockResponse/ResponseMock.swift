@@ -20,7 +20,7 @@ extension Address_Response {
     static let mockData = Address_Response(lines: ["address"], postalCode: "021", cityName: "tehran")
 }
 
-class BaseResponseHotelSearch : BaseResponse<[HotelSearchResponse]> {
+class BaseResponseHotelSearch: BaseResponse<[HotelSearchResponse]> {
     override init() {
         super.init()
         self.data = [

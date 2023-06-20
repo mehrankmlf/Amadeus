@@ -112,7 +112,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     }
 }
 
-extension LoginViewController : ShowEmptyStateProtocol {
+extension LoginViewController: ShowEmptyStateProtocol {
     func showEmptyStateView(title: String?, errorType: EmptyStateErrorType, isShow: Bool) {
         super.alert.error(message: title ?? "")
     }

@@ -10,10 +10,10 @@ import Alamofire
 
 enum UserTokenNetworking {
     
-    case accessToken(grant_type: String, client_id :String, client_secret: String)
+    case accessToken(grant_type: String, client_id:String, client_secret: String)
 }
 
-extension UserTokenNetworking : TargetType {
+extension UserTokenNetworking: TargetType {
     var baseURL: BaseURLType {
         return .baseApi
     }
@@ -31,7 +31,7 @@ extension UserTokenNetworking : TargetType {
     
     var method: HTTPMethod {
         switch self {
-        case .accessToken :
+        case .accessToken:
             return .post
         }
     }
@@ -43,9 +43,9 @@ extension UserTokenNetworking : TargetType {
         }
     }
 
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         switch self {
-        default :
+        default:
             return ["Content-Type":"application/x-www-form-urlencoded"]
         }
     }

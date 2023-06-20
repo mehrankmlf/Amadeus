@@ -8,6 +8,6 @@
 import Foundation
 
 protocol MainFactory {
-    func makeMainViewController(coordinator : MainCoordinator) -> MainViewController
-    func makeMainViewModel(coordinator : MainCoordinator) -> MainViewModel
+    func makeMainViewController(coordinator: MainCoordinator) -> MainViewController
+    func makeMainViewModel(coordinator: MainCoordinator) -> MainViewModel
 }

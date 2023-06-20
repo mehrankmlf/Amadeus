@@ -11,19 +11,19 @@ import Combine
 typealias BaseMainViewModel =  MainViewModelProtocol
 
 protocol MainViewModelProtocol {
-    var title : String { get }
-    var useCase : HotelsSearchProtocol { get }
+    var title: String { get }
+    var useCase: HotelsSearchProtocol { get }
     func getHotelsData(cityCode: String)
 }
 
-final class MainViewModel : BaseViewModel, BaseMainViewModel {
+final class MainViewModel: BaseViewModel, BaseMainViewModel {
     
     var title: String = "Amadeus"
     var useCase: HotelsSearchProtocol
 
-    @Published var hotelData : [HotelSearchResponse]?
+    @Published var hotelData: [HotelSearchResponse]?
     
-    init(useCase : HotelsSearchProtocol) {
+    init(useCase: HotelsSearchProtocol) {
         self.useCase = useCase
     }
     

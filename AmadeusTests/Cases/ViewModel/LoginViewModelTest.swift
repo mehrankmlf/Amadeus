@@ -12,9 +12,9 @@ import Combine
 
 class LoginViewModelTest: XCTestCase {
     
-    private var mockLogin : MockLogin!
-    private var viewModelToTest : LoginViewModel!
-    private var subscriber : Set<AnyCancellable> = []
+    private var mockLogin: MockLogin!
+    private var viewModelToTest: LoginViewModel!
+    private var subscriber: Set<AnyCancellable> = []
     
     override func setUp()  {
         mockLogin = MockLogin()

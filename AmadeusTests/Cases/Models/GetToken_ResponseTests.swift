@@ -10,7 +10,7 @@ import XCTest
 
 class GetToken_ResponseTests: XCTestCase {
     
-    var data : GetToken_Response!
+    var data: GetToken_Response!
     
     override func setUp() {
         super.setUp()

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ObfuscatorProtocol {
-    var salt : String { get }
+    var salt: String { get }
     func bytesByObfuscatingString(string: String) -> [UInt8]
     func reveal(key: [UInt8]) -> String
     init(with salt: String)
@@ -18,7 +18,7 @@ enum ObfuscatedConstants {
     static let obfuscatedSecret: [UInt8] = [5, 67, 68, 115, 42, 45, 51, 34, 86, 46, 47, 118, 37, 56, 46, 56]
 }
 
-struct Obfuscator : ObfuscatorProtocol {
+struct Obfuscator: ObfuscatorProtocol {
     
     // MARK: - Variables
     

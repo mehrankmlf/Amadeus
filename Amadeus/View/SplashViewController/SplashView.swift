@@ -9,13 +9,13 @@ import UIKit
 
 final class SplashView: UIView {
     
-   lazy var viewContainer : UIView = {
+   lazy var viewContainer: UIView = {
         let containerView = UIView()
         containerView.backgroundColor = .white
         return containerView
     }()
     
-    lazy var imageMain : UIImageView = {
+    lazy var imageMain: UIImageView = {
         let imageMain = UIImageView()
         imageMain.contentMode = .scaleToFill
         imageMain.image = UIImage(named: "amadeus")
@@ -24,7 +24,6 @@ final class SplashView: UIView {
     
     init() {
         super.init(frame: .zero)
-        
         addSubviews()
         makeAutolayout()
         setupUI()

@@ -10,15 +10,15 @@ import SwiftKeychainWrapper
 import Combine
 
 protocol BaseLoginViewModel {
-    var useCase : GetTokenProtocol { get }
+    var useCase: GetTokenProtocol { get }
     func getTokenData(grant_type: String, client_id: String, client_secret: String)
 }
 
-final class LoginViewModel : BaseViewModel, BaseLoginViewModel, KeyChainManagerInjector {
+final class LoginViewModel: BaseViewModel, BaseLoginViewModel, KeyChainManagerInjector {
     
-    @Published var userName : String = ""
-    @Published var password : String = ""
-    @Published var isGetToken : Bool = false
+    @Published var userName: String = ""
+    @Published var password: String = ""
+    @Published var isGetToken: Bool = false
     
     let usernameMessagePublisher = PassthroughSubject<String, Never>()
     let passwordMessagePublisher = PassthroughSubject<String, Never>()
@@ -27,7 +27,7 @@ final class LoginViewModel : BaseViewModel, BaseLoginViewModel, KeyChainManagerI
                                           accessGroup: KeychainWrapper.standard.accessGroup)
     var useCase: GetTokenProtocol
     
-    init(useCase : GetTokenProtocol) {
+    init(useCase: GetTokenProtocol) {
         self.useCase = useCase
     }
 }
@@ -44,7 +44,7 @@ extension LoginViewModel {
 
 extension LoginViewModel {
     
-    var validateUserName : AnyPublisher<String?, Never> {
+    var validateUserName: AnyPublisher<String?, Never> {
         
         $userName
             .debounce(for: 0.2, scheduler: RunLoop.main)
@@ -66,7 +66,7 @@ extension LoginViewModel {
             }.eraseToAnyPublisher()
     }
     
-    var validatePassword : AnyPublisher<String?, Never> {
+    var validatePassword: AnyPublisher<String?, Never> {
         
         $password
             .debounce(for: 0.2, scheduler: RunLoop.main)

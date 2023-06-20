@@ -10,8 +10,8 @@ import XCTest
 
 class MainCoordinatorTest: XCTestCase {
     
-    var sut : MainCoordinator!
-    var navigation : SpyNavigationController!
+    var sut: MainCoordinator!
+    var navigation: SpyNavigationController!
     
     override func setUp() {
         super.setUp()

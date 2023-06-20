@@ -11,9 +11,9 @@ import Combine
  
 class HotelSearchViewModelSearch: XCTestCase {
 
-    private var mockSearch : MockHotelsSearch!
-    private var viewModelToTest : MainViewModel!
-    private var subscriber : Set<AnyCancellable> = []
+    private var mockSearch: MockHotelsSearch!
+    private var viewModelToTest: MainViewModel!
+    private var subscriber: Set<AnyCancellable> = []
 
     override func setUp()  {
         mockSearch = MockHotelsSearch()

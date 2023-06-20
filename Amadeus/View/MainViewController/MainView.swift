@@ -11,7 +11,7 @@ final class MainView: UIView {
         
     private var safeArea: UILayoutGuide!
     
-    lazy var viewContainer : UIView = {
+    lazy var viewContainer: UIView = {
         let viewContainer = UIView()
         viewContainer.backgroundColor = .whiteBackground
         return viewContainer

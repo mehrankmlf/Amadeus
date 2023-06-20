@@ -10,7 +10,7 @@ import Foundation
 protocol AlertAdapter {
     func Loading()
     func dismiss()
-    func LoadingWithMessage(message : String)
-    func success(message : String)
-    func error(message : String)
+    func LoadingWithMessage(message: String)
+    func success(message: String)
+    func error(message: String)
 }

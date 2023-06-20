@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GetToken_Response : Decodable, Equatable {
+struct GetToken_Response: Decodable, Equatable {
     
     var type, username, application_name, client_id: String?
     var token_type: String?
@@ -37,7 +37,7 @@ extension GetToken_Response {
 
 extension GetToken_Response {
     
-    var tokenData : String {
+    var tokenData: String {
         get{
             guard let token = self.access_token else {return ""}
             return token.trimmingString()

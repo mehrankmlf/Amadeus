@@ -8,14 +8,14 @@
 import Foundation
 
 
-fileprivate let sharedDependencyAssembler : AppDependencyAssembler = AppDependencyAssembler()
+fileprivate let sharedDependencyAssembler: AppDependencyAssembler = AppDependencyAssembler()
 
 protocol DependencyAssemblerInjector {
-    var dependencyAssembler : AppDependencyAssembler { get }
+    var dependencyAssembler: AppDependencyAssembler { get }
 }
 
 extension DependencyAssemblerInjector {
-    var dependencyAssembler : AppDependencyAssembler {
+    var dependencyAssembler: AppDependencyAssembler {
         return sharedDependencyAssembler
     }
 }
@@ -24,7 +24,7 @@ final class AppDependencyAssembler {
      init() {}
 }
 
-extension AppDependencyAssembler : LoginViewFactory {
+extension AppDependencyAssembler: LoginViewFactory {
     func makeLoginViewController(coordinator: AuthenticationCoordinator) -> LoginViewController {
         let vc = LoginViewController(viewModel: self.makeLoginViewModel(coordinator: coordinator))
         return vc
@@ -36,7 +36,7 @@ extension AppDependencyAssembler : LoginViewFactory {
     }
 }
 
-extension AppDependencyAssembler : SplashFactory {
+extension AppDependencyAssembler: SplashFactory {
     func makeSplashViewController(coordinator: SplashCoordinator) -> SplashViewController {
         let vc = SplashViewController(viewModel: self.makeSplashViewModel(coordinator: coordinator))
         return vc
@@ -49,7 +49,7 @@ extension AppDependencyAssembler : SplashFactory {
     
 }
 
-extension AppDependencyAssembler : MainFactory {
+extension AppDependencyAssembler: MainFactory {
     func makeMainViewController(coordinator: MainCoordinator) -> MainViewController {
         let vc = MainViewController(viewModel: self.makeMainViewModel(coordinator: coordinator))
         return vc
@@ -61,7 +61,7 @@ extension AppDependencyAssembler : MainFactory {
     }
 }
 
-extension AppDependencyAssembler : DetailFactory {
+extension AppDependencyAssembler: DetailFactory {
     func makeDetailViewController(coordinator: MainCoordinator) -> DetailViewController {
         let vc = DetailViewController(viewModel: self.makeDetailViewModel(coordinator: coordinator))
         return vc

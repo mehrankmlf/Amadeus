@@ -8,11 +8,11 @@
 import UIKit
 import Combine
 
-protocol WalkthroughCoordinatorProtocol : Coordinator {
+protocol WalkthroughCoordinatorProtocol: Coordinator {
     func showWWalkthroughViewController()
 }
 
-final class WalkthroughCoordinator : WalkthroughCoordinatorProtocol {
+final class WalkthroughCoordinator: WalkthroughCoordinatorProtocol {
     
     var finishDelegate: FinishDelegate?
     var navigationController: UINavigationController

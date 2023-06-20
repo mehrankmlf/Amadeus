@@ -19,15 +19,15 @@ final class StartCommonBuilder {
 }
 
 // Clear keychain after new installation
-struct ClearKeycahin : Command {
+struct ClearKeycahin: Command {
     
     func execute() {
         let keyChain = KeychainWrapper(serviceName: KeychainWrapper.standard.serviceName)
         let freshInstall = !UserDefaults.standard.bool(forKey: "alreadyInstalled")
 
         if freshInstall {
-            let _ : Bool = keyChain.removeObject(forKey: KeychainKeyType.passKey.key)
-            let _ : Bool = keyChain.removeObject(forKey: KeychainKeyType.token.key)
+            let _: Bool = keyChain.removeObject(forKey: KeychainKeyType.passKey.key)
+            let _: Bool = keyChain.removeObject(forKey: KeychainKeyType.token.key)
             UserDefaults.standard.set(true, forKey: "alreadyInstalled")
         }
     }

@@ -11,7 +11,7 @@ import Combine
 final class MainViewController: BaseViewController<MainViewModel> {
     
     var contentView = MainView()
-    private(set) var data : [HotelSearchResponse]?
+    private(set) var data: [HotelSearchResponse]?
     private var dataSource:TableViewCustomDataSource<HotelSearchResponse>?
     var navigateSubject = PassthroughSubject<MainViewController.Event, Never>()
     
@@ -61,7 +61,7 @@ final class MainViewController: BaseViewController<MainViewModel> {
     }
 }
 
-extension MainViewController : EmptyStateDelegate, ShowEmptyStateProtocol {
+extension MainViewController: EmptyStateDelegate, ShowEmptyStateProtocol {
     func showEmptyStateView(title: String?, errorType: EmptyStateErrorType, isShow: Bool) {
         contentView.viewContainer.emptyState.show(title: title ?? "", errorType: errorType, isShow: isShow)
     }
@@ -72,7 +72,7 @@ extension MainViewController : EmptyStateDelegate, ShowEmptyStateProtocol {
     }
 }
 
-extension MainViewController : UITableViewDelegate {
+extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -92,7 +92,7 @@ extension MainViewController : UITableViewDelegate {
 extension MainViewController {
     enum Event {
         case main
-        case detail(data : HotelSearchResponse)
+        case detail(data: HotelSearchResponse)
     }
 }
 

@@ -9,19 +9,19 @@ import UIKit
 import Alamofire
 
 protocol RequestInterceptorProtocol {
-    var retryLimit : Int { get }
-    var isDoRetrying : Bool { get }
-    var retryDelay : TimeInterval { get }
+    var retryLimit: Int { get }
+    var isDoRetrying: Bool { get }
+    var retryDelay: TimeInterval { get }
 }
 
-final class RequestInterceptorHelper : Alamofire.RequestInterceptor, KeyChainManagerInjector, RequestInterceptorProtocol {
+final class RequestInterceptorHelper: Alamofire.RequestInterceptor, KeyChainManagerInjector, RequestInterceptorProtocol {
     
     var retryLimit: Int = 3
     var isDoRetrying: Bool = false
     var retryDelay: TimeInterval = 2
-    var requestNewToken : RequestNewTokenProtocol?
+    var requestNewToken: RequestNewTokenProtocol?
     
-    init(_requestNewToken : RequestNewTokenProtocol = RequestNewToken()) {
+    init(_requestNewToken: RequestNewTokenProtocol = RequestNewToken()) {
         self.requestNewToken = _requestNewToken
     }
     
@@ -49,18 +49,18 @@ final class RequestInterceptorHelper : Alamofire.RequestInterceptor, KeyChainMan
         if request.retryCount < self.retryLimit {
             
             switch statusCode {
-            case 200...299 :
+            case 200...299:
                 completion(.doNotRetry)
-            case 401 :
+            case 401:
                 guard !isDoRetrying else {
                     completion(.doNotRetry)
                     return
                 }
                 self.requestNewToken?.refreshToken { isSuccess in
                     self.isDoRetrying = true
-                    isSuccess ? completion(.retry) : completion(.doNotRetry)
+                    isSuccess ? completion(.retry): completion(.doNotRetry)
                 }
-            case 500...599 :
+            case 500...599:
                 return completion(.retryWithDelay(self.retryDelay))
             default:
                 completion(.doNotRetry)

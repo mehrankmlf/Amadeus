@@ -11,27 +11,27 @@ import IHProgressHUD
 import Combine
 import SwiftKeychainWrapper
 
-enum BaseVCActManager : Int {
+enum BaseVCActManager: Int {
     case setNavHeightForNotch = 0
     case hideKeyBoardWhenNeeded = 1
 }
 
-protocol ShowEmptyStateProtocol : AnyObject {
-    func showEmptyStateView(title: String?, errorType: EmptyStateErrorType, isShow : Bool)
+protocol ShowEmptyStateProtocol: AnyObject {
+    func showEmptyStateView(title: String?, errorType: EmptyStateErrorType, isShow: Bool)
 }
 
-class BaseViewController<ViewModel : StandardBaseViewModel>: UIViewController {
+class BaseViewController<ViewModel: StandardBaseViewModel>: UIViewController {
     
-    var viewModel : ViewModel
+    var viewModel: ViewModel
     var reachability =  Reachability()
     var subscriber = Set<AnyCancellable>()
-    weak var delegate : ShowEmptyStateProtocol?
+    weak var delegate: ShowEmptyStateProtocol?
     
     lazy var alert: AlertHelper = {
         return AlertHelper(vc: self)
     }()
     
-    init(viewModel : ViewModel) {
+    init(viewModel: ViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -79,7 +79,7 @@ class BaseViewController<ViewModel : StandardBaseViewModel>: UIViewController {
         }
     }
     
-    func baseVCActHelper(navigationView view : UIView? = nil, actType : BaseVCActManager ) {
+    func baseVCActHelper(navigationView view: UIView? = nil, actType: BaseVCActManager ) {
         switch actType {
         case .setNavHeightForNotch:
             return
@@ -106,7 +106,7 @@ class BaseViewController<ViewModel : StandardBaseViewModel>: UIViewController {
 }
 
 extension BaseViewController {
-    func setViewState(state : ViewModelStatus) {
+    func setViewState(state: ViewModelStatus) {
         switch state {
         case .loadStart:
             self.alert.Loading()

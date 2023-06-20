@@ -13,9 +13,9 @@ import Combine
 // App Configuration Base
 protocol AppConfiguration {
     
-    var baseURL : BaseURLType { get }
+    var baseURL: BaseURLType { get }
     
-    var version : VersionType { get }
+    var version: VersionType { get }
     
     func isVPNConnected() -> Bool
     func isJailBrokenDevice() -> Bool
@@ -25,7 +25,7 @@ protocol AppConfiguration {
 
 // App Configuration Set Base
 protocol AppConfigurable {
-    static var setAppState : AppConfiguration { get }
+    static var setAppState: AppConfiguration { get }
 }
 
 

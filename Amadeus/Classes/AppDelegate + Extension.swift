@@ -14,7 +14,7 @@ extension AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
     
-    static var window : UIWindow? {
+    static var window: UIWindow? {
         return self.appDelegate().window
     }
 }

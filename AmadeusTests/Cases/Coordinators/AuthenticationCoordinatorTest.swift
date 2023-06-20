@@ -10,8 +10,8 @@ import XCTest
 
 class AuthenticationCoordinatorTest: XCTestCase {
 
-    var sut : AuthenticationCoordinator!
-    var navigation : SpyNavigationController!
+    var sut: AuthenticationCoordinator!
+    var navigation: SpyNavigationController!
     
     override func setUp() {
         super.setUp()

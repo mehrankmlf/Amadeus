@@ -10,8 +10,8 @@ import UIKit
 
 extension UIWindow {
     
-    static var currentWindow : UIWindow?  {
-        var window : UIWindow?
+    static var currentWindow: UIWindow?  {
+        var window: UIWindow?
         if let windowInner = AppDelegate.window {
             window = windowInner
         }else if let windowInner = UIApplication.shared.keyWindow {

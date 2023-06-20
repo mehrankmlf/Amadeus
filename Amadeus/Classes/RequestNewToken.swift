@@ -10,11 +10,11 @@ import Alamofire
 import Combine
 
 protocol RequestNewTokenProtocol  {
-    var getTokenService : GetTokenProtocol { get }
+    var getTokenService: GetTokenProtocol { get }
     func refreshToken(completion: @escaping (_ isSuccess: Bool) -> Void)
 }
 
-final class RequestNewToken : RequestNewTokenProtocol, KeyChainManagerInjector {
+final class RequestNewToken: RequestNewTokenProtocol, KeyChainManagerInjector {
     
     var getTokenService: GetTokenProtocol
     var subscriber = Set<AnyCancellable>()
@@ -35,7 +35,7 @@ final class RequestNewToken : RequestNewTokenProtocol, KeyChainManagerInjector {
             receiveValue: { [weak self] data in
                 guard let data = data else {return}
                 self?.keychainManager.setToken(token: data.tokenData)
-                !String.isNilOrEmpty(string: data.tokenData) ? completion(true) : completion(false)
+                !String.isNilOrEmpty(string: data.tokenData) ? completion(true): completion(false)
             }
             .store(in: &subscriber)
         }

@@ -9,7 +9,7 @@ import UIKit
 
 extension UIView {
     
-    func fromNib<T : UIView>() -> T? {
+    func fromNib<T: UIView>() -> T? {
         guard let contentView = Bundle(for: type(of: self)).loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?.first as? T else {
             // xib not loaded, or its top view is of the wrong type
             return nil
@@ -40,7 +40,7 @@ extension UIView {
         layer.shadowOffset = CGSize.zero
         layer.shadowRadius = 3
         layer.shouldRasterize = true
-        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+        layer.rasterizationScale = scale ? UIScreen.main.scale: 1
     }
     
     func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {

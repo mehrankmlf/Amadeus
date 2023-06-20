@@ -8,14 +8,14 @@
 import UIKit
 import Combine
 
-protocol EmptyStateDelegate : AnyObject {
+protocol EmptyStateDelegate: AnyObject {
     func emptyStateButtonClicked()
 }
 
 final class EmptyState {
     
-    var delegate : EmptyStateDelegate?
-    private var emptyStateView : EmptyStateView!
+    var delegate: EmptyStateDelegate?
+    private var emptyStateView: EmptyStateView!
     
     var subscriber = Set<AnyCancellable>()
     
@@ -25,7 +25,7 @@ final class EmptyState {
         }
     }
     
-    init(inView view : UIView?) {
+    init(inView view: UIView?) {
         
         emptyStateView = EmptyStateView.getView()
         emptyStateView?.isHidden = true
@@ -38,7 +38,7 @@ final class EmptyState {
 }
 
 extension EmptyState {
-    func show(title : String, errorType : EmptyStateErrorType?, isShow : Bool) {
+    func show(title: String, errorType: EmptyStateErrorType?, isShow: Bool) {
         self.emptyStateView.viewModel = EmptyStateView.ViewModel(title: title, description: nil)
         hidden = !isShow
     }

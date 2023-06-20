@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AppBuildConfig : AppConfigurable {
+struct AppBuildConfig: AppConfigurable {
     
     static var setAppState: AppConfiguration {
         // return help you to change thec AppConfigState
@@ -16,11 +16,11 @@ struct AppBuildConfig : AppConfigurable {
     }
 }
 
-private struct Realese : AppConfiguration {
+private struct Realese: AppConfiguration {
     
-    var baseURL : BaseURLType = .baseApi
+    var baseURL: BaseURLType = .baseApi
     
-    var version : VersionType = .none
+    var version: VersionType = .none
     
     func isVPNConnected() -> Bool {
         return false
@@ -39,11 +39,11 @@ private struct Realese : AppConfiguration {
     }
 }
 
-private struct PenTest : AppConfiguration {
+private struct PenTest: AppConfiguration {
     
-    var baseURL : BaseURLType = .baseApi
+    var baseURL: BaseURLType = .baseApi
     
-    var version : VersionType = .none
+    var version: VersionType = .none
     
     func isVPNConnected() -> Bool {
         return false

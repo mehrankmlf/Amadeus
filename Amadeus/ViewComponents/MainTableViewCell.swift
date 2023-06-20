@@ -11,21 +11,21 @@ class MainTableViewCell: UITableViewCell {
     
     private enum Constants {
         
-        static let fontSize : CGFloat = 15
-        static let padding : CGFloat = 10
+        static let fontSize: CGFloat = 15
+        static let padding: CGFloat = 10
         
         // MARK: contentView layout constants
         static let contentViewCornerRadius: CGFloat = 10.0
         
         // MARK: profileImageView layout constants
         
-        static let generalPadding : CGFloat = 10.0
-        static let generalHeight  : CGFloat = 25.0
+        static let generalPadding: CGFloat = 10.0
+        static let generalHeight : CGFloat = 25.0
     }
     
     static let cellId = "cellId"
     
-    private lazy var containerView : UIView = {
+    private lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .whiteBackground
         view.clipsToBounds = true
@@ -34,14 +34,14 @@ class MainTableViewCell: UITableViewCell {
         return view
     }()
     
-    private lazy var rightSideView : UIView = {
+    private lazy var rightSideView: UIView = {
         let view = UIView()
         view.backgroundColor = .blueBackground
         view.clipsToBounds = true
         return view
     }()
     
-    private lazy var lblRightSideView : UILabel = {
+    private lazy var lblRightSideView: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.white
         label.textAlignment = .center
@@ -49,21 +49,21 @@ class MainTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var imageDiscount : UIImageView = {
+    lazy var imageDiscount: UIImageView = {
         let imageMain = UIImageView()
         imageMain.contentMode = .scaleAspectFill
         imageMain.image = UIImage(named: "discount")
         return imageMain
     }()
     
-    private lazy var lblTitle : UILabel = {
+    private lazy var lblTitle: UILabel = {
         let lblTitle = UILabel()
         lblTitle.textColor = UIColor.black
         lblTitle.font = UIFont.systemFont(ofSize: Constants.fontSize)
         return lblTitle
     }()
     
-    private lazy var lblHeadLine : UILabel = {
+    private lazy var lblHeadLine: UILabel = {
         let lblHeadLine = UILabel()
         lblHeadLine.textColor = UIColor.black
         lblHeadLine.font = UIFont.systemFont(ofSize: Constants.fontSize)
@@ -71,7 +71,7 @@ class MainTableViewCell: UITableViewCell {
         return lblHeadLine
     }()
     
-    private lazy var lblSubline : UILabel = {
+    private lazy var lblSubline: UILabel = {
         let lblSubline = UILabel()
         lblSubline.textColor = UIColor.black
         lblSubline.font = UIFont.systemFont(ofSize: Constants.fontSize)
@@ -114,7 +114,7 @@ class MainTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupParametrs(items : HotelSearchResponse) {
+    func setupParametrs(items: HotelSearchResponse) {
         self.lblTitle.text = items.hotel?.type
         self.lblRightSideView.text = items.availableText()
         self.lblHeadLine.text = items.hotel?.name

@@ -11,12 +11,12 @@ enum BaseURLType {
     case baseApi
     case staging
     
-    var desc : String {
+    var desc: String {
         
         switch self {
-        case .baseApi :
+        case .baseApi:
             return "https://test.api.amadeus.com"
-        case .staging :
+        case .staging:
             return "http://staging.com"
         }
     }
@@ -26,19 +26,19 @@ enum VersionType {
     case none
     case v1, v2
     
-    var desc : String {
+    var desc: String {
         switch self {
-        case .none :
+        case .none:
             return ""
-        case .v1 :
+        case .v1:
             return "/v1"
-        case .v2 :
+        case .v2:
             return "/v2"
         }
     }
 }
 
-enum APIError : Error {
+enum APIError: Error {
     case general
     case timeout
     case pageNotFound
@@ -46,7 +46,7 @@ enum APIError : Error {
     case noNetwork
     case unknownError
     case serverError
-    case statusMessage(message : String)
+    case statusMessage(message: String)
     case decodeError(String)
 }
 
@@ -68,7 +68,7 @@ extension APIError {
     }
 }
 
-enum StatusCodeType : Int , Codable {
+enum StatusCodeType: Int , Codable {
     case success = 0
     case requestIsNotPermitted = 31
     case failed = 42

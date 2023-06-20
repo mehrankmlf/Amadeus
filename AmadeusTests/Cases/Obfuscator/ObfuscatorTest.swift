@@ -10,7 +10,7 @@ import XCTest
 
 class ObfuscatorTest: XCTestCase {
     
-    var sut : ObfuscatorProtocol!
+    var sut: ObfuscatorProtocol!
     
     override func setUp() {
         super.setUp()

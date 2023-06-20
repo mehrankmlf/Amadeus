@@ -19,8 +19,8 @@ extension UIView {
         gradient.name = "Gradient"
         gradient.locations = nil
         gradient.frame = self.bounds
-        gradient.startPoint = startPoint == nil ? CGPoint(x: 0, y: 0.5) : startPoint!
-        gradient.endPoint = endPoint == nil ? CGPoint(x: 0, y: 0.5) : endPoint!
+        gradient.startPoint = startPoint == nil ? CGPoint(x: 0, y: 0.5): startPoint!
+        gradient.endPoint = endPoint == nil ? CGPoint(x: 0, y: 0.5): endPoint!
         gradient.cornerRadius = self.layer.cornerRadius
         gradient.colors = colors.map{ $0.cgColor }
         self.layer.insertSublayer(gradient, at: 0)

@@ -11,21 +11,21 @@ final class DetailView: UIView {
     
     private enum Constants {
         
-        static let fontSize : CGFloat = 15
-        static let padding : CGFloat = 10
+        static let fontSize: CGFloat = 15
+        static let padding: CGFloat = 10
         
         // MARK: contentView layout constants
         static let contentViewCornerRadius: CGFloat = 10.0
         
         // MARK: profileImageView layout constants
         
-        static let generalPadding : CGFloat = 10.0
-        static let generalHeight  : CGFloat = 25.0
+        static let generalPadding: CGFloat = 10.0
+        static let generalHeight : CGFloat = 25.0
     }
     
     private var safeArea: UILayoutGuide!
     
-    lazy var viewContainer : UIView = {
+    lazy var viewContainer: UIView = {
         let viewContainer = UIView()
         viewContainer.backgroundColor = .white
         viewContainer.layer.borderColor =  UIColor.gray.cgColor
@@ -33,7 +33,7 @@ final class DetailView: UIView {
         return viewContainer
     }()
     
-    lazy var imageHeader : UIImageView = {
+    lazy var imageHeader: UIImageView = {
         let imageLogo = UIImageView()
         imageLogo.image = UIImage(named: "info")
         imageLogo.contentMode = .scaleAspectFill
@@ -41,15 +41,15 @@ final class DetailView: UIView {
         return imageLogo
     }()
     
-    lazy var lblHeadLine : UILabel = {
+    lazy var lblHeadLine: UILabel = {
         let lblHeadLine = UILabel()
-        lblHeadLine.text = "ID : "
+        lblHeadLine.text = "ID: "
         lblHeadLine.textColor = .gray
         lblHeadLine.font = UIFont.boldSystemFont(ofSize: Constants.fontSize)
         return lblHeadLine
     }()
     
-    lazy var lblHeadLineDetail : UILabel = {
+    lazy var lblHeadLineDetail: UILabel = {
         let lblHeadLineDetail = UILabel()
         lblHeadLineDetail.text = "unknown"
         lblHeadLineDetail.textColor = .black
@@ -58,16 +58,16 @@ final class DetailView: UIView {
         return lblHeadLineDetail
     }()
     
-    lazy var lblSubline : UILabel = {
+    lazy var lblSubline: UILabel = {
         let lblSubline = UILabel()
-        lblSubline.text = "Hotel Name : "
+        lblSubline.text = "Hotel Name: "
         lblSubline.textAlignment = .left
         lblSubline.textColor = .gray
         lblSubline.font = UIFont.boldSystemFont(ofSize: Constants.fontSize)
         return lblSubline
     }()
     
-    lazy var lblSublineDetail : UILabel = {
+    lazy var lblSublineDetail: UILabel = {
         let lblSublineDetail = UILabel()
         lblSublineDetail.text = "unknown"
         lblSublineDetail.textAlignment = .left

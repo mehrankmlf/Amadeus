@@ -20,7 +20,7 @@ extension BaseAPI  {
         }
     }
     
-    func buildTarget(target : RequestType) -> String {
+    func buildTarget(target: RequestType) -> String {
         switch target {
         case .requestPath(path: let path):
             return path

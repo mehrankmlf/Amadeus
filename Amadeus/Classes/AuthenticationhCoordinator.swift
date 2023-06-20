@@ -9,27 +9,27 @@ import UIKit
 import Combine
 
 protocol AuthenticationFactory {
-    var loginViewFactory : LoginViewFactory { get set }
+    var loginViewFactory: LoginViewFactory { get set }
 }
 
-protocol AuthenticationCoordinatorProtocol : Coordinator, AuthenticationFactory {
+protocol AuthenticationCoordinatorProtocol: Coordinator, AuthenticationFactory {
     func showLoginViewController()
-    init(_ navigationController : UINavigationController,
-         loginViewFactory : LoginViewFactory)
+    init(_ navigationController: UINavigationController,
+         loginViewFactory: LoginViewFactory)
 }
 
-final class AuthenticationCoordinator : AuthenticationCoordinatorProtocol, DependencyAssemblerInjector {
+final class AuthenticationCoordinator: AuthenticationCoordinatorProtocol, DependencyAssemblerInjector {
 
     var finishDelegate: FinishDelegate?
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
     var type: CoordinatorType { .authentication }
-    var loginViewFactory : LoginViewFactory
+    var loginViewFactory: LoginViewFactory
     private var subscriber = Set<AnyCancellable>()
     
     
     init(_ navigationController: UINavigationController,
-         loginViewFactory : LoginViewFactory) {
+         loginViewFactory: LoginViewFactory) {
         self.navigationController = navigationController
         self.loginViewFactory = loginViewFactory
     }

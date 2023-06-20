@@ -8,7 +8,7 @@
 import Foundation
 import SwiftKeychainWrapper
 
-enum KeychainKeyType : String  {
+enum KeychainKeyType: String  {
     
     case grant_type
     case client_id
@@ -20,27 +20,27 @@ enum KeychainKeyType : String  {
 
 extension KeychainKeyType {
     
-    var key : String {
+    var key: String {
         
         switch self  {
         case .grant_type: return "com.grant_type"
         case .client_id: return "com.client_id"
         case .client_secret: return "com.client_secret"
-        case .passKey : return "com.passKey"
-        case .token : return "com.token"
+        case .passKey: return "com.passKey"
+        case .token: return "com.token"
         }
     }
 }
 
 /// Protocol approach replacement for Singelton
 protocol KeyChainManagerInjector {
-    var keychainManager : KeychainManager { get }
+    var keychainManager: KeychainManager { get }
 }
 
-fileprivate let sharedAppKeychainManager : KeychainManager = KeychainManager()
+fileprivate let sharedAppKeychainManager: KeychainManager = KeychainManager()
 
 extension KeyChainManagerInjector {
-    var keychainManager : KeychainManager {
+    var keychainManager: KeychainManager {
         return sharedAppKeychainManager
     }
 }
@@ -49,7 +49,7 @@ extension KeyChainManagerInjector {
      init() {}
 }
 
-extension KeychainManager : TokenManagment {
+extension KeychainManager: TokenManagment {
     
     var keyChain: KeychainWrapper {
         return KeychainWrapper(serviceName: KeychainWrapper.standard.serviceName, accessGroup: KeychainWrapper.standard.accessGroup)
@@ -91,7 +91,7 @@ extension KeychainManager : TokenManagment {
         UserDefaultManager.save(value: true, key: .isSignIn)
     }
     
-    func signIn(grant_type: String, client_id: String, client_secret: String, token :String) {
+    func signIn(grant_type: String, client_id: String, client_secret: String, token:String) {
         self.setUsetCredential(grant_type: grant_type, client_id: client_id, client_secret: client_secret)
         self.setToken(token: token)
         self.signInUser()

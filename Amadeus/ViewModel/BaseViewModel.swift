@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-open class BaseViewModel : StandardBaseViewModel {
+open class BaseViewModel: StandardBaseViewModel {
     
     var loadinState = CurrentValueSubject<ViewModelStatus, Never>(.dismissAlert)
     var subscriber = Set<AnyCancellable>()

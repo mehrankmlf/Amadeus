@@ -9,8 +9,8 @@ import Foundation
 import Combine
 @testable import Amadeus
 
-class MockHotelsSearch : HotelsSearchProtocol {
-    var fetchResult : AnyPublisher<BaseResponse<[HotelSearchResponse]>?, APIError>!
+class MockHotelsSearch: HotelsSearchProtocol {
+    var fetchResult: AnyPublisher<BaseResponse<[HotelSearchResponse]>?, APIError>!
     func HotelsSearchService(cityCode: String) -> AnyPublisher<BaseResponse<[HotelSearchResponse]>?, APIError> {
         return fetchResult
     }

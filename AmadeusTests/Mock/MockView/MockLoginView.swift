@@ -8,7 +8,7 @@
 import Foundation
 @testable import Amadeus
 
-class MockLoginView : LoginViewFactory {
+class MockLoginView: LoginViewFactory {
     func makeLoginViewController(coordinator: AuthenticationCoordinator) -> LoginViewController {
         let viewModel = makeLoginViewModel(coordinator: coordinator)
         let initialViewController = LoginViewController(viewModel: viewModel)

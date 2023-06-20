@@ -8,7 +8,7 @@
 import Foundation
 
 struct HotelSearchResponse: Decodable {
-    var type : HotelType?
+    var type: HotelType?
     var hotel: Hotel_Response?
     var available: Bool?
 }
@@ -28,6 +28,6 @@ enum HotelType: String, Codable {
 extension HotelSearchResponse {
     func availableText() -> String {
         guard let available = self.available else {return ""}
-        return available ? "Available" : "Not Available"
+        return available ? "Available": "Not Available"
     }
 }

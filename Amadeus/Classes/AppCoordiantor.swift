@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AppCoordinatorProtocol : Coordinator {
+protocol AppCoordinatorProtocol: Coordinator {
     func showMainFlow()
     func showAuthFlow()
     func showSplashFlow()
@@ -15,12 +15,12 @@ protocol AppCoordinatorProtocol : Coordinator {
     func isShowWalktroughFlow()
 }
 
-final class AppCoordinator : AppCoordinatorProtocol, DependencyAssemblerInjector, KeyChainManagerInjector {
+final class AppCoordinator: AppCoordinatorProtocol, DependencyAssemblerInjector, KeyChainManagerInjector {
      
-    weak var finishDelegate : FinishDelegate? = nil
+    weak var finishDelegate: FinishDelegate? = nil
     var navigationController: UINavigationController
     var childCoordinators = [Coordinator]()
-    var type : CoordinatorType { .splash }
+    var type: CoordinatorType { .splash }
         
     required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -56,7 +56,7 @@ final class AppCoordinator : AppCoordinatorProtocol, DependencyAssemblerInjector
     }
     
     func isShowWalktroughFlow() {
-        isShowWalktrough() ? showAuthFlow() : showWalkthroughFlow()
+        isShowWalktrough() ? showAuthFlow(): showWalkthroughFlow()
     }
     
     func showMainFlow() {
@@ -69,12 +69,11 @@ final class AppCoordinator : AppCoordinatorProtocol, DependencyAssemblerInjector
     }
 }
 
-extension AppCoordinator : FinishDelegate {
+extension AppCoordinator: FinishDelegate {
     
     func coordinatorDidFinish(childCoordonator: Coordinator) {
         
         childCoordinators = childCoordinators.filter({ $0.type != childCoordonator.type })
-        
         switch childCoordonator.type {
         case .walkthrough:
             navigationController.viewControllers.removeAll()

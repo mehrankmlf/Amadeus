@@ -80,7 +80,7 @@ public class Reachability {
         
         switch flags?.connection {
         case .none?, nil: return .none
-        case .cellular?: return allowsCellularConnection ? .cellular : .none
+        case .cellular?: return allowsCellularConnection ? .cellular: .none
         case .wifi?: return .wifi
         }
     }
@@ -193,15 +193,15 @@ public extension Reachability {
     
     var description: String {
         guard let flags = flags else { return "unavailable flags" }
-        let W = isRunningOnDevice ? (flags.isOnWWANFlagSet ? "W" : "-") : "X"
-        let R = flags.isReachableFlagSet ? "R" : "-"
-        let c = flags.isConnectionRequiredFlagSet ? "c" : "-"
-        let t = flags.isTransientConnectionFlagSet ? "t" : "-"
-        let i = flags.isInterventionRequiredFlagSet ? "i" : "-"
-        let C = flags.isConnectionOnTrafficFlagSet ? "C" : "-"
-        let D = flags.isConnectionOnDemandFlagSet ? "D" : "-"
-        let l = flags.isLocalAddressFlagSet ? "l" : "-"
-        let d = flags.isDirectFlagSet ? "d" : "-"
+        let W = isRunningOnDevice ? (flags.isOnWWANFlagSet ? "W": "-"): "X"
+        let R = flags.isReachableFlagSet ? "R": "-"
+        let c = flags.isConnectionRequiredFlagSet ? "c": "-"
+        let t = flags.isTransientConnectionFlagSet ? "t": "-"
+        let i = flags.isInterventionRequiredFlagSet ? "i": "-"
+        let C = flags.isConnectionOnTrafficFlagSet ? "C": "-"
+        let D = flags.isConnectionOnDemandFlagSet ? "D": "-"
+        let l = flags.isLocalAddressFlagSet ? "l": "-"
+        let d = flags.isDirectFlagSet ? "d": "-"
         
         return "\(W)\(R) \(c)\(t)\(i)\(C)\(D)\(l)\(d)"
     }
@@ -222,7 +222,7 @@ fileprivate extension Reachability {
     }
     
     func reachabilityChanged() {
-        let block = connection != .none ? whenReachable : whenUnreachable
+        let block = connection != .none ? whenReachable: whenUnreachable
         
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }

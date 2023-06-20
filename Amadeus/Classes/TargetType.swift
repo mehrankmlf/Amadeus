@@ -18,9 +18,9 @@ enum HTTPMethod: String {
 
 enum RequestType {
     /// A request with no additional data.
-    case requestPath(path : String)
+    case requestPath(path: String)
     /// A request with query param
-    case queryParametrs(query : String)
+    case queryParametrs(query: String)
 }
 
 enum Task {
@@ -38,7 +38,7 @@ protocol TargetType {
     var baseURL: BaseURLType { get }
     
     /// The Version of EndPoints
-    var version : VersionType { get }
+    var version: VersionType { get }
     
     /// The path to be appended to `baseURL` to form the full `URL`.
     var path: RequestType { get }

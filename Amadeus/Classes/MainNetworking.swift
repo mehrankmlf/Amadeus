@@ -12,7 +12,7 @@ enum MainNetworking {
     case hotelSearch(cityCode: String)
 }
 
-extension MainNetworking : TargetType {
+extension MainNetworking: TargetType {
     var baseURL: BaseURLType {
         return .baseApi
     }
@@ -30,7 +30,7 @@ extension MainNetworking : TargetType {
     
     var method: HTTPMethod {
         switch self {
-        case .hotelSearch :
+        case .hotelSearch:
             return .get
         }
     }
@@ -42,9 +42,9 @@ extension MainNetworking : TargetType {
         }
     }
 
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         switch self {
-        default :
+        default:
             return nil
         }
     }

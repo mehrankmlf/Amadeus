@@ -9,9 +9,9 @@ import Foundation
 @testable import Amadeus
 import UIKit
 
-class SpyNavigationController : UINavigationController {
+class SpyNavigationController: UINavigationController {
     
-    var pushedViewController : UIViewController?
+    var pushedViewController: UIViewController?
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         pushedViewController = viewController

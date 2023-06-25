@@ -22,7 +22,6 @@ final class LoginViewModel: BaseViewModel, BaseLoginViewModel, KeyChainManagerIn
     
     let usernameMessagePublisher = PassthroughSubject<String, Never>()
     let passwordMessagePublisher = PassthroughSubject<String, Never>()
-    
     let keychainWrapper = KeychainWrapper(serviceName: KeychainWrapper.standard.serviceName,
                                           accessGroup: KeychainWrapper.standard.accessGroup)
     var useCase: GetTokenProtocol

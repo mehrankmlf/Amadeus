@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/swift,cocoapods,xcode
-# Edit at https://www.toptal.com/developers/gitignore?templates=swift,cocoapods,xcode
+# Created by https://www.toptal.com/developers/gitignore/api/swift,xcode,cocoapods
+# Edit at https://www.toptal.com/developers/gitignore?templates=swift,xcode,cocoapods
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
@@ -16,6 +16,10 @@ Pods/
 
 ## User settings
 xcuserdata/
+
+# Ignore Mac DS_Store files
+.DS_Store
+**/.DS_Store
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
@@ -97,12 +101,6 @@ iOSInjectionProject/
 
 ## Xcode 8 and earlier
 
-### Xcode Patch ###
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-!*.xcodeproj/xcshareddata/
-!*.xcworkspace/contents.xcworkspacedata
-/*.gcno
-**/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.toptal.com/developers/gitignore/api/swift,cocoapods,xcode
+
+# End of https://www.toptal.com/developers/gitignore/api/swift,xcode,cocoapods

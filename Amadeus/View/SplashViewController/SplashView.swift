@@ -9,7 +9,7 @@ import UIKit
 
 final class SplashView: UIView {
     
-   lazy var viewContainer: UIView = {
+    lazy var viewContainer: UIView = {
         let containerView = UIView()
         containerView.backgroundColor = .white
         return containerView

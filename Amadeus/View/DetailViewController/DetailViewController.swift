@@ -9,7 +9,7 @@ import UIKit
 
 final class DetailViewController: BaseViewController<DetailViewModel> {
     
-    var  data: HotelSearchResponse?
+    var data: HotelSearchResponse?
     let contentView = DetailView()
 
     override func loadView() {

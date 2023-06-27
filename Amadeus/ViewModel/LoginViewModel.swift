@@ -33,9 +33,14 @@ final class LoginViewModel: BaseViewModel, BaseLoginViewModel, KeyChainManagerIn
 
 extension LoginViewModel {
     func getTokenData(grant_type: String, client_id: String, client_secret: String) {
-        super.callWithProgress(argument: self.useCase.getTokenService(grant_type: grant_type, client_id: client_id, client_secret: client_secret)) { [weak self] data in
+        super.callWithProgress(argument: self.useCase.getTokenService(grant_type: grant_type,
+                                                                      client_id: client_id,
+                                                                      client_secret: client_secret)) { [weak self] data in
             guard let data = data else {return}
-            self?.keychainManager.signIn(grant_type: grant_type, client_id: client_id, client_secret: client_secret, token: data.tokenData)
+            self?.keychainManager.signIn(grant_type: grant_type,
+                                         client_id: client_id,
+                                         client_secret: client_secret,
+                                         token: data.tokenData)
             self?.isGetToken = true
         }
     }
@@ -53,14 +58,11 @@ extension LoginViewModel {
                     self.usernameMessagePublisher.send("Username can't be blank")
                     return nil
                 }
-                
                 guard name.count > 2 else {
                     self.usernameMessagePublisher.send("Minimum of 3 characters required")
                     return nil
                 }
-                
                 self.usernameMessagePublisher.send("")
-                
                 return name
             }.eraseToAnyPublisher()
     }
@@ -70,17 +72,16 @@ extension LoginViewModel {
         $password
             .debounce(for: 0.2, scheduler: RunLoop.main)
             .removeDuplicates()
-            .map { pass in
-                guard pass.count != 0 else {
+            .map { password in
+                guard password.count != 0 else {
                     self.passwordMessagePublisher.send("Username can't be blank")
                     return nil
                 }
-                
-                guard pass.count > 2 else {
+                guard password.count > 2 else {
                     self.passwordMessagePublisher.send("Minimum of 3 characters required")
                     return nil
                 }
-                return pass
+                return password
             }
             .eraseToAnyPublisher()
     }
@@ -88,11 +89,11 @@ extension LoginViewModel {
     var formValidation: AnyPublisher<(String, String)?, Never> {
         
         return Publishers.CombineLatest(validateUserName, validatePassword)
-            .map { name, pass in
-                guard let name = name, let pass = pass else {
+            .map { name, password in
+                guard let name = name, let password = password else {
                     return nil
                 }
-                return (name, pass)
+                return (name, password)
             }
             .eraseToAnyPublisher()
     }

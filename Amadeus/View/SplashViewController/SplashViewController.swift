@@ -8,11 +8,12 @@
 import UIKit
 import Combine
 
-final class SplashViewController: BaseViewController<SplashViewModel>  {
+final class SplashViewController: UIViewController {
     
     let timer = CountDownTimer(duration: 4)
-    var navigateSubject = PassthroughSubject<SplashViewController.Event, Never>()
     let contentView = SplashView()
+    let subscriber = Cancelable()
+    var navigateSubject = PassthroughSubject<SplashViewController.Event, Never>()
     
     override func loadView() {
         view = contentView
@@ -21,11 +22,11 @@ final class SplashViewController: BaseViewController<SplashViewModel>  {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .whiteBackground
-        self.handleTimer()
+        self.setupTimer()
         self.setupNavigation()
     }
     
-    private func handleTimer() {
+    private func setupTimer() {
         self.timer
             .map { String(describing: $0) }
             .sink { [weak self] value in
@@ -35,7 +36,7 @@ final class SplashViewController: BaseViewController<SplashViewModel>  {
                 }
             } receiveValue: { value in
                 print(value)
-            }.store(in: &subscriber)
+            }.store(in: subscriber)
     }
     
     private func setupNavigation() {

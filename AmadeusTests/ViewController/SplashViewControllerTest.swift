@@ -30,6 +30,7 @@ final class SplashViewControllerTest: XCTestCase {
         let durationExpectation = expectation(description: "durationExpectation")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + expected, execute: {
+            // Assert
             durationExpectation.fulfill()
             XCTAssertEqual(4.0, self.sut.timer.duration, "'durationInSeconds' is not set to correct value.")
         })

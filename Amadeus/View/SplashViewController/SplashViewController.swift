@@ -26,7 +26,7 @@ final class SplashViewController: UIViewController {
         self.setupNavigation()
     }
     
-    private func setupTimer() {
+    func setupTimer() {
         self.timer
             .map { String(describing: $0) }
             .sink { [weak self] value in

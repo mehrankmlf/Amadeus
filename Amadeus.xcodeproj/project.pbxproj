@@ -20,6 +20,7 @@
 		02DC602B28590253000B2F97 /* HotelSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC602A28590253000B2F97 /* HotelSearchResponse.swift */; };
 		02DC602E285902D3000B2F97 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC602D285902D3000B2F97 /* BaseResponse.swift */; };
 		450C0B0A2A4AEE7D007F2A0D /* Cancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C0B092A4AEE7D007F2A0D /* Cancelable.swift */; };
+		450C0B0D2A4AF2C8007F2A0D /* SplashViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C0B0C2A4AF2C8007F2A0D /* SplashViewControllerTest.swift */; };
 		82DEB063B583A7A05C0429F6 /* Pods_Amadeus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */; };
 		A809F50C28AB7889006F95BE /* UITextField + Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A809F50B28AB7889006F95BE /* UITextField + Publisher.swift */; };
 		A809F50F28AB8D64006F95BE /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A809F50E28AB8D64006F95BE /* ViewModelProtocol.swift */; };
@@ -144,6 +145,7 @@
 		1530094CAF1E86E4F71C237D /* Pods-Amadeus-AmadeusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus-AmadeusUITests.release.xcconfig"; path = "Target Support Files/Pods-Amadeus-AmadeusUITests/Pods-Amadeus-AmadeusUITests.release.xcconfig"; sourceTree = "<group>"; };
 		34AEB3D063800CEA021DADD6 /* Pods-Amadeus-AmadeusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus-AmadeusUITests.debug.xcconfig"; path = "Target Support Files/Pods-Amadeus-AmadeusUITests/Pods-Amadeus-AmadeusUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		450C0B092A4AEE7D007F2A0D /* Cancelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancelable.swift; sourceTree = "<group>"; };
+		450C0B0C2A4AF2C8007F2A0D /* SplashViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerTest.swift; sourceTree = "<group>"; };
 		69F1C0F06733B06828F9B82B /* Pods-Amadeus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus.release.xcconfig"; path = "Target Support Files/Pods-Amadeus/Pods-Amadeus.release.xcconfig"; sourceTree = "<group>"; };
 		7035E696CB460776507D073D /* Pods-AmadeusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmadeusTests.release.xcconfig"; path = "Target Support Files/Pods-AmadeusTests/Pods-AmadeusTests.release.xcconfig"; sourceTree = "<group>"; };
 		A809F50B28AB7889006F95BE /* UITextField + Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Publisher.swift"; sourceTree = "<group>"; };
@@ -330,6 +332,14 @@
 			name = App;
 			sourceTree = "<group>";
 		};
+		450C0B0B2A4AF2AB007F2A0D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				450C0B0C2A4AF2C8007F2A0D /* SplashViewControllerTest.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		4ED68E1F211C74C2C5A41099 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +413,7 @@
 		A828C88728447D6800738854 /* AmadeusTests */ = {
 			isa = PBXGroup;
 			children = (
+				450C0B0B2A4AF2AB007F2A0D /* ViewController */,
 				A8BDA626288BFD160052BB3F /* Cases */,
 				A8BDA624288BF3090052BB3F /* Mock */,
 				A8BDA629288C02330052BB3F /* Spies */,
@@ -1193,6 +1204,7 @@
 				A8EC3C57288D586200C75CFA /* MainCoordinatorTest.swift in Sources */,
 				022D79DD284624340050CEE4 /* MockHotelsSearch.swift in Sources */,
 				A80BE4A7288E554000D11F88 /* HotelSearchViewModelSearch.swift in Sources */,
+				450C0B0D2A4AF2C8007F2A0D /* SplashViewControllerTest.swift in Sources */,
 				022D79E9284624CC0050CEE4 /* LoginViewModelTest.swift in Sources */,
 				022D79DE284624340050CEE4 /* MockLogin.swift in Sources */,
 				A8BDA62F288C0A770052BB3F /* MockLoginView.swift in Sources */,

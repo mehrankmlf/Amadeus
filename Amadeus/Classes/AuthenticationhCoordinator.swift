@@ -14,8 +14,6 @@ protocol AuthenticationFactory {
 
 protocol AuthenticationCoordinatorProtocol: Coordinator, AuthenticationFactory {
     func showLoginViewController()
-    init(_ navigationController: UINavigationController,
-         loginViewFactory: LoginViewFactory)
 }
 
 final class AuthenticationCoordinator: AuthenticationCoordinatorProtocol, DependencyAssemblerInjector {

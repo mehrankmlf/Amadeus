@@ -14,7 +14,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     let timer = CountDownTimer(duration: 40)
     let contentView = LoginView()
-    var obfuscator = Obfuscator()
+    let obfuscator = Obfuscator()
     
     var navigateSubject = PassthroughSubject<LoginViewController.Event, Never>()
 

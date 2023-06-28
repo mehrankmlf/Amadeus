@@ -25,12 +25,12 @@ final class AppDependencyAssembler {
 }
 
 extension AppDependencyAssembler: LoginViewFactory {
-    func makeLoginViewController(coordinator: AuthenticationCoordinator) -> LoginViewController {
+    func makeLoginViewController(coordinator: AuthenticationCoordinatorProtocol) -> LoginViewController {
         let vc = LoginViewController(viewModel: self.makeLoginViewModel(coordinator: coordinator))
         return vc
     }
     
-    func makeLoginViewModel(coordinator: AuthenticationCoordinator) -> LoginViewModel {
+    func makeLoginViewModel(coordinator: AuthenticationCoordinatorProtocol) -> LoginViewModel {
         let viewModel = LoginViewModel(useCase:  GetToken_Request())
         return viewModel
     }

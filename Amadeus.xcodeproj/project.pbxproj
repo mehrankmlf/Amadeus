@@ -22,6 +22,8 @@
 		450C0B0A2A4AEE7D007F2A0D /* Cancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C0B092A4AEE7D007F2A0D /* Cancelable.swift */; };
 		450C0B0D2A4AF2C8007F2A0D /* SplashViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C0B0C2A4AF2C8007F2A0D /* SplashViewControllerTest.swift */; };
 		450C0B0F2A4AF5CA007F2A0D /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C0B0E2A4AF5CA007F2A0D /* LoginViewControllerTest.swift */; };
+		453F3B402A4C51E900094CCE /* MockAuthenticateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F3B3F2A4C51E900094CCE /* MockAuthenticateCoordinator.swift */; };
+		453F3B452A4C548B00094CCE /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F3B442A4C548B00094CCE /* MockNavigationController.swift */; };
 		82DEB063B583A7A05C0429F6 /* Pods_Amadeus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */; };
 		A809F50C28AB7889006F95BE /* UITextField + Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A809F50B28AB7889006F95BE /* UITextField + Publisher.swift */; };
 		A809F50F28AB8D64006F95BE /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A809F50E28AB8D64006F95BE /* ViewModelProtocol.swift */; };
@@ -148,6 +150,8 @@
 		450C0B092A4AEE7D007F2A0D /* Cancelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancelable.swift; sourceTree = "<group>"; };
 		450C0B0C2A4AF2C8007F2A0D /* SplashViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerTest.swift; sourceTree = "<group>"; };
 		450C0B0E2A4AF5CA007F2A0D /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTest.swift; sourceTree = "<group>"; };
+		453F3B3F2A4C51E900094CCE /* MockAuthenticateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthenticateCoordinator.swift; sourceTree = "<group>"; };
+		453F3B442A4C548B00094CCE /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
 		69F1C0F06733B06828F9B82B /* Pods-Amadeus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus.release.xcconfig"; path = "Target Support Files/Pods-Amadeus/Pods-Amadeus.release.xcconfig"; sourceTree = "<group>"; };
 		7035E696CB460776507D073D /* Pods-AmadeusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmadeusTests.release.xcconfig"; path = "Target Support Files/Pods-AmadeusTests/Pods-AmadeusTests.release.xcconfig"; sourceTree = "<group>"; };
 		A809F50B28AB7889006F95BE /* UITextField + Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Publisher.swift"; sourceTree = "<group>"; };
@@ -341,6 +345,22 @@
 				450C0B0E2A4AF5CA007F2A0D /* LoginViewControllerTest.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		453F3B3C2A4C512200094CCE /* MockCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				453F3B3F2A4C51E900094CCE /* MockAuthenticateCoordinator.swift */,
+			);
+			path = MockCoordinator;
+			sourceTree = "<group>";
+		};
+		453F3B432A4C548400094CCE /* MockNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				453F3B442A4C548B00094CCE /* MockNavigationController.swift */,
+			);
+			path = MockNavigationController;
 			sourceTree = "<group>";
 		};
 		4ED68E1F211C74C2C5A41099 /* Frameworks */ = {
@@ -813,6 +833,8 @@
 		A8BDA624288BF3090052BB3F /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				453F3B432A4C548400094CCE /* MockNavigationController */,
+				453F3B3C2A4C512200094CCE /* MockCoordinator */,
 				A8BDA62D288C0A340052BB3F /* MockView */,
 				022D79D9284624240050CEE4 /* MockDataParser */,
 				022D79E0284624750050CEE4 /* MockResponse */,
@@ -1206,11 +1228,13 @@
 				022D79E2284624840050CEE4 /* ResponseMock.swift in Sources */,
 				A828C88928447D6800738854 /* AmadeusTests.swift in Sources */,
 				A8EC3C57288D586200C75CFA /* MainCoordinatorTest.swift in Sources */,
+				453F3B452A4C548B00094CCE /* MockNavigationController.swift in Sources */,
 				022D79DD284624340050CEE4 /* MockHotelsSearch.swift in Sources */,
 				A80BE4A7288E554000D11F88 /* HotelSearchViewModelSearch.swift in Sources */,
 				450C0B0D2A4AF2C8007F2A0D /* SplashViewControllerTest.swift in Sources */,
 				022D79E9284624CC0050CEE4 /* LoginViewModelTest.swift in Sources */,
 				022D79DE284624340050CEE4 /* MockLogin.swift in Sources */,
+				453F3B402A4C51E900094CCE /* MockAuthenticateCoordinator.swift in Sources */,
 				A8BDA62F288C0A770052BB3F /* MockLoginView.swift in Sources */,
 				A8EC3C52288D3D9A00C75CFA /* ObfuscatorTest.swift in Sources */,
 			);

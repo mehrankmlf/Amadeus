@@ -21,11 +21,21 @@ final class LoginViewControllerTest: XCTestCase, DependencyAssemblerInjector {
         sut = nil
     }
     
-    func testLoginViewController() {
+    func testLoginViewController_WhenCreated_HasTextField() {
         
         let view = sut.contentView
         
         XCTAssertEqual(view.txtID.text, "")
         XCTAssertEqual(view.txtSecret.text, "")
+    }
+    
+    func testLoginViewController_WhenCreated_HasLoginButtonandActive() {
+        
+        let view = sut.contentView
+        
+        let loginButton: UIButton = try! XCTUnwrap(view.btnSubmit, "LoginButton does not have refrence")
+        let action = try! XCTUnwrap(loginButton.actions(forTarget: sut, forControlEvent: .touchUpInside))
+        
+        XCTAssertEqual(action.count, 1)
     }
 }

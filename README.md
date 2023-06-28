@@ -1,9 +1,8 @@
 # Amadeus
 
-This project Contains Alamofire Network layer Based on Protocol Oriented Concept and Combine Framework + The Promises and Futures.
+This project uses Amadeus services to implement authentication flow with alamofire, The project Contains Alamofire Network layer Based on Protocol Oriented Concept and Combine Framework + The Promises and Futures.
 
 It is created with UIKit, Alamofire, Combine.
-
 
 ## How to run
 Amadeus requires iOS 13.0 or later. If you are developer, you can set its deployment target to lower iOS version if needed.

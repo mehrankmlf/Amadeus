@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class TableViewCustomDataSource<Model>: NSObject,UITableViewDataSource {
+final class TableViewCustomDataSource<Model>: NSObject,UITableViewDataSource {
     
     typealias CellConfigurator = (Model,UITableViewCell)-> Void
     

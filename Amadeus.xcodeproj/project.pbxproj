@@ -22,8 +22,18 @@
 		450C0B0A2A4AEE7D007F2A0D /* Cancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C0B092A4AEE7D007F2A0D /* Cancelable.swift */; };
 		450C0B0D2A4AF2C8007F2A0D /* SplashViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C0B0C2A4AF2C8007F2A0D /* SplashViewControllerTest.swift */; };
 		450C0B0F2A4AF5CA007F2A0D /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C0B0E2A4AF5CA007F2A0D /* LoginViewControllerTest.swift */; };
+		4516563C2A500903006134F2 /* WalkthroughNavigationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4516563B2A500903006134F2 /* WalkthroughNavigationTest.swift */; };
+		451656402A501C6C006134F2 /* MockAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4516563F2A501C6C006134F2 /* MockAppCoordinator.swift */; };
 		453F3B402A4C51E900094CCE /* MockAuthenticateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F3B3F2A4C51E900094CCE /* MockAuthenticateCoordinator.swift */; };
 		453F3B452A4C548B00094CCE /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F3B442A4C548B00094CCE /* MockNavigationController.swift */; };
+		45A131732A5024C00064F5E0 /* MockWalkthroughCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A131722A5024C00064F5E0 /* MockWalkthroughCoordinator.swift */; };
+		45A131752A5035A50064F5E0 /* MockSplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A131742A5035A50064F5E0 /* MockSplashCoordinator.swift */; };
+		45A131772A50366B0064F5E0 /* MockSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A131762A50366B0064F5E0 /* MockSplashView.swift */; };
+		45A131792A50381E0064F5E0 /* SplashNavigationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A131782A50381E0064F5E0 /* SplashNavigationTest.swift */; };
+		45A1317B2A5038C30064F5E0 /* MockMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A1317A2A5038C30064F5E0 /* MockMainCoordinator.swift */; };
+		45A1317D2A5038E20064F5E0 /* AuthNavigationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A1317C2A5038E10064F5E0 /* AuthNavigationTest.swift */; };
+		45A1317F2A503C770064F5E0 /* MockMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A1317E2A503C770064F5E0 /* MockMainView.swift */; };
+		45A131812A503E6B0064F5E0 /* MockDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A131802A503E6B0064F5E0 /* MockDetailView.swift */; };
 		82DEB063B583A7A05C0429F6 /* Pods_Amadeus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DE9072E587972C5E3D3A58 /* Pods_Amadeus.framework */; };
 		A809F50C28AB7889006F95BE /* UITextField + Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A809F50B28AB7889006F95BE /* UITextField + Publisher.swift */; };
 		A809F50F28AB8D64006F95BE /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A809F50E28AB8D64006F95BE /* ViewModelProtocol.swift */; };
@@ -150,8 +160,18 @@
 		450C0B092A4AEE7D007F2A0D /* Cancelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancelable.swift; sourceTree = "<group>"; };
 		450C0B0C2A4AF2C8007F2A0D /* SplashViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerTest.swift; sourceTree = "<group>"; };
 		450C0B0E2A4AF5CA007F2A0D /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTest.swift; sourceTree = "<group>"; };
+		4516563B2A500903006134F2 /* WalkthroughNavigationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughNavigationTest.swift; sourceTree = "<group>"; };
+		4516563F2A501C6C006134F2 /* MockAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppCoordinator.swift; sourceTree = "<group>"; };
 		453F3B3F2A4C51E900094CCE /* MockAuthenticateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthenticateCoordinator.swift; sourceTree = "<group>"; };
 		453F3B442A4C548B00094CCE /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
+		45A131722A5024C00064F5E0 /* MockWalkthroughCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWalkthroughCoordinator.swift; sourceTree = "<group>"; };
+		45A131742A5035A50064F5E0 /* MockSplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSplashCoordinator.swift; sourceTree = "<group>"; };
+		45A131762A50366B0064F5E0 /* MockSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSplashView.swift; sourceTree = "<group>"; };
+		45A131782A50381E0064F5E0 /* SplashNavigationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashNavigationTest.swift; sourceTree = "<group>"; };
+		45A1317A2A5038C30064F5E0 /* MockMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMainCoordinator.swift; sourceTree = "<group>"; };
+		45A1317C2A5038E10064F5E0 /* AuthNavigationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationTest.swift; sourceTree = "<group>"; };
+		45A1317E2A503C770064F5E0 /* MockMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMainView.swift; sourceTree = "<group>"; };
+		45A131802A503E6B0064F5E0 /* MockDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailView.swift; sourceTree = "<group>"; };
 		69F1C0F06733B06828F9B82B /* Pods-Amadeus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadeus.release.xcconfig"; path = "Target Support Files/Pods-Amadeus/Pods-Amadeus.release.xcconfig"; sourceTree = "<group>"; };
 		7035E696CB460776507D073D /* Pods-AmadeusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmadeusTests.release.xcconfig"; path = "Target Support Files/Pods-AmadeusTests/Pods-AmadeusTests.release.xcconfig"; sourceTree = "<group>"; };
 		A809F50B28AB7889006F95BE /* UITextField + Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Publisher.swift"; sourceTree = "<group>"; };
@@ -347,10 +367,24 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		4516563A2A5008EB006134F2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				4516563B2A500903006134F2 /* WalkthroughNavigationTest.swift */,
+				45A131782A50381E0064F5E0 /* SplashNavigationTest.swift */,
+				45A1317C2A5038E10064F5E0 /* AuthNavigationTest.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		453F3B3C2A4C512200094CCE /* MockCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				4516563F2A501C6C006134F2 /* MockAppCoordinator.swift */,
+				45A131742A5035A50064F5E0 /* MockSplashCoordinator.swift */,
+				45A131722A5024C00064F5E0 /* MockWalkthroughCoordinator.swift */,
 				453F3B3F2A4C51E900094CCE /* MockAuthenticateCoordinator.swift */,
+				45A1317A2A5038C30064F5E0 /* MockMainCoordinator.swift */,
 			);
 			path = MockCoordinator;
 			sourceTree = "<group>";
@@ -436,6 +470,7 @@
 		A828C88728447D6800738854 /* AmadeusTests */ = {
 			isa = PBXGroup;
 			children = (
+				4516563A2A5008EB006134F2 /* Navigation */,
 				450C0B0B2A4AF2AB007F2A0D /* ViewController */,
 				A8BDA626288BFD160052BB3F /* Cases */,
 				A8BDA624288BF3090052BB3F /* Mock */,
@@ -874,6 +909,9 @@
 			isa = PBXGroup;
 			children = (
 				A8BDA62E288C0A770052BB3F /* MockLoginView.swift */,
+				45A131762A50366B0064F5E0 /* MockSplashView.swift */,
+				45A1317E2A503C770064F5E0 /* MockMainView.swift */,
+				45A131802A503E6B0064F5E0 /* MockDetailView.swift */,
 			);
 			path = MockView;
 			sourceTree = "<group>";
@@ -1222,20 +1260,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8BDA62B288C02510052BB3F /* SpyNavigationController.swift in Sources */,
+				4516563C2A500903006134F2 /* WalkthroughNavigationTest.swift in Sources */,
 				022D79E5284624A70050CEE4 /* GetToken_ResponseTests.swift in Sources */,
 				450C0B0F2A4AF5CA007F2A0D /* LoginViewControllerTest.swift in Sources */,
 				A8BDA628288BFE2A0052BB3F /* AuthenticationCoordinatorTest.swift in Sources */,
 				022D79E2284624840050CEE4 /* ResponseMock.swift in Sources */,
 				A828C88928447D6800738854 /* AmadeusTests.swift in Sources */,
+				45A131772A50366B0064F5E0 /* MockSplashView.swift in Sources */,
 				A8EC3C57288D586200C75CFA /* MainCoordinatorTest.swift in Sources */,
 				453F3B452A4C548B00094CCE /* MockNavigationController.swift in Sources */,
 				022D79DD284624340050CEE4 /* MockHotelsSearch.swift in Sources */,
+				451656402A501C6C006134F2 /* MockAppCoordinator.swift in Sources */,
 				A80BE4A7288E554000D11F88 /* HotelSearchViewModelSearch.swift in Sources */,
+				45A1317D2A5038E20064F5E0 /* AuthNavigationTest.swift in Sources */,
 				450C0B0D2A4AF2C8007F2A0D /* SplashViewControllerTest.swift in Sources */,
 				022D79E9284624CC0050CEE4 /* LoginViewModelTest.swift in Sources */,
+				45A131732A5024C00064F5E0 /* MockWalkthroughCoordinator.swift in Sources */,
+				45A131812A503E6B0064F5E0 /* MockDetailView.swift in Sources */,
+				45A131792A50381E0064F5E0 /* SplashNavigationTest.swift in Sources */,
+				45A131752A5035A50064F5E0 /* MockSplashCoordinator.swift in Sources */,
 				022D79DE284624340050CEE4 /* MockLogin.swift in Sources */,
 				453F3B402A4C51E900094CCE /* MockAuthenticateCoordinator.swift in Sources */,
+				45A1317B2A5038C30064F5E0 /* MockMainCoordinator.swift in Sources */,
 				A8BDA62F288C0A770052BB3F /* MockLoginView.swift in Sources */,
+				45A1317F2A503C770064F5E0 /* MockMainView.swift in Sources */,
 				A8EC3C52288D3D9A00C75CFA /* ObfuscatorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

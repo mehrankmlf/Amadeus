@@ -1,20 +1,24 @@
 //
-//  MockAuthenticateCoordinator.swift
+//  MockMainCoordinator.swift
 //  AmadeusTests
 //
-//  Created by Mehran Kamalifard on 6/28/23.
+//  Created by Mehran Kamalifard on 7/1/23.
 //
 
 import UIKit
 @testable import Amadeus
 
-final class MockAuthenticateCoordinator: AuthenticationCoordinatorProtocol {
+final class MockMainCoordinator: MainCoordinatorProtocol {
     
     var finishDelegate: Amadeus.FinishDelegate?
-    var navigationController: UINavigationController = MockUINavigationControllerMock()
+    var navigationController: UINavigationController
     var childCoordinators: [Amadeus.Coordinator] = []
     var type: Amadeus.CoordinatorType = .authentication
     var loginViewFactory: Amadeus.LoginViewFactory = MockLoginView()
+    
+    var mainFactory: Amadeus.MainFactory = MockMainView()
+    var detailFactory: Amadeus.DetailFactory = MockDetaiLView()
+    
     var vcCalled = false
     
     init(navigationController: UINavigationController) {
@@ -22,12 +26,10 @@ final class MockAuthenticateCoordinator: AuthenticationCoordinatorProtocol {
     }
     
     func start() {
-        showLoginViewController()
+        showMainViewController()
     }
     
-    func showLoginViewController() {
+    func showMainViewController() {
         vcCalled = true
     }
 }
-
-

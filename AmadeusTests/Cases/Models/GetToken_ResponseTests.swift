@@ -14,7 +14,15 @@ class GetToken_ResponseTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        data = GetToken_Response(type: "type", username: "username", application_name: "application_name", client_id: "client_id", token_type: "token_type", access_token: "access_token", expires_in: 120, state: "state", scope: "scope")
+        data = GetToken_Response(type: "type",
+                                 username: "username",
+                                 application_name: "application_name",
+                                 client_id: "client_id",
+                                 token_type: "token_type",
+                                 access_token: "access_token",
+                                 expires_in: 120,
+                                 state: "state",
+                                 scope: "scope")
     }
     
     override func tearDown() {

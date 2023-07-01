@@ -14,7 +14,6 @@ protocol SplashFactorty {
 
 protocol SplashCoordinatorProtocol: Coordinator, SplashFactorty {
     func showSplashViewController()
-    init(_ navigationController: UINavigationController, splashFactory: SplashFactory)
 }
 
 final class SplashCoordinator: SplashCoordinatorProtocol, DependencyAssemblerInjector {

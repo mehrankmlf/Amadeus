@@ -12,7 +12,6 @@ final class SplashViewControllerTest: XCTestCase {
     
     var sut: SplashViewController!
     
-
     override func setUp() {
         sut = SplashViewController()
     }

@@ -15,10 +15,6 @@ protocol MainViewFactory {
 
 protocol MainCoordinatorProtocol: Coordinator, MainViewFactory {
     func showMainViewController()
-    func showDetailViewController(data: HotelSearchResponse)
-    init(_ navigationController: UINavigationController,
-         mainFactory: MainFactory,
-         detailFactory: DetailFactory)
 }
 
 final class MainCoordinator: MainCoordinatorProtocol {

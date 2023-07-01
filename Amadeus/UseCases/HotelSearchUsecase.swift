@@ -13,7 +13,6 @@ protocol HotelsSearchProtocol: AnyObject {
 }
 
 final class HotelSearch_Request: BaseAPI<MainNetworking>, HotelsSearchProtocol {
-    
     func HotelsSearchService(cityCode: String) -> AnyPublisher <BaseResponse<[HotelSearchResponse]>?, APIError> {
         self.fetchData(target: .hotelSearch(cityCode: cityCode), responseClass: BaseResponse<[HotelSearchResponse]>.self)
     }

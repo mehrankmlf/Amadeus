@@ -15,7 +15,6 @@ protocol GetTokenProtocol: AnyObject {
 }
 
 final class GetToken_Request: BaseAPI<UserTokenNetworking>, GetTokenProtocol {
-    
     func getTokenService(grant_type: String,
                          client_id: String,
                          client_secret: String) -> AnyPublisher <GetToken_Response?, APIError> {

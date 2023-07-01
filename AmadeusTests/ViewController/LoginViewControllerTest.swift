@@ -38,4 +38,22 @@ final class LoginViewControllerTest: XCTestCase, DependencyAssemblerInjector {
         
         XCTAssertEqual(action.count, 1)
     }
+    
+    func testTextId_WhenCreated_HasIdBorderType() {
+        
+        let view = sut.contentView
+        
+        let idTextField = try! XCTUnwrap(view.txtID, "idTextFieldNotConnected")
+        
+        XCTAssertEqual(idTextField.borderStyle, .line)
+    }
+    
+    func testTextISecret_WhenCreated_HasSecretSecureInput() {
+        
+        let view = sut.contentView
+        
+        let secretTextField = try! XCTUnwrap(view.txtSecret, "secretTextFieldNotConnected")
+        
+        XCTAssertEqual(secretTextField.isSecureTextEntry, true)
+    }
 }

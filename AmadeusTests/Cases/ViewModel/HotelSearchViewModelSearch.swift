@@ -28,6 +28,10 @@ class HotelSearchViewModelSearch: XCTestCase {
         super.tearDown()
     }
     
+    func testHotelsViewModel_WhenInitiated_ShouldReturnTitle() {
+        XCTAssertEqual(viewModelToTest.title, "Amadeus")
+    }
+    
     func testHotelsViewModelService_WhenServieCalled_ShouldReturnResponse() {
         
         let result = BaseResponseHotelSearch()

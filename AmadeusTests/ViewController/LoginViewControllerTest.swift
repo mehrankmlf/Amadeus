@@ -13,8 +13,9 @@ final class LoginViewControllerTest: XCTestCase, DependencyAssemblerInjector {
     var sut: LoginViewController!
 
     override func setUp() {
+        let view = MockLoginView()
         let navigationController = UINavigationController(rootViewController: UIViewController())
-        sut = LoginViewController(viewModel: self.dependencyAssembler.makeLoginViewModel(coordinator: MockAuthenticateCoordinator(navigationController: navigationController)))
+        sut = LoginViewController(viewModel: view.makeLoginViewModel(coordinator: MockAuthenticateCoordinator(navigationController: navigationController)))
         sut.loadViewIfNeeded()
     }
     

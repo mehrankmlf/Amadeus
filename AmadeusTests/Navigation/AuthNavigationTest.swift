@@ -15,9 +15,9 @@ final class AuthNavigationTest: XCTestCase {
 
     override func setUp() {
         let mockLogin = MockLoginView()
-        sut = LoginViewController(viewModel:  mockLogin.makeLoginViewModel(coordinator: authenticateCoordinator))
         let navigationController = UINavigationController(rootViewController: UIViewController())
         authenticateCoordinator = MockAuthenticateCoordinator(navigationController: navigationController)
+        sut = LoginViewController(viewModel:  mockLogin.makeLoginViewModel(coordinator: authenticateCoordinator))
         navigationController.pushViewController(sut, animated: false)
     }
     
